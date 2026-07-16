@@ -861,7 +861,7 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 <div class="rp-field"><span class="lbl">身份证</span><span class="val">440106199801120011</span></div>
 <div class="rp-field"><span class="lbl">入职日期</span><span class="val">2026-07-01</span></div>
 <div class="rp-field"><span class="lbl">项目</span><span class="val">电子普工</span></div>
-<div class="rp-field"><span class="lbl">状态</span><span class="val"><span class="tg tg-g">在职</span></span></div>
+<div class="rp-field" style="min-width:0"><span class="lbl">状态</span><span class="val"><span class="tg tg-g">在职</span></span></div>
 <div class="rp-field"><span class="lbl">渠道来源</span><span class="val">刘洋(LT0001)</span></div>
 </div>
 </div>
@@ -1080,26 +1080,24 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 <div class="cd">
 <div class="tbar"><div class="tbar-l"></div><div class="tbar-r"><button class="btn btn-sm" onclick="sm('tableSettingsModal')">表格设置</button><button class="btn btn-sm" onclick="sm('exportModal')">数据导出</button></div></div>
 <div class="tw"><table>
-<thead><tr><th style="width:36px"><input type="checkbox" onclick="toggleAll(this)"></th><th>项目名称</th><th>项目属性</th><th>关联客户</th><th>招聘人数</th><th>薪资范围</th><th>项目单价</th><th>服务通知</th><th>屏蔽在职</th><th>评价</th><th>状态</th><th>操作</th></tr></thead>
+<thead><tr><th style="width:36px"><input type="checkbox" onclick="toggleAll(this)"></th><th>项目名称</th><th>项目属性</th><th>关联客户</th><th>项目单价</th><th>服务通知</th><th>屏蔽在职</th><th>评价</th><th>状态</th><th>操作</th></tr></thead>
 <tbody>
-<tr><td><input type="checkbox"></td><td>电子普工</td><td>对内</td><td>比亚迪电子</td><td>50人</td><td>5k-7k</td><td>40元/时</td><td><span class="tg tg-g">已开启</span></td><td><span class="tg tg-g">是</span></td><td>4.2星(36评)</td><td><span class="tg tg-g">进行中</span></td><td><button class="btn-link" onclick="goProjectDetail()">编辑</button><button class="btn-link" onclick="sm('pushModal')">推送</button></td></tr>
-<tr><td><input type="checkbox"></td><td>质检员</td><td>对外</td><td>广汽乘用车</td><td>20人</td><td>7k-9k</td><td>45元/时</td><td><span class="tg tg-g">已开启</span></td><td><span class="tg tg-g">是</span></td><td>4.5星(18评)</td><td><span class="tg tg-g">进行中</span></td><td><button class="btn-link" onclick="goProjectDetail()">编辑</button><button class="btn-link" onclick="sm('pushModal')">推送</button></td></tr>
-<tr><td><input type="checkbox"></td><td>高级技工</td><td>对外</td><td>美的集团</td><td>10人</td><td>9k-12k</td><td>55元/时</td><td><span class="tg tg-y">未开启</span></td><td>--</td><td>3.8星(5评)</td><td><span class="tg tg-r">已停用</span></td><td><button class="btn-link" onclick="goProjectDetail()">编辑</button></td></tr>
-<tr><td><input type="checkbox"></td><td>仓管员</td><td>对内</td><td>TCL科技</td><td>15人</td><td>6k-8k</td><td>38元/时</td><td><span class="tg tg-g">已开启</span></td><td><span class="tg tg-g">是</span></td><td>4.0星(12评)</td><td><span class="tg tg-g">进行中</span></td><td><button class="btn-link" onclick="goProjectDetail()">编辑</button><button class="btn-link" onclick="sm('pushModal')">推送</button></td></tr>
+<tr><td><input type="checkbox"></td><td>电子普工</td><td>对内</td><td>比亚迪电子</td><td>40元/时</td><td><span class="tg tg-g">已开启</span></td><td><span class="tg tg-g">是</span></td><td>4.2星(36评)</td><td><span class="tg tg-g">进行中</span></td><td><button class="btn-link" onclick="goProjectDetail()">编辑</button><button class="btn-link" onclick="sm('pushModal')">推送</button></td></tr>
+<tr><td><input type="checkbox"></td><td>质检员</td><td>对外</td><td>广汽乘用车</td><td>45元/时</td><td><span class="tg tg-g">已开启</span></td><td><span class="tg tg-g">是</span></td><td>4.5星(18评)</td><td><span class="tg tg-g">进行中</span></td><td><button class="btn-link" onclick="goProjectDetail()">编辑</button><button class="btn-link" onclick="sm('pushModal')">推送</button></td></tr>
+<tr><td><input type="checkbox"></td><td>高级技工</td><td>对外</td><td>美的集团</td><td>55元/时</td><td><span class="tg tg-y">未开启</span></td><td>--</td><td>3.8星(5评)</td><td><span class="tg tg-r">已停用</span></td><td><button class="btn-link" onclick="goProjectDetail()">编辑</button></td></tr>
+<tr><td><input type="checkbox"></td><td>仓管员</td><td>对内</td><td>TCL科技</td><td>38元/时</td><td><span class="tg tg-g">已开启</span></td><td><span class="tg tg-g">是</span></td><td>4.0星(12评)</td><td><span class="tg tg-g">进行中</span></td><td><button class="btn-link" onclick="goProjectDetail()">编辑</button><button class="btn-link" onclick="sm('pushModal')">推送</button></td></tr>
 </tbody></table></div>
 <div class="pgn"><span>共28条</span><button class="active">1</button><button class="">2</button><button class="">3</button><span>条/页 10</span></div></div>
 
 <div class="mo" id="addProject"><div class="ml" style="width:680px">
 <div class="ml-t">新增项目</div>
 <div class="fr"><div class="fg"><label>关联客户 *</label><select><option>请选择</option><option>比亚迪电子</option><option>广汽乘用车</option><option>美的集团</option><option>TCL科技</option></select></div></div>
-<div class="fr"><div class="fg"><label>项目名称</label><input placeholder="如：电子普工"></div><div class="fg"><label>招聘人数</label><input placeholder="50"></div><div class="fg"><label>项目属性</label><select><option>对内项目</option><option selected>对外项目</option></select></div></div>
-<div class="fr"><div class="fg"><label>薪资最低</label><input placeholder="5000"></div><div class="fg"><label>薪资最高</label><input placeholder="7000"></div></div>
+<div class="fr"><div class="fg"><label>项目名称</label><input placeholder="如：电子普工"></div><div class="fg"><label>项目属性</label><select><option>对内项目</option><option selected>对外项目</option></select></div></div>
 <div class="fr"><div class="fg"><label>项目类型</label><select><option>请选择</option><option>短期工</option><option>长期工</option><option>小时工</option><option>承包</option></select></div><div class="fg"><label>工作地点</label><input placeholder="广州黄埔区"></div></div>
 <div class="fg" style="margin-bottom:16px"><label>项目描述</label><textarea rows="3" placeholder="请输入项目描述..."></textarea></div>
 
 
 <div class="ib ib-b"><b style="color:var(--brand)">项目单价配置（支持多工种不同单价）</b>
-<div style="margin-top:8px;font-size:13px;color:var(--text2)">一个项目可配置多个单价策略，按工种/用工类型区分。分别设置<b>结算方式、正常单价、加班单价</b>（加班费按正常单价 1.5 倍计）。</div>
 <div class="price-cfg"><table class="price-tbl">
 <thead><tr><th>工种/类型</th><th>结算方式</th><th>正常单价(元/时)</th><th>加班单价(元/时)</th><th>结算周期</th><th style="width:64px">操作</th></tr></thead>
 <tbody>
@@ -1110,7 +1108,7 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 </div>
 <div class="ib ib-b"><b style="color:var(--brand)">项目合同管理（支持多份合同）</b>
 <div style="margin-top:8px;font-size:13px;color:var(--text2)">一个项目可关联多份合同，每份合同独立管理，支持启用/停用。</div>
-<div style="display:flex;justify-content:flex-end;margin:12px 0 8px"><button class="btn btn-sm btn-p" onclick="sm('addContractModal')">+ 新增合同</button></div>
+<div style="display:flex;justify-content:flex-end;margin:12px 0 8px"><button class="btn btn-sm btn-p" onclick="openAddContract('customer')">+ 新增合同</button></div>
 <div class="tw"><table>
 <thead><tr><th>合同名称</th><th>合同编号</th><th>开始日期</th><th>结束日期</th><th>状态</th><th>操作</th></tr></thead>
 <tbody>
@@ -1245,8 +1243,6 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 <div><span style="color:var(--text3)">项目名称</span><div style="font-weight:500">电子普工</div></div>
 <div><span style="color:var(--text3)">关联客户</span><div style="font-weight:500">比亚迪电子</div></div>
 <div><span style="color:var(--text3)">项目属性</span><div style="font-weight:500">对内项目</div></div>
-<div><span style="color:var(--text3)">招聘人数</span><div style="font-weight:500">50人</div></div>
-<div><span style="color:var(--text3)">薪资范围</span><div style="font-weight:500">5k-7k</div></div>
 <div><span style="color:var(--text3)">项目单价</span><div style="font-weight:500">40元/时</div></div>
 <div><span style="color:var(--text3)">状态</span><div><span class="tg tg-g">进行中</span></div></div>
 </div>
@@ -1299,10 +1295,7 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 <div class="rp-fields">
 <div class="rp-field"><span class="lbl">项目名称</span><input value="电子普工"></div>
 <div class="rp-field"><span class="lbl">关联客户</span><select><option selected>比亚迪电子</option><option>广汽乘用车</option><option>美的集团</option><option>TCL科技</option></select></div>
-<div class="rp-field"><span class="lbl">招聘人数</span><input value="50"></div>
 <div class="rp-field"><span class="lbl">项目属性</span><select><option selected>对内项目</option><option>对外项目</option></select></div>
-<div class="rp-field"><span class="lbl">薪资最低</span><input value="5000"></div>
-<div class="rp-field"><span class="lbl">薪资最高</span><input value="7000"></div>
 <div class="rp-field"><span class="lbl">项目类型</span><select><option selected>短期工</option><option>长期工</option><option>小时工</option></select></div>
 <div class="rp-field"><span class="lbl">工作地点</span><input value="广州黄埔区"></div>
 </div>
@@ -1312,7 +1305,6 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 
 <div class="rp-card">
 <div class="rp-card-title">项目单价配置 <button class="btn btn-sm btn-p">+ 添加单价策略</button></div>
-<div class="ib ib-b" style="margin-bottom:8px">一个项目支持多个单价策略，按工种/用工类型区分。</div>
 <div class="price-cfg"><table class="price-tbl">
 <thead><tr><th>工种/类型</th><th>结算方式</th><th>正常单价(元/时)</th><th>加班单价(元/时)</th><th>结算周期</th><th style="width:64px">操作</th></tr></thead>
 <tbody>
@@ -1372,11 +1364,15 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 <div class="mo" id="addContractModal"><div class="ml" style="width:520px">
 <div class="ml-t">新增合同</div>
 <div class="fr">
-<div class="fg"><label>合同名称</label><input placeholder="新增合同名称"></div>
-<div class="fg"><label>合同编号</label><input placeholder="如：HT-2026-003"></div>
+<div class="fg"><label>合同名称 *</label><input id="contractNameInput" placeholder="新增合同名称"></div>
+<div class="fg"><label>合同编号 *</label><input id="contractNoInput" placeholder="如：HT-2026-003"></div>
+</div>
+<div class="fr">
+<div class="fg"><label>开始日期 *</label><input id="contractStartInput" type="date"></div>
+<div class="fg"><label>结束日期 *</label><input id="contractEndInput" type="date"></div>
 </div>
 <div class="fg" style="margin-top:12px"><label>上传合同附件</label><div class="uz" style="padding:10px 12px;cursor:pointer;border:1px dashed var(--border);border-radius:6px;text-align:center;background:#fafafa"><span style="font-size:13px;color:var(--text3)">点击上传合同文件（PDF/Word）</span></div></div>
-<div class="ml-f"><button class="btn" onclick="hm('addContractModal')">取消</button><button class="btn btn-p" onclick="hm('addContractModal')">确认新增</button></div>
+<div class="ml-f"><button class="btn" onclick="cancelAddContract()">取消</button><button class="btn btn-p" onclick="saveContract()">确认新增</button></div>
 </div></div>
 
 <!-- ===== SETTLEMENT ===== -->
@@ -1497,7 +1493,7 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 <div class="rp-card-title">结算基本信息</div>
 <div class="rp-fields">
 <div class="rp-field"><span class="lbl">结算名称</span><input placeholder="如：2026年7月电子普工结算"></div>
-<div class="rp-field"><span class="lbl">关联项目</span><select><option>请选择</option><option>电子普工</option><option>质检员</option><option>高级技工</option><option>仓管员</option></select></div>
+<div class="rp-field" style="min-width:0"><span class="lbl">关联项目</span><select><option>请选择</option><option>电子普工</option><option>质检员</option><option>高级技工</option><option>仓管员</option></select></div>
 <div class="rp-field"><span class="lbl">结算周期</span><select><option>按月</option><option>按日</option><option>按周</option><option>一次性结算</option></select></div>
 <div class="rp-field"><span class="lbl">结算月份</span><input type="month" value="2026-07"></div>
 <div class="rp-field"><span class="lbl">工资规则模板</span><select style="min-width:200px"><option selected>标准工资计算（默认）</option><option>日结工资计算</option><option>高级技工工资</option></select></div>
@@ -2874,6 +2870,39 @@ document.addEventListener('DOMContentLoaded',function(){
   document.querySelectorAll('.pgn').forEach(function(pager){pager.querySelectorAll('button').forEach(function(btn){btn.onclick=function(){if(this.textContent.trim()==='...')return;pager.querySelectorAll('button').forEach(function(b){b.classList.remove('active')});this.classList.add('active')}})});
   document.querySelectorAll('table tbody input[type="checkbox"]').forEach(function(cb){cb.addEventListener('change',function(){var tr=this.closest('tr');if(tr)tr.style.background=this.checked?'var(--brand-light)':''})});
 });
+
+var contractReturnTarget='customer';
+function openAddContract(target){
+ contractReturnTarget=target||'customer';
+ hm(contractReturnTarget==='newCustomer'?'addCustomerModal':'customerContractModal');
+ ['contractNameInput','contractNoInput','contractStartInput','contractEndInput'].forEach(function(id){var el=document.getElementById(id);if(el)el.value=''});
+ sm('addContractModal');
+}
+function restoreContractParent(){
+ if(contractReturnTarget==='newCustomer')sm('addCustomerModal');else sm('customerContractModal');
+}
+function cancelAddContract(){hm('addContractModal');restoreContractParent()}
+function contractRowHtml(name,no,start,end,withActions){
+ return '<tr><td>'+name+'</td><td>'+no+'</td><td>'+start+'</td><td>'+end+'</td><td><span class="tg tg-g">启用</span></td>'+(withActions?'<td><button class="btn-link" onclick="alert(\'合同详情查看功能已触发\')">查看</button><button class="btn-link" onclick="toggleContract(this)">停用</button></td>':'')+'</tr>';
+}
+function appendContract(tbodyId,html){
+ var body=document.getElementById(tbodyId);if(!body)return;
+ var empty=body.querySelector('.contract-empty');if(empty)empty.remove();
+ body.insertAdjacentHTML('beforeend',html);
+}
+function saveContract(){
+ var name=document.getElementById('contractNameInput').value.trim(),no=document.getElementById('contractNoInput').value.trim();
+ var start=document.getElementById('contractStartInput').value,end=document.getElementById('contractEndInput').value;
+ if(!name||!no||!start||!end){alert('请完整填写合同名称、编号和有效日期');return}
+ if(end<start){alert('合同结束日期不能早于开始日期');return}
+ if(contractReturnTarget==='newCustomer')appendContract('newCustomerContractList',contractRowHtml(name,no,start,end,false));
+ else {appendContract('customerContractList',contractRowHtml(name,no,start,end,true));appendContract('customerDetailContractList',contractRowHtml(name,no,start,end,true))}
+ hm('addContractModal');restoreContractParent();alert('合同已新增，可在合同管理列表中继续维护');
+}
+function toggleContract(btn){
+ var row=btn.closest('tr'),tag=row.querySelector('.tg'),stopping=btn.textContent.trim()==='停用';
+ tag.textContent=stopping?'已停用':'启用';tag.className='tg '+(stopping?'tg-y':'tg-g');btn.textContent=stopping?'启用':'停用';
+}
 </script>
 
 <!-- 账号设置-新增/编辑弹窗（需求3） -->
@@ -3063,11 +3092,11 @@ document.addEventListener('DOMContentLoaded',function(){
 <div style="font-size:13px;line-height:1.8;color:var(--text2);padding:8px 0">客户结算基准单价：<b>45 元/时</b>。各岗位实际结算单价以「岗位管理」中配置为准，差额部分为客户服务费。</div>
 </div>
 <div class="rp-card">
-<div class="rp-card-title">合同管理 <button class="btn btn-sm btn-p" onclick="sm('customerContractModal')">+ 新增合同</button></div>
+<div class="rp-card-title">合同管理 <button class="btn btn-sm btn-p" onclick="openAddContract('customer')">+ 新增合同</button> <button class="btn btn-sm" onclick="sm('customerContractModal')">管理合同</button></div>
 <div class="ib ib-b" style="margin-bottom:8px">一个客户可关联多份合同，每份合同独立管理，支持启用/停用。</div>
 <div class="tw"><table>
 <thead><tr><th>合同名称</th><th>合同编号</th><th>开始日期</th><th>结束日期</th><th>状态</th><th>操作</th></tr></thead>
-<tbody>
+<tbody id="customerDetailContractList">
 <tr><td>比亚迪电子劳务外包合同</td><td>HT-CUS-001</td><td>2026-01-01</td><td>2026-12-31</td><td><span class="tg tg-g">启用</span></td><td><button class="btn-link">查看</button><button class="btn-link">停用</button></td></tr>
 <tr><td>比亚迪电子补充协议</td><td>HT-CUS-002</td><td>2026-03-01</td><td>2026-09-30</td><td><span class="tg tg-y">已停用</span></td><td><button class="btn-link">查看</button><button class="btn-link">启用</button></td></tr>
 </tbody></table></div>
@@ -3083,11 +3112,11 @@ document.addEventListener('DOMContentLoaded',function(){
 </div>
 <div class="rp-card">
 <div class="rp-card-title">客户基本信息</div>
-<div class="rp-fields">
-<div class="rp-field"><span class="lbl">客户名称 *</span><input value="比亚迪电子"></div>
-<div class="rp-field"><span class="lbl">签单价(元/时) *</span><input value="45"></div>
-<div class="rp-field"><span class="lbl">联系人</span><input value="王经理"></div>
-<div class="rp-field"><span class="lbl">联系电话</span><input value="13800001200"></div>
+<div class="rp-fields" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;overflow:visible">
+<div class="rp-field" style="min-width:0"><span class="lbl">客户名称 *</span><input value="比亚迪电子"></div>
+<div class="rp-field" style="min-width:0"><span class="lbl">签单价(元/时) *</span><input value="45"></div>
+<div class="rp-field" style="min-width:0"><span class="lbl">联系人</span><input value="王经理"></div>
+<div class="rp-field" style="min-width:0"><span class="lbl">联系电话</span><input value="13800001200"></div>
 <div class="rp-field"><span class="lbl">状态</span><select><option selected>合作中</option><option>已暂停</option></select></div>
 </div>
 <div class="rp-field" style="margin-top:8px"><span class="lbl">关联项目</span><select><option selected>电子普工</option><option>质检员</option><option>高级技工</option><option>仓管员</option></select></div>
@@ -3115,7 +3144,7 @@ document.addEventListener('DOMContentLoaded',function(){
 </div>
 
 <!-- ===== ADD CUSTOMER MODAL ===== -->
-<div class="mo" id="addCustomerModal"><div class="ml" style="width:640px">
+<div class="mo" id="addCustomerModal"><div class="ml" style="width:680px;max-width:calc(100vw - 40px);max-height:calc(100vh - 40px);overflow-y:auto;overflow-x:hidden">
 <div class="ml-t">新增客户</div>
 <div class="rp-card" style="border:none;padding:0;margin:0">
 <div class="rp-fields">
@@ -3128,11 +3157,11 @@ document.addEventListener('DOMContentLoaded',function(){
 </div>
 </div>
 <div class="rp-card" style="border:none;padding:0;margin:0">
-<div class="rp-card-title">合同管理 <button class="btn btn-sm btn-p" onclick="sm('customerContractModal')">+ 新增合同</button></div>
+<div class="rp-card-title">合同管理 <button class="btn btn-sm btn-p" onclick="openAddContract('newCustomer')">+ 新增合同</button></div>
 <div class="ib ib-b" style="margin-bottom:8px">录入客户基础信息后，可继续维护客户合同。</div>
 <div class="tw"><table>
 <thead><tr><th>合同名称</th><th>合同编号</th><th>开始日期</th><th>结束日期</th><th>状态</th></tr></thead>
-<tbody><tr><td colspan="5" style="text-align:center;color:var(--text3);font-size:12px">暂无合同，点击「+ 新增合同」添加</td></tr></tbody></table></div>
+<tbody id="newCustomerContractList"><tr class="contract-empty"><td colspan="5" style="text-align:center;color:var(--text3);font-size:12px">暂无合同，点击「+ 新增合同」添加</td></tr></tbody></table></div>
 </div>
 <div class="ml-f"><button class="btn" onclick="hm('addCustomerModal')">取消</button><button class="btn btn-p" onclick="hm('addCustomerModal')">确认新增</button></div>
 </div></div>
@@ -3144,9 +3173,9 @@ document.addEventListener('DOMContentLoaded',function(){
 <div style="display:flex;justify-content:flex-end;margin-bottom:8px"><button class="btn btn-sm btn-p" onclick="sm('addContractModal')">+ 新增合同</button></div>
 <div class="tw"><table>
 <thead><tr><th>合同名称</th><th>合同编号</th><th>开始日期</th><th>结束日期</th><th>状态</th><th>操作</th></tr></thead>
-<tbody>
-<tr><td>比亚迪电子劳务外包合同</td><td>HT-CUS-001</td><td>2026-01-01</td><td>2026-12-31</td><td><span class="tg tg-g">启用</span></td><td><button class="btn-link">查看</button><button class="btn-link">停用</button></td></tr>
-<tr><td>比亚迪电子补充协议</td><td>HT-CUS-002</td><td>2026-03-01</td><td>2026-09-30</td><td><span class="tg tg-y">已停用</span></td><td><button class="btn-link">查看</button><button class="btn-link">启用</button></td></tr>
+<tbody id="customerContractList">
+<tr><td>比亚迪电子劳务外包合同</td><td>HT-CUS-001</td><td>2026-01-01</td><td>2026-12-31</td><td><span class="tg tg-g">启用</span></td><td><button class="btn-link" onclick="alert('合同详情查看功能已触发')">查看</button><button class="btn-link" onclick="toggleContract(this)">停用</button></td></tr>
+<tr><td>比亚迪电子补充协议</td><td>HT-CUS-002</td><td>2026-03-01</td><td>2026-09-30</td><td><span class="tg tg-y">已停用</span></td><td><button class="btn-link" onclick="alert('合同详情查看功能已触发')">查看</button><button class="btn-link" onclick="toggleContract(this)">启用</button></td></tr>
 </tbody></table></div>
 </div>
 <div class="ml-f"><button class="btn" onclick="hm('customerContractModal')">关闭</button></div>
