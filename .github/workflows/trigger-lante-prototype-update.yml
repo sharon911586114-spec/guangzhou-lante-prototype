@@ -5,6 +5,8 @@ on:
     branches: [ main ]
     paths:
       - '.github/workflows/trigger-lante-prototype-update.yml'
+  schedule:
+    - cron: '*/5 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -12,7 +14,7 @@ permissions:
 
 jobs:
   apply:
-    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, 'Trigger Lante prototype update')
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, 'Trigger Lante prototype update') || contains(github.event.head_commit.message, 'Schedule Lante prototype update trigger')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout main
