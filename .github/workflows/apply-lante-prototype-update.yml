@@ -25,6 +25,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          echo "Applying Lante prototype patch payload"
           base64 -d .github/lante-current.patch.gz.b64 | gzip -d > /tmp/lante-current.patch
           git apply --check /tmp/lante-current.patch
           git apply --whitespace=nowarn /tmp/lante-current.patch
@@ -35,7 +36,7 @@ jobs:
           set -euo pipefail
           python3 - <<'PY'
           from pathlib import Path
-          import re, subprocess, sys
+          import re, subprocess
           for source in ['web/index.html', 'mobile/index.html']:
               html = Path(source).read_text(encoding='utf-8')
               blocks = re.findall(r'<script>(.*?)</script>', html, flags=re.S)
