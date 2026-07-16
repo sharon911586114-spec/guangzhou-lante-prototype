@@ -26,7 +26,8 @@ jobs:
         run: |
           set -euo pipefail
           echo "Applying Lante prototype patch payload"
-          base64 -d .github/lante-current.patch.gz.b64 | gzip -d > /tmp/lante-current.patch
+          python3 -c "from pathlib import Path; s=Path('.github/lante-current.patch.gz.b64').read_text().strip(); Path('/tmp/lante-current.patch.gz.b64').write_text(s + ('=' * (-len(s) % 4)))"
+          base64 -d /tmp/lante-current.patch.gz.b64 | gzip -d > /tmp/lante-current.patch
           git apply --check /tmp/lante-current.patch
           git apply --whitespace=nowarn /tmp/lante-current.patch
           git status --short
