@@ -1,0 +1,59 @@
+name: Trigger Lante prototype update
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/trigger-lante-prototype-update.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, 'Trigger Lante prototype update')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Extract and apply embedded patch
+        shell: bash
+        run: |
+          set -euo pipefail
+          awk 'BEGIN{p=0} /^PATCH_B64$/{p=!p; next} p{print}' .github/workflows/apply-lante-prototype-update.yml > /tmp/lante_update.patch.gz.b64
+          test -s /tmp/lante_update.patch.gz.b64
+          base64 -d /tmp/lante_update.patch.gz.b64 | gzip -d > /tmp/lante_update.patch
+          git apply --whitespace=nowarn /tmp/lante_update.patch
+          git status --short
+      - name: Validate HTML scripts
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+from pathlib import Path
+for source, out in [('web/index.html','/tmp/web-script.js'), ('mobile/index.html','/tmp/mobile-script.js')]:
+    html = Path(source).read_text(encoding='utf-8')
+    start = html.find('<script>')
+    end = html.rfind('</script>')
+    if start == -1 or end == -1 or end <= start:
+        raise SystemExit(f'missing script block in {source}')
+    Path(out).write_text(html[start+8:end], encoding='utf-8')
+PY
+          node --check /tmp/web-script.js
+          node --check /tmp/mobile-script.js
+      - name: Commit and push prototype update
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add web/index.html mobile/index.html
+          if git diff --cached --quiet; then
+            echo "No prototype changes to commit."
+            exit 0
+          fi
+          git commit -m "Apply Lante prototype update"
+          git push origin main
