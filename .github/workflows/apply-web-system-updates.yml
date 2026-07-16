@@ -1,0 +1,88 @@
+name: Apply web system prototype updates
+
+on:
+  push:
+    paths:
+      - .github/workflows/apply-web-system-updates.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Patch web prototype
+        run: |
+          python3 <<'PY'
+          # -*- coding: utf-8 -*-
+          from pathlib import Path
+          import re
+          p=Path('web/index.html')
+          s=p.read_text(encoding='utf-8')
+          def cut(a,b,t):
+            i=t.find(a)
+            if i<0:return t
+            j=t.find(b,i)
+            return t if j<0 else t[:i]+t[j:]
+          def swap(a,b,r,t):
+            i=t.find(a)
+            if i<0:return t
+            j=t.find(b,i)
+            return t if j<0 else t[:i]+r+t[j:]
+          s=s.replace('<div class="cd"><div class="cd-t">渠道商角色说明</div><div class="ib ib-b">渠道商为平台外部合作角色（L2），可代求职者报名（报备）、提交渠道商入驻申请、管理自身团队与下线、查看开放岗位；其分销佣金与团队数据在「分销裂变」模块统一管理。</div></div>','')
+          s=s.replace('<div class="cd"><div class="cd-t">数据隔离策略</div><div class="ib ib-g">基于RBAC权限模型实现数据隔离 | L5全量 | L4本部门+下属 | L3本部门 | L2/L1仅个人数据 | 跨部门访问需超管审批</div></div>','')
+          s=s.replace('<div class="tab" onclick="stab(this,\'dict-salary\')">薪资区间</div>','')
+          i=s.find('<div class="tc" id="dict-salary">')
+          if i>=0:
+            j=s.find('<div class="tc"',i+1)
+            if j>i:s=s[:i]+s[j:]
+          rows=[('基本工资','BASE_WAGE','加项','系统计算','单价 × 工时','计税'),('绩效奖励','PERFORMANCE','加项','直接填写','—','计税'),('质量扣款','QUALITY_DEDUCT','减项','直接填写','—','不计税'),('借支抵扣','ADVANCE','减项','系统读数','未核销售支金额','不计税'),('社保个人部分','SOCIAL','减项','直接填写','—','不计税'),('个人所得税','TAX','减项','系统读数','个税','不计税')]
+          trs=[]
+          for name,code,dirn,mode,rule,tax in rows:
+            dc='var(--success)' if dirn=='加项' else 'var(--danger)'
+            tag='tg-g' if mode=='系统计算' else ('tg-b' if mode=='系统读数' else 'tg-y')
+            tc='tg-o' if tax=='计税' else 'tg-y'
+            key='calc' if mode=='系统计算' else ('read' if mode=='系统读数' else 'manual')
+            trs.append(f'<tr><td><input type="checkbox"></td><td><b>{name}</b></td><td>{code}</td><td><span style="color:{dc}">{dirn}</span></td><td><span class="tg {tag}">{mode}</span></td><td>{rule}</td><td><span class="tg {tc}">{tax}</span></td><td><span class="tg tg-g">● 启用</span></td><td><button class="btn-link" onclick="openSalaryFeeModal(\'edit\',\'{name}\',\'{code}\',\'{key}\')">编辑</button><button class="btn-link" style="color:var(--danger)">禁用</button><button class="btn-link" style="color:var(--danger)">删除</button></td></tr>')
+          salary=f'''<div class="tc show" id="cfg-salaryrule">
+<div class="cd"><div class="sbar"><input placeholder="费用名称　请输入" style="width:220px"><input placeholder="费用编码　请输入" style="width:220px"><select><option>收支方向　请选择</option><option>加项</option><option>减项</option></select><select><option>设置方式　请选择</option><option>直接填写</option><option>系统读数</option><option>系统计算</option></select><select><option>状态　请选择</option><option>启用</option><option>禁用</option></select><button class="btn btn-p btn-sm">查询</button><button class="btn btn-sm">清除条件</button></div>
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px"><div style="display:flex;gap:12px;align-items:center"><button class="btn btn-p" onclick="openSalaryFeeModal('add')">+ 新增费用项</button><span style="font-size:12px;color:var(--text3)">费用项由平台统一维护，客户仅选择使用范围</span></div><button class="btn btn-sm">导出</button></div>
+<div class="ib ib-b" style="padding:8px 12px;margin-bottom:0">费用总数：<b>6项</b>　·　已启用：<b>6项</b>　·　系统计算：<b>1项</b></div>
+<div class="tw"><table><thead><tr><th style="width:36px"><input type="checkbox" onclick="toggleAll(this)"></th><th>费用名称</th><th>费用编码</th><th>收支方向</th><th>设置方式</th><th>计算规则</th><th>是否计税</th><th>状态</th><th>操作</th></tr></thead><tbody>{''.join(trs)}</tbody></table></div>
+<div class="pgn"><span>共6条数据</span><button disabled>&lt;</button><button class="active">1</button><button disabled>&gt;</button></div></div>
+<div class="mo" id="salaryTplModal"><div class="ml" style="width:620px;max-height:86vh;overflow-y:auto;padding:0"><div style="padding:18px 20px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center"><div><div style="font-size:12px;color:var(--text3)">操作确认</div><div class="ml-t" id="salaryTplTitle" style="margin:2px 0 0">新增费用项</div></div><button class="btn-link" onclick="hm('salaryTplModal')" style="font-size:22px;color:var(--text3)">×</button></div>
+<div style="padding:18px 20px"><div class="fr"><div class="fg"><label>费用名称</label><input id="tplName" placeholder="如：基本工资"></div><div class="fg"><label>费用编码</label><input id="tplCode" placeholder="如：BASE_WAGE"></div></div><div class="fr"><div class="fg"><label>收支方向</label><select><option>加项</option><option>减项</option></select></div><div class="fg"><label>设置方式</label><select id="feeSetMode" onchange="changeFeeSetMode()"><option value="manual">直接填写</option><option value="read">系统读数</option><option value="calc">系统计算</option></select></div></div><div class="ib ib-b" style="padding:10px 12px"><b>是否计税</b>　<label><input type="radio" name="feeTax"> 是，计入个税应税收入</label>　<label><input type="radio" name="feeTax" checked> 否，不计入个税</label></div><div id="feeModePanel" style="margin-top:12px"></div><div class="fg" style="margin-top:12px"><label>费用说明</label><input id="tplDesc" placeholder="说明使用场景"></div></div><div class="ml-f" style="margin:0;padding:14px 20px;border-top:1px solid var(--border)"><button class="btn" onclick="hm('salaryTplModal')">取消</button><button class="btn btn-p" onclick="hm('salaryTplModal');alert('费用项已保存')">保存</button></div></div></div>
+</div>
+</div>
+
+'''
+          s=swap('<div class="tc show" id="cfg-salaryrule">','<!-- Batch Upload Modal -->',salary,s)
+          js=r'''
+function openSalaryFeeModal(mode,name,code,setMode){var t=document.getElementById('salaryTplTitle');if(t)t.textContent=mode==='edit'?'编辑费用项':'新增费用项';var n=document.getElementById('tplName');if(n)n.value=name||'';var c=document.getElementById('tplCode');if(c)c.value=code||'';var m=document.getElementById('feeSetMode');if(m)m.value=setMode||'manual';changeFeeSetMode();sm('salaryTplModal')}
+function changeFeeSetMode(){var m=document.getElementById('feeSetMode'),b=document.getElementById('feeModePanel');if(!m||!b)return;if(m.value==='manual')b.innerHTML='<div class="ib ib-b">直接填写：结算时由财务人员录入金额，可用于绩效奖励、质量扣款、社保个人部分等费用项。</div>';else if(m.value==='read')b.innerHTML='<div class="ib ib-b"><b>系统读数来源</b><div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px"><label style="border:1px solid var(--border);border-radius:6px;padding:12px"><input type="radio" name="readSrc"> 未核销售支金额<div style="font-size:12px;color:var(--text3)">结算时自动带入，只读</div></label><label style="border:1px solid var(--border);border-radius:6px;padding:12px"><input type="radio" name="readSrc"> 本次个税金额<div style="font-size:12px;color:var(--text3)">随应税金额自动重算，只读</div></label></div><div class="ib ib-o" style="margin-top:10px">系统读数不可直接修改，如来源变化需更新来源记录或重新计算。</div></div>';else b.innerHTML='<div class="ib ib-b"><div style="display:flex;gap:8px;margin-bottom:12px"><button class="btn btn-p btn-sm">运算公式</button><button class="btn btn-sm">条件公式</button></div><div style="border:1px solid var(--border);border-radius:8px;padding:12px"><b>运算公式</b><div style="font-size:12px;color:var(--text3);margin:8px 0">选择推荐公式，或依次设置起始因子、运算符和运算项。</div><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px"><div class="ib ib-b"><b>基本工资</b><br>岗位单价 × 工时</div><div class="ib ib-b"><b>日薪</b><br>岗位单价 × 计薪天数</div><div class="ib ib-b"><b>月薪</b><br>岗位单价 × 计薪月数</div></div><div class="fr"><div class="fg"><label>起始因子</label><select><option>岗位单价</option><option>工时</option><option>计薪天数</option><option>费用_基本工资</option></select></div></div><div class="fr"><div class="fg"><label>运算符</label><select><option>×</option><option>+</option><option>-</option><option>÷</option></select></div></div><div class="fr"><div class="fg"><label>运算项 1</label><select><option>工时</option><option>计薪天数</option><option>费用_个人所得税</option></select></div></div><button class="btn btn-sm" style="border-style:dashed;color:var(--brand)">+ 增加运算项</button><div class="ib ib-g"><b>公式校验通过</b><br><b>岗位单价 × 工时</b><br><b>示例结果：¥4,400.00</b></div></div></div>'}
+document.addEventListener('DOMContentLoaded',function(){try{changeFeeSetMode()}catch(e){}});
+'''
+          if 'function openSalaryFeeModal' not in s:
+            k=s.rfind('</script>')
+            if k>=0:s=s[:k]+js+s[k:]
+          p.write_text(s,encoding='utf-8')
+          PY
+      - name: Validate and commit
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          h=Path('web/index.html').read_text(encoding='utf-8')
+          Path('/tmp/web.js').write_text('\n'.join(re.findall(r'<script>(.*?)</script>',h,re.S)),encoding='utf-8')
+          PY
+          node --check /tmp/web.js
+          if git diff --quiet -- web/index.html; then echo 'No web changes'; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add web/index.html
+          git commit -m "Update web system prototype settings"
+          git push
