@@ -616,17 +616,19 @@ body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Helvetica Neue'
 </div>
 
 <div class="wb-section">
-<div class="section-h">客户与用户</div>
+<div class="section-h">业务管理</div>
+<div class="wb-list-item" onclick="mp('m-wbPosition')"><div class="left"><span class="icon">📌</span><span class="text">岗位管理</span></div><span class="arrow">&rarr;</span></div>
+<div class="wb-list-item" onclick="mp('m-wbProject')"><div class="left"><span class="icon">📁</span><span class="text">项目管理</span></div><span class="arrow">&rarr;</span></div>
 <div class="wb-list-item" onclick="mp('m-customer')"><div class="left"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/><path d="M9 9h.01M9 13h.01M9 17h.01"/></svg></span><span class="text">客户管理</span></div><span class="arrow">&rarr;</span></div>
 <div class="wb-list-item" onclick="mp('m-userList')"><div class="left"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></span><span class="text">用户列表</span></div><span class="arrow">&rarr;</span></div>
 </div>
 
 <!-- FAB: Generate entry code -->
-<div class="wb-section"><div class="section-h">业务管理</div><div class="wb-list-item" onclick="mp('m-wbPosition')"><div class="left"><span class="icon">岗</span><span class="text">岗位管理</span></div><span class="arrow">&rarr;</span></div><div class="wb-list-item" onclick="mp('m-wbProject')"><div class="left"><span class="icon">项</span><span class="text">项目管理</span></div><span class="arrow">&rarr;</span></div><div class="wb-list-item" onclick="mp('m-wbCustomer')"><div class="left"><span class="icon">客</span><span class="text">客户管理</span></div><span class="arrow">&rarr;</span></div></div><button class="fab" onclick="mp('m-entryCode')" title="生成入职码"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+<button class="fab" onclick="mp('m-entryCode')" title="生成入职码"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
 </div>
 </div>
 
-<div class="page" id="m-wbPosition"><div class="nav-bar"><span class="back" onclick="mp('m-workbench')">&lsaquo;</span>岗位管理</div><div class="content"><div class="search-bar"><input placeholder="搜索岗位名称"></div><div class="card"><b>电子组装工</b><div class="info-row"><span>项目</span><span>电子普工</span></div><div class="info-row"><span>岗位评价</span><span>4.2星（36评）</span></div></div><div class="card"><b>QC质检员</b><div class="info-row"><span>项目</span><span>质检员</span></div><div class="info-row"><span>岗位评价</span><span>4.5星（18评）</span></div></div><button class="btn btn-p" style="width:100%" onclick="alert('进入新增岗位流程')">+ 新增岗位</button></div></div><div class="page" id="m-wbProject"><div class="nav-bar"><span class="back" onclick="mp('m-workbench')">&lsaquo;</span>项目管理</div><div class="content"><div class="search-bar"><input placeholder="搜索项目名称"></div><div class="card"><b>电子普工</b><div class="info-row"><span>客户</span><span>比亚迪电子</span></div><div class="info-row"><span>单价</span><span>40元/时</span></div></div><button class="btn btn-p" style="width:100%" onclick="alert('进入新增项目流程')">+ 新增项目</button></div></div><div class="page" id="m-wbCustomer"><div class="nav-bar"><span class="back" onclick="mp('m-workbench')">&lsaquo;</span>客户管理</div><div class="content"><div class="search-bar"><input placeholder="搜索客户名称"></div><div class="card"><b>比亚迪电子</b><div class="info-row"><span>联系人</span><span>王经理</span></div><div class="info-row"><span>状态</span><span class="tag tag-g">合作中</span></div></div><button class="btn btn-p" style="width:100%" onclick="alert('进入新增客户流程')">+ 新增客户</button></div></div><!-- ===== ENTRY CODE ===== -->
+<!-- ===== ENTRY CODE ===== -->
 <div class="page" id="m-entryCode">
 <div class="nav-bar"><span class="back" onclick="mp('m-workbench')"><svg viewBox="0 0 12 12" fill="none"><path d="M8 1L3 6l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> 返回</span>入职码</div>
 <div class="content">
@@ -2607,6 +2609,30 @@ function onMobEntryCustChange(sel){var ps=document.getElementById('mobEntryProjS
 function onMobEntryProjChange(sel){var pos=document.getElementById('mobEntryPosSel');if(!pos)return;var list=MOB_PROJ_POS[sel.value]||[];pos.innerHTML='<option>'+list.join('</option><option>')+'</option>'}
 </script>
 
+
+<!-- ===== MOBILE POSITION MANAGEMENT ===== -->
+<div class="page" id="m-wbPosition">
+<div class="nav-bar"><span class="back" onclick="mp('m-workbench')"><svg viewBox="0 0 12 12" fill="none"><path d="M8 1L3 6l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> 返回</span>岗位管理<span style="position:absolute;right:12px;font-size:13px;font-weight:500;color:var(--pri);cursor:pointer" onclick="alert('新增岗位')">+ 新增</span></div>
+<div class="content">
+<div class="card" style="padding:0">
+<div style="padding:12px 14px;border-bottom:1px solid var(--border2)"><div style="font-weight:600;font-size:15px">电子组装工</div><div style="font-size:12px;color:var(--text-2);margin-top:2px">电子普工 · 招聘50人 · 4.2星(36评)</div></div>
+<div style="padding:12px 14px;border-bottom:1px solid var(--border2)"><div style="font-weight:600;font-size:15px">QC质检员</div><div style="font-size:12px;color:var(--text-2);margin-top:2px">质检员 · 招聘20人 · 4.5星(18评)</div></div>
+<div style="padding:12px 14px"><div style="font-weight:600;font-size:15px">仓库管理员</div><div style="font-size:12px;color:var(--text-2);margin-top:2px">仓管员 · 已停招 · 4.0星(12评)</div></div>
+</div>
+</div>
+</div>
+
+<!-- ===== MOBILE PROJECT MANAGEMENT ===== -->
+<div class="page" id="m-wbProject">
+<div class="nav-bar"><span class="back" onclick="mp('m-workbench')"><svg viewBox="0 0 12 12" fill="none"><path d="M8 1L3 6l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> 返回</span>项目管理<span style="position:absolute;right:12px;font-size:13px;font-weight:500;color:var(--pri);cursor:pointer" onclick="alert('新增项目')">+ 新增</span></div>
+<div class="content">
+<div class="card" style="padding:0">
+<div style="padding:12px 14px;border-bottom:1px solid var(--border2)"><div style="font-weight:600;font-size:15px">电子普工</div><div style="font-size:12px;color:var(--text-2);margin-top:2px">比亚迪电子 · 40元/时 · 进行中</div></div>
+<div style="padding:12px 14px;border-bottom:1px solid var(--border2)"><div style="font-weight:600;font-size:15px">质检员</div><div style="font-size:12px;color:var(--text-2);margin-top:2px">广汽乘用车 · 45元/时 · 进行中</div></div>
+<div style="padding:12px 14px"><div style="font-weight:600;font-size:15px">高级技工</div><div style="font-size:12px;color:var(--text-2);margin-top:2px">美的集团 · 55元/时 · 已停用</div></div>
+</div>
+</div>
+</div>
 <!-- ===== MOBILE CUSTOMER MANAGEMENT ===== -->
 <div class="page" id="m-customer">
 <div class="nav-bar"><span class="back" onclick="mp('m-workbench')"><svg viewBox="0 0 12 12" fill="none"><path d="M8 1L3 6l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> 返回</span>客户管理<span style="position:absolute;right:12px;font-size:13px;font-weight:500;color:var(--pri);cursor:pointer" onclick="sm('mobAddCustomerModal')">+ 新增</span></div>

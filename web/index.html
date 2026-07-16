@@ -315,11 +315,11 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 <div class="tw"><table>
 <thead><tr><th style="width:36px"><input type="checkbox" onclick="toggleAll(this)"></th><th>姓名</th><th>性别</th><th>民族</th><th>年龄</th><th>手机号</th><th>职位标签</th><th>用户标签</th><th>英语能力</th><th>期望薪资</th><th>来源</th><th>状态</th><th>操作</th></tr></thead>
 <tbody>
-<tr><td><input type="checkbox"></td><td><a href="javascript:void(0)" onclick="goEmpDetail()" style="color:var(--brand);text-decoration:none;cursor:pointer;font-weight:500">张伟</a></td><td>男</td><td>汉族</td><td>28</td><td>138****6688</td><td><span class="tg tg-b">技工</span></td><td><span class="tg tg-p">电工证</span></td><td style="font-size:11px;color:var(--warning)">听★★☆ 说★★☆ 读★★★ 写★★☆</td><td>8k-10k</td><td><span class="tg tg-y">后台导入</span></td><td><span class="tg tg-g">已入职</span></td><td><button class="btn-link" onclick="sm('interviewInviteModal')">面试邀约</button></td></tr>
-<tr><td><input type="checkbox"></td><td><a href="javascript:void(0)" onclick="goEmpDetail()" style="color:var(--brand);text-decoration:none;cursor:pointer;font-weight:500">李娜</a></td><td>女</td><td>汉族</td><td>25</td><td>139****2233</td><td><span class="tg tg-b">质检</span></td><td><span class="tg tg-p">可出差</span></td><td style="font-size:11px;color:var(--warning)">听★★★ 说★★★ 读★★★★ 写★★★</td><td>7k-9k</td><td><span class="tg tg-b">用户上传</span></td><td><span class="tg tg-g">已入职</span></td><td><button class="btn-link" onclick="sm('interviewInviteModal')">面试邀约</button></td></tr>
-<tr><td><input type="checkbox"></td><td><a href="#" onclick="goResumeDetail()" style="color:var(--brand);text-decoration:none;cursor:pointer;font-weight:500">王强</a></td><td>男</td><td>汉族</td><td>32</td><td>137****8899</td><td><span class="tg tg-b">技工</span></td><td><span class="tg tg-p">焊工证</span> <span class="tg tg-p">夜班</span></td><td style="font-size:11px;color:var(--text3)">听★☆☆ 说★☆☆ 读★★☆ 写★☆☆</td><td>9k-12k</td><td><span class="tg tg-y">后台导入</span></td><td><span class="tg tg-o">待面试</span></td><td><button class="btn-link" onclick="sm('interviewInviteModal')">面试邀约</button> <button class="btn-link" style="color:var(--success)" onclick="sm('onboardDirectModal')">员工入职</button></td></tr>
-<tr><td><input type="checkbox"></td><td><a href="#" onclick="goResumeDetail()" style="color:var(--brand);text-decoration:none;cursor:pointer;font-weight:500">赵敏</a></td><td>女</td><td>汉族</td><td>27</td><td>136****4455</td><td><span class="tg tg-b">仓储</span></td><td><span class="tg tg-p">服从安排</span></td><td style="font-size:11px;color:var(--text3)">听★☆☆ 说★☆☆ 读★☆☆ 写★☆☆</td><td>6k-8k</td><td><span class="tg tg-b">用户上传</span></td><td><span class="tg tg-o">待面试</span></td><td><button class="btn-link" onclick="sm('interviewInviteModal')">面试邀约</button> <button class="btn-link" style="color:var(--success)" onclick="sm('onboardDirectModal')">员工入职</button></td></tr>
-<tr><td><input type="checkbox"></td><td><a href="#" onclick="goResumeDetail()" style="color:var(--brand);text-decoration:none;cursor:pointer;font-weight:500">陈杰</a></td><td>男</td><td>汉族</td><td>24</td><td>135****5566</td><td><span class="tg tg-b">普工</span></td><td><span class="tg tg-p">有车</span></td><td style="font-size:11px;color:var(--text3)">听★☆☆ 说★☆☆ 读★☆☆ 写★☆☆</td><td>5k-7k</td><td><span class="tg tg-g">后台新增</span></td><td><span class="tg tg-b">面试通过</span></td><td><button class="btn-link" onclick="sm('interviewInviteModal')">面试邀约</button> <button class="btn-link" style="color:var(--success)" onclick="sm('onboardDirectModal')">员工入职</button></td></tr>
+<tr><td><input type="checkbox"></td><td><a href="javascript:void(0)" onclick="goResumeDetail()" style="color:var(--brand);text-decoration:none;cursor:pointer;font-weight:500">张伟</a></td><td>男</td><td>汉族</td><td>28</td><td>138****6688</td><td><span class="tg tg-b">技工</span></td><td><span class="tg tg-p">电工证</span></td><td style="font-size:11px;color:var(--warning)">听★★☆ 说★★☆ 读★★★ 写★★☆</td><td>8k-10k</td><td><span class="tg tg-y">导入</span></td><td><span class="tg tg-g">已入职</span></td><td><button class="btn-link" onclick="goEmpDetail()">查看员工档案</button></td></tr>
+<tr><td><input type="checkbox"></td><td><a href="javascript:void(0)" onclick="goResumeDetail()" style="color:var(--brand);text-decoration:none;cursor:pointer;font-weight:500">李娜</a></td><td>女</td><td>汉族</td><td>25</td><td>139****2233</td><td><span class="tg tg-b">质检</span></td><td><span class="tg tg-p">可出差</span></td><td style="font-size:11px;color:var(--warning)">听★★★ 说★★★ 读★★★★ 写★★★</td><td>7k-9k</td><td><span class="tg tg-b">mob端</span></td><td><span class="tg tg-g">已入职</span></td><td><button class="btn-link" onclick="goEmpDetail()">查看员工档案</button></td></tr>
+<tr><td><input type="checkbox"></td><td><a href="#" onclick="goResumeDetail()" style="color:var(--brand);text-decoration:none;cursor:pointer;font-weight:500">王强</a></td><td>男</td><td>汉族</td><td>32</td><td>137****8899</td><td><span class="tg tg-b">技工</span></td><td><span class="tg tg-p">焊工证</span> <span class="tg tg-p">夜班</span></td><td style="font-size:11px;color:var(--text3)">听★☆☆ 说★☆☆ 读★★☆ 写★☆☆</td><td>9k-12k</td><td><span class="tg tg-y">导入</span></td><td><span class="tg tg-o">待面试</span></td><td><button class="btn-link" onclick="sm('interviewInviteModal')">面试邀约</button> <button class="btn-link" style="color:var(--success)" onclick="sm('onboardDirectModal')">员工入职</button></td></tr>
+<tr><td><input type="checkbox"></td><td><a href="#" onclick="goResumeDetail()" style="color:var(--brand);text-decoration:none;cursor:pointer;font-weight:500">赵敏</a></td><td>女</td><td>汉族</td><td>27</td><td>136****4455</td><td><span class="tg tg-b">仓储</span></td><td><span class="tg tg-p">服从安排</span></td><td style="font-size:11px;color:var(--text3)">听★☆☆ 说★☆☆ 读★☆☆ 写★☆☆</td><td>6k-8k</td><td><span class="tg tg-b">mob端</span></td><td><span class="tg tg-o">待面试</span></td><td><button class="btn-link" onclick="sm('interviewInviteModal')">面试邀约</button> <button class="btn-link" style="color:var(--success)" onclick="sm('onboardDirectModal')">员工入职</button></td></tr>
+<tr><td><input type="checkbox"></td><td><a href="#" onclick="goResumeDetail()" style="color:var(--brand);text-decoration:none;cursor:pointer;font-weight:500">陈杰</a></td><td>男</td><td>汉族</td><td>24</td><td>135****5566</td><td><span class="tg tg-b">普工</span></td><td><span class="tg tg-p">有车</span></td><td style="font-size:11px;color:var(--text3)">听★☆☆ 说★☆☆ 读★☆☆ 写★☆☆</td><td>5k-7k</td><td><span class="tg tg-g">新增</span></td><td><span class="tg tg-b">面试通过</span></td><td><button class="btn-link" onclick="sm('interviewInviteModal')">面试邀约</button> <button class="btn-link" style="color:var(--success)" onclick="sm('onboardDirectModal')">员工入职</button></td></tr>
 </tbody></table></div>
 <div class="pgn"><span>共1286条</span><button class="active">1</button><button class="">2</button><button class="">3</button><button class="">4</button><button class="">5</button><button>...</button><button>129</button><span>条/页 10</span></div></div>
 </div>
@@ -348,8 +348,8 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 <div style="margin-top:18px"><table>
 <thead><tr><th>文件名</th><th>格式</th><th>语言</th><th>状态</th><th>识别姓名</th><th>操作</th></tr></thead>
 <tbody>
-<tr><td>张伟_简历.pdf</td><td><span class="tg tg-r">PDF</span></td><td>中文</td><td><span class="tg tg-g">解析成功</span></td><td><a href="#" onclick="goEmpDetail()" style="color:var(--brand);text-decoration:none;cursor:pointer;font-weight:500">张伟</a></td><td><button class="btn-link" onclick="goResumeDetail()">查看</button></td></tr>
-<tr><td>resume_LiNa.docx</td><td><span class="tg tg-b">Word</span></td><td>英文</td><td><span class="tg tg-g">解析成功</span></td><td><a href="#" onclick="goEmpDetail()" style="color:var(--brand);text-decoration:none;cursor:pointer;font-weight:500">李娜</a></td><td><button class="btn-link" onclick="goResumeDetail()">查看</button></td></tr>
+<tr><td>张伟_简历.pdf</td><td><span class="tg tg-r">PDF</span></td><td>中文</td><td><span class="tg tg-g">解析成功</span></td><td><a href="#" onclick="goResumeDetail()" style="color:var(--brand);text-decoration:none;cursor:pointer;font-weight:500">张伟</a></td><td><button class="btn-link" onclick="goResumeDetail()">查看</button></td></tr>
+<tr><td>resume_LiNa.docx</td><td><span class="tg tg-b">Word</span></td><td>英文</td><td><span class="tg tg-g">解析成功</span></td><td><a href="#" onclick="goResumeDetail()" style="color:var(--brand);text-decoration:none;cursor:pointer;font-weight:500">李娜</a></td><td><button class="btn-link" onclick="goResumeDetail()">查看</button></td></tr>
 <tr><td>batch_0630.zip</td><td><span class="tg tg-y">压包</span></td><td>中英混合</td><td><span class="tg tg-o" style="background:#fff7e6;color:#d46b08">解析中(待处理)</span></td><td>--</td><td><button class="btn-link" onclick="sm('parseProgressModal')">查看进度</button></td></tr>
 </tbody></table></div>
 </div>
@@ -791,7 +791,7 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 <div class="tc show" id="roster-active">
 <div class="sbar"><input id="rosterSearch" placeholder="搜索姓名/手机号/身份证" style="width:220px"><select><option>全部状态</option><option>在职</option><option>离职</option></select><button class="btn btn-p btn-sm" onclick="var s=document.getElementById('rosterSearch');var c=document.getElementById('rosterTurnoverCard');if(s&&s.value.trim()&&c)c.style.display='block';else if(c)c.style.display='none'">搜索</button><button class="btn btn-sm">重置</button><button class="btn btn-p btn-sm" onclick="goAddEmployee()">+ 新增员工</button></div>
 <div class="cd">
-<div class="tbar"><div class="tbar-l"><button class="btn btn-p btn-sm" onclick="sm('rosterBatchModal');changeRosterBatchAction(document.getElementById('rosterBatchAction'))" style="margin-right:8px">批量操作选中</button></div><div class="tbar-r"><button class="btn btn-sm" onclick="sm('tableSettingsModal')">表格设置</button><button class="btn btn-sm" onclick="sm('exportModal')">数据导出</button></div></div>
+<div class="tbar"><div class="tbar-l"><button class="btn btn-p btn-sm" onclick="sm('rosterBatchModal')" style="margin-right:8px">批量操作选中</button></div><div class="tbar-r"><button class="btn btn-sm" onclick="sm('tableSettingsModal')">表格设置</button><button class="btn btn-sm" onclick="sm('exportModal')">数据导出</button></div></div>
 <div class="tw"><table>
 <thead><tr><th style="width:36px"><input type="checkbox" onclick="toggleAll(this)"></th><th>姓名</th><th>手机号</th><th>身份证</th><th>项目</th><th>渠道来源</th><th>入职日期</th><th>职位标签</th><th>用户标签</th><th>状态</th><th>操作</th></tr></thead>
 <tbody>
@@ -861,7 +861,7 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 <div class="rp-field"><span class="lbl">身份证</span><span class="val">440106199801120011</span></div>
 <div class="rp-field"><span class="lbl">入职日期</span><span class="val">2026-07-01</span></div>
 <div class="rp-field"><span class="lbl">项目</span><span class="val">电子普工</span></div>
-<div class="rp-field" style="min-width:0"><span class="lbl">状态</span><span class="val"><span class="tg tg-g">在职</span></span></div>
+<div class="rp-field"><span class="lbl">状态</span><span class="val"><span class="tg tg-g">在职</span></span></div>
 <div class="rp-field"><span class="lbl">渠道来源</span><span class="val">刘洋(LT0001)</span></div>
 </div>
 </div>
@@ -1080,35 +1080,37 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 <div class="cd">
 <div class="tbar"><div class="tbar-l"></div><div class="tbar-r"><button class="btn btn-sm" onclick="sm('tableSettingsModal')">表格设置</button><button class="btn btn-sm" onclick="sm('exportModal')">数据导出</button></div></div>
 <div class="tw"><table>
-<thead><tr><th style="width:36px"><input type="checkbox" onclick="toggleAll(this)"></th><th>项目名称</th><th>项目属性</th><th>关联客户</th><th>项目单价</th><th>服务通知</th><th>屏蔽在职</th><th>状态</th><th>操作</th></tr></thead>
+<thead><tr><th style="width:36px"><input type="checkbox" onclick="toggleAll(this)"></th><th>项目名称</th><th>项目属性</th><th>关联客户</th><th>招聘人数</th><th>薪资范围</th><th>项目单价</th><th>服务通知</th><th>屏蔽在职</th><th>状态</th><th>操作</th></tr></thead>
 <tbody>
-<tr><td><input type="checkbox"></td><td>电子普工</td><td>对内</td><td>比亚迪电子</td><td>40元/时</td><td><span class="tg tg-g">已开启</span></td><td><span class="tg tg-g">是</span></td><td><span class="tg tg-g">进行中</span></td><td><button class="btn-link" onclick="goProjectDetail()">编辑</button><button class="btn-link" onclick="sm('pushModal')">推送</button></td></tr>
-<tr><td><input type="checkbox"></td><td>质检员</td><td>对外</td><td>广汽乘用车</td><td>45元/时</td><td><span class="tg tg-g">已开启</span></td><td><span class="tg tg-g">是</span></td><td><span class="tg tg-g">进行中</span></td><td><button class="btn-link" onclick="goProjectDetail()">编辑</button><button class="btn-link" onclick="sm('pushModal')">推送</button></td></tr>
-<tr><td><input type="checkbox"></td><td>高级技工</td><td>对外</td><td>美的集团</td><td>55元/时</td><td><span class="tg tg-y">未开启</span></td><td>--</td><td><span class="tg tg-r">已停用</span></td><td><button class="btn-link" onclick="goProjectDetail()">编辑</button></td></tr>
-<tr><td><input type="checkbox"></td><td>仓管员</td><td>对内</td><td>TCL科技</td><td>38元/时</td><td><span class="tg tg-g">已开启</span></td><td><span class="tg tg-g">是</span></td><td><span class="tg tg-g">进行中</span></td><td><button class="btn-link" onclick="goProjectDetail()">编辑</button><button class="btn-link" onclick="sm('pushModal')">推送</button></td></tr>
+<tr><td><input type="checkbox"></td><td>电子普工</td><td>对内</td><td>比亚迪电子</td><td>50人</td><td>5k-7k</td><td>40元/时</td><td><span class="tg tg-g">已开启</span></td><td><span class="tg tg-g">是</span></td><td><span class="tg tg-g">进行中</span></td><td><button class="btn-link" onclick="goProjectDetail()">编辑</button><button class="btn-link" onclick="sm('pushModal')">推送</button></td></tr>
+<tr><td><input type="checkbox"></td><td>质检员</td><td>对外</td><td>广汽乘用车</td><td>20人</td><td>7k-9k</td><td>45元/时</td><td><span class="tg tg-g">已开启</span></td><td><span class="tg tg-g">是</span></td><td><span class="tg tg-g">进行中</span></td><td><button class="btn-link" onclick="goProjectDetail()">编辑</button><button class="btn-link" onclick="sm('pushModal')">推送</button></td></tr>
+<tr><td><input type="checkbox"></td><td>高级技工</td><td>对外</td><td>美的集团</td><td>10人</td><td>9k-12k</td><td>55元/时</td><td><span class="tg tg-y">未开启</span></td><td>--</td><td><span class="tg tg-r">已停用</span></td><td><button class="btn-link" onclick="goProjectDetail()">编辑</button></td></tr>
+<tr><td><input type="checkbox"></td><td>仓管员</td><td>对内</td><td>TCL科技</td><td>15人</td><td>6k-8k</td><td>38元/时</td><td><span class="tg tg-g">已开启</span></td><td><span class="tg tg-g">是</span></td><td><span class="tg tg-g">进行中</span></td><td><button class="btn-link" onclick="goProjectDetail()">编辑</button><button class="btn-link" onclick="sm('pushModal')">推送</button></td></tr>
 </tbody></table></div>
 <div class="pgn"><span>共28条</span><button class="active">1</button><button class="">2</button><button class="">3</button><span>条/页 10</span></div></div>
 
 <div class="mo" id="addProject"><div class="ml" style="width:680px">
 <div class="ml-t">新增项目</div>
 <div class="fr"><div class="fg"><label>关联客户 *</label><select><option>请选择</option><option>比亚迪电子</option><option>广汽乘用车</option><option>美的集团</option><option>TCL科技</option></select></div></div>
-<div class="fr"><div class="fg"><label>项目名称</label><input placeholder="如：电子普工"></div><div class="fg"><label>项目属性</label><select><option>对内项目</option><option selected>对外项目</option></select></div></div>
+<div class="fr"><div class="fg"><label>项目名称</label><input placeholder="如：电子普工"></div><div class="fg"><label>招聘人数</label><input placeholder="50"></div><div class="fg"><label>项目属性</label><select><option>对内项目</option><option selected>对外项目</option></select></div></div>
+<div class="fr"><div class="fg"><label>薪资最低</label><input placeholder="5000"></div><div class="fg"><label>薪资最高</label><input placeholder="7000"></div></div>
 <div class="fr"><div class="fg"><label>项目类型</label><select><option>请选择</option><option>短期工</option><option>长期工</option><option>小时工</option><option>承包</option></select></div><div class="fg"><label>工作地点</label><input placeholder="广州黄埔区"></div></div>
 <div class="fg" style="margin-bottom:16px"><label>项目描述</label><textarea rows="3" placeholder="请输入项目描述..."></textarea></div>
 
 
 <div class="ib ib-b"><b style="color:var(--brand)">项目单价配置（支持多工种不同单价）</b>
+<div style="margin-top:8px;font-size:13px;color:var(--text2)">一个项目可配置多个单价策略，按工种/用工类型区分。分别设置<b>结算方式、正常单价、加班单价</b>（加班费按正常单价 1.5 倍计）。</div>
 <div class="price-cfg"><table class="price-tbl">
-<thead><tr><th>工种/类型</th><th>正常单价(元/时)</th><th>加班单价(元/时)</th><th>结算周期</th><th style="width:64px">操作</th></tr></thead>
+<thead><tr><th>工种/类型</th><th>结算方式</th><th>正常单价(元/时)</th><th>加班单价(元/时)</th><th>结算周期</th><th style="width:64px">操作</th></tr></thead>
 <tbody>
-<tr><td><select class="cell-select"><option>短期工</option><option>长期工</option><option>小时工</option><option>承包工</option></select></td><td><input class="cell-input price-val" placeholder="如：15"></td><td><input class="cell-input" placeholder="如：22"></td><td><select class="cell-select"><option>按月</option><option>按日</option><option>按周</option><option>一次性</option></select></td><td><button class="btn btn-d btn-sm">删除</button></td></tr>
-<tr><td><select class="cell-select"><option>短期工</option><option selected>长期工</option><option>小时工</option></select></td><td><input class="cell-input price-val" value="22"></td><td><input class="cell-input" value="33"></td><td><select class="cell-select"><option selected>按月</option><option>按日</option></select></td><td><button class="btn btn-d btn-sm">删除</button></td></tr>
+<tr><td><select class="cell-select"><option>短期工</option><option>长期工</option><option>小时工</option><option>承包工</option></select></td><td><select class="cell-select"><option>按月</option><option>按日</option><option>按周</option><option>一次性</option></select></td><td><input class="cell-input price-val" placeholder="如：15"></td><td><input class="cell-input" placeholder="如：22"></td><td><select class="cell-select"><option>按月</option><option>按日</option><option>按周</option><option>一次性</option></select></td><td><button class="btn btn-d btn-sm">删除</button></td></tr>
+<tr><td><select class="cell-select"><option>短期工</option><option selected>长期工</option><option>小时工</option></select></td><td><select class="cell-select"><option selected>按月</option><option>按日</option><option>按周</option><option>一次性</option></select></td><td><input class="cell-input price-val" value="22"></td><td><input class="cell-input" value="33"></td><td><select class="cell-select"><option selected>按月</option><option>按日</option></select></td><td><button class="btn btn-d btn-sm">删除</button></td></tr>
 </tbody></table>
 <button class="btn-add-row">+ 添加单价策略</button></div>
 </div>
 <div class="ib ib-b"><b style="color:var(--brand)">项目合同管理（支持多份合同）</b>
 <div style="margin-top:8px;font-size:13px;color:var(--text2)">一个项目可关联多份合同，每份合同独立管理，支持启用/停用。</div>
-<div style="display:flex;justify-content:flex-end;margin:12px 0 8px"><button class="btn btn-sm btn-p" onclick="openAddContract('customer')">+ 新增合同</button></div>
+<div style="display:flex;justify-content:flex-end;margin:12px 0 8px"><button class="btn btn-sm btn-p" onclick="sm('addContractModal')">+ 新增合同</button></div>
 <div class="tw"><table>
 <thead><tr><th>合同名称</th><th>合同编号</th><th>开始日期</th><th>结束日期</th><th>状态</th><th>操作</th></tr></thead>
 <tbody>
@@ -1134,10 +1136,10 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 <div class="tw"><table>
 <thead><tr><th style="width:36px"><input type="checkbox" onclick="toggleAll(this)"></th><th>岗位名称</th><th>关联项目</th><th>关联客户</th><th>薪资待遇</th><th>招聘人数</th><th>已招人数</th><th>岗位评价</th><th>岗位要求摘要</th><th>状态</th><th>操作</th></tr></thead>
 <tbody>
-<tr><td><input type="checkbox"></td><td><b>电子组装工</b></td><td>电子普工</td><td>比亚迪电子</td><td>5k-7k/月</td><td>50人</td><td>32人</td><td>4.2星（36评）</td><td style="font-size:12px;color:var(--text2)">有电子厂经验优先，能适应倒班</td><td><span class="tg tg-g">招聘中</span></td><td><button class="btn-link" onclick="goPositionEdit()">编辑</button><button class="btn-link" onclick="goPositionDetail()">详情</button><button class="btn-link" onclick="sm('stopPositionModal')">停招</button></td></tr>
-<tr><td><input type="checkbox"></td><td><b>QC质检员</b></td><td>质检员</td><td>广汽乘用车</td><td>7k-9k/月</td><td>20人</td><td>15人</td><td>4.5星（18评）</td><td style="font-size:12px;color:var(--text2)">需有质检经验，熟练使用卡尺等量具</td><td><span class="tg tg-g">招聘中</span></td><td><button class="btn-link" onclick="goPositionEdit()">编辑</button><button class="btn-link" onclick="goPositionDetail()">详情</button><button class="btn-link">停招</button></td></tr>
-<tr><td><input type="checkbox"></td><td><b>高级焊工</b></td><td>高级技工</td><td>美的集团</td><td>9k-12k/月</td><td>10人</td><td>8人</td><td>3.8星（5评）</td><td style="font-size:12px;color:var(--text2)">需持焊工证，3年以上氩弧焊经验</td><td><span class="tg tg-g">招聘中</span></td><td><button class="btn-link" onclick="goPositionEdit()">编辑</button><button class="btn-link" onclick="goPositionDetail()">详情</button><button class="btn-link">停招</button></td></tr>
-<tr><td><input type="checkbox"></td><td><b>仓库管理员</b></td><td>仓管员</td><td>TCL科技</td><td>6k-8k/月</td><td>15人</td><td>15人</td><td>4.0星（12评）</td><td style="font-size:12px;color:var(--text2)">熟悉ERP系统，有仓管经验即可</td><td><span class="tg tg-r">已停招</span></td><td><button class="btn-link" onclick="goPositionEdit()">编辑</button><button class="btn-link" onclick="goPositionDetail()">详情</button><button class="btn-link" style="color:var(--success)">复招</button></td></tr>
+<tr><td><input type="checkbox"></td><td><b>电子组装工</b></td><td>电子普工</td><td>比亚迪电子</td><td>5k-7k/月</td><td>50人</td><td>32人</td><td>4.2星(36评)</td><td style="font-size:12px;color:var(--text2)">有电子厂经验优先，能适应倒班</td><td><span class="tg tg-g">招聘中</span></td><td><button class="btn-link" onclick="goPositionEdit()">编辑</button><button class="btn-link" onclick="goPositionDetail()">详情</button><button class="btn-link" onclick="sm('stopPositionModal')">停招</button></td></tr>
+<tr><td><input type="checkbox"></td><td><b>QC质检员</b></td><td>质检员</td><td>广汽乘用车</td><td>7k-9k/月</td><td>20人</td><td>15人</td><td>4.5星(18评)</td><td style="font-size:12px;color:var(--text2)">需有质检经验，熟练使用卡尺等量具</td><td><span class="tg tg-g">招聘中</span></td><td><button class="btn-link" onclick="goPositionEdit()">编辑</button><button class="btn-link" onclick="goPositionDetail()">详情</button><button class="btn-link">停招</button></td></tr>
+<tr><td><input type="checkbox"></td><td><b>高级焊工</b></td><td>高级技工</td><td>美的集团</td><td>9k-12k/月</td><td>10人</td><td>8人</td><td>3.8星(5评)</td><td style="font-size:12px;color:var(--text2)">需持焊工证，3年以上氩弧焊经验</td><td><span class="tg tg-g">招聘中</span></td><td><button class="btn-link" onclick="goPositionEdit()">编辑</button><button class="btn-link" onclick="goPositionDetail()">详情</button><button class="btn-link">停招</button></td></tr>
+<tr><td><input type="checkbox"></td><td><b>仓库管理员</b></td><td>仓管员</td><td>TCL科技</td><td>6k-8k/月</td><td>15人</td><td>15人</td><td>4.0星(12评)</td><td style="font-size:12px;color:var(--text2)">熟悉ERP系统，有仓管经验即可</td><td><span class="tg tg-r">已停招</span></td><td><button class="btn-link" onclick="goPositionEdit()">编辑</button><button class="btn-link" onclick="goPositionDetail()">详情</button><button class="btn-link" style="color:var(--success)">复招</button></td></tr>
 </tbody></table></div>
 <div class="pgn"><span>共28条</span><button class="active">1</button><button class="">2</button><button class="">3</button><span>条/页 10</span></div></div>
 </div>
@@ -1243,6 +1245,8 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 <div><span style="color:var(--text3)">项目名称</span><div style="font-weight:500">电子普工</div></div>
 <div><span style="color:var(--text3)">关联客户</span><div style="font-weight:500">比亚迪电子</div></div>
 <div><span style="color:var(--text3)">项目属性</span><div style="font-weight:500">对内项目</div></div>
+<div><span style="color:var(--text3)">招聘人数</span><div style="font-weight:500">50人</div></div>
+<div><span style="color:var(--text3)">薪资范围</span><div style="font-weight:500">5k-7k</div></div>
 <div><span style="color:var(--text3)">项目单价</span><div style="font-weight:500">40元/时</div></div>
 <div><span style="color:var(--text3)">状态</span><div><span class="tg tg-g">进行中</span></div></div>
 </div>
@@ -1258,10 +1262,10 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 <div class="rp-card">
 <div class="rp-card-title">单价配置</div>
 <div class="tw"><table>
-<thead><tr><th>工种/类型</th><th>正常单价(元/时)</th><th>加班单价(元/时)</th><th>结算周期</th></tr></thead>
+<thead><tr><th>工种/类型</th><th>结算方式</th><th>正常单价(元/时)</th><th>加班单价(元/时)</th><th>结算周期</th></tr></thead>
 <tbody>
-<tr><td>短期工</td><td>15</td><td>22</td><td>按月</td></tr>
-<tr><td>长期工</td><td>22</td><td>33</td><td>按月</td></tr>
+<tr><td>短期工</td><td>按月</td><td>15</td><td>22</td><td>按月</td></tr>
+<tr><td>长期工</td><td>按月</td><td>22</td><td>33</td><td>按月</td></tr>
 </tbody></table></div>
 </div>
 <div class="rp-card">
@@ -1295,7 +1299,10 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 <div class="rp-fields">
 <div class="rp-field"><span class="lbl">项目名称</span><input value="电子普工"></div>
 <div class="rp-field"><span class="lbl">关联客户</span><select><option selected>比亚迪电子</option><option>广汽乘用车</option><option>美的集团</option><option>TCL科技</option></select></div>
+<div class="rp-field"><span class="lbl">招聘人数</span><input value="50"></div>
 <div class="rp-field"><span class="lbl">项目属性</span><select><option selected>对内项目</option><option>对外项目</option></select></div>
+<div class="rp-field"><span class="lbl">薪资最低</span><input value="5000"></div>
+<div class="rp-field"><span class="lbl">薪资最高</span><input value="7000"></div>
 <div class="rp-field"><span class="lbl">项目类型</span><select><option selected>短期工</option><option>长期工</option><option>小时工</option></select></div>
 <div class="rp-field"><span class="lbl">工作地点</span><input value="广州黄埔区"></div>
 </div>
@@ -1305,11 +1312,12 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 
 <div class="rp-card">
 <div class="rp-card-title">项目单价配置 <button class="btn btn-sm btn-p">+ 添加单价策略</button></div>
+<div class="ib ib-b" style="margin-bottom:8px">一个项目支持多个单价策略，按工种/用工类型区分。</div>
 <div class="price-cfg"><table class="price-tbl">
-<thead><tr><th>工种/类型</th><th>正常单价(元/时)</th><th>加班单价(元/时)</th><th>结算周期</th><th style="width:64px">操作</th></tr></thead>
+<thead><tr><th>工种/类型</th><th>结算方式</th><th>正常单价(元/时)</th><th>加班单价(元/时)</th><th>结算周期</th><th style="width:64px">操作</th></tr></thead>
 <tbody>
-<tr><td><select class="cell-select"><option selected>短期工</option><option>长期工</option></select></td><td><input class="cell-input price-val" value="15"></td><td><input class="cell-input" value="22"></td><td><select class="cell-select"><option selected>按月</option></select></td><td><button class="btn btn-d btn-sm">删除</button></td></tr>
-<tr><td><select class="cell-select"><option>短期工</option><option selected>长期工</option></select></td><td><input class="cell-input price-val" value="22"></td><td><input class="cell-input" value="33"></td><td><select class="cell-select"><option selected>按月</option></select></td><td><button class="btn btn-d btn-sm">删除</button></td></tr>
+<tr><td><select class="cell-select"><option selected>短期工</option><option>长期工</option></select></td><td><select class="cell-select"><option selected>按月</option><option>按日</option><option>按周</option><option>一次性</option></select></td><td><input class="cell-input price-val" value="15"></td><td><input class="cell-input" value="22"></td><td><select class="cell-select"><option selected>按月</option></select></td><td><button class="btn btn-d btn-sm">删除</button></td></tr>
+<tr><td><select class="cell-select"><option>短期工</option><option selected>长期工</option></select></td><td><select class="cell-select"><option selected>按月</option><option>按日</option><option>按周</option><option>一次性</option></select></td><td><input class="cell-input price-val" value="22"></td><td><input class="cell-input" value="33"></td><td><select class="cell-select"><option selected>按月</option></select></td><td><button class="btn btn-d btn-sm">删除</button></td></tr>
 </tbody></table>
 <button class="btn-add-row">+ 添加单价策略</button></div>
 </div>
@@ -1353,7 +1361,7 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 <div class="fg" style="margin-top:16px"><label>推送对象（支持多选标签筛选）</label></div>
 <div class="tag-select"><div class="ts-item selected">普工</div><div class="ts-item selected">技工</div><div class="ts-item">质检</div><div class="ts-item">仓储</div><div class="ts-item">其他</div></div>
 <div class="fr" style="margin-top:12px">
-<div class="fg"><label>推送方式</label><select disabled style="background:#f5f5f5"><option selected>微信服务通知</option></select></div>
+<div class="fg"><label>推送方式</label><select><option>微信服务通知</option><option>短信通知</option><option>服务通知+短信</option></select></div>
 <div class="fg"><label>屏蔽在职</label><select><option>是</option><option>否</option></select></div>
 </div>
 <div class="ib ib-b" style="margin-top:8px">支持二次推送，系统将记录每次推送的对象和時間。重复推送时会过滤已查看/已报名的用户。</div>
@@ -1364,15 +1372,11 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 <div class="mo" id="addContractModal"><div class="ml" style="width:520px">
 <div class="ml-t">新增合同</div>
 <div class="fr">
-<div class="fg"><label>合同名称 *</label><input id="contractNameInput" placeholder="新增合同名称"></div>
-<div class="fg"><label>合同编号 *</label><input id="contractNoInput" placeholder="如：HT-2026-003"></div>
-</div>
-<div class="fr">
-<div class="fg"><label>开始日期 *</label><input id="contractStartInput" type="date"></div>
-<div class="fg"><label>结束日期 *</label><input id="contractEndInput" type="date"></div>
+<div class="fg"><label>合同名称</label><input placeholder="新增合同名称"></div>
+<div class="fg"><label>合同编号</label><input placeholder="如：HT-2026-003"></div>
 </div>
 <div class="fg" style="margin-top:12px"><label>上传合同附件</label><div class="uz" style="padding:10px 12px;cursor:pointer;border:1px dashed var(--border);border-radius:6px;text-align:center;background:#fafafa"><span style="font-size:13px;color:var(--text3)">点击上传合同文件（PDF/Word）</span></div></div>
-<div class="ml-f"><button class="btn" onclick="cancelAddContract()">取消</button><button class="btn btn-p" onclick="saveContract()">确认新增</button></div>
+<div class="ml-f"><button class="btn" onclick="hm('addContractModal')">取消</button><button class="btn btn-p" onclick="hm('addContractModal')">确认新增</button></div>
 </div></div>
 
 <!-- ===== SETTLEMENT ===== -->
@@ -1493,7 +1497,7 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 <div class="rp-card-title">结算基本信息</div>
 <div class="rp-fields">
 <div class="rp-field"><span class="lbl">结算名称</span><input placeholder="如：2026年7月电子普工结算"></div>
-<div class="rp-field" style="min-width:0"><span class="lbl">关联项目</span><select><option>请选择</option><option>电子普工</option><option>质检员</option><option>高级技工</option><option>仓管员</option></select></div>
+<div class="rp-field"><span class="lbl">关联项目</span><select><option>请选择</option><option>电子普工</option><option>质检员</option><option>高级技工</option><option>仓管员</option></select></div>
 <div class="rp-field"><span class="lbl">结算周期</span><select><option>按月</option><option>按日</option><option>按周</option><option>一次性结算</option></select></div>
 <div class="rp-field"><span class="lbl">结算月份</span><input type="month" value="2026-07"></div>
 <div class="rp-field"><span class="lbl">工资规则模板</span><select style="min-width:200px"><option selected>标准工资计算（默认）</option><option>日结工资计算</option><option>高级技工工资</option></select></div>
@@ -1628,12 +1632,8 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 
 <!-- 按渠道商 / 岗位配置佣金规则 -->
 <div class="cd">
-<div class="cd-h"><div class="cd-t">按渠道商 / 岗位配置佣金</div></div>
-<div class="ib ib-b" style="margin-bottom:16px">佣金结算方式一（在职天数）、方式二（满岗条件）、方式三（固定金额）均可按渠道商或按岗位进行独立配置，支持灵活的佣金策略。</div>
-<div class="tabs" style="margin-bottom:12px">
-<div class="tab active" onclick="stab(this,'dist-cfg-channel')">按渠道商配置</div>
-<div class="tab" onclick="stab(this,'dist-cfg-position')">按岗位配置</div>
-</div>
+<div class="cd-h"><div class="cd-t">按渠道商配置佣金</div></div>
+<div class="ib ib-b" style="margin-bottom:16px">岗位维度的佣金已在「岗位管理」中维护；本处仅保留渠道商维度的佣金覆盖配置。</div>
 <div class="tc show" id="dist-cfg-channel">
 <div class="tw"><table>
 <thead><tr><th>渠道商</th><th>专属码</th><th>佣金方式</th><th>档位 / 金额</th><th>倍率</th><th>状态</th><th>操作</th></tr></thead>
@@ -1644,18 +1644,6 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 </tbody></table></div>
 <div style="margin-top:10px"><button class="btn btn-p btn-sm" onclick="goDistCommChannel()">+ 新增渠道商佣金配置</button></div>
 </div>
-<div class="tc" id="dist-cfg-position">
-<div class="tw"><table>
-<thead><tr><th>岗位名称</th><th>关联项目</th><th>佣金方式</th><th>档位 / 金额</th><th>适用渠道商</th><th>状态</th><th>操作</th></tr></thead>
-<tbody>
-<tr><td>电子组装工</td><td>电子普工</td><td><span class="tg tg-b">在职天数</span></td><td>30天 / 200元 | 60天 / 500元 | 90天 / 1000元</td><td>A / B / C级</td><td><span class="tg tg-g">启用</span></td><td><button class="btn-link" onclick="goDistCommPosition()">编辑</button></td></tr>
-<tr><td>QC质检员</td><td>质检员</td><td><span class="tg tg-b">满岗条件</span></td><td>30天 / 400元 | 60天 / 1000元</td><td>A / B级</td><td><span class="tg tg-g">启用</span></td><td><button class="btn-link" onclick="goDistCommPosition()">编辑</button></td></tr>
-<tr><td>高级焊工</td><td>高级技工</td><td><span class="tg tg-o">固定金额</span></td><td>一次性 800元</td><td>全部等级</td><td><span class="tg tg-g">启用</span></td><td><button class="btn-link" onclick="goDistCommPosition()">编辑</button></td></tr>
-</tbody></table></div>
-<div style="margin-top:10px"><button class="btn btn-p btn-sm" onclick="goDistCommPosition()">+ 新增岗位佣金配置</button></div>
-</div>
-</div>
-
 <!-- 渠道商等级关联 -->
 <div class="cd">
 <div class="cd-h"><div class="cd-t">渠道商等级与佣金倍率</div><button class="btn btn-p btn-sm" onclick="sm('addDistLevelModal')">+ 新增等级</button></div>
@@ -1673,6 +1661,17 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 </div>
 
 <!-- Add Channel Modal -->
+
+<!-- ===== ADD DISTRIBUTOR LEVEL MODAL ===== -->
+<div class="mo" id="addDistLevelModal"><div class="ml" style="width:520px">
+<div class="ml-t">新增渠道商等级</div>
+<div style="padding:16px 20px">
+<div class="fr"><div class="fg"><label>等级名称 *</label><input placeholder="如：D级"></div><div class="fg"><label>佣金倍率 *</label><input placeholder="如：0.8"></div></div>
+<div class="fr" style="margin-top:12px"><div class="fg"><label>适用条件</label><input placeholder="如：累计有效推荐≥10人"></div><div class="fg"><label>状态</label><select><option selected>启用</option><option>停用</option></select></div></div>
+<div class="fg" style="margin-top:12px"><label>等级说明</label><textarea rows="3" placeholder="请输入等级权益、结算说明或维护规则"></textarea></div>
+</div>
+<div class="ml-f"><button class="btn" onclick="hm('addDistLevelModal')">取消</button><button class="btn btn-p" onclick="hm('addDistLevelModal');alert('渠道商等级已新增')">确认新增</button></div>
+</div></div>
 <div class="mo" id="addChannelModal"><div class="ml" style="width:520px">
 <div class="ml-t">新增渠道商</div>
 <div class="fr">
@@ -1935,8 +1934,8 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 <div class="rc"><h4>普通员工 <span class="tg tg-y">L1</span></h4><ul class="pl"><li>个人数据查看</li><li>花名册录入</li></ul></div>
 <div class="rc" style="position:relative"><h4>渠道商 <span class="tg tg-y">L2</span></h4><div style="position:absolute;top:12px;right:12px"><button class="btn-link" onclick="goRoleEdit()">编辑权限</button></div><ul class="pl"><li>报备求职者（代报名）</li><li>提交渠道商申请</li><li>管理团队 / 下线</li><li>查看岗位信息</li></ul></div>
 </div></div>
-<div class="cd"><div class="cd-t">渠道商角色说明</div><div class="ib ib-b">渠道商为平台外部合作角色（L2），可代求职者报名（报备）、提交渠道商入驻申请、管理自身团队与下线、查看开放岗位；其分销佣金与团队数据在「分销裂变」模块统一管理。</div></div>
-<div class="cd"><div class="cd-t">数据隔离策略</div><div class="ib ib-g">基于RBAC权限模型实现数据隔离 | L5全量 | L4本部门+下属 | L3本部门 | L2/L1仅个人数据 | 跨部门访问需超管审批</div></div>
+
+
 </div>
 
 <!-- ===== ROLE ADD PAGE ===== -->
@@ -2015,7 +2014,7 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 <div class="tab" onclick="stab(this,'dict-user')">用户标签</div>
 <div class="tab" onclick="stab(this,'dict-posttype')">岗位类型</div>
 <div class="tab" onclick="stab(this,'dict-protype')">项目类型</div>
-<div class="tab" onclick="stab(this,'dict-salary')">薪资区间</div>
+
 <div class="tab" onclick="stab(this,'dict-edu')">学历</div>
 <div class="tab" onclick="stab(this,'dict-nation')">民族</div>
 </div>
@@ -2077,18 +2076,6 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 <div class="pgn"><span>共4条</span><button class="active">1</button><span>条/页 10</span></div>
 </div></div>
 
-<div class="tc" id="dict-salary"><div class="cd">
-<div class="cd-h"><div class="cd-t">薪资区间管理</div><button class="btn btn-p btn-sm">+ 新增</button></div>
-<div class="tbar"><div class="tbar-l"></div><div class="tbar-r"><button class="btn btn-sm" onclick="sm('tableSettingsModal')">表格设置</button><button class="btn btn-sm" onclick="sm('exportModal')">数据导出</button></div></div>
-<div class="tw"><table><thead><tr><th style="width:36px"><input type="checkbox" onclick="toggleAll(this)"></th><th>区间名称</th><th>月薪(低)</th><th>月薪(高)</th><th>上月平均</th><th>年收入参考</th><th>状态</th><th>操作</th></tr></thead>
-<tbody>
-<tr><td><input type="checkbox"></td><td>普工</td><td>5,000</td><td>7,000</td><td>5,800</td><td>69,600</td><td><span class="tg tg-g">启用</span></td><td><button class="btn-link" onclick="alert('编辑功能开发中')">编辑</button></td></tr>
-<tr><td><input type="checkbox"></td><td>技工</td><td>8,000</td><td>12,000</td><td>9,500</td><td>114,000</td><td><span class="tg tg-g">启用</span></td><td><button class="btn-link" onclick="alert('编辑功能开发中')">编辑</button></td></tr>
-<tr><td><input type="checkbox"></td><td>质检</td><td>7,000</td><td>9,000</td><td>7,800</td><td>93,600</td><td><span class="tg tg-g">启用</span></td><td><button class="btn-link" onclick="alert('编辑功能开发中')">编辑</button></td></tr>
-<tr><td><input type="checkbox"></td><td>仓储</td><td>6,000</td><td>8,000</td><td>6,500</td><td>78,000</td><td><span class="tg tg-g">启用</span></td><td><button class="btn-link" onclick="alert('编辑功能开发中')">编辑</button></td></tr>
-</tbody></table></div>
-<div class="pgn"><span>共8条</span><button class="active">1</button><span>条/页 10</span></div>
-</div></div>
 
 <div class="tc" id="dict-edu"><div class="cd">
 <div class="cd-h"><div class="cd-t">学历管理</div><button class="btn btn-p btn-sm">+ 新增</button></div>
@@ -2367,163 +2354,43 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 </div>
 
 <div class="tc show" id="cfg-salaryrule">
-<!-- Template List -->
 <div class="cd">
-<div class="cd-h"><div class="cd-t">工资计算规则模板管理</div><button class="btn btn-p btn-sm" onclick="sm('salaryTplModal')">+ 新增模板</button></div>
-<div class="ib ib-b" style="margin-bottom:16px">工资计算规则以模板方式管理，支持多套模板配置。新建结算时可选择适用的工资计算规则模板，系统按所选模板执行计算。</div>
+<div class="sbar" style="margin-bottom:12px">
+<input placeholder="费用名称　请输入" style="width:240px">
+<input placeholder="费用编码　请输入" style="width:240px">
+<select style="width:180px"><option>收支方向　请选择</option><option>加项</option><option>减项</option></select>
+<select style="width:180px"><option>设置方式　请选择</option><option>直接填写</option><option>系统读数</option><option>系统计算</option></select>
+<select style="width:180px"><option>状态　请选择</option><option>启用</option><option>禁用</option></select>
+<button class="btn btn-p btn-sm">查询</button><button class="btn btn-sm">清除条件</button>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+<div style="display:flex;align-items:center;gap:12px"><button class="btn btn-p" onclick="openSalaryFeeModal('add')">+ 新增费用项</button><span style="font-size:12px;color:var(--text3)">费用项由平台统一维护，客户仅选择使用范围</span></div>
+<button class="btn btn-sm">导出</button>
+</div>
+<div class="ib ib-b" style="margin-bottom:0;padding:8px 12px">费用总数：<b>6项</b>　·　已启用：<b>6项</b>　·　系统计算：<b>1项</b></div>
 <div class="tw"><table>
-<thead><tr><th style="width:36px"><input type="checkbox" onclick="toggleAll(this)"></th><th>模板名称</th><th>描述</th><th>基础工资公式</th><th>适用项目</th><th>状态</th><th>操作</th></tr></thead>
+<thead><tr><th style="width:36px"><input type="checkbox" onclick="toggleAll(this)"></th><th>费用名称</th><th>费用编码</th><th>收支方向</th><th>设置方式</th><th>计算规则</th><th>是否计税</th><th>状态</th><th>操作</th></tr></thead>
 <tbody>
-<tr><td><input type="checkbox"></td><td><b>标准工资计算</b> <span class="tg tg-g" style="font-size:10px">默认</span></td><td>适用于标准用工，含加班费</td><td style="font-size:12px;font-family:monospace;color:var(--brand)">标准工时 x 员工单价 + 加班工时 x 员工单价 x 1.5</td><td>全部项目</td><td><span class="tg tg-g">启用</span></td><td><button class="btn-link" onclick="editSalaryTpl(0)">编辑</button><button class="btn-link">复制</button></td></tr>
-<tr><td><input type="checkbox"></td><td><b>日结工资计算</b></td><td>适用于日结/临时工种，不含加班</td><td style="font-size:12px;font-family:monospace;color:var(--brand)">实际工时 x 员工单价</td><td>电子普工</td><td><span class="tg tg-g">启用</span></td><td><button class="btn-link" onclick="editSalaryTpl(1)">编辑</button><button class="btn-link">复制</button></td></tr>
-<tr><td><input type="checkbox"></td><td><b>高级技工工资</b></td><td>适用于高级技工，含绩效系数</td><td style="font-size:12px;font-family:monospace;color:var(--brand)">标准工时 x 岗位单价 x ( 绩效评分 / 100 )</td><td>高级技工</td><td><span class="tg tg-g">启用</span></td><td><button class="btn-link" onclick="editSalaryTpl(2)">编辑</button><button class="btn-link">复制</button></td></tr>
+<tr><td><input type="checkbox"></td><td><b>基本工资</b></td><td>BASE_WAGE</td><td><span style="color:var(--success)">加项</span></td><td><span class="tg tg-g">系统计算</span></td><td><span class="tg tg-b">单价 × 工时</span></td><td><span class="tg tg-o">计税</span></td><td><span class="tg tg-g">● 启用</span></td><td><button class="btn-link" onclick="openSalaryFeeModal('edit','基本工资','BASE_WAGE','calc')">编辑</button><button class="btn-link" style="color:var(--danger)">禁用</button><button class="btn-link" style="color:var(--danger)">删除</button></td></tr>
+<tr><td><input type="checkbox"></td><td><b>绩效奖励</b></td><td>PERFORMANCE</td><td><span style="color:var(--success)">加项</span></td><td><span class="tg tg-y">直接填写</span></td><td>—</td><td><span class="tg tg-o">计税</span></td><td><span class="tg tg-g">● 启用</span></td><td><button class="btn-link" onclick="openSalaryFeeModal('edit','绩效奖励','PERFORMANCE','manual')">编辑</button><button class="btn-link" style="color:var(--danger)">禁用</button><button class="btn-link" style="color:var(--danger)">删除</button></td></tr>
+<tr><td><input type="checkbox"></td><td><b>质量扣款</b></td><td>QUALITY_DEDUCT</td><td><span style="color:var(--danger)">减项</span></td><td><span class="tg tg-y">直接填写</span></td><td>—</td><td>不计税</td><td><span class="tg tg-g">● 启用</span></td><td><button class="btn-link" onclick="openSalaryFeeModal('edit','质量扣款','QUALITY_DEDUCT','manual')">编辑</button><button class="btn-link" style="color:var(--danger)">禁用</button><button class="btn-link" style="color:var(--danger)">删除</button></td></tr>
+<tr><td><input type="checkbox"></td><td><b>借支抵扣</b></td><td>ADVANCE</td><td><span style="color:var(--danger)">减项</span></td><td><span class="tg tg-b">系统读数</span></td><td><span class="tg tg-b">未核销售支金额</span></td><td>不计税</td><td><span class="tg tg-g">● 启用</span></td><td><button class="btn-link" onclick="openSalaryFeeModal('edit','借支抵扣','ADVANCE','read')">编辑</button><button class="btn-link" style="color:var(--danger)">禁用</button><button class="btn-link" style="color:var(--danger)">删除</button></td></tr>
+<tr><td><input type="checkbox"></td><td><b>社保个人部分</b></td><td>SOCIAL</td><td><span style="color:var(--danger)">减项</span></td><td><span class="tg tg-y">直接填写</span></td><td>—</td><td>不计税</td><td><span class="tg tg-g">● 启用</span></td><td><button class="btn-link" onclick="openSalaryFeeModal('edit','社保个人部分','SOCIAL','manual')">编辑</button><button class="btn-link" style="color:var(--danger)">禁用</button><button class="btn-link" style="color:var(--danger)">删除</button></td></tr>
+<tr><td><input type="checkbox"></td><td><b>个人所得税</b></td><td>TAX</td><td><span style="color:var(--danger)">减项</span></td><td><span class="tg tg-b">系统读数</span></td><td><span class="tg tg-b">个税</span></td><td>不计税</td><td><span class="tg tg-g">● 启用</span></td><td><button class="btn-link" onclick="openSalaryFeeModal('edit','个人所得税','TAX','read')">编辑</button><button class="btn-link" style="color:var(--danger)">禁用</button><button class="btn-link" style="color:var(--danger)">删除</button></td></tr>
 </tbody></table></div>
-<div class="pgn"><span>共3条</span><button class="active">1</button><span>条/页 10</span></div>
+<div class="pgn"><span>共6条数据</span><button disabled>&lt;</button><button class="active">1</button><button disabled>&gt;</button></div>
 </div>
 
-<!-- Template Edit Modal -->
-<div class="mo" id="salaryTplModal"><div class="ml" style="width:800px;max-height:85vh;overflow-y:auto">
-<div class="ml-t" id="salaryTplTitle">新增工资计算规则模板</div>
-<div class="fr" style="margin-bottom:12px">
-<div class="fg"><label>模板名称 *</label><input id="tplName" placeholder="如：标准工资计算" value=""></div>
-<div class="fg"><label>适用项目</label><select><option>全部项目</option><option>电子普工</option><option>质检员</option><option>高级技工</option><option>仓管员</option></select></div>
+<div class="mo" id="salaryTplModal"><div class="ml" style="width:620px;max-height:86vh;overflow-y:auto;padding:0">
+<div style="padding:18px 20px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center"><div><div style="font-size:12px;color:var(--text3)">操作确认</div><div class="ml-t" id="salaryTplTitle" style="margin:2px 0 0">新增费用项</div></div><button class="btn-link" onclick="hm('salaryTplModal')" style="font-size:22px;color:var(--text3)">×</button></div>
+<div style="padding:18px 20px">
+<div class="fr" style="margin-bottom:12px"><div class="fg"><label>费用名称</label><input id="tplName" placeholder="如：基本工资"></div><div class="fg"><label>费用编码</label><input id="tplCode" placeholder="如：BASE_WAGE"></div></div>
+<div class="fr" style="margin-bottom:12px"><div class="fg"><label>收支方向</label><select id="feeDirection"><option value="plus">加项</option><option value="minus">减项</option></select></div><div class="fg"><label>设置方式</label><select id="feeSetMode" onchange="changeFeeSetMode()"><option value="manual">直接填写</option><option value="read">系统读数</option><option value="calc">系统计算</option></select></div></div>
+<div class="ib ib-b" style="padding:10px 12px;margin-bottom:12px"><b>是否计税</b>　<label style="margin-left:12px"><input type="radio" name="feeTax" value="yes"> 是，计入个税应税收入</label>　<label><input type="radio" name="feeTax" value="no" checked> 否，不计入个税</label></div>
+<div id="feeModePanel"></div>
+<div class="fg" style="margin-top:12px"><label>费用说明</label><input id="tplDesc" placeholder="说明使用场景"></div>
 </div>
-<div class="fg" style="margin-bottom:12px"><label>描述</label><input id="tplDesc" placeholder="简要描述该模板的适用场景" value=""></div>
-
-<!-- Base Salary -->
-<div class="rp-card" style="border:none;padding:0">
-<div class="rp-card-title">基础工资计算 <span style="font-size:12px;font-weight:400;color:var(--text3);margin-left:8px">支持手动配置公式，自定义变量与系数组合</span></div>
-<div class="fb" id="salaryFormulaBuilder">
-<div class="fb-row">
-<span class="fb-seg var" style="padding:6px 12px">标准工时<span style="margin-left:6px;font-size:11px;color:var(--text3)">&#9660;</span></span>
-<span class="fb-seg op">x</span>
-<span class="fb-seg var" style="padding:6px 12px">员工单价<span style="margin-left:6px;font-size:11px;color:var(--text3)">&#9660;</span></span>
-<span class="fb-del" onclick="this.parentElement.remove();updateFormulaPreview('salaryFormulaBuilder','formulaPreview')">x</span>
-</div>
-<div class="fb-row">
-<span class="fb-seg op">+</span>
-<span class="fb-seg var" style="padding:6px 12px">加班工时<span style="margin-left:6px;font-size:11px;color:var(--text3)">&#9660;</span></span>
-<span class="fb-seg op">x</span>
-<span class="fb-seg var" style="padding:6px 12px">员工单价<span style="margin-left:6px;font-size:11px;color:var(--text3)">&#9660;</span></span>
-<span class="fb-seg op">x</span>
-<span class="fb-seg coef">系数 <input class="fb-coef-input" value="1.5" onchange="updateFormulaPreview('salaryFormulaBuilder','formulaPreview')"></span>
-<span class="fb-del" onclick="this.parentElement.remove();updateFormulaPreview('salaryFormulaBuilder','formulaPreview')">x</span>
-</div>
-<div class="fb-add-row">
-<button class="fb-btn" onclick="addFormulaSegment('var','','salaryFormulaBuilder','formulaPreview')">+ 变量</button>
-<button class="fb-btn op-btn" onclick="addFormulaSegment('op','+','salaryFormulaBuilder','formulaPreview')">+</button>
-<button class="fb-btn op-btn" onclick="addFormulaSegment('op','-','salaryFormulaBuilder','formulaPreview')">-</button>
-<button class="fb-btn op-btn" onclick="addFormulaSegment('op','x','salaryFormulaBuilder','formulaPreview')">x</button>
-<button class="fb-btn op-btn" onclick="addFormulaSegment('op','/','salaryFormulaBuilder','formulaPreview')">/</button>
-<button class="fb-btn" onclick="addFormulaSegment('coef','1.0','salaryFormulaBuilder','formulaPreview')">+ 系数</button>
-<button class="fb-btn" onclick="addFormulaSegment('paren','(','salaryFormulaBuilder','formulaPreview')">(</button>
-<button class="fb-btn" onclick="addFormulaSegment('paren',')','salaryFormulaBuilder','formulaPreview')">)</button>
-</div>
-<div class="fb-preview">
-<div class="fb-preview-label">公式预览</div>
-<div class="fb-preview-formula" id="formulaPreview">标准工时 x 员工单价 + 加班工时 x 员工单价 x 1.5</div>
-</div>
-<div style="margin-top:8px;font-size:12px;color:var(--text3)">可用变量：标准工时、实际工时、加班工时、周末工时、节假日工时、员工单价、项目单价、岗位单价、出勤天数、绩效评分、个税应缴金额、社保个人部分、社保单位部分、公积金个人部分、公积金单位部分、基础工资、应发工资、实发工资</div>
-</div>
-</div>
-
-<!-- Tax -->
-<div class="rp-card" style="border:none;padding:0;margin-top:16px">
-<div class="rp-card-title">个税计算 <span style="font-size:12px;font-weight:400;color:var(--text3);margin-left:8px">支持自定义公式 + 累进税率表</span></div>
-<div class="rp-fields">
-<div class="rp-field"><span class="lbl">起征点</span><input value="5000" style="width:120px"> 元/月</div>
-<div class="rp-field"><span class="lbl">计算方式</span><select><option selected>累进税率</option><option>固定比例</option><option>自定义公式</option></select></div>
-</div>
-<div class="fb" id="taxFormulaBuilder">
-<div class="fb-row">
-<span class="fb-seg op">(</span>
-<span class="fb-seg var" style="padding:6px 12px">应发工资<span style="margin-left:6px;font-size:11px;color:var(--text3)">&#9660;</span></span>
-<span class="fb-seg op">-</span>
-<span class="fb-seg var" style="padding:6px 12px">社保个人部分<span style="margin-left:6px;font-size:11px;color:var(--text3)">&#9660;</span></span>
-<span class="fb-seg op">-</span>
-<span class="fb-seg coef">起征点 <input class="fb-coef-input" value="5000" onchange="updateFormulaPreview('taxFormulaBuilder','taxFormulaPreview')"></span>
-<span class="fb-seg op">)</span>
-<span class="fb-seg op">x</span>
-<span class="fb-seg coef">适用税率 <input class="fb-coef-input" value="10" onchange="updateFormulaPreview('taxFormulaBuilder','taxFormulaPreview')"></span>
-<span class="fb-seg op">-</span>
-<span class="fb-seg coef">速算扣除数 <input class="fb-coef-input" value="210" onchange="updateFormulaPreview('taxFormulaBuilder','taxFormulaPreview')"></span>
-<span class="fb-del" onclick="this.parentElement.remove();updateFormulaPreview('taxFormulaBuilder','taxFormulaPreview')">x</span>
-</div>
-<div class="fb-add-row">
-<button class="fb-btn" onclick="addFormulaSegment('var','','taxFormulaBuilder','taxFormulaPreview')">+ 变量</button>
-<button class="fb-btn op-btn" onclick="addFormulaSegment('op','+','taxFormulaBuilder','taxFormulaPreview')">+</button>
-<button class="fb-btn op-btn" onclick="addFormulaSegment('op','-','taxFormulaBuilder','taxFormulaPreview')">-</button>
-<button class="fb-btn op-btn" onclick="addFormulaSegment('op','x','taxFormulaBuilder','taxFormulaPreview')">x</button>
-<button class="fb-btn op-btn" onclick="addFormulaSegment('op','/','taxFormulaBuilder','taxFormulaPreview')">/</button>
-<button class="fb-btn" onclick="addFormulaSegment('coef','1.0','taxFormulaBuilder','taxFormulaPreview')">+ 系数</button>
-<button class="fb-btn" onclick="addFormulaSegment('paren','(','taxFormulaBuilder','taxFormulaPreview')">(</button>
-<button class="fb-btn" onclick="addFormulaSegment('paren',')','taxFormulaBuilder','taxFormulaPreview')">)</button>
-</div>
-<div class="fb-preview">
-<div class="fb-preview-label">公式预览</div>
-<div class="fb-preview-formula" id="taxFormulaPreview">( 应发工资 - 社保个人部分 - 起征点 5000 ) x 适用税率 10 - 速算扣除数 210</div>
-</div>
-</div>
-<div class="tw" style="margin-top:12px"><table>
-<thead><tr><th>级数</th><th>应纳税所得额(元)</th><th>税率</th><th>速算扣除数</th></tr></thead>
-<tbody>
-<tr><td>1</td><td>0 - 3,000</td><td>3%</td><td>0</td></tr>
-<tr><td>2</td><td>3,001 - 12,000</td><td>10%</td><td>210</td></tr>
-<tr><td>3</td><td>12,001 - 25,000</td><td>20%</td><td>1,410</td></tr>
-<tr><td>4</td><td>25,001 - 35,000</td><td>25%</td><td>2,660</td></tr>
-<tr><td>5</td><td>35,001 - 55,000</td><td>30%</td><td>4,410</td></tr>
-<tr><td>6</td><td>55,001 - 80,000</td><td>35%</td><td>7,160</td></tr>
-<tr><td>7</td><td>80,001+</td><td>45%</td><td>15,160</td></tr>
-</tbody></table></div>
-</div>
-
-<!-- Social Security -->
-<div class="rp-card" style="border:none;padding:0;margin-top:16px">
-<div class="rp-card-title">社保计算 <span style="font-size:12px;font-weight:400;color:var(--text3);margin-left:8px">支持自定义公式，可引用基数与比例变量</span></div>
-<div class="rp-fields">
-<div class="rp-field"><span class="lbl">养老</span><input value="8" style="width:60px"> %</div>
-<div class="rp-field"><span class="lbl">医疗</span><input value="2" style="width:60px"> %</div>
-<div class="rp-field"><span class="lbl">失业</span><input value="0.5" style="width:60px"> %</div>
-<div class="rp-field"><span class="lbl">公积金</span><input value="12" style="width:60px"> %</div>
-</div>
-<div class="fb" id="ssFormulaBuilder">
-<div class="fb-row">
-<span class="fb-seg var" style="padding:6px 12px">社保个人部分<span style="margin-left:6px;font-size:11px;color:var(--text3)">&#9660;</span></span>
-<span class="fb-seg op">=</span>
-<span class="fb-seg var" style="padding:6px 12px">应发工资<span style="margin-left:6px;font-size:11px;color:var(--text3)">&#9660;</span></span>
-<span class="fb-seg op">x</span>
-<span class="fb-seg op">(</span>
-<span class="fb-seg coef">养老 <input class="fb-coef-input" value="8" onchange="updateFormulaPreview('ssFormulaBuilder','ssFormulaPreview')"></span>
-<span class="fb-seg op">+</span>
-<span class="fb-seg coef">医疗 <input class="fb-coef-input" value="2" onchange="updateFormulaPreview('ssFormulaBuilder','ssFormulaPreview')"></span>
-<span class="fb-seg op">+</span>
-<span class="fb-seg coef">失业 <input class="fb-coef-input" value="0.5" onchange="updateFormulaPreview('ssFormulaBuilder','ssFormulaPreview')"></span>
-<span class="fb-seg op">+</span>
-<span class="fb-seg coef">公积金 <input class="fb-coef-input" value="12" onchange="updateFormulaPreview('ssFormulaBuilder','ssFormulaPreview')"></span>
-<span class="fb-seg op">)</span>
-<span class="fb-seg op">/</span>
-<span class="fb-seg coef">系数 <input class="fb-coef-input" value="100" onchange="updateFormulaPreview('ssFormulaBuilder','ssFormulaPreview')"></span>
-<span class="fb-del" onclick="this.parentElement.remove();updateFormulaPreview('ssFormulaBuilder','ssFormulaPreview')">x</span>
-</div>
-<div class="fb-add-row">
-<button class="fb-btn" onclick="addFormulaSegment('var','','ssFormulaBuilder','ssFormulaPreview')">+ 变量</button>
-<button class="fb-btn op-btn" onclick="addFormulaSegment('op','+','ssFormulaBuilder','ssFormulaPreview')">+</button>
-<button class="fb-btn op-btn" onclick="addFormulaSegment('op','-','ssFormulaBuilder','ssFormulaPreview')">-</button>
-<button class="fb-btn op-btn" onclick="addFormulaSegment('op','x','ssFormulaBuilder','ssFormulaPreview')">x</button>
-<button class="fb-btn op-btn" onclick="addFormulaSegment('op','/','ssFormulaBuilder','ssFormulaPreview')">/</button>
-<button class="fb-btn" onclick="addFormulaSegment('coef','1.0','ssFormulaBuilder','ssFormulaPreview')">+ 系数</button>
-<button class="fb-btn" onclick="addFormulaSegment('paren','(','ssFormulaBuilder','ssFormulaPreview')">(</button>
-<button class="fb-btn" onclick="addFormulaSegment('paren',')','ssFormulaBuilder','ssFormulaPreview')">)</button>
-</div>
-<div class="fb-preview">
-<div class="fb-preview-label">公式预览</div>
-<div class="fb-preview-formula" id="ssFormulaPreview">社保个人部分 = 应发工资 x ( 养老 8 + 医疗 2 + 失业 0.5 + 公积金 12 ) / 系数 100</div>
-</div>
-<div style="margin-top:8px;font-size:12px;color:var(--text3)">可用变量：标准工时、实际工时、加班工时、周末工时、节假日工时、员工单价、项目单价、岗位单价、出勤天数、绩效评分、个税应缴金额、社保个人部分、社保单位部分、公积金个人部分、公积金单位部分、基础工资、应发工资、实发工资</div>
-</div>
-</div>
-
-<div class="ml-f" style="margin-top:16px"><button class="btn" onclick="hm('salaryTplModal')">取消</button><button class="btn btn-p" onclick="hm('salaryTplModal');alert('工资计算规则模板已保存')">保存模板</button></div>
+<div class="ml-f" style="margin:0;padding:14px 20px;border-top:1px solid var(--border)"><button class="btn" onclick="hm('salaryTplModal')">取消</button><button class="btn btn-p" onclick="hm('salaryTplModal');alert('费用项已保存')">保存</button></div>
 </div></div>
 </div>
 </div>
@@ -2632,13 +2499,14 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 </div></div>
 
 <!-- ========== 花名册批量操作弹窗 ========== -->
-<div class="mo" id="rosterBatchModal"><div class="ml" style="width:520px">
+<div class="mo" id="rosterBatchModal"><div class="ml" style="width:560px">
 <div class="ml-t">员工管理 - 已选中员工批量操作</div>
 <div style="padding:20px">
-<div class="fg"><label>选择操作</label><select id="rosterBatchAction" onchange="changeRosterBatchAction(this)" style="width:100%;padding:8px 12px;border:1px solid var(--border2);border-radius:var(--radius);font-size:14px"><option value="project">批量更新项目</option><option value="price">批量调整单价</option><option value="resign">批量更新状态为「离职」</option><option value="settle">批量更新结算方式</option><option value="export">导出员工信息</option></select></div><div id="rosterBatchFields" style="margin-top:12px"></div>
+<div class="fg"><label>选择操作</label><select id="rosterBatchAction" onchange="changeRosterBatchAction()" style="width:100%;padding:8px 12px;border:1px solid var(--border2);border-radius:var(--radius);font-size:14px"><option value="project">批量更新项目</option><option value="price">批量调整单价</option><option value="leave">批量更新状态为「离职」</option><option value="settle">批量更新结算方式</option><option value="export">导出员工信息</option></select></div>
+<div id="rosterBatchFields" style="margin-top:12px"></div>
 <div class="fg" style="margin-top:12px"><label>渠道来源（选填）</label><select style="width:100%;padding:8px 12px;border:1px solid var(--border2);border-radius:var(--radius);font-size:14px"><option value="">不修改</option><option>刘洋(LT0001)</option><option>杨光(LT0003)</option><option>陈芳(LT0005)</option></select></div>
 <div class="fg" style="margin-top:12px"><label>备注说明</label><textarea rows="2" placeholder="请输入操作原因（选填）" style="width:100%;padding:8px 12px;border:1px solid var(--border2);border-radius:var(--radius);font-size:14px;resize:vertical"></textarea></div>
-<div class="ib ib-y" style="margin-top:8px;font-size:12px">💡 批量操作将应用于表格中勾选的所有员工，请谨慎确认后提交。</div>
+<div class="ib ib-y" style="margin-top:8px;font-size:12px">批量操作将应用于表格中勾选的所有员工；选择不同操作后，下方字段会同步切换。</div>
 </div>
 <div class="ml-f"><button class="btn" onclick="hm('rosterBatchModal')">取消</button><button class="btn btn-p" onclick="hm('rosterBatchModal');alert('批量操作已完成')">确认操作</button></div>
 </div></div>
@@ -2675,8 +2543,22 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 var _lastPage='roster';
 function login(){document.getElementById('loginPage').style.display='none';document.getElementById('app').classList.add('show')}
 function goDistCommChannel(){showPage('distCommChannel');setMi('dist')}
-function goDistCommPosition(){showPage('distCommPosition');setMi('dist')}
 function goBackDistRule(){showPage('dist');setMi('dist');var t=document.querySelector('#p-dist .tabs .tab:nth-child(2)');if(t)t.click()}
+
+function changeRosterBatchAction(){
+  var sel=document.getElementById('rosterBatchAction');
+  var box=document.getElementById('rosterBatchFields');
+  if(!sel||!box)return;
+  var css='width:100%;padding:8px 12px;border:1px solid var(--border2);border-radius:var(--radius);font-size:14px';
+  var map={
+    project:'<div class="fg"><label>目标项目</label><select style="'+css+'"><option>电子普工</option><option>质检员</option><option>高级技工</option><option>仓管员</option></select></div><div class="fg" style="margin-top:12px"><label>目标岗位</label><select style="'+css+'"><option>电子组装工</option><option>QC质检员</option><option>高级焊工</option><option>仓库管理员</option></select></div>',
+    price:'<div class="fg"><label>员工单价</label><input style="'+css+'" placeholder="如：22 元/时"></div><div class="fg" style="margin-top:12px"><label>生效日期</label><input type="date" style="'+css+'"></div>',
+    leave:'<div class="fg"><label>离职日期</label><input type="date" style="'+css+'"></div><div class="fg" style="margin-top:12px"><label>离职原因</label><select style="'+css+'"><option>个人原因</option><option>项目结束</option><option>旷工离职</option><option>其他</option></select></div>',
+    settle:'<div class="fg"><label>结算方式</label><select style="'+css+'"><option>按月</option><option>按日</option><option>按小时</option><option>一次性</option></select></div>',
+    export:'<div class="fg"><label>导出范围</label><select style="'+css+'"><option>仅导出已选员工</option><option>导出已选员工及在职信息</option><option>导出已选员工完整档案</option></select></div>'
+  };
+  box.innerHTML=map[sel.value]||'';
+}
 var names={dashboard:'数据看板',resume:'简历库',resumeDetail:'简历详情',resumeAdd:'新增简历',interview:'面试审核',onboard:'入职审核',roster:'花名册',empDetail:'花名册 / 员工详情',addEmployee:'花名册 / 新增员工',project:'项目管理',projectDetail:'项目管理 / 项目详情',projectEdit:'项目管理 / 编辑项目',position:'岗位管理',positionDetail:'岗位管理 / 岗位详情',positionAdd:'岗位管理 / 新增岗位',settle:'结算中心',settleCreate:'结算中心 / 新建结算',settleApproval:'结算中心 / 结算审批',settlePaySlip:'结算中心 / 工资条详情',dist:'分销裂变',distDetail:'分销裂变 / 渠道商详情',distCommChannel:'分销裂变 / 按渠道商配置佣金',role:'角色权限',roleAdd:'角色权限 / 新增角色',roleEdit:'角色权限 / 修改角色权限',dict:'字典管理',config:'系统设置',account:'账号设置',accountAdd:'账号设置 / 新增账号',salary:'系统设置 / 工资计算规则',watermark:'系统设置 / 简历水印',agreement:'系统设置 / 协议管理',formfields:'系统设置 / 字段管理',customer:'客户管理',customerDetail:'客户管理 / 客户详情',customerEdit:'客户管理 / 编辑客户',userList:'用户列表',entryCode:'入职码'}
 function sw(el){var p=el.dataset.p;document.querySelectorAll('.mi').forEach(m=>m.classList.remove('active'));el.classList.add('active');showPage(p)}
 function showPage(p){document.querySelectorAll('.pg').forEach(function(g){g.classList.remove('show')});var el=document.getElementById('p-'+p);if(!el){console.warn('Page not found: '+p);return}el.classList.add('show');var pn=document.getElementById('pn');if(pn)pn.textContent=names[p]||p}
@@ -2693,8 +2575,8 @@ function goEmpDetail(){var current=document.querySelector('.pg.show');if(current
 function goProjectEdit(){document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-projectEdit').classList.add('show');document.getElementById('pn').textContent='项目管理 / 编辑项目';document.querySelector('[data-p=project]').classList.add('active')}
 function goProjectDetail(){document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-projectDetail').classList.add('show');document.getElementById('pn').textContent='项目管理 / 项目详情';document.querySelector('[data-p=project]').classList.add('active')}
 function goSettleApproval(){document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-settleApproval').classList.add('show');document.getElementById('pn').textContent='结算中心 / 结算审批';document.querySelector('[data-p=settle]').classList.add('active')}
-function goPositionAdd(){var t=document.getElementById('positionAddTitle');if(t)t.textContent='新增岗位';var n=document.getElementById('posName');if(n)n.value='';var sal=document.getElementById('posSalary');if(sal){sal.value='';sal.disabled=false}var st=document.getElementById('posSalaryType');if(st)st.value='month';var pn=document.getElementById('posPriceN');if(pn)pn.value='';var po=document.getElementById('posPriceOt');if(po)po.value='';var pc=document.getElementById('posCount');if(pc)pc.value='';showPage('positionAdd');setMi('position')}
-function goPositionEdit(){var t=document.getElementById('positionAddTitle');if(t)t.textContent='编辑岗位 - 电子组装工';var n=document.getElementById('posName');if(n)n.value='电子组装工';var sal=document.getElementById('posSalary');if(sal){sal.value='5000-7000';sal.disabled=false}var st=document.getElementById('posSalaryType');if(st)st.value='month';var pn=document.getElementById('posPriceN');if(pn)pn.value='40';var po=document.getElementById('posPriceOt');if(po)po.value='60';var pc=document.getElementById('posCount');if(pc)pc.value='50';showPage('positionAdd');setMi('position')}
+function goPositionAdd(){var t=document.getElementById('positionAddTitle');if(t)t.textContent='新增岗位';var n=document.getElementById('posName');if(n)n.value='';var mn=document.getElementById('posSalMin');if(mn)mn.value='';var mx=document.getElementById('posSalMax');if(mx)mx.value='';var pn=document.getElementById('posPriceN');if(pn)pn.value='';var po=document.getElementById('posPriceOt');if(po)po.value='';var pc=document.getElementById('posCount');if(pc)pc.value='';showPage('positionAdd');setMi('position')}
+function goPositionEdit(){var t=document.getElementById('positionAddTitle');if(t)t.textContent='编辑岗位 - 电子组装工';var n=document.getElementById('posName');if(n)n.value='电子组装工';var mn=document.getElementById('posSalMin');if(mn)mn.value='5000';var mx=document.getElementById('posSalMax');if(mx)mx.value='7000';var pn=document.getElementById('posPriceN');if(pn)pn.value='40';var po=document.getElementById('posPriceOt');if(po)po.value='60';var pc=document.getElementById('posCount');if(pc)pc.value='50';showPage('positionAdd');setMi('position')}
 function goDistDetail(){document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-distDetail').classList.add('show');document.getElementById('pn').textContent='分销裂变 / 渠道商详情';document.querySelector('[data-p=dist]').classList.add('active')}
 function goPositionDetail(){document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-positionDetail').classList.add('show');document.getElementById('pn').textContent='岗位管理 / 岗位详情';document.querySelector('[data-p=position]').classList.add('active')}
 function goRoleAdd(){document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-roleAdd').classList.add('show');document.getElementById('pn').textContent='角色权限 / 新增角色';document.querySelector('[data-p=role]').classList.add('active')}
@@ -2761,21 +2643,9 @@ if(el)el.textContent=formula||'\u8bf7\u6dfb\u52a0\u516c\u5f0f\u6bb5';
 
 
 
-// Salary template editing
-function editSalaryTpl(idx){
-  var names=['标准工资计算','日结工资计算','高级技工工资'];
-  var descs=['适用于标准用工，含加班费','适用于日结/临时工种，不含加班','适用于高级技工，含绩效系数'];
-  document.getElementById('tplName').value=names[idx]||'';
-  document.getElementById('tplDesc').value=descs[idx]||'';
-  document.getElementById('salaryTplTitle').textContent='编辑工资计算规则模板';
-  sm('salaryTplModal');
-}
-// Override save template button
+// Salary fee item modal is initialized by openSalaryFeeModal/changeFeeSetMode.
 document.addEventListener('DOMContentLoaded',function(){
-  var btns=document.querySelectorAll('#salaryTplModal .ml-f .btn-p');
-  btns.forEach(function(b){b.onclick=function(){hm('salaryTplModal');alert('工资计算规则模板已保存')}});
-  var addBtn=document.querySelector('#cfg-salaryrule .cd-h .btn-p');
-  if(addBtn){addBtn.onclick=function(){document.getElementById('tplName').value='';document.getElementById('tplDesc').value='';document.getElementById('salaryTplTitle').textContent='新增工资计算规则模板';sm('salaryTplModal')}}
+  try{changeFeeSetMode()}catch(e){}
 });
 
 // Customer / UserList navigation + entry-code cascade
@@ -2818,26 +2688,34 @@ document.addEventListener('DOMContentLoaded',function(){
   document.querySelectorAll('table tbody input[type="checkbox"]').forEach(function(cb){cb.addEventListener('change',function(){var tr=this.closest('tr');if(tr)tr.style.background=this.checked?'var(--brand-light)':''})});
 });
 
-var contractReturnTarget='customer';
-function openAddContract(target){contractReturnTarget=target||'customer';hm(contractReturnTarget==='newCustomer'?'addCustomerModal':'customerContractModal');['contractNameInput','contractNoInput','contractStartInput','contractEndInput'].forEach(function(id){var el=document.getElementById(id);if(el)el.value=''});sm('addContractModal')}
-function restoreContractParent(){if(contractReturnTarget==='newCustomer')sm('addCustomerModal');else sm('customerContractModal')}
-function cancelAddContract(){hm('addContractModal');restoreContractParent()}
-function contractRowHtml(name,no,start,end,withActions){return '<tr><td>'+name+'</td><td>'+no+'</td><td>'+start+'</td><td>'+end+'</td><td><span class="tg tg-g">启用</span></td>'+(withActions?'<td><button class="btn-link" onclick="alert(\'合同详情查看功能已触发\')">查看</button><button class="btn-link" onclick="toggleContract(this)">停用</button></td>':'')+'</tr>'}
-function appendContract(id,html){var b=document.getElementById(id);if(!b)return;var e=b.querySelector('.contract-empty');if(e)e.remove();b.insertAdjacentHTML('beforeend',html)}
-function saveContract(){var n=document.getElementById('contractNameInput').value.trim(),no=document.getElementById('contractNoInput').value.trim(),st=document.getElementById('contractStartInput').value,en=document.getElementById('contractEndInput').value;if(!n||!no||!st||!en){alert('请完整填写合同名称、编号和有效日期');return}if(en<st){alert('合同结束日期不能早于开始日期');return}if(contractReturnTarget==='newCustomer')appendContract('newCustomerContractList',contractRowHtml(n,no,st,en,false));else{appendContract('customerContractList',contractRowHtml(n,no,st,en,true));appendContract('customerDetailContractList',contractRowHtml(n,no,st,en,true))}hm('addContractModal');restoreContractParent();alert('合同已新增，可在合同管理列表中继续维护')}
-function toggleContract(btn){var r=btn.closest('tr'),t=r.querySelector('.tg'),x=btn.textContent.trim()==='停用';t.textContent=x?'已停用':'启用';t.className='tg '+(x?'tg-y':'tg-g');btn.textContent=x?'启用':'停用'}
+try{changeRosterBatchAction()}catch(e){}
 
-function togglePositionSalary(sel){var i=document.getElementById('posSalary');if(!i)return;var n=sel.value==='negotiable';i.disabled=n;i.value=n?'面议':'';i.placeholder=sel.value==='day'?'如：260-320':'如：6000-8000'}
-function saveEmploymentUnit(){var n=document.getElementById('employmentUnitName').value.trim(),a=document.getElementById('employmentUnitAddress').value.trim(),i=document.getElementById('employmentUnitIntro').value.trim();if(!n||!a){alert('请填写单位名称和工作地址');return}var s=document.getElementById('employmentUnitSelect'),e=Array.prototype.some.call(s.options,function(o){return o.text===n});if(!e){var o=new Option(n,n,true,true);o.dataset.address=a;o.dataset.intro=i;s.add(o)}else s.value=n;hm('addEmploymentUnitModal');alert('用工单位已保存，并加入可复用名单');document.getElementById('employmentUnitName').value='';document.getElementById('employmentUnitAddress').value='';document.getElementById('employmentUnitIntro').value=''}
-
-function changeRosterBatchAction(sel){
- var box=document.getElementById('rosterBatchFields'),map={
- project:'<div class="fg"><label>目标项目 *</label><select><option>请选择项目</option><option>电子普工</option><option>质检员</option><option>高级技工</option></select></div>',
- price:'<div class="fr"><div class="fg"><label>正常单价 *</label><input placeholder="元/时"></div><div class="fg"><label>加班单价</label><input placeholder="元/时"></div></div>',
- resign:'<div class="fr"><div class="fg"><label>离职日期 *</label><input type="date"></div><div class="fg"><label>离职原因 *</label><select><option>个人原因</option><option>合同到期</option><option>公司原因</option><option>其他</option></select></div></div>',
- settle:'<div class="fg"><label>目标结算方式 *</label><select><option>按月结算</option><option>按日结算</option><option>按周结算</option><option>一次性结算</option></select></div>',
- export:'<div class="ib ib-b">确认后将导出当前勾选员工的信息，无需填写其他内容。</div>'
- };box.innerHTML=map[sel.value]||''
+function openSalaryFeeModal(mode,name,code,setMode){
+  var title=document.getElementById('salaryTplTitle');
+  if(title)title.textContent=(mode==='edit'?'编辑费用项':'新增费用项');
+  var n=document.getElementById('tplName'); if(n)n.value=name||'';
+  var c=document.getElementById('tplCode'); if(c)c.value=code||'';
+  var m=document.getElementById('feeSetMode'); if(m)m.value=setMode||'manual';
+  changeFeeSetMode();
+  sm('salaryTplModal');
+}
+function editSalaryTpl(idx){
+  var names=['基本工资','绩效奖励','个人所得税'];
+  var codes=['BASE_WAGE','PERFORMANCE','TAX'];
+  var modes=['calc','manual','read'];
+  openSalaryFeeModal('edit',names[idx]||'',codes[idx]||'',modes[idx]||'manual');
+}
+function changeFeeSetMode(){
+  var mode=document.getElementById('feeSetMode');
+  var box=document.getElementById('feeModePanel');
+  if(!mode||!box)return;
+  if(mode.value==='manual'){
+    box.innerHTML='<div class="ib ib-b" style="padding:10px 12px">直接填写：结算时由财务人员录入金额，可用于绩效奖励、质量扣款、社保个人部分等需要人工确认的费用项。</div>';
+  }else if(mode.value==='read'){
+    box.innerHTML='<div class="ib ib-b" style="padding:12px"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px"><b>系统读数来源</b><span style="font-size:12px;color:var(--text3)">结算核算时自动获取，无需手工填写</span></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:10px"><label style="border:1px solid var(--border);border-radius:6px;padding:12px;display:block"><input type="radio" name="readSrc"> 未核销售支金额<div style="font-size:12px;color:var(--text3);margin-top:4px">读取该员工已审批、尚未通过工资完成抵扣的借支余额。</div><div class="tg tg-y" style="margin-top:6px">结算时自动带入，只读</div></label><label style="border:1px solid var(--border);border-radius:6px;padding:12px;display:block"><input type="radio" name="readSrc"> 本次个税金额<div style="font-size:12px;color:var(--text3);margin-top:4px">读取系统根据应税收入及固定个税公式计算出的本次应扣税额。</div><div class="tg tg-y" style="margin-top:6px">随应税金额自动重算，只读</div></label></div><div class="ib ib-o" style="margin-top:10px;font-size:12px">系统读数不可直接修改。如来源数据发生变化，应更新借支记录或重新执行个税计算，系统会同步刷新本次结算金额。</div></div>';
+  }else{
+    box.innerHTML='<div class="ib ib-b" style="padding:12px"><div style="display:flex;gap:8px;margin-bottom:12px"><button class="btn btn-p btn-sm">运算公式</button><button class="btn btn-sm">条件公式</button></div><div style="border:1px solid var(--border);border-radius:8px;padding:12px;background:#fff"><b>运算公式</b><div style="font-size:12px;color:var(--text3);margin:8px 0 12px">选择推荐公式，或依次设置起始因子、运算符和运算项。</div><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px"><div class="ib ib-b" style="margin:0;padding:10px"><b>基本工资</b><br><span style="font-size:12px;color:var(--text3)">岗位单价 × 工时</span></div><div class="ib ib-b" style="margin:0;padding:10px"><b>日薪</b><br><span style="font-size:12px;color:var(--text3)">岗位单价 × 计薪天数</span></div><div class="ib ib-b" style="margin:0;padding:10px"><b>月薪</b><br><span style="font-size:12px;color:var(--text3)">岗位单价 × 计薪月数</span></div></div><div class="fr"><div class="fg"><label>起始因子</label><select><option>岗位单价</option><option>工时</option><option>计薪天数</option><option>计薪月数</option><option>费用_基本工资</option><option>费用_绩效奖励</option><option>费用_质量扣款</option></select></div></div><div class="fr"><div class="fg"><label>运算符</label><select><option>×</option><option>+</option><option>-</option><option>÷</option></select></div></div><div class="fr"><div class="fg"><label>运算项 1</label><select><option>运算因子</option><option>系数</option></select></div><div class="fg"><label>&nbsp;</label><select><option>工时</option><option>计薪天数</option><option>计薪月数</option><option>费用_个人所得税</option></select></div></div><button class="btn btn-sm" style="border-style:dashed;color:var(--brand)">+ 增加运算项</button><div class="ib ib-g" style="margin-top:12px"><div style="font-size:12px">公式校验通过</div><b>岗位单价 × 工时</b><br><b>示例结果：¥4,400.00</b></div></div></div>';
+  }
 }
 </script>
 
@@ -2920,23 +2798,22 @@ function changeRosterBatchAction(sel){
 <!-- 1. 基本信息 -->
 <div class="rp-card">
 <div class="rp-card-title"><span style="display:inline-block;width:18px;height:18px;border-radius:50%;background:var(--brand);color:#fff;text-align:center;line-height:18px;font-size:11px;margin-right:6px">1</span>基本信息</div>
-<div class="fr"><div class="fg"><label>岗位标题名称 *</label><input id="posName" placeholder="如：电子组装工"></div><div class="fg"><label>岗位图片</label><div class="uz" style="padding:10px;text-align:center;cursor:pointer">点击上传岗位封面图<br><span style="font-size:11px;color:var(--text3)">建议比例 16:9，支持 JPG/PNG</span></div></div><div class="fg"><label>关联项目 *</label><select><option>请选择</option><option>电子普工</option><option>质检员</option><option>高级技工</option><option>仓管员</option></select></div></div>
+<div class="fr"><div class="fg"><label>岗位标题名称 *</label><input id="posName" placeholder="如：电子组装工"></div><div class="fg"><label>关联项目 *</label><select><option>请选择</option><option>电子普工</option><option>质检员</option><option>高级技工</option><option>仓管员</option></select></div></div>
 <div class="fr" style="margin-top:10px"><div class="fg"><label>用工类型</label><select><option>长期工</option><option>短期工</option><option>小时工</option><option>日结</option><option>承包</option></select></div><div class="fg"><label>是否急招</label><select><option>否</option><option>是</option></select></div><div class="fg"><label>岗位状态</label><select><option selected>草稿</option><option>立即发布</option></select></div></div>
+<div class="fr" style="margin-top:10px"><div class="fg"><label>岗位图片</label><div class="uz" style="padding:14px 16px"><p>点击上传岗位图片</p><p style="font-size:12px;color:var(--text3)">用于小程序岗位详情轮播，支持 JPG/PNG，建议 16:9</p></div></div></div>
 </div>
-
-<div class="rp-card"><div class="rp-card-title">用工单位</div><div class="fr"><div class="fg"><label>选择用工单位 *</label><select id="employmentUnitSelect"><option value="">请选择</option><option>比亚迪电子</option><option>广汽乘用车</option><option>美的集团</option><option>TCL科技</option></select></div><div class="fg" style="justify-content:flex-end"><label>&nbsp;</label><button class="btn btn-p" type="button" onclick="sm('addEmploymentUnitModal')">+ 新增用工单位</button></div></div><div class="ib ib-b" style="margin-top:10px">名单汇总自客户管理；新增单位保存后可在后续岗位中直接选择复用。</div></div>
 
 <!-- 2. 薪资与结算 -->
 <div class="rp-card">
 <div class="rp-card-title"><span style="display:inline-block;width:18px;height:18px;border-radius:50%;background:var(--brand);color:#fff;text-align:center;line-height:18px;font-size:11px;margin-right:6px">2</span>薪资与结算 <span style="font-weight:400;font-size:11px;color:var(--text3);margin-left:8px">结算单价将带入入职审核与电子合同</span></div>
-<div class="fr"><div class="fg"><label>薪资 *</label><input id="posSalary" placeholder="如：6000-8000"></div><div class="fg"><label>薪资类型</label><select id="posSalaryType" onchange="togglePositionSalary(this)"><option value="month" selected>月薪（元/月）</option><option value="day">日薪（元/天）</option><option value="negotiable">面议</option></select></div></div>
-<div class="fr" style="margin-top:10px"><div class="fg"><label>结算方式</label><select><option selected>按月结算</option><option>按周结算</option><option>按日结算</option><option>完工一次性结算</option><option>按件计薪</option></select></div><div class="fg"><label>正常单价(元) *</label><input id="posPriceN" placeholder="如：40（时薪）"><div style="font-size:11px;color:var(--text3);margin-top:2px">将写入电子合同劳动报酬条款</div></div><div class="fg"><label>加班单价(元)</label><input id="posPriceOt" placeholder="如：60（时薪）"></div></div>
+<div class="fr"><div class="fg"><label>薪资 *</label><input id="posSalary" placeholder="如：5000-7000 / 260元/天 / 面议"></div><div class="fg"><label>薪资类型</label><select><option selected>月薪</option><option>日薪</option><option>面议</option></select></div></div>
+<div class="fr" style="margin-top:10px"><div class="fg"><label>结算方式</label><select><option selected>按月结算</option><option>按周结算</option><option>按日结算</option><option>完工一次性结算</option><option>按件计薪</option></select></div><div class="fg"><label>正常单价(元) *</label><input id="posPriceN" placeholder="如：40（时薪）"><div style="font-size:11px;color:var(--text3);margin-top:2px">将写入电子合同劳动报酬条款</div></div><div class="fg"><label>加班单价(元)</label><input id="posPriceOt" placeholder="如：60（时薪）"><div style="font-size:11px;color:var(--text3);margin-top:2px">未填则按正常单价 1.5 倍计</div></div></div>
 </div>
 
 <!-- 3. 任职资格要求 -->
 <div class="rp-card">
 <div class="rp-card-title"><span style="display:inline-block;width:18px;height:18px;border-radius:50%;background:var(--brand);color:#fff;text-align:center;line-height:18px;font-size:11px;margin-right:6px">3</span>任职资格要求</div>
-<div class="fr"><div class="fg"><label>性别要求</label><select><option selected>不限</option><option>男</option><option>女</option></select></div><div class="fg"><label>年龄要求</label><input list="positionAgeOptions" placeholder="自由填写，如：18-55岁；不限可直接选择"><datalist id="positionAgeOptions"><option value="不限"></option></datalist></div><div class="fg"><label>学历要求</label><select><option selected>不限</option><option>初中及以下</option><option>高中/中专</option><option>大专</option><option>本科及以上</option></select></div></div>
+<div class="fr"><div class="fg"><label>性别要求</label><select><option selected>不限</option><option>男</option><option>女</option></select></div><div class="fg"><label>年龄要求</label><input placeholder="不限 / 18-55岁 / 45岁以下"></div><div class="fg"><label>学历要求</label><select><option selected>不限</option><option>初中及以下</option><option>高中/中专</option><option>大专</option><option>本科及以上</option></select></div></div>
 <div class="fr" style="margin-top:10px"><div class="fg"><label>工作经验</label><select><option selected>不限</option><option>无经验可带薪培训</option><option>1年以下</option><option>1-3年</option><option>3-5年</option><option>5年以上</option></select></div><div class="fg"><label>技能证书要求</label><input placeholder="如：电工证、叉车证、焊工证（多选）"></div></div>
 </div>
 
@@ -2966,8 +2843,7 @@ function changeRosterBatchAction(sel){
 <!-- 7. 发布设置 -->
 <div class="rp-card">
 <div class="rp-card-title"><span style="display:inline-block;width:18px;height:18px;border-radius:50%;background:var(--brand);color:#fff;text-align:center;line-height:18px;font-size:11px;margin-right:6px">7</span>发布设置</div>
-<div class="fr"><div class="fg"><label>岗位有效期至</label><input type="date" value="2026-12-31"></div><div class="fg"><label>所属组织架构</label><select><option>广州澜特总部 - 招聘中心</option><option>广州澜特总部 - 结算中心</option><option>广州澜特总部 - 运营中心</option></select></div></div>
-<div class="fr" style="margin-top:10px"><div class="fg"><label>数据权限范围</label><select><option selected>全部（全平台可见）</option><option>本部门（仅本组织可见）</option><option>指定项目（仅授权项目可见）</option><option>本人（仅创建者可见）</option></select></div><div class="fg"><label>联系人</label><input placeholder="招聘负责人姓名"></div><div class="fg"><label>联系电话</label><input placeholder="用于求职者咨询"></div></div>
+<div class="fr"><div class="fg"><label>岗位有效期至</label><input type="date" value="2026-12-31"></div><div class="fg"><label>联系人</label><input placeholder="招聘负责人姓名"></div><div class="fg"><label>联系电话</label><input placeholder="用于求职者咨询"></div></div>
 <div class="fg" style="margin-top:10px"><label style="display:flex;align-items:center;gap:8px;cursor:pointer"><input type="checkbox" checked> 上架到求职端（员工小程序可见）</label></div>
 <div class="fg" style="margin-top:8px"><label style="display:flex;align-items:center;gap:8px;cursor:pointer"><input type="checkbox"> 开启分销推广（渠道商可推广此岗位）</label></div>
 </div>
@@ -3030,11 +2906,11 @@ function changeRosterBatchAction(sel){
 <div style="font-size:13px;line-height:1.8;color:var(--text2);padding:8px 0">客户结算基准单价：<b>45 元/时</b>。各岗位实际结算单价以「岗位管理」中配置为准，差额部分为客户服务费。</div>
 </div>
 <div class="rp-card">
-<div class="rp-card-title">合同管理 <button class="btn btn-sm btn-p" onclick="openAddContract('customer')">+ 新增合同</button> <button class="btn btn-sm" onclick="sm('customerContractModal')">管理合同</button></div>
+<div class="rp-card-title">合同管理 <button class="btn btn-sm btn-p" onclick="sm('customerContractModal')">+ 新增合同</button></div>
 <div class="ib ib-b" style="margin-bottom:8px">一个客户可关联多份合同，每份合同独立管理，支持启用/停用。</div>
 <div class="tw"><table>
 <thead><tr><th>合同名称</th><th>合同编号</th><th>开始日期</th><th>结束日期</th><th>状态</th><th>操作</th></tr></thead>
-<tbody id="customerDetailContractList">
+<tbody>
 <tr><td>比亚迪电子劳务外包合同</td><td>HT-CUS-001</td><td>2026-01-01</td><td>2026-12-31</td><td><span class="tg tg-g">启用</span></td><td><button class="btn-link">查看</button><button class="btn-link">停用</button></td></tr>
 <tr><td>比亚迪电子补充协议</td><td>HT-CUS-002</td><td>2026-03-01</td><td>2026-09-30</td><td><span class="tg tg-y">已停用</span></td><td><button class="btn-link">查看</button><button class="btn-link">启用</button></td></tr>
 </tbody></table></div>
@@ -3050,11 +2926,11 @@ function changeRosterBatchAction(sel){
 </div>
 <div class="rp-card">
 <div class="rp-card-title">客户基本信息</div>
-<div class="rp-fields" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;overflow:visible">
-<div class="rp-field" style="min-width:0"><span class="lbl">客户名称 *</span><input value="比亚迪电子"></div>
-<div class="rp-field" style="min-width:0"><span class="lbl">签单价(元/时) *</span><input value="45"></div>
-<div class="rp-field" style="min-width:0"><span class="lbl">联系人</span><input value="王经理"></div>
-<div class="rp-field" style="min-width:0"><span class="lbl">联系电话</span><input value="13800001200"></div>
+<div class="rp-fields">
+<div class="rp-field"><span class="lbl">客户名称 *</span><input value="比亚迪电子"></div>
+<div class="rp-field"><span class="lbl">签单价(元/时) *</span><input value="45"></div>
+<div class="rp-field"><span class="lbl">联系人</span><input value="王经理"></div>
+<div class="rp-field"><span class="lbl">联系电话</span><input value="13800001200"></div>
 <div class="rp-field"><span class="lbl">状态</span><select><option selected>合作中</option><option>已暂停</option></select></div>
 </div>
 <div class="rp-field" style="margin-top:8px"><span class="lbl">关联项目</span><select><option selected>电子普工</option><option>质检员</option><option>高级技工</option><option>仓管员</option></select></div>
@@ -3082,7 +2958,7 @@ function changeRosterBatchAction(sel){
 </div>
 
 <!-- ===== ADD CUSTOMER MODAL ===== -->
-<div class="mo" id="addCustomerModal"><div class="ml" style="width:680px;max-width:calc(100vw - 40px);max-height:calc(100vh - 40px);overflow-y:auto;overflow-x:hidden">
+<div class="mo" id="addCustomerModal"><div class="ml" style="width:640px">
 <div class="ml-t">新增客户</div>
 <div class="rp-card" style="border:none;padding:0;margin:0">
 <div class="rp-fields">
@@ -3095,11 +2971,11 @@ function changeRosterBatchAction(sel){
 </div>
 </div>
 <div class="rp-card" style="border:none;padding:0;margin:0">
-<div class="rp-card-title">合同管理 <button class="btn btn-sm btn-p" onclick="openAddContract('newCustomer')">+ 新增合同</button></div>
+<div class="rp-card-title">合同管理 <button class="btn btn-sm btn-p" onclick="sm('customerContractModal')">+ 新增合同</button></div>
 <div class="ib ib-b" style="margin-bottom:8px">录入客户基础信息后，可继续维护客户合同。</div>
 <div class="tw"><table>
 <thead><tr><th>合同名称</th><th>合同编号</th><th>开始日期</th><th>结束日期</th><th>状态</th></tr></thead>
-<tbody id="newCustomerContractList"><tr class="contract-empty"><td colspan="5" style="text-align:center;color:var(--text3);font-size:12px">暂无合同，点击「+ 新增合同」添加</td></tr></tbody></table></div>
+<tbody><tr><td colspan="5" style="text-align:center;color:var(--text3);font-size:12px">暂无合同，点击「+ 新增合同」添加</td></tr></tbody></table></div>
 </div>
 <div class="ml-f"><button class="btn" onclick="hm('addCustomerModal')">取消</button><button class="btn btn-p" onclick="hm('addCustomerModal')">确认新增</button></div>
 </div></div>
@@ -3111,24 +2987,13 @@ function changeRosterBatchAction(sel){
 <div style="display:flex;justify-content:flex-end;margin-bottom:8px"><button class="btn btn-sm btn-p" onclick="sm('addContractModal')">+ 新增合同</button></div>
 <div class="tw"><table>
 <thead><tr><th>合同名称</th><th>合同编号</th><th>开始日期</th><th>结束日期</th><th>状态</th><th>操作</th></tr></thead>
-<tbody id="customerContractList">
-<tr><td>比亚迪电子劳务外包合同</td><td>HT-CUS-001</td><td>2026-01-01</td><td>2026-12-31</td><td><span class="tg tg-g">启用</span></td><td><button class="btn-link" onclick="alert('合同详情查看功能已触发')">查看</button><button class="btn-link" onclick="toggleContract(this)">停用</button></td></tr>
-<tr><td>比亚迪电子补充协议</td><td>HT-CUS-002</td><td>2026-03-01</td><td>2026-09-30</td><td><span class="tg tg-y">已停用</span></td><td><button class="btn-link" onclick="alert('合同详情查看功能已触发')">查看</button><button class="btn-link" onclick="toggleContract(this)">启用</button></td></tr>
+<tbody>
+<tr><td>比亚迪电子劳务外包合同</td><td>HT-CUS-001</td><td>2026-01-01</td><td>2026-12-31</td><td><span class="tg tg-g">启用</span></td><td><button class="btn-link">查看</button><button class="btn-link">停用</button></td></tr>
+<tr><td>比亚迪电子补充协议</td><td>HT-CUS-002</td><td>2026-03-01</td><td>2026-09-30</td><td><span class="tg tg-y">已停用</span></td><td><button class="btn-link">查看</button><button class="btn-link">启用</button></td></tr>
 </tbody></table></div>
 </div>
 <div class="ml-f"><button class="btn" onclick="hm('customerContractModal')">关闭</button></div>
 </div></div>
-
-<!-- ===== ADD DISTRIBUTOR LEVEL MODAL ===== -->
-<div class="mo" id="addDistLevelModal"><div class="ml" style="width:520px">
-<div class="ml-t">新增渠道商等级</div><div style="padding:16px 20px">
-<div class="fr"><div class="fg"><label>等级名称 *</label><input placeholder="如：D级"></div><div class="fg"><label>基础佣金倍率 *</label><input placeholder="如：0.8"></div></div>
-<div class="fr" style="margin-top:12px"><div class="fg"><label>优先佣金方式</label><select><option>在职天数/满岗条件</option><option>固定金额</option></select></div><div class="fg"><label>结算周期</label><select><option>按月</option><option>一次性</option></select></div></div>
-<div class="fg" style="margin-top:12px"><label>等级说明</label><textarea rows="3" placeholder="请输入适用条件或等级说明"></textarea></div>
-<div class="fg" style="margin-top:12px"><label>状态</label><select><option>启用</option><option>停用</option></select></div>
-</div><div class="ml-f"><button class="btn" onclick="hm('addDistLevelModal')">取消</button><button class="btn btn-p" onclick="hm('addDistLevelModal');alert('渠道商等级已新增')">确认新增</button></div></div></div>
-
-<!-- ===== ADD EMPLOYMENT UNIT MODAL ===== --><div class="mo" id="addEmploymentUnitModal"><div class="ml" style="width:560px;max-width:calc(100vw - 40px)"><div class="ml-t">新增用工单位</div><div style="padding:16px 20px"><div class="fg"><label>单位名称 *</label><input id="employmentUnitName" placeholder="请输入单位名称"></div><div class="fg" style="margin-top:12px"><label>工作地址 *</label><input id="employmentUnitAddress" placeholder="请输入详细工作地址"></div><div class="fg" style="margin-top:12px"><label>单位介绍</label><textarea id="employmentUnitIntro" rows="4" placeholder="请输入单位业务、工作环境及配套说明"></textarea></div></div><div class="ml-f"><button class="btn" onclick="hm('addEmploymentUnitModal')">取消</button><button class="btn btn-p" onclick="saveEmploymentUnit()">保存并选用</button></div></div></div>
 
 <!-- ===== ADD USER MODAL ===== -->
 <div class="mo" id="addUserModal"><div class="ml" style="width:520px">
