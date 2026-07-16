@@ -553,10 +553,10 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 <div class="tc" id="interview-confirm">
 <div class="cd-h"><div class="cd-t">待确认面试</div><div class="cd-desc" style="font-size:12px;color:var(--text3)">面试邀约已发送，等待候选人确认面试时间</div></div>
 <div class="tw"><table>
-<thead><tr><th style="width:36px"><input type="checkbox" onclick="toggleAll(this)"></th><th>候选人</th><th>岗位</th><th>邀约面试时间</th><th>邀约渠道</th><th>发送时间</th><th>等待时长</th><th>操作</th></tr></thead>
+<thead><tr><th style="width:36px"><input type="checkbox" onclick="toggleAll(this)"></th><th>候选人</th><th>岗位</th><th>邀约面试时间</th><th>通知方式</th><th>发送时间</th><th>等待时长</th><th>操作</th></tr></thead>
 <tbody>
-<tr><td><input type="checkbox"></td><td>李娜</td><td>电子组装工</td><td>2026-07-15 09:00</td><td>电话邀约</td><td>2026-07-10</td><td>2天</td><td><button class="btn-link" onclick="alert('已重新发送面试确认提醒')">催促确认</button><button class="btn-link" onclick="hm('interviewModal');alert('面试邀约已取消')">取消邀约</button></td></tr>
-<tr><td><input type="checkbox"></td><td>张伟</td><td>QC质检员</td><td>2026-07-16 14:00</td><td>微信通知</td><td>2026-07-09</td><td>3天</td><td><button class="btn-link" onclick="alert('已重新发送面试确认提醒')">催促确认</button><button class="btn-link" onclick="hm('interviewModal');alert('面试邀约已取消')">取消邀约</button></td></tr>
+<tr><td><input type="checkbox"></td><td>李娜</td><td>电子组装工</td><td>2026-07-15 09:00</td><td>微信服务通知</td><td>2026-07-10</td><td>2天</td><td><button class="btn-link" onclick="alert('已重新发送面试确认提醒')">催促确认</button><button class="btn-link" onclick="hm('interviewModal');alert('面试邀约已取消')">取消邀约</button></td></tr>
+<tr><td><input type="checkbox"></td><td>张伟</td><td>QC质检员</td><td>2026-07-16 14:00</td><td>微信服务通知</td><td>2026-07-09</td><td>3天</td><td><button class="btn-link" onclick="alert('已重新发送面试确认提醒')">催促确认</button><button class="btn-link" onclick="hm('interviewModal');alert('面试邀约已取消')">取消邀约</button></td></tr>
 </tbody></table></div>
 </div>
 
@@ -838,8 +838,8 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 <div class="pt">入职码</div>
 <div class="cd">
 <div class="cd-t">员工入职码生成</div>
-<div class="fr"><div class="fg"><label>关联客户</label><select onchange="onEntryCustChange(this)"><option>请选择</option><option>比亚迪电子</option><option>广汽乘用车</option><option>美的集团</option><option>TCL科技</option></select></div><div class="fg"><label>关联项目</label><select id="entryProjSel" onchange="onEntryProjChange(this)"><option>请先选择客户</option></select></div><div class="fg"><label>关联岗位</label><select id="entryPosSel"><option>请先选择项目</option></select></div><div class="fg"><label>有效期</label><select id="entryCodeExpiry" onchange="toggleEntryCodeCustom(this)"><option>7天</option><option>30天</option><option>90天</option><option>1年</option><option>长期有效</option><option value="custom">自定义...</option></select></div><div class="fg" id="entryCodeCustomWrap" style="display:none"><label>自定义有效期至</label><input type="date" id="entryCodeCustomDate"></div><div class="fg" style="display:flex;align-items:flex-end"><button class="btn btn-p">生成入职码</button></div></div>
-<div class="ib ib-b" style="margin-top:4px">有效期支持 7天/30天/90天/1年/长期有效，或选择「自定义...」指定具体到期日。选「长期有效」时入职码不过期，可在列表中随时停用。</div>
+<div class="fr"><div class="fg"><label>岗位</label><select id="entryPosSel"><option>请选择岗位</option><option>电子组装工</option><option>QC质检员</option><option>高级焊工</option><option>仓库管理员</option></select></div><div class="fg"><label>有效期</label><select id="entryCodeExpiry" onchange="toggleEntryCodeCustom(this)"><option>长期</option><option>一年</option><option>两年</option><option value="custom">自定义</option><option>长期有效</option><option>一个月</option></select></div><div class="fg" id="entryCodeCustomWrap" style="display:none"><label>自定义有效期至</label><input type="date" id="entryCodeCustomDate"></div><div class="fg" style="display:flex;align-items:flex-end"><button class="btn btn-p">生成入职码</button></div></div>
+<div class="ib ib-b" style="margin-top:4px">入职码仅需选择岗位和有效期。有效期支持「长期 / 一年 / 两年 / 自定义 / 长期有效 / 一个月」；选择「自定义」时需指定具体到期日。</div>
 <div class="qr"><div class="qb" style="padding:0;border:none;background:none"><svg width="160" height="160" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg"><rect width="160" height="160" fill="#fff" rx="4"/><g fill="#1a1a1a"><rect x="0" y="0" width="8" height="8"/><rect x="8" y="0" width="8" height="8"/><rect x="16" y="0" width="8" height="8"/><rect x="24" y="0" width="8" height="8"/><rect x="48" y="0" width="8" height="8"/><rect x="64" y="0" width="8" height="8"/><rect x="96" y="0" width="8" height="8"/><rect x="104" y="0" width="8" height="8"/><rect x="112" y="0" width="8" height="8"/><rect x="128" y="0" width="8" height="8"/><rect x="144" y="0" width="8" height="8"/><rect x="152" y="0" width="8" height="8"/><rect x="0" y="8" width="8" height="8"/><rect x="8" y="8" width="8" height="8"/><rect x="16" y="8" width="8" height="8"/><rect x="24" y="8" width="8" height="8"/><rect x="72" y="8" width="8" height="8"/><rect x="88" y="8" width="8" height="8"/><rect x="104" y="8" width="8" height="8"/><rect x="120" y="8" width="8" height="8"/><rect x="144" y="8" width="8" height="8"/><rect x="152" y="8" width="8" height="8"/><rect x="8" y="16" width="8" height="8"/><rect x="24" y="16" width="8" height="8"/><rect x="56" y="16" width="8" height="8"/><rect x="88" y="16" width="8" height="8"/><rect x="128" y="16" width="8" height="8"/><rect x="136" y="16" width="8" height="8"/><rect x="144" y="16" width="8" height="8"/><rect x="152" y="16" width="8" height="8"/><rect x="16" y="24" width="8" height="8"/><rect x="24" y="24" width="8" height="8"/><rect x="48" y="24" width="8" height="8"/><rect x="72" y="24" width="8" height="8"/><rect x="112" y="24" width="8" height="8"/><rect x="136" y="24" width="8" height="8"/><rect x="144" y="24" width="8" height="8"/><rect x="0" y="32" width="8" height="8"/><rect x="16" y="32" width="8" height="8"/><rect x="32" y="32" width="8" height="8"/><rect x="56" y="32" width="8" height="8"/><rect x="64" y="32" width="8" height="8"/><rect x="88" y="32" width="8" height="8"/><rect x="96" y="32" width="8" height="8"/><rect x="128" y="32" width="8" height="8"/><rect x="136" y="32" width="8" height="8"/><rect x="8" y="40" width="8" height="8"/><rect x="24" y="40" width="8" height="8"/><rect x="40" y="40" width="8" height="8"/><rect x="48" y="40" width="8" height="8"/><rect x="56" y="40" width="8" height="8"/><rect x="64" y="40" width="8" height="8"/><rect x="72" y="40" width="8" height="8"/><rect x="80" y="40" width="8" height="8"/><rect x="88" y="40" width="8" height="8"/><rect x="96" y="40" width="8" height="8"/><rect x="104" y="40" width="8" height="8"/><rect x="112" y="40" width="8" height="8"/><rect x="120" y="40" width="8" height="8"/><rect x="128" y="40" width="8" height="8"/><rect x="152" y="40" width="8" height="8"/><rect x="16" y="48" width="8" height="8"/><rect x="24" y="48" width="8" height="8"/><rect x="32" y="48" width="8" height="8"/><rect x="40" y="48" width="8" height="8"/><rect x="56" y="48" width="8" height="8"/><rect x="72" y="48" width="8" height="8"/><rect x="80" y="48" width="8" height="8"/><rect x="96" y="48" width="8" height="8"/><rect x="120" y="48" width="8" height="8"/><rect x="136" y="48" width="8" height="8"/><rect x="0" y="56" width="8" height="8"/><rect x="8" y="56" width="8" height="8"/><rect x="40" y="56" width="8" height="8"/><rect x="48" y="56" width="8" height="8"/><rect x="56" y="56" width="8" height="8"/><rect x="72" y="56" width="8" height="8"/><rect x="80" y="56" width="8" height="8"/><rect x="120" y="56" width="8" height="8"/><rect x="144" y="56" width="8" height="8"/><rect x="152" y="56" width="8" height="8"/><rect x="16" y="64" width="8" height="8"/><rect x="24" y="64" width="8" height="8"/><rect x="40" y="64" width="8" height="8"/><rect x="56" y="64" width="8" height="8"/><rect x="64" y="64" width="8" height="8"/><rect x="72" y="64" width="8" height="8"/><rect x="104" y="64" width="8" height="8"/><rect x="128" y="64" width="8" height="8"/><rect x="144" y="64" width="8" height="8"/><rect x="8" y="72" width="8" height="8"/><rect x="16" y="72" width="8" height="8"/><rect x="48" y="72" width="8" height="8"/><rect x="64" y="72" width="8" height="8"/><rect x="72" y="72" width="8" height="8"/><rect x="80" y="72" width="8" height="8"/><rect x="96" y="72" width="8" height="8"/><rect x="128" y="72" width="8" height="8"/><rect x="8" y="80" width="8" height="8"/><rect x="48" y="80" width="8" height="8"/><rect x="56" y="80" width="8" height="8"/><rect x="96" y="80" width="8" height="8"/><rect x="152" y="80" width="8" height="8"/><rect x="8" y="88" width="8" height="8"/><rect x="24" y="88" width="8" height="8"/><rect x="32" y="88" width="8" height="8"/><rect x="56" y="88" width="8" height="8"/><rect x="112" y="88" width="8" height="8"/><rect x="136" y="88" width="8" height="8"/><rect x="152" y="88" width="8" height="8"/><rect x="16" y="96" width="8" height="8"/><rect x="24" y="96" width="8" height="8"/><rect x="32" y="96" width="8" height="8"/><rect x="48" y="96" width="8" height="8"/><rect x="64" y="96" width="8" height="8"/><rect x="72" y="96" width="8" height="8"/><rect x="80" y="96" width="8" height="8"/><rect x="88" y="96" width="8" height="8"/><rect x="104" y="96" width="8" height="8"/><rect x="120" y="96" width="8" height="8"/><rect x="0" y="104" width="8" height="8"/><rect x="8" y="104" width="8" height="8"/><rect x="16" y="104" width="8" height="8"/><rect x="24" y="104" width="8" height="8"/><rect x="32" y="104" width="8" height="8"/><rect x="40" y="104" width="8" height="8"/><rect x="48" y="104" width="8" height="8"/><rect x="64" y="104" width="8" height="8"/><rect x="72" y="104" width="8" height="8"/><rect x="96" y="104" width="8" height="8"/><rect x="112" y="104" width="8" height="8"/><rect x="128" y="104" width="8" height="8"/><rect x="144" y="104" width="8" height="8"/><rect x="16" y="112" width="8" height="8"/><rect x="40" y="112" width="8" height="8"/><rect x="64" y="112" width="8" height="8"/><rect x="88" y="112" width="8" height="8"/><rect x="104" y="112" width="8" height="8"/><rect x="112" y="112" width="8" height="8"/><rect x="128" y="112" width="8" height="8"/><rect x="136" y="112" width="8" height="8"/><rect x="144" y="112" width="8" height="8"/><rect x="152" y="112" width="8" height="8"/><rect x="0" y="120" width="8" height="8"/><rect x="24" y="120" width="8" height="8"/><rect x="56" y="120" width="8" height="8"/><rect x="72" y="120" width="8" height="8"/><rect x="88" y="120" width="8" height="8"/><rect x="104" y="120" width="8" height="8"/><rect x="144" y="120" width="8" height="8"/><rect x="152" y="120" width="8" height="8"/><rect x="0" y="128" width="8" height="8"/><rect x="8" y="128" width="8" height="8"/><rect x="16" y="128" width="8" height="8"/><rect x="32" y="128" width="8" height="8"/><rect x="40" y="128" width="8" height="8"/><rect x="48" y="128" width="8" height="8"/><rect x="96" y="128" width="8" height="8"/><rect x="104" y="128" width="8" height="8"/><rect x="112" y="128" width="8" height="8"/><rect x="128" y="128" width="8" height="8"/><rect x="136" y="128" width="8" height="8"/><rect x="144" y="128" width="8" height="8"/><rect x="16" y="136" width="8" height="8"/><rect x="32" y="136" width="8" height="8"/><rect x="40" y="136" width="8" height="8"/><rect x="64" y="136" width="8" height="8"/><rect x="80" y="136" width="8" height="8"/><rect x="112" y="136" width="8" height="8"/><rect x="128" y="136" width="8" height="8"/><rect x="136" y="136" width="8" height="8"/><rect x="144" y="136" width="8" height="8"/><rect x="48" y="144" width="8" height="8"/><rect x="56" y="144" width="8" height="8"/><rect x="64" y="144" width="8" height="8"/><rect x="72" y="144" width="8" height="8"/><rect x="88" y="144" width="8" height="8"/><rect x="120" y="144" width="8" height="8"/><rect x="128" y="144" width="8" height="8"/><rect x="152" y="144" width="8" height="8"/><rect x="0" y="152" width="8" height="8"/><rect x="8" y="152" width="8" height="8"/><rect x="32" y="152" width="8" height="8"/><rect x="56" y="152" width="8" height="8"/><rect x="64" y="152" width="8" height="8"/><rect x="80" y="152" width="8" height="8"/><rect x="88" y="152" width="8" height="8"/><rect x="104" y="152" width="8" height="8"/><rect x="112" y="152" width="8" height="8"/><rect x="136" y="152" width="8" height="8"/><rect x="0" y="0" width="40" height="40" fill="#1a1a1a"/><rect x="6" y="6" width="28" height="28" fill="#fff"/><rect x="12" y="12" width="16" height="16" fill="#1a1a1a"/><rect x="112" y="0" width="40" height="40" fill="#1a1a1a"/><rect x="118" y="6" width="28" height="28" fill="#fff"/><rect x="124" y="12" width="16" height="16" fill="#1a1a1a"/><rect x="0" y="112" width="40" height="40" fill="#1a1a1a"/><rect x="6" y="118" width="28" height="28" fill="#fff"/><rect x="12" y="124" width="16" height="16" fill="#1a1a1a"/></g></svg></div><p style="font-size:15px;font-weight:500;color:#1a1a1a;margin-bottom:4px">扫码入职登记</p><p style="font-size:13px;color:var(--text3)">扫码 &rarr; 填写信息 &rarr; 审核通过 &rarr; 正式入职</p></div>
 </div>
 </div>
@@ -897,6 +897,16 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 <div class="tab" onclick="stab(this,'emp-files')">员工文件</div>
 </div>
 <div class="tc show" id="emp-resume">
+<div class="ib ib-b" style="margin-bottom:12px">同一用户可沉淀多份简历。<b>平台端</b>可查看该用户完整简历库；<b>用户端</b>仅展示用户自己填写或自己导入的简历，后台导入/后台新增简历默认仅平台可见。</div>
+<div class="rp-card" style="background:#fafafa">
+<div class="rp-card-title">该用户的多份简历</div>
+<div class="tw"><table><thead><tr><th>简历名称</th><th>来源</th><th>用户端可见</th><th>更新时间</th><th>操作</th></tr></thead><tbody>
+<tr><td>电子技工简历（当前使用）</td><td><span class="tg tg-b">用户填写</span></td><td><span class="tg tg-g">可见</span></td><td>2026-07-06</td><td><button class="btn-link">查看</button><button class="btn-link">设为当前</button></td></tr>
+<tr><td>质检员简历</td><td><span class="tg tg-p">用户上传</span></td><td><span class="tg tg-g">可见</span></td><td>2026-06-28</td><td><button class="btn-link">查看</button><button class="btn-link">设为当前</button></td></tr>
+<tr><td>后台补录完整档案</td><td><span class="tg tg-y">后台新增</span></td><td><span class="tg tg-r">仅平台</span></td><td>2026-06-20</td><td><button class="btn-link">查看</button><button class="btn-link">授权给用户</button></td></tr>
+<tr><td>历史导入简历</td><td><span class="tg">后台导入</span></td><td><span class="tg tg-r">仅平台</span></td><td>2026-05-15</td><td><button class="btn-link">查看</button><button class="btn-link">合并</button></td></tr>
+</tbody></table></div>
+</div>
 <div class="rp-card" id="empResumeCard">
 <div class="rp-card-title">简历信息 <button class="btn btn-sm" id="empEditBtn" onclick="toggleEmpResumeEdit()">编辑</button></div>
 <div class="rp-fields">
@@ -1080,31 +1090,29 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 <div class="cd">
 <div class="tbar"><div class="tbar-l"></div><div class="tbar-r"><button class="btn btn-sm" onclick="sm('tableSettingsModal')">表格设置</button><button class="btn btn-sm" onclick="sm('exportModal')">数据导出</button></div></div>
 <div class="tw"><table>
-<thead><tr><th style="width:36px"><input type="checkbox" onclick="toggleAll(this)"></th><th>项目名称</th><th>项目属性</th><th>关联客户</th><th>招聘人数</th><th>薪资范围</th><th>项目单价</th><th>服务通知</th><th>屏蔽在职</th><th>状态</th><th>操作</th></tr></thead>
+<thead><tr><th style="width:36px"><input type="checkbox" onclick="toggleAll(this)"></th><th>项目名称</th><th>项目属性</th><th>关联客户</th><th>项目单价</th><th>服务通知</th><th>屏蔽在职</th><th>状态</th><th>操作</th></tr></thead>
 <tbody>
-<tr><td><input type="checkbox"></td><td>电子普工</td><td>对内</td><td>比亚迪电子</td><td>50人</td><td>5k-7k</td><td>40元/时</td><td><span class="tg tg-g">已开启</span></td><td><span class="tg tg-g">是</span></td><td><span class="tg tg-g">进行中</span></td><td><button class="btn-link" onclick="goProjectDetail()">编辑</button><button class="btn-link" onclick="sm('pushModal')">推送</button></td></tr>
-<tr><td><input type="checkbox"></td><td>质检员</td><td>对外</td><td>广汽乘用车</td><td>20人</td><td>7k-9k</td><td>45元/时</td><td><span class="tg tg-g">已开启</span></td><td><span class="tg tg-g">是</span></td><td><span class="tg tg-g">进行中</span></td><td><button class="btn-link" onclick="goProjectDetail()">编辑</button><button class="btn-link" onclick="sm('pushModal')">推送</button></td></tr>
-<tr><td><input type="checkbox"></td><td>高级技工</td><td>对外</td><td>美的集团</td><td>10人</td><td>9k-12k</td><td>55元/时</td><td><span class="tg tg-y">未开启</span></td><td>--</td><td><span class="tg tg-r">已停用</span></td><td><button class="btn-link" onclick="goProjectDetail()">编辑</button></td></tr>
-<tr><td><input type="checkbox"></td><td>仓管员</td><td>对内</td><td>TCL科技</td><td>15人</td><td>6k-8k</td><td>38元/时</td><td><span class="tg tg-g">已开启</span></td><td><span class="tg tg-g">是</span></td><td><span class="tg tg-g">进行中</span></td><td><button class="btn-link" onclick="goProjectDetail()">编辑</button><button class="btn-link" onclick="sm('pushModal')">推送</button></td></tr>
+<tr><td><input type="checkbox"></td><td>电子普工</td><td>对内</td><td>比亚迪电子</td><td>40元/时</td><td><span class="tg tg-g">已开启</span></td><td><span class="tg tg-g">是</span></td><td><span class="tg tg-g">进行中</span></td><td><button class="btn-link" onclick="goProjectDetail()">编辑</button><button class="btn-link" onclick="sm('pushModal')">推送</button></td></tr>
+<tr><td><input type="checkbox"></td><td>质检员</td><td>对外</td><td>广汽乘用车</td><td>45元/时</td><td><span class="tg tg-g">已开启</span></td><td><span class="tg tg-g">是</span></td><td><span class="tg tg-g">进行中</span></td><td><button class="btn-link" onclick="goProjectDetail()">编辑</button><button class="btn-link" onclick="sm('pushModal')">推送</button></td></tr>
+<tr><td><input type="checkbox"></td><td>高级技工</td><td>对外</td><td>美的集团</td><td>55元/时</td><td><span class="tg tg-y">未开启</span></td><td>--</td><td><span class="tg tg-r">已停用</span></td><td><button class="btn-link" onclick="goProjectDetail()">编辑</button></td></tr>
+<tr><td><input type="checkbox"></td><td>仓管员</td><td>对内</td><td>TCL科技</td><td>38元/时</td><td><span class="tg tg-g">已开启</span></td><td><span class="tg tg-g">是</span></td><td><span class="tg tg-g">进行中</span></td><td><button class="btn-link" onclick="goProjectDetail()">编辑</button><button class="btn-link" onclick="sm('pushModal')">推送</button></td></tr>
 </tbody></table></div>
 <div class="pgn"><span>共28条</span><button class="active">1</button><button class="">2</button><button class="">3</button><span>条/页 10</span></div></div>
 
 <div class="mo" id="addProject"><div class="ml" style="width:680px">
 <div class="ml-t">新增项目</div>
 <div class="fr"><div class="fg"><label>关联客户 *</label><select><option>请选择</option><option>比亚迪电子</option><option>广汽乘用车</option><option>美的集团</option><option>TCL科技</option></select></div></div>
-<div class="fr"><div class="fg"><label>项目名称</label><input placeholder="如：电子普工"></div><div class="fg"><label>招聘人数</label><input placeholder="50"></div><div class="fg"><label>项目属性</label><select><option>对内项目</option><option selected>对外项目</option></select></div></div>
-<div class="fr"><div class="fg"><label>薪资最低</label><input placeholder="5000"></div><div class="fg"><label>薪资最高</label><input placeholder="7000"></div></div>
+<div class="fr"><div class="fg"><label>项目名称</label><input placeholder="如：电子普工"></div><div class="fg"><label>项目属性</label><select><option>对内项目</option><option selected>对外项目</option></select></div></div>
 <div class="fr"><div class="fg"><label>项目类型</label><select><option>请选择</option><option>短期工</option><option>长期工</option><option>小时工</option><option>承包</option></select></div><div class="fg"><label>工作地点</label><input placeholder="广州黄埔区"></div></div>
 <div class="fg" style="margin-bottom:16px"><label>项目描述</label><textarea rows="3" placeholder="请输入项目描述..."></textarea></div>
 
 
-<div class="ib ib-b"><b style="color:var(--brand)">项目单价配置（支持多工种不同单价）</b>
-<div style="margin-top:8px;font-size:13px;color:var(--text2)">一个项目可配置多个单价策略，按工种/用工类型区分。分别设置<b>结算方式、正常单价、加班单价</b>（加班费按正常单价 1.5 倍计）。</div>
+<div class="ib ib-b"><b style="color:var(--brand)">项目单价配置</b>
 <div class="price-cfg"><table class="price-tbl">
-<thead><tr><th>工种/类型</th><th>结算方式</th><th>正常单价(元/时)</th><th>加班单价(元/时)</th><th>结算周期</th><th style="width:64px">操作</th></tr></thead>
+<thead><tr><th>工种/类型</th><th>正常单价(元/时)</th><th>加班单价(元/时)</th><th>结算周期</th><th style="width:64px">操作</th></tr></thead>
 <tbody>
-<tr><td><select class="cell-select"><option>短期工</option><option>长期工</option><option>小时工</option><option>承包工</option></select></td><td><select class="cell-select"><option>按月</option><option>按日</option><option>按周</option><option>一次性</option></select></td><td><input class="cell-input price-val" placeholder="如：15"></td><td><input class="cell-input" placeholder="如：22"></td><td><select class="cell-select"><option>按月</option><option>按日</option><option>按周</option><option>一次性</option></select></td><td><button class="btn btn-d btn-sm">删除</button></td></tr>
-<tr><td><select class="cell-select"><option>短期工</option><option selected>长期工</option><option>小时工</option></select></td><td><select class="cell-select"><option selected>按月</option><option>按日</option><option>按周</option><option>一次性</option></select></td><td><input class="cell-input price-val" value="22"></td><td><input class="cell-input" value="33"></td><td><select class="cell-select"><option selected>按月</option><option>按日</option></select></td><td><button class="btn btn-d btn-sm">删除</button></td></tr>
+<tr><td><select class="cell-select"><option>短期工</option><option>长期工</option><option>小时工</option><option>承包工</option></select></td><td><input class="cell-input price-val" placeholder="如：15"></td><td><input class="cell-input" placeholder="如：22"></td><td><select class="cell-select"><option>按月</option><option>按日</option><option>按周</option><option>一次性</option></select></td><td><button class="btn btn-d btn-sm">删除</button></td></tr>
+<tr><td><select class="cell-select"><option>短期工</option><option selected>长期工</option><option>小时工</option></select></td><td><input class="cell-input price-val" value="22"></td><td><input class="cell-input" value="33"></td><td><select class="cell-select"><option selected>按月</option><option>按日</option></select></td><td><button class="btn btn-d btn-sm">删除</button></td></tr>
 </tbody></table>
 <button class="btn-add-row">+ 添加单价策略</button></div>
 </div>
@@ -1209,7 +1217,7 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 </div>
 </div>
 <div class="rp-card">
-<div class="rp-card-title" style="display:flex;justify-content:space-between;align-items:center">小程序端预览效果<button class="btn btn-sm" onclick="sm('positionPreviewModal')" style="font-size:12px">放大预览</button></div>
+<div class="rp-card-title" style="display:flex;justify-content:space-between;align-items:center">小程序端展示效果</div>
 <div style="font-size:12px;color:var(--text3);margin:2px 0 12px">求职者在小程序端看到的岗位卡片实时效果</div>
 <div style="display:flex;justify-content:center;padding:8px 0">
 <div style="width:300px;background:#f0f2f5;border-radius:28px;padding:12px;border:1px solid var(--border)">
@@ -1262,10 +1270,10 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 <div class="rp-card">
 <div class="rp-card-title">单价配置</div>
 <div class="tw"><table>
-<thead><tr><th>工种/类型</th><th>结算方式</th><th>正常单价(元/时)</th><th>加班单价(元/时)</th><th>结算周期</th></tr></thead>
+<thead><tr><th>工种/类型</th><th>正常单价(元/时)</th><th>加班单价(元/时)</th><th>结算周期</th></tr></thead>
 <tbody>
-<tr><td>短期工</td><td>按月</td><td>15</td><td>22</td><td>按月</td></tr>
-<tr><td>长期工</td><td>按月</td><td>22</td><td>33</td><td>按月</td></tr>
+<tr><td>短期工</td><td>15</td><td>22</td><td>按月</td></tr>
+<tr><td>长期工</td><td>22</td><td>33</td><td>按月</td></tr>
 </tbody></table></div>
 </div>
 <div class="rp-card">
@@ -1299,10 +1307,7 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 <div class="rp-fields">
 <div class="rp-field"><span class="lbl">项目名称</span><input value="电子普工"></div>
 <div class="rp-field"><span class="lbl">关联客户</span><select><option selected>比亚迪电子</option><option>广汽乘用车</option><option>美的集团</option><option>TCL科技</option></select></div>
-<div class="rp-field"><span class="lbl">招聘人数</span><input value="50"></div>
 <div class="rp-field"><span class="lbl">项目属性</span><select><option selected>对内项目</option><option>对外项目</option></select></div>
-<div class="rp-field"><span class="lbl">薪资最低</span><input value="5000"></div>
-<div class="rp-field"><span class="lbl">薪资最高</span><input value="7000"></div>
 <div class="rp-field"><span class="lbl">项目类型</span><select><option selected>短期工</option><option>长期工</option><option>小时工</option></select></div>
 <div class="rp-field"><span class="lbl">工作地点</span><input value="广州黄埔区"></div>
 </div>
@@ -1312,12 +1317,11 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 
 <div class="rp-card">
 <div class="rp-card-title">项目单价配置 <button class="btn btn-sm btn-p">+ 添加单价策略</button></div>
-<div class="ib ib-b" style="margin-bottom:8px">一个项目支持多个单价策略，按工种/用工类型区分。</div>
 <div class="price-cfg"><table class="price-tbl">
-<thead><tr><th>工种/类型</th><th>结算方式</th><th>正常单价(元/时)</th><th>加班单价(元/时)</th><th>结算周期</th><th style="width:64px">操作</th></tr></thead>
+<thead><tr><th>工种/类型</th><th>正常单价(元/时)</th><th>加班单价(元/时)</th><th>结算周期</th><th style="width:64px">操作</th></tr></thead>
 <tbody>
-<tr><td><select class="cell-select"><option selected>短期工</option><option>长期工</option></select></td><td><select class="cell-select"><option selected>按月</option><option>按日</option><option>按周</option><option>一次性</option></select></td><td><input class="cell-input price-val" value="15"></td><td><input class="cell-input" value="22"></td><td><select class="cell-select"><option selected>按月</option></select></td><td><button class="btn btn-d btn-sm">删除</button></td></tr>
-<tr><td><select class="cell-select"><option>短期工</option><option selected>长期工</option></select></td><td><select class="cell-select"><option selected>按月</option><option>按日</option><option>按周</option><option>一次性</option></select></td><td><input class="cell-input price-val" value="22"></td><td><input class="cell-input" value="33"></td><td><select class="cell-select"><option selected>按月</option></select></td><td><button class="btn btn-d btn-sm">删除</button></td></tr>
+<tr><td><select class="cell-select"><option selected>短期工</option><option>长期工</option></select></td><td><input class="cell-input price-val" value="15"></td><td><input class="cell-input" value="22"></td><td><select class="cell-select"><option selected>按月</option></select></td><td><button class="btn btn-d btn-sm">删除</button></td></tr>
+<tr><td><select class="cell-select"><option>短期工</option><option selected>长期工</option></select></td><td><input class="cell-input price-val" value="22"></td><td><input class="cell-input" value="33"></td><td><select class="cell-select"><option selected>按月</option></select></td><td><button class="btn btn-d btn-sm">删除</button></td></tr>
 </tbody></table>
 <button class="btn-add-row">+ 添加单价策略</button></div>
 </div>
@@ -1355,13 +1359,13 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 <div class="ml-t">项目推送</div>
 <div class="approval-info">
 <div class="row"><span class="k">项目名称</span><span class="v">电子普工</span></div>
-<div class="row"><span class="k">招聘人数</span><span class="v">50人</span></div>
+<div class="row"><span class="k">关联岗位</span><span class="v">电子组装工、包装工</span></div>
 <div class="row"><span class="k">推送次数</span><span class="v">已推送 2 次</span></div>
 </div>
 <div class="fg" style="margin-top:16px"><label>推送对象（支持多选标签筛选）</label></div>
 <div class="tag-select"><div class="ts-item selected">普工</div><div class="ts-item selected">技工</div><div class="ts-item">质检</div><div class="ts-item">仓储</div><div class="ts-item">其他</div></div>
 <div class="fr" style="margin-top:12px">
-<div class="fg"><label>推送方式</label><select><option>微信服务通知</option><option>短信通知</option><option>服务通知+短信</option></select></div>
+<div class="fg"><label>推送方式</label><select><option selected>微信服务通知</option></select></div>
 <div class="fg"><label>屏蔽在职</label><select><option>是</option><option>否</option></select></div>
 </div>
 <div class="ib ib-b" style="margin-top:8px">支持二次推送，系统将记录每次推送的对象和時間。重复推送时会过滤已查看/已报名的用户。</div>
@@ -2511,34 +2515,6 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 <div class="ml-f"><button class="btn" onclick="hm('rosterBatchModal')">取消</button><button class="btn btn-p" onclick="hm('rosterBatchModal');alert('批量操作已完成')">确认操作</button></div>
 </div></div>
 
-<!-- ========== 岗位预览弹窗（模拟小程序端） ========== -->
-<div class="mo" id="positionPreviewModal"><div class="ml" style="width:380px;padding:0">
-<div class="ml-t">岗位预览（小程序端效果）</div>
-<div style="background:#f5f5f5;padding:16px;border-radius:0 0 8px 8px">
-<div style="background:#fff;border-radius:12px;padding:20px;max-width:340px;margin:0 auto">
-<div style="font-size:18px;font-weight:700;color:#1a1a1a;margin-bottom:4px">电子组装工</div>
-<div style="font-size:22px;color:#ff4d4f;font-weight:700;margin-bottom:8px">5k-7k<span style="font-size:13px;color:var(--text3)">/月</span></div>
-<div style="display:flex;gap:6px;margin-bottom:12px">
-<span style="background:#e6f4ff;color:#1677ff;padding:2px 8px;border-radius:4px;font-size:11px">包吃包住</span>
-<span style="background:#e6f4ff;color:#1677ff;padding:2px 8px;border-radius:4px;font-size:11px">五险一金</span>
-<span style="background:#e6f4ff;color:#1677ff;padding:2px 8px;border-radius:4px;font-size:11px">月休4天</span>
-</div>
-<div style="font-size:12px;color:var(--text3);margin-bottom:6px">📍 广州黄埔区 · 长期工 · 急招</div>
-<div style="font-size:12px;color:var(--text3);margin-bottom:8px">招聘50人 · 已招32人</div>
-<div style="border-top:1px solid var(--border);padding-top:12px;font-size:13px;color:var(--text2);line-height:1.8">
-负责电子元器件的组装、焊接和检测工作；需严格按照SOP作业；配合产线完成每日生产任务。
-</div>
-<div style="border-top:1px solid var(--border);padding-top:12px;font-size:13px;color:var(--text2);line-height:1.8">
-<b>岗位要求：</b><br>
-学历：中专及以上<br>
-经验：1年以上电子厂经验<br>
-其他：能适应两班倒
-</div>
-<button style="width:100%;padding:12px;background:var(--brand);color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;margin-top:16px">立即报名</button>
-</div>
-</div>
-</div></div>
-
 <script>
 var _lastPage='roster';
 function login(){document.getElementById('loginPage').style.display='none';document.getElementById('app').classList.add('show')}
@@ -2648,11 +2624,7 @@ document.addEventListener('DOMContentLoaded',function(){
   try{changeFeeSetMode()}catch(e){}
 });
 
-// Customer / UserList navigation + entry-code cascade
-var CUST_PROJ={'比亚迪电子':['电子普工'],'广汽乘用车':['质检员'],'美的集团':['高级技工'],'TCL科技':['仓管员']};
-var PROJ_POS={'电子普工':['电子组装工'],'质检员':['QC质检员'],'高级技工':['高级焊工'],'仓管员':['仓库管理员']};
-function onEntryCustChange(sel){var ps=document.getElementById('entryProjSel');if(!ps)return;var list=CUST_PROJ[sel.value]||[];ps.innerHTML='<option>请选择项目</option>'+list.map(function(p){return '<option>'+p+'</option>'}).join('');var pos=document.getElementById('entryPosSel');if(pos)pos.innerHTML='<option>请先选择项目</option>'}
-function onEntryProjChange(sel){var pos=document.getElementById('entryPosSel');if(!pos)return;var list=PROJ_POS[sel.value]||[];pos.innerHTML='<option>请选择岗位</option>'+list.map(function(p){return '<option>'+p+'</option>'}).join('')}
+// Customer / UserList navigation. Entry-code generation now only requires 岗位 + 有效期.
 function goCustomerDetail(){document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-customerDetail').classList.add('show');document.getElementById('pn').textContent='客户管理 / 客户详情';document.querySelectorAll('.mi').forEach(m=>m.classList.remove('active'));var mi=document.querySelector('[data-p=customer]');if(mi)mi.classList.add('active')}
 function goCustomerEdit(){document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-customerEdit').classList.add('show');document.getElementById('pn').textContent='客户管理 / 编辑客户';document.querySelectorAll('.mi').forEach(m=>m.classList.remove('active'));var mi=document.querySelector('[data-p=customer]');if(mi)mi.classList.add('active')}
 function goUserDetail(){document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-userList').classList.add('show');document.getElementById('pn').textContent='用户列表';document.querySelectorAll('.mi').forEach(m=>m.classList.remove('active'));var mi=document.querySelector('[data-p=userList]');if(mi)mi.classList.add('active')}
@@ -2756,8 +2728,7 @@ function changeFeeSetMode(){
 <div class="fg"><label>面试地点</label><input value="广州市黄埔区XX路XX号3楼会议室"></div>
 <div class="fg"><label>面试官</label><select><option>管理员</option><option>乐天</option><option>陈刚</option></select></div>
 <div class="fg"><label>备注</label><textarea rows="2" placeholder="补充说明..."></textarea></div>
-<div class="fg" style="margin-top:12px"><label style="display:flex;align-items:center;gap:8px;cursor:pointer"><input type="checkbox" checked> 推送到小程序（候选人将收到面试通知）</label></div>
-<div class="ib ib-b" style="margin-top:8px">邀请信息将通过微信服务通知推送到候选人的小程序端，候选人可在线确认或重新约时间。</div>
+<div class="fg" style="margin-top:12px"><label>通知方式</label><div style="display:flex;align-items:flex-start;gap:10px;padding:12px;background:var(--pri-l);border:1px solid #b7d4ff;border-radius:8px;color:var(--text2);font-size:13px;line-height:1.7"><span style="font-size:18px">🔔</span><span><b style="color:var(--brand)">微信服务通知</b><br>候选人在报名时需订阅服务通知；邀约将推送到小程序端，候选人可在线确认或重新约时间。</span></div></div>
 <div class="ml-f"><button class="btn" onclick="hm('interviewInviteModal')">取消</button><button class="btn btn-p" onclick="hm('interviewInviteModal');alert('面试邀约已发送到小程序，候选人状态变更为「待确认面试」，正在为你打开待确认列表');goInterviewConfirm()">发送邀请</button></div>
 </div></div>
 
@@ -2807,13 +2778,13 @@ function changeFeeSetMode(){
 <div class="rp-card">
 <div class="rp-card-title"><span style="display:inline-block;width:18px;height:18px;border-radius:50%;background:var(--brand);color:#fff;text-align:center;line-height:18px;font-size:11px;margin-right:6px">2</span>薪资与结算 <span style="font-weight:400;font-size:11px;color:var(--text3);margin-left:8px">结算单价将带入入职审核与电子合同</span></div>
 <div class="fr"><div class="fg"><label>薪资 *</label><input id="posSalary" placeholder="如：5000-7000 / 260元/天 / 面议"></div><div class="fg"><label>薪资类型</label><select><option selected>月薪</option><option>日薪</option><option>面议</option></select></div></div>
-<div class="fr" style="margin-top:10px"><div class="fg"><label>结算方式</label><select><option selected>按月结算</option><option>按周结算</option><option>按日结算</option><option>完工一次性结算</option><option>按件计薪</option></select></div><div class="fg"><label>正常单价(元) *</label><input id="posPriceN" placeholder="如：40（时薪）"><div style="font-size:11px;color:var(--text3);margin-top:2px">将写入电子合同劳动报酬条款</div></div><div class="fg"><label>加班单价(元)</label><input id="posPriceOt" placeholder="如：60（时薪）"><div style="font-size:11px;color:var(--text3);margin-top:2px">未填则按正常单价 1.5 倍计</div></div></div>
+<div class="fr" style="margin-top:10px"><div class="fg"><label>结算方式</label><select><option selected>按月结算</option><option>按周结算</option><option>按日结算</option><option>完工一次性结算</option><option>按件计薪</option></select></div><div class="fg"><label>正常单价(元) *</label><input id="posPriceN" placeholder="如：40（时薪）"><div style="font-size:11px;color:var(--text3);margin-top:2px">将写入电子合同劳动报酬条款</div></div><div class="fg"><label>加班单价(元)</label><input id="posPriceOt" placeholder="如：60（时薪）"></div></div>
 </div>
 
 <!-- 3. 任职资格要求 -->
 <div class="rp-card">
 <div class="rp-card-title"><span style="display:inline-block;width:18px;height:18px;border-radius:50%;background:var(--brand);color:#fff;text-align:center;line-height:18px;font-size:11px;margin-right:6px">3</span>任职资格要求</div>
-<div class="fr"><div class="fg"><label>性别要求</label><select><option selected>不限</option><option>男</option><option>女</option></select></div><div class="fg"><label>年龄要求</label><input placeholder="不限 / 18-55岁 / 45岁以下"></div><div class="fg"><label>学历要求</label><select><option selected>不限</option><option>初中及以下</option><option>高中/中专</option><option>大专</option><option>本科及以上</option></select></div></div>
+<div class="fr"><div class="fg"><label>性别要求</label><select><option selected>不限</option><option>男</option><option>女</option></select></div><div class="fg"><label>年龄要求</label><div style="display:flex;gap:8px"><input placeholder="自由填写，如：18-55岁 / 45岁以下" style="flex:1"><select style="width:90px"><option selected>填写</option><option>不限</option></select></div></div><div class="fg"><label>学历要求</label><select><option selected>不限</option><option>初中及以下</option><option>高中/中专</option><option>大专</option><option>本科及以上</option></select></div></div>
 <div class="fr" style="margin-top:10px"><div class="fg"><label>工作经验</label><select><option selected>不限</option><option>无经验可带薪培训</option><option>1年以下</option><option>1-3年</option><option>3-5年</option><option>5年以上</option></select></div><div class="fg"><label>技能证书要求</label><input placeholder="如：电工证、叉车证、焊工证（多选）"></div></div>
 </div>
 
@@ -2853,14 +2824,15 @@ function changeFeeSetMode(){
 <div class="rp-card-title"><span style="display:inline-block;width:18px;height:18px;border-radius:50%;background:var(--text3);color:#fff;text-align:center;line-height:18px;font-size:11px;margin-right:6px">8</span>分销佣金配置 <span style="font-weight:400;font-size:11px;color:var(--text3);margin-left:8px">选填，也可在「分销裂变」模块统一配置</span></div>
 <div class="ib ib-b" style="font-size:12px;margin-bottom:10px">为此岗位设置分销佣金规则，支持在职天数、满岗条件、固定金额三种方式。</div>
 <div class="fr">
-<div class="fg"><label>佣金方式</label><select><option>在职天数佣金</option><option>满岗条件佣金</option><option>固定金额（一次性）</option></select></div>
-<div class="fg"><label>基础佣金（元）</label><input placeholder="如：200"></div>
-<div class="fg"><label>结算周期</label><select><option>一次性发放</option><option>按月结算</option></select></div>
+<div class="fg"><label>佣金方式</label><select><option selected>阶梯条件佣金（在职天数/满岗条件）</option><option>固定金额（一次性）</option><option>不设置</option></select></div>
+<div class="fg"><label>奖励对象</label><select><option>经纪人</option><option>供应商</option><option>经纪人 + 供应商</option></select></div>
+<div class="fg"><label>公开状态</label><select><option selected>公开给渠道商</option><option>仅后台可见</option></select></div>
 </div>
-<div class="fr" style="margin-top:8px">
-<div class="fg"><label>触发条件</label><select><option>在职满30天</option><option>在职满60天</option><option>在职满90天</option><option>入职即发</option></select></div>
-<div class="fg"><label>渠道商倍率</label><select><option>默认（1.0x）</option><option>A级（1.5x）</option><option>B级（1.2x）</option><option>C级（1.0x）</option></select></div>
+<div style="margin-top:12px;background:#f7f9fc;border:1px solid var(--border);border-radius:8px;padding:12px">
+<div class="fr"><div class="fg"><label>奖励条件</label><div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text2)">被推荐人入职且满岗 <input value="30" style="width:72px;padding:6px 8px;border:1px solid var(--border);border-radius:4px"> <select style="width:90px;padding:6px 8px;border:1px solid var(--border);border-radius:4px"><option>天</option><option>小时</option></select></div></div><div class="fg"><label>直接推荐奖</label><div style="display:flex;gap:8px"><input placeholder="请输入" value="300"><select><option>元</option><option>%</option></select></div></div><div class="fg"><label>间接推荐奖</label><div style="display:flex;gap:8px"><input placeholder="请输入" value="100"><select><option>元</option><option>%</option></select></div></div></div>
+<div class="fr" style="margin-top:8px"><div class="fg"><label>奖励时效</label><select><option>单次奖励</option><option>长期奖励</option><option>每月</option><option>每周</option><option>自定义</option></select></div><div class="fg"><label>渠道商倍率</label><select><option>默认（1.0x）</option><option>A级（1.5x）</option><option>B级（1.2x）</option><option>C级（1.0x）</option></select></div><div class="fg" style="display:flex;align-items:flex-end"><button class="btn btn-sm">+ 增加奖励模式</button></div></div>
 </div>
+<div class="ib ib-y" style="margin-top:10px;font-size:12px">「在职天数」与「满岗条件」合并为同一种阶梯条件模式；如需入职即发，可切换为「固定金额（一次性）」。</div>
 </div>
 
 </div>
