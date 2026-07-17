@@ -1740,6 +1740,18 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 </div>
 
 <div class="rp-card">
+<div class="rp-card-title">分销关系</div>
+<div class="ib ib-b" style="margin-bottom:12px">渠道商可通过分销码绑定上下级关系。平台最多保留二级分销：一级为直接邀请，二级为一级渠道商继续邀请；二级渠道商不可继续发展下级。</div>
+<div class="rp-fields">
+<div class="rp-field"><span class="lbl">我的分销码</span><span class="val"><b style="color:var(--brand)">LT0001</b></span></div>
+<div class="rp-field"><span class="lbl">当前层级</span><span class="val">一级渠道商</span></div>
+<div class="rp-field"><span class="lbl">上级渠道商</span><span class="val">平台直营（无上级）</span></div>
+<div class="rp-field"><span class="lbl">下级数量</span><span class="val">3 个一级下级</span></div>
+</div>
+<div class="fr" style="margin-top:12px"><div class="fg"><label>绑定上级分销码</label><input id="webDistParentCode" placeholder="输入上级分销码，如 LT0008"></div><div class="fg" style="justify-content:flex-end"><label>&nbsp;</label><button class="btn btn-p" onclick="var v=document.getElementById('webDistParentCode').value.trim();if(!v){alert('请输入上级分销码');return}alert('分销码 '+v+' 校验通过，已绑定上级渠道商；系统将自动校验层级不超过二级')">校验并绑定</button></div></div>
+</div>
+
+<div class="rp-card">
 <div class="rp-card-title">个人业绩数据</div>
 <div class="sg">
 <div class="sc"><div class="sv"><div class="n">5</div><div class="l">今日推荐</div></div></div>
@@ -1756,11 +1768,11 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 <div class="rp-card">
 <div class="rp-card-title">下级团队</div>
 <div class="tw"><table>
-<thead><tr><th>渠道商</th><th>手机号</th><th>今日推荐</th><th>今日面试</th><th>今日入职</th><th>在职资源数</th><th>累计推荐</th><th>预计收入</th><th>操作</th></tr></thead>
+<thead><tr><th>渠道商</th><th>手机号</th><th>关系层级</th><th>分销码</th><th>今日推荐</th><th>今日面试</th><th>今日入职</th><th>在职资源数</th><th>累计推荐</th><th>预计收入</th><th>操作</th></tr></thead>
 <tbody>
-<tr><td>王小明</td><td>136****1001</td><td>2</td><td>1</td><td>0</td><td>8</td><td>156</td><td>1,200</td><td><button class="btn-link" onclick="alert('下级渠道商详情页面开发中')">详情</button></td></tr>
-<tr><td>李小红</td><td>135****1002</td><td>1</td><td>1</td><td>1</td><td>5</td><td>98</td><td>800</td><td><button class="btn-link" onclick="alert('下级渠道商详情页面开发中')">详情</button></td></tr>
-<tr><td>张大海</td><td>134****1003</td><td>0</td><td>0</td><td>0</td><td>3</td><td>45</td><td>300</td><td><button class="btn-link" onclick="alert('下级渠道商详情页面开发中')">详情</button></td></tr>
+<tr><td>王小明</td><td>136****1001</td><td><span class="tg tg-b">一级</span></td><td>LT1001</td><td>2</td><td>1</td><td>0</td><td>8</td><td>156</td><td>1,200</td><td><button class="btn-link" onclick="alert('查看一级渠道商及其二级团队')">详情</button></td></tr>
+<tr><td>李小红</td><td>135****1002</td><td><span class="tg tg-b">一级</span></td><td>LT1002</td><td>1</td><td>1</td><td>1</td><td>5</td><td>98</td><td>800</td><td><button class="btn-link" onclick="alert('查看一级渠道商及其二级团队')">详情</button></td></tr>
+<tr><td>张大海</td><td>134****1003</td><td><span class="tg tg-o">二级</span></td><td>LT2001</td><td>0</td><td>0</td><td>0</td><td>3</td><td>45</td><td>300</td><td><button class="btn-link" onclick="alert('二级渠道商不可继续发展下级')">详情</button></td></tr>
 </tbody></table></div>
 <div class="pgn"><span>共3条</span><button class="active">1</button><span>条/页 10</span></div>
 </div>
@@ -2552,6 +2564,15 @@ function goProjectEdit(){document.querySelectorAll('.pg').forEach(g=>g.classList
 function goProjectDetail(){document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-projectDetail').classList.add('show');document.getElementById('pn').textContent='项目管理 / 项目详情';document.querySelector('[data-p=project]').classList.add('active')}
 function goSettleApproval(){document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-settleApproval').classList.add('show');document.getElementById('pn').textContent='结算中心 / 结算审批';document.querySelector('[data-p=settle]').classList.add('active')}
 function goPositionAdd(){var t=document.getElementById('positionAddTitle');if(t)t.textContent='新增岗位';var n=document.getElementById('posName');if(n)n.value='';var mn=document.getElementById('posSalMin');if(mn)mn.value='';var mx=document.getElementById('posSalMax');if(mx)mx.value='';var pn=document.getElementById('posPriceN');if(pn)pn.value='';var po=document.getElementById('posPriceOt');if(po)po.value='';var pc=document.getElementById('posCount');if(pc)pc.value='';showPage('positionAdd');setMi('position')}
+// 部分后补页面位于分销页之后，浏览器解析时可能被包进隐藏的 p-dist。
+// 初始化时将新增岗位页提升到主内容容器，保证 showPage() 后可见。
+document.addEventListener('DOMContentLoaded',function(){
+  var content=document.querySelector('.ct');
+  if(!content)return;
+  // 独立页面不应嵌套在其他 .pg 内；统一提升可修复渠道商详情、功能模块、
+  // 新增岗位等后补页面因父页面隐藏而出现空白的问题。
+  Array.prototype.slice.call(document.querySelectorAll('.pg .pg')).forEach(function(page){content.appendChild(page)});
+});
 function goPositionEdit(){var t=document.getElementById('positionAddTitle');if(t)t.textContent='编辑岗位 - 电子组装工';var n=document.getElementById('posName');if(n)n.value='电子组装工';var mn=document.getElementById('posSalMin');if(mn)mn.value='5000';var mx=document.getElementById('posSalMax');if(mx)mx.value='7000';var pn=document.getElementById('posPriceN');if(pn)pn.value='40';var po=document.getElementById('posPriceOt');if(po)po.value='60';var pc=document.getElementById('posCount');if(pc)pc.value='50';showPage('positionAdd');setMi('position')}
 function goDistDetail(){document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-distDetail').classList.add('show');document.getElementById('pn').textContent='分销裂变 / 渠道商详情';document.querySelector('[data-p=dist]').classList.add('active')}
 function goPositionDetail(){document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-positionDetail').classList.add('show');document.getElementById('pn').textContent='岗位管理 / 岗位详情';document.querySelector('[data-p=position]').classList.add('active')}

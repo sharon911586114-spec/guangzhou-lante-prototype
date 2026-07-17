@@ -906,22 +906,22 @@ body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Helvetica Neue'
 <h3 style="font-size:18px;font-weight:600;margin-bottom:8px">成为渠道商</h3>
 <p style="font-size:13px;color:var(--text-2);line-height:1.8;margin-bottom:20px">推荐好友入职，赚取丰厚佣金<br>一级推荐10%佣金，二级推荐5%佣金</p>
 <button class="btn btn-p" onclick="mp('m-distApply')">申请成为渠道商</button>
-<button class="btn btn-o" style="margin-top:10px;padding:10px;font-size:14px" onclick="sm('bindReferralModal')">已有推荐码，绑定邀请关系</button>
-<div style="margin-top:14px;background:var(--pri-l);border-radius:10px;padding:10px;text-align:left;font-size:12px;color:var(--text-2);line-height:1.7">成为渠道商有两种关系绑定方式：<br>1. 通过上级渠道商分享邀请链接进入申请，自动绑定上下级；<br>2. 手动输入上级推荐码，校验后绑定关系。</div>
+<button class="btn btn-o" style="margin-top:10px;padding:10px;font-size:14px" onclick="sm('bindReferralModal')">已有分销码，绑定邀请关系</button>
+<div style="margin-top:14px;background:var(--pri-l);border-radius:10px;padding:10px;text-align:left;font-size:12px;color:var(--text-2);line-height:1.7">成为渠道商有两种关系绑定方式：<br>1. 通过上级渠道商分享邀请链接进入申请，自动绑定上下级；<br>2. 手动输入上级分销码，校验后绑定关系。<br><b>仅支持一级、二级分销，二级渠道商不可继续发展下级。</b></div>
 </div>
 </div>
 <!-- Already a channel partner - show dashboard -->
 <div id="dist-applied" style="display:none">
 <div class="dist-qr">
 <div class="qr-box"><svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><rect width="120" height="120" fill="#fff"/><g fill="#191919"><rect x="4" y="4" width="30" height="30"/><rect x="10" y="10" width="18" height="18" fill="#fff"/><rect x="14" y="14" width="10" height="10"/><rect x="86" y="4" width="30" height="30"/><rect x="92" y="10" width="18" height="18" fill="#fff"/><rect x="96" y="14" width="10" height="10"/><rect x="4" y="86" width="30" height="30"/><rect x="10" y="92" width="18" height="18" fill="#fff"/><rect x="14" y="96" width="10" height="10"/><rect x="42" y="4" width="6" height="6"/><rect x="56" y="4" width="6" height="6"/><rect x="70" y="4" width="6" height="6"/><rect x="42" y="18" width="6" height="6"/><rect x="56" y="18" width="6" height="6"/><rect x="42" y="32" width="6" height="6"/><rect x="70" y="32" width="6" height="6"/><rect x="4" y="42" width="6" height="6"/><rect x="18" y="42" width="6" height="6"/><rect x="32" y="42" width="6" height="6"/><rect x="42" y="42" width="6" height="6"/><rect x="56" y="42" width="6" height="6"/><rect x="70" y="42" width="6" height="6"/><rect x="86" y="42" width="6" height="6"/><rect x="100" y="42" width="6" height="6"/><rect x="4" y="56" width="6" height="6"/><rect x="18" y="56" width="6" height="6"/><rect x="42" y="56" width="6" height="6"/><rect x="56" y="56" width="6" height="6"/><rect x="70" y="56" width="6" height="6"/><rect x="86" y="56" width="6" height="6"/><rect x="100" y="56" width="6" height="6"/><rect x="4" y="70" width="6" height="6"/><rect x="32" y="70" width="6" height="6"/><rect x="42" y="70" width="6" height="6"/><rect x="56" y="70" width="6" height="6"/><rect x="70" y="70" width="6" height="6"/><rect x="86" y="70" width="6" height="6"/><rect x="100" y="70" width="6" height="6"/><rect x="42" y="86" width="6" height="6"/><rect x="56" y="86" width="6" height="6"/><rect x="70" y="86" width="6" height="6"/><rect x="42" y="100" width="6" height="6"/><rect x="56" y="100" width="6" height="6"/><rect x="70" y="100" width="6" height="6"/><rect x="86" y="100" width="6" height="6"/><rect x="100" y="100" width="6" height="6"/></g></svg></div>
-<h3 style="font-size:16px;font-weight:600;margin-bottom:4px">我的推荐码</h3>
+<h3 style="font-size:16px;font-weight:600;margin-bottom:4px">我的分销码</h3>
 <p style="font-size:13px;color:var(--text-3)">LT202607001</p>
 <div style="margin-top:8px;font-size:12px;color:var(--text-2)">邀请链接：https://lante.cn/i/LT202607001</div>
 <div style="display:flex;gap:8px;margin-top:12px"><button class="btn btn-o" style="flex:1;padding:10px;font-size:14px" onclick="alert('推荐链接已复制，可分享给好友申请渠道商')">复制邀请链接</button><button class="btn btn-p" style="flex:1;padding:10px;font-size:14px" onclick="alert('已调起微信分享卡片')">微信分享</button></div>
 </div>
 <div class="card" style="margin-top:12px;background:#f7faff">
 <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><h4 style="font-size:15px;font-weight:600;margin:0">我的渠道关系</h4><span style="font-size:12px;color:var(--pri)" onclick="sm('bindReferralModal')">手动绑定</span></div>
-<div style="font-size:13px;color:var(--text-2);line-height:1.8">我的推荐码：<b style="color:var(--pri)">LT202607001</b><br>上级渠道商：<b>刘洋（LT0001）</b><br>绑定方式：分享邀请自动绑定；如线下邀请，可手动输入推荐码绑定。</div>
+<div style="font-size:13px;color:var(--text-2);line-height:1.8">我的分销码：<b style="color:var(--pri)">LT202607001</b><br>当前层级：<b>二级渠道商</b><br>上级渠道商：<b>刘洋（LT0001）</b><br>绑定方式：分享邀请自动绑定；如线下邀请，可手动输入分销码绑定。<br><span style="font-size:11px;color:var(--text-3)">当前已是二级，不可继续发展下级渠道商。</span></div>
 </div>
 <div class="dist-dashboard">
 <div class="dist-stat">
@@ -989,10 +989,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Helvetica Neue'
 
 <!-- ===== BIND REFERRAL CODE MODAL ===== -->
 <div class="modal" id="bindReferralModal"><div class="modal-box">
-<div class="modal-title">绑定上级推荐码</div>
-<div style="font-size:12px;color:var(--text-2);line-height:1.7;margin-bottom:12px">每个渠道商都有唯一推荐码。通过分享邀请进入时系统自动绑定；线下邀请或口头推荐时，可在这里手动输入推荐码绑定上下级关系。</div>
-<div class="form-group"><label>上级推荐码</label><input id="referralCodeInput" placeholder="请输入推荐码，如 LT0001"></div>
-<div class="form-group"><label>推荐人信息</label><div style="background:#f7f7f7;border-radius:8px;padding:10px;font-size:13px;color:var(--text-2)">示例：刘洋 · A级渠道商 · 推荐码 LT0001<br><span style="font-size:11px;color:var(--text-3)">输入后系统自动校验推荐码是否有效</span></div></div>
+<div class="modal-title">绑定上级分销码</div>
+<div style="font-size:12px;color:var(--text-2);line-height:1.7;margin-bottom:12px">每个渠道商都有唯一分销码。通过分享邀请进入时系统自动绑定；线下邀请时，可手动输入分销码绑定上下级。系统最多建立二级关系，超过二级将无法绑定。</div>
+<div class="form-group"><label>上级分销码</label><input id="referralCodeInput" placeholder="请输入分销码，如 LT0001"></div>
+<div class="form-group"><label>推荐人信息</label><div style="background:#f7f7f7;border-radius:8px;padding:10px;font-size:13px;color:var(--text-2)">示例：刘洋 · A级渠道商 · 分销码 LT0001<br><span style="font-size:11px;color:var(--text-3)">输入后系统自动校验分销码是否有效及层级是否超过二级</span></div></div>
 <div class="btn-row"><button class="btn btn-o" style="flex:1;padding:10px;font-size:14px" onclick="hm('bindReferralModal')">取消</button><button class="btn btn-p" style="flex:1;padding:10px;font-size:14px" onclick="bindReferralCode()">确认绑定</button></div>
 </div></div>
 
@@ -1008,14 +1008,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Helvetica Neue'
 <div class="card">
 <div class="form-group"><label>真实姓名</label><input placeholder="请输入真实姓名"></div>
 <div class="form-group"><label>手机号</label><input type="tel" placeholder="请输入手机号"></div>
-<div class="form-group"><label>上级推荐码（选填）</label><input placeholder="如：LT0001，来自分享邀请时自动带入"><div style="font-size:11px;color:var(--text-3);margin-top:4px">填写后将绑定上下级渠道关系；未填写则作为独立渠道商申请。</div></div>
+<div class="form-group"><label>上级分销码（选填）</label><input placeholder="如：LT0001，来自分享邀请时自动带入"><div style="font-size:11px;color:var(--text-3);margin-top:4px">填写后将绑定上下级渠道关系；未填写则作为独立渠道商申请。系统仅支持一级、二级分销。</div></div>
 <div class="form-group"><label>身份证号</label><input placeholder="请输入身份证号"></div>
 <div class="form-group"><label>所在地区</label><select><option>请选择</option><option>广州</option><option>深圳</option><option>东莞</option><option>佛山</option></select></div>
 <div class="form-group"><label>推广渠道</label><select><option>请选择</option><option>微信群推广</option><option>线下推广</option><option>短视频推广</option><option>其他</option></select></div>
 <div class="form-group"><label>备注说明</label><textarea rows="3" placeholder="请简要描述您的推广资源"></textarea></div>
 </div>
 <div class="card" style="background:#f7f7f7">
-<p style="font-size:12px;color:var(--text-2);line-height:1.8">&#9745; 我已阅读并同意《渠道商合作协议》<br><br>&#128204; 渠道商权益：<br>&bull; 专属推荐码，分享即可推广<br>&bull; 一级推荐10%佣金，二级5%<br>&bull; 实时查看分销数据和预计收入<br>&bull; 按月自动结算佣金</p>
+<p style="font-size:12px;color:var(--text-2);line-height:1.8">&#9745; 我已阅读并同意《渠道商合作协议》<br><br>&#128204; 渠道商权益：<br>&bull; 专属分销码，分享即可推广<br>&bull; 一级推荐10%佣金，二级5%（最多二级）<br>&bull; 实时查看分销数据和预计收入<br>&bull; 按月自动结算佣金</p>
 </div>
 <button class="btn btn-p" style="margin:12px" onclick="applyChannel()">提交申请</button>
 </div>
@@ -2540,10 +2540,10 @@ if(imgSlides.length>0)setInterval(imgNext,3500);
 function bindReferralCode(){
   var v=(document.getElementById('referralCodeInput')||{}).value||'LT0001';
   hm('bindReferralModal');
-  alert('已绑定上级渠道商：刘洋（推荐码 '+v+'），申请成为渠道商后将自动形成上下级关系');
+  alert('已绑定上级渠道商：刘洋（分销码 '+v+'），申请成为渠道商后将自动形成上下级关系；系统最多支持二级分销');
 }
 function applyChannel(){
-  alert('申请已提交，等待审核通过后即可成为渠道商；审核通过后系统将生成专属推荐码');
+  alert('申请已提交，等待审核通过后即可成为渠道商；审核通过后系统将生成专属分销码');
   document.getElementById('dist-not-apply').style.display='none';
   document.getElementById('dist-applied').style.display='block';
   mp('m-dist');
