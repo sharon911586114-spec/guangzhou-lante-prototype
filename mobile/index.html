@@ -343,6 +343,35 @@ body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Helvetica Neue'
 /* Batch action bar */
 .batch-bar{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;background:var(--card-bg);border-top:1px solid var(--border);position:absolute;bottom:0;left:0;right:0;z-index:50}
 
+/* R35 mobile experience refresh */
+.filter-panel{margin:10px -16px 4px;background:#fff;border-top:1px solid #f0f0f0;border-bottom:1px solid #ededed;box-shadow:0 2px 8px rgba(31,55,88,.035)}
+.filter-bar{margin:0;padding:0 8px;background:#fff;border:0;border-radius:0;box-shadow:none;height:46px}
+.filter-item{position:relative;border-radius:0;padding:0 4px;height:46px;font-size:14px;font-weight:500;color:#333;display:flex;align-items:center;justify-content:center;gap:4px}
+.filter-item.active{background:#fff;color:var(--pri);font-weight:600}
+.filter-item.active:after{content:"";position:absolute;left:34%;right:34%;bottom:0;height:2px;border-radius:2px;background:var(--pri)}
+.filter-icon{display:none}
+.filter-item .arrow{font-size:10px;color:#9aa0a6;transition:transform .15s}.filter-item.active .arrow{color:var(--pri);transform:rotate(180deg)}
+.active-filter-row{display:flex;align-items:center;gap:8px;height:40px;padding:0 14px;border-top:1px solid #f5f5f5}
+.active-filter-chips{flex:1;display:flex;gap:6px;overflow-x:auto;padding:0;scrollbar-width:none;min-width:0}
+.active-filter-chips::-webkit-scrollbar{display:none}
+.active-filter-chips span{white-space:nowrap;padding:4px 10px;border-radius:14px;background:#f2f6fc;color:#52627a;font-size:11px}
+.active-filter-chips span:first-child{background:#eaf3ff;color:var(--pri)}
+.filter-result-count{font-size:11px;color:var(--text-3);white-space:nowrap;padding-left:8px;border-left:1px solid #eee}
+.job-card.thumb{display:flex;gap:12px;padding:12px;align-items:stretch}
+.job-thumb{width:92px;min-height:96px;flex-shrink:0;border-radius:10px;background:linear-gradient(145deg,#5b8ff9,#1677ff);color:#fff;display:flex;flex-direction:column;justify-content:flex-end;padding:10px;font-size:12px;line-height:1.35;box-shadow:inset 0 -30px 40px rgba(0,0,0,.12)}
+.job-thumb.orange{background:linear-gradient(145deg,#ffb15a,#e8794d)}
+.job-thumb.green{background:linear-gradient(145deg,#45c7b8,#009688)}
+.job-thumb.purple{background:linear-gradient(145deg,#9b7bea,#6856c8)}
+.job-body{flex:1;min-width:0}.job-card.thumb .title{margin-bottom:6px}.job-card.thumb .meta{margin-bottom:6px;gap:7px}.job-card.thumb .tags{margin-bottom:4px}
+.wb-module-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:12px 0}
+.wb-module{background:#fff;border:1px solid var(--border);border-radius:12px;padding:13px 6px 11px;text-align:center;box-shadow:0 2px 8px rgba(31,55,88,.05);cursor:pointer}
+.wb-module .mi{width:42px;height:42px;margin:0 auto 7px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:linear-gradient(145deg,#eef5ff,#dbeaff);font-size:22px}
+.wb-module .mt{font-size:12px;font-weight:600}.wb-module .ms{font-size:10px;color:var(--text-3);margin-top:2px}
+#m-workbench .wb-section{display:none}
+.resume-entry{border:1px solid var(--border);border-left:3px solid var(--pri);border-radius:9px;padding:11px;margin-bottom:9px;background:#f8fbff}
+.resume-entry.primary{background:#eef6ff}.resume-actions{display:flex;gap:8px;margin-top:8px}.resume-actions button{border:0;background:transparent;color:var(--pri);font-size:12px;padding:0;cursor:pointer}
+.subscribe-option{display:flex;align-items:flex-start;gap:8px;padding:10px 0;border-bottom:1px solid var(--border);font-size:13px}.subscribe-option:last-child{border-bottom:0}
+
 </style>
 </head>
 <body>
@@ -385,10 +414,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Helvetica Neue'
 </div>
 
 <!-- Filter Bar -->
+<div class="filter-panel">
 <div class="filter-bar">
-<div class="filter-item" onclick="toggleFilter(this,'fd-area')">地区 <span class="arrow">&#9662</span></div>
-<div class="filter-item" onclick="toggleFilter(this,'fd-tag')">岗位标签 <span class="arrow">&#9662</span></div>
-<div class="filter-item" onclick="toggleFilter(this,'fd-more')">筛选 <span class="arrow">&#9662</span></div>
+<div class="filter-item" onclick="toggleFilter(this,'fd-area')">广州 <span class="arrow">&#9662;</span></div>
+<div class="filter-item" onclick="toggleFilter(this,'fd-tag')">岗位类型 <span class="arrow">&#9662;</span></div>
+<div class="filter-item" onclick="toggleFilter(this,'fd-more')">更多筛选 <span class="arrow">&#9662;</span></div>
+</div>
+<div class="active-filter-row"><div class="active-filter-chips"><span>广州 ×</span><span>经验不限 ×</span><span>5-8K ×</span></div><span class="filter-result-count">128 个岗位</span></div>
 </div>
 
 <!-- Filter Dropdowns -->
@@ -408,30 +440,30 @@ body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Helvetica Neue'
 </div>
 
 <div class="section-title">热门岗位</div>
-<div class="job-card" onclick="mp('m-job')">
+<div class="job-card thumb" onclick="mp('m-job')"><div class="job-thumb">电子制造<br><b>环境实拍</b></div><div class="job-body">
   <div class="title"><span>电子普工</span><span class="salary">5-7K</span></div>
   <div class="meta"><span>广州黄埔</span><span>50人</span><span>经验不限</span></div>
   <div class="tags"><span class="tag">普工</span><span class="tag">包吃住</span><span class="tag">五险一金</span></div>
   <div class="rating">&#9733;&#9733;&#9733;&#9733;&#9734; 4.2 (36评)</div>
-</div>
-<div class="job-card" onclick="mp('m-job')">
+</div></div>
+<div class="job-card thumb" onclick="mp('m-job')"><div class="job-thumb orange">品质检测<br><b>洁净车间</b></div><div class="job-body">
   <div class="title"><span>质检员</span><span class="salary">7-9K</span></div>
   <div class="meta"><span>广州南沙</span><span>20人</span><span>1年经验</span></div>
   <div class="tags"><span class="tag">质检</span><span class="tag">双休</span><span class="tag">绩效奖金</span></div>
   <div class="rating">&#9733;&#9733;&#9733;&#9733;&#9733; 4.5 (18评)</div>
-</div>
-<div class="job-card" onclick="mp('m-job')">
+</div></div>
+<div class="job-card thumb" onclick="mp('m-job')"><div class="job-thumb green">技术岗位<br><b>专业培训</b></div><div class="job-body">
   <div class="title"><span>高级技工</span><span class="salary">9-12K</span></div>
   <div class="meta"><span>广州增城</span><span>10人</span><span>3年经验</span></div>
   <div class="tags"><span class="tag">技工</span><span class="tag">技术培训</span></div>
   <div class="rating">&#9733;&#9733;&#9733;&#9734;&#9734; 3.8 (5评)</div>
-</div>
-<div class="job-card" onclick="mp('m-job')">
+</div></div>
+<div class="job-card thumb" onclick="mp('m-job')"><div class="job-thumb purple">仓储物流<br><b>规范管理</b></div><div class="job-body">
   <div class="title"><span>仓管员</span><span class="salary">6-8K</span></div>
   <div class="meta"><span>广州番禺</span><span>15人</span><span>经验不限</span></div>
   <div class="tags"><span class="tag">仓储</span><span class="tag">月休4天</span></div>
   <div class="rating">&#9733;&#9733;&#9733;&#9733;&#9734; 4.0 (12评)</div>
-</div>
+</div></div>
 </div>
 </div>
 
@@ -457,12 +489,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Helvetica Neue'
 <div class="tags"><span class="tag">普工</span><span class="tag">包吃住</span><span class="tag">五险一金</span></div>
 </div>
 
-<div class="card" style="margin-top:8px">
-<h4 style="font-size:15px;font-weight:600;margin-bottom:10px;color:var(--pri)">用工单位信息</h4>
-<div class="info-row"><span>用工单位名称</span><span>比亚迪电子</span></div>
-<div class="info-row"><span>用工单位地址</span><span style="text-align:right">广州黄埔区科学城大道88号</span></div>
-<div class="info-row" style="display:block"><span>用工单位介绍</span><p style="font-size:12px;color:var(--text-2);margin:6px 0 0;line-height:1.6">比亚迪电子为全球领先的电子制造服务商，主营消费电子与汽车零部件，厂区配套宿舍与食堂，管理规范、准时发薪。</p></div>
-</div>
 <div class="job-desc">
 <h4>岗位描述</h4>
 <p>负责电子产品生产线组装、测试、包装等操作，需配合加班安排。提供住宿及餐饮补贴，五险一金按国家标准缴纳。</p>
@@ -473,6 +499,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Helvetica Neue'
 <li>能吃苦耐劳，服从管理安排</li>
 <li>有电子厂工作经验者优先</li>
 </div>
+
 </div>
 
 <div class="job-desc">
@@ -487,6 +514,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Helvetica Neue'
 </div>
 </div>
 
+<div class="card" style="margin-top:8px">
+<h4 style="font-size:15px;font-weight:600;margin-bottom:10px;color:var(--pri)">用工单位介绍</h4>
+<div class="info-row"><span>单位名称</span><span>比亚迪电子</span></div>
+<div class="info-row"><span>工作地址</span><span style="text-align:right">广州黄埔区科学城大道88号</span></div>
+<p style="font-size:12px;color:var(--text-2);margin:8px 0 0;line-height:1.7">比亚迪电子为全球领先的电子制造服务商，主营消费电子与汽车零部件，厂区配套宿舍与食堂，管理规范、准时发薪。</p>
+</div>
+
 <!-- Reviews - compact -->
 <div class="review-compact"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px"><span style="font-size:15px;font-weight:600">点评岗位</span><div style="display:flex;gap:12px;align-items:center"><span style="font-size:13px;color:var(--pri);cursor:pointer" onclick="sm('reviewModal')">我要点评</span><span style="font-size:13px;color:var(--text-3);cursor:pointer" onclick="mp('m-reviewAll')">查看全部 86条 &rsaquo;</span></div></div>
 <div class="header"><span class="score">4.2</span><span class="count">&#9733;&#9733;&#9733;&#9733;&#9734; 36条评价</span></div>
@@ -497,7 +531,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Helvetica Neue'
 
 
 </div>
-<div class="fixed-bottom-btn"><button class="btn btn-p" onclick="_mobLastPage='m-job';mp('m-onboard')">立即报名</button></div>
+<div class="fixed-bottom-btn"><button class="btn btn-p" onclick="startJobApplication()">立即报名并投递简历</button></div>
 </div>
 
 <!-- ===== ALL REVIEWS ===== -->
@@ -596,6 +630,19 @@ body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Helvetica Neue'
 <div class="wb-card" onclick="mp('m-wbInterview')" style="cursor:pointer"><div class="num blue">8</div><div class="label">待面试</div></div>
 <div class="wb-card" onclick="mp('m-wbOnboard')" style="cursor:pointer"><div class="num orange">5</div><div class="label">待入职审核</div></div>
 <div class="wb-card" onclick="mp('m-wbRoster')" style="cursor:pointer"><div class="num green">126</div><div class="label">花名册</div></div>
+</div>
+
+<div class="section-title" style="padding-left:0">业务功能</div>
+<div class="wb-module-grid">
+<div class="wb-module" onclick="mp('m-wbRecruit')"><div class="mi">🧑‍💼</div><div class="mt">招聘管理</div><div class="ms">简历与邀约</div></div>
+<div class="wb-module" onclick="mp('m-wbPosition')"><div class="mi">📌</div><div class="mt">岗位管理</div><div class="ms">发布与维护</div></div>
+<div class="wb-module" onclick="mp('m-wbProject')"><div class="mi">📁</div><div class="mt">项目管理</div><div class="ms">项目与合同</div></div>
+<div class="wb-module" onclick="mp('m-customer')"><div class="mi">🏢</div><div class="mt">客户管理</div><div class="ms">客户与合同</div></div>
+<div class="wb-module" onclick="mp('m-wbInterview')"><div class="mi">📅</div><div class="mt">面试审核</div><div class="ms">待处理 8</div></div>
+<div class="wb-module" onclick="mp('m-wbOnboard')"><div class="mi">✅</div><div class="mt">入职审核</div><div class="ms">待处理 5</div></div>
+<div class="wb-module" onclick="mp('m-wbRoster')"><div class="mi">👥</div><div class="mt">花名册</div><div class="ms">员工 126</div></div>
+<div class="wb-module" onclick="mp('m-entryCode')"><div class="mi">▦</div><div class="mt">入职码</div><div class="ms">生成与管理</div></div>
+<div class="wb-module" onclick="mp('m-wbDashboard')"><div class="mi">📊</div><div class="mt">数据看板</div><div class="ms">经营概览</div></div>
 </div>
 
 <div class="wb-section">
@@ -748,12 +795,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Helvetica Neue'
 <!-- 服务通知订阅 -->
 <div class="card" style="background:var(--pri-l);border:1px solid #b7d4ff">
 <h4 style="font-size:15px;margin-bottom:8px;color:var(--pri)">订阅微信服务通知</h4>
-<p style="font-size:12px;color:var(--text-2);line-height:1.7;margin-bottom:10px">面试邀约、时间变更和入职审核结果将通过微信服务通知推送。报名提交前需授权订阅，后续才能及时收到通知。</p>
-<label style="display:flex;align-items:start;gap:8px;font-size:13px;color:var(--text);cursor:pointer">
-<input type="checkbox" checked style="margin-top:2px">
-<span>允许接收面试邀约 / 入职审核相关服务通知</span>
-</label>
-<button class="btn btn-o" style="margin-top:10px;padding:9px;font-size:13px" onclick="alert('已调起微信订阅消息授权：面试邀约通知、审核结果通知')">模拟订阅授权</button>
+<p style="font-size:12px;color:var(--text-2);line-height:1.7;margin-bottom:6px">微信一次授权通常对应一次通知。可在报名时及「我的」中多次订阅，避免错过后续节点。</p>
+<label class="subscribe-option"><input type="checkbox" checked><span>面试邀约与时间变更通知</span></label>
+<label class="subscribe-option"><input type="checkbox" checked><span>入职审核与合同签署通知</span></label>
+<label class="subscribe-option"><input type="checkbox"><span>工资发放与岗位状态通知</span></label>
+<button class="btn btn-o" style="margin-top:10px;padding:9px;font-size:13px" onclick="subscribeMoreServiceNotices()">再次订阅服务通知（已订阅 <span class="subscribe-count">1</span> 次）</button>
 </div>
 
 <!-- 协议确认 -->
@@ -1050,8 +1096,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Helvetica Neue'
 <div class="avatar">张</div>
 <div><div style="font-size:17px;font-weight:600">张伟</div><div style="font-size:13px;color:var(--text-3);margin-top:4px">138****6688</div><div style="margin-top:4px"><span class="tag" style="padding:2px 8px;border-radius:16px;background:#E3F2FD;color:var(--ok);font-size:11px">技工</span></div></div>
 </div>
-<button onclick="switchRole()" style="margin:12px 16px;padding:10px;background:var(--pri-l);color:var(--pri);border:none;border-radius:8px;width:calc(100% - 32px);font-size:14px;cursor:pointer">🔄 切换角色（求职者/管理员）</button>
+<button onclick="switchRole()" style="margin:12px 16px;padding:10px;background:var(--pri-l);color:var(--pri);border:none;border-radius:8px;width:calc(100% - 32px);font-size:14px;cursor:pointer">🔄 切换角色（求职者 / 管理员 / 渠道商）</button>
 <div class="menu-item" onclick="mp('m-resume')"><div class="left"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></span><span class="text">我的简历</span></div><span class="arrow">&rarr;</span></div>
+<div class="menu-item" onclick="sm('serviceSubscribeModal')"><div class="left"><span class="icon">🔔</span><span class="text">微信服务通知订阅</span></div><span class="arrow">&rarr;</span></div>
 <div class="menu-item" onclick="mp('m-interview')"><div class="left"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4"/></svg></span><span class="text">我的面试</span></div><span class="arrow">&rarr;</span></div>
 <div class="menu-item" onclick="mp('m-payslip')"><div class="left"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12V7H5a2 2 0 010-4h14v4M3 5v14a2 2 0 002 2h16v-5M18 12a2 2 0 000 4h4v-4z"/></svg></span><span class="text">工资条</span></div><span class="arrow">&rarr;</span></div>
 <div class="menu-item" onclick="mp('m-contract')"><div class="left"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l7 3v6c0 4.5-3 8.5-7 9.5-4-1-7-5-7-9.5V5l7-3z"/><path d="M9 12l2 2 4-4"/></svg></span><span class="text">我的合同</span></div><span class="arrow">&rarr;</span></div>
@@ -1069,21 +1116,23 @@ body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Helvetica Neue'
 <div class="card" style="margin-bottom:8px">
 <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
 <h4 style="font-size:15px;font-weight:600;margin:0">我的简历</h4>
-<span style="font-size:12px;color:var(--text-3)">共 1 份</span>
+<span id="resumeCountText" style="font-size:12px;color:var(--text-3)">共 2 / 3 份</span>
 </div>
 <!-- 简历1: 用户自主上传 -->
-<div style="background:#f0f7ff;border-radius:8px;padding:12px;margin-bottom:8px;border-left:3px solid var(--pri)">
+<div class="resume-entry primary">
 <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
 <div style="display:flex;align-items:center;gap:8px">
 <span style="font-size:14px;font-weight:600">张伟_最新简历.pdf</span>
+<span class="primary-badge" style="font-size:10px;padding:1px 6px;border-radius:4px;background:var(--pri);color:#fff">主简历</span>
 <span style="font-size:10px;padding:1px 6px;border-radius:4px;background:#e6f4ff;color:var(--pri);font-weight:500">自主上传</span>
 </div>
 <span style="font-size:11px;color:var(--text-3)">2026-07-08 上传</span>
 </div>
-<p style="font-size:12px;color:var(--text-2);margin:0">已解析 &middot; 可编辑 &middot; <span style="color:var(--pri);cursor:pointer" onclick="sm('resumeUploadModal')">重新上传</span></p>
+<p style="font-size:12px;color:var(--text-2);margin:0">已解析 · 自主上传 · 默认用于岗位投递</p><div class="resume-actions"><button onclick="editMobileResume('张伟_最新简历')">编辑</button><button disabled style="color:var(--text-3)">当前主简历</button></div>
 </div>
+<div class="resume-entry"><div style="display:flex;justify-content:space-between"><b style="font-size:14px">张伟_技工专项简历.pdf</b><span style="font-size:11px;color:var(--text-3)">07-10</span></div><p style="font-size:12px;color:var(--text-2);margin:5px 0 0">已解析 · 用户填写 · 适用于技工岗位</p><div class="resume-actions"><button onclick="editMobileResume('技工专项简历')">编辑</button><button onclick="setPrimaryResume(this,'技工专项简历')">设为主简历</button></div></div>
 <!-- 上传简历按钮 -->
-<button class="btn btn-p" style="margin-top:10px;padding:10px;font-size:14px;display:flex;align-items:center;justify-content:center;gap:6px" onclick="sm('resumeUploadModal')">
+<button class="btn btn-p" style="margin-top:10px;padding:10px;font-size:14px;display:flex;align-items:center;justify-content:center;gap:6px" onclick="addMobileResume()">
 <span style="font-size:18px;line-height:1">&#128228;</span> 上传新简历
 </button>
 <p style="font-size:11px;color:var(--text-3);text-align:center;margin-top:6px">支持 PDF / Word / PNG / JPG / JPEG 格式，上传后自动解析填充</p>
@@ -2102,6 +2151,19 @@ function toggleEditEmp(){
 </div>
 </div></div>
 
+<!-- 报名简历选择 -->
+<div class="modal" id="applyResumeModal"><div class="modal-box"><div class="modal-title">选择投递简历</div>
+<p style="font-size:12px;color:var(--text-2);margin-bottom:10px">报名岗位必须投递一份简历，系统默认选中主简历。</p>
+<label class="subscribe-option"><input type="radio" name="applyResume" checked><span><b>张伟_最新简历.pdf</b><br><small style="color:var(--pri)">主简历 · 默认投递</small></span></label>
+<label class="subscribe-option"><input type="radio" name="applyResume"><span><b>张伟_技工专项简历.pdf</b><br><small style="color:var(--text-3)">适用于技工岗位</small></span></label>
+<button class="btn btn-o" style="margin-top:10px" onclick="hm('applyResumeModal');mp('m-resume')">管理 / 新增简历</button>
+<div class="btn-row"><button class="btn btn-o" onclick="hm('applyResumeModal')">取消</button><button class="btn btn-p" onclick="confirmJobApplication()">确认投递</button></div>
+</div></div>
+<div class="modal" id="resumeRequiredModal"><div class="modal-box"><div class="modal-title">请先完善简历</div><p style="font-size:13px;color:var(--text-2);line-height:1.7">当前账号暂无可投递简历。请填写或上传简历后再报名该岗位。</p><div class="btn-row"><button class="btn btn-o" onclick="hm('resumeRequiredModal')">暂不报名</button><button class="btn btn-p" onclick="hm('resumeRequiredModal');mp('m-resume');addMobileResume()">去补充简历</button></div></div></div>
+
+<!-- 多次订阅微信服务通知 -->
+<div class="modal" id="serviceSubscribeModal"><div class="modal-box"><div class="modal-title">微信服务通知</div><p style="font-size:12px;color:var(--text-2);line-height:1.7">可多次发起订阅授权。每次授权用于发送后续一次重要节点通知。</p><label class="subscribe-option"><input type="checkbox" checked><span>面试邀约与时间变更</span></label><label class="subscribe-option"><input type="checkbox" checked><span>入职审核与合同签署</span></label><label class="subscribe-option"><input type="checkbox" checked><span>工资发放与岗位状态</span></label><div style="padding:10px;background:#f0f7ff;border-radius:8px;font-size:12px;color:var(--pri)">当前累计订阅 <b class="subscribe-count">1</b> 次，可继续订阅。</div><div class="btn-row"><button class="btn btn-o" onclick="hm('serviceSubscribeModal')">关闭</button><button class="btn btn-p" onclick="subscribeMoreServiceNotices()">再次订阅</button></div></div></div>
+
 <!-- Workbench Modals -->
 <div class="modal" id="wbInterviewModal"><div class="modal-box" style="max-height:90%;overflow:auto"><div class="modal-title">面试审核</div>
 <div class="card" style="margin:0;padding:12px;background:#f7f7f7;border-radius:6px">
@@ -2365,18 +2427,43 @@ function toggleEditEmp(){
 <script>
 var _mobLastPage='m-home';
 var _currentRole='staff';
+var _mobileResumeCount=2;
+var _serviceSubscribeCount=1;
 
 function renderTabBar(){
   var staff=document.querySelector('.tab-bar-staff');
   var admin=document.querySelector('.tab-bar-admin');
   if(!staff||!admin)return;
-  if(_currentRole==='staff'){staff.style.display='flex';admin.style.display='none';}
+  if(_currentRole==='staff'||_currentRole==='channel'){staff.style.display='flex';admin.style.display='none';}
   else{staff.style.display='none';admin.style.display='flex';}
 }
 function switchRole(){
-  _currentRole=_currentRole==='staff'?'admin':'staff';
+  _currentRole=_currentRole==='staff'?'admin':(_currentRole==='admin'?'channel':'staff');
   renderTabBar();
-  alert(_currentRole==='staff'?'已切换为：求职者视角':'已切换为：管理员视角');
+  var names={staff:'求职者',admin:'管理员',channel:'渠道商'};
+  alert('已切换为：'+names[_currentRole]+'视角');
+  if(_currentRole==='admin')mp('m-workbench');else if(_currentRole==='channel')mp('m-dist');else mp('m-profile');
+}
+
+function startJobApplication(){
+  _mobLastPage='m-job';
+  if(_mobileResumeCount<1)sm('resumeRequiredModal');else sm('applyResumeModal');
+}
+function confirmJobApplication(){hm('applyResumeModal');mp('m-onboard');}
+function addMobileResume(){
+  if(_mobileResumeCount>=3){alert('最多可保存 3 份简历，请先删除不再使用的简历');return;}
+  sm('resumeUploadModal');
+}
+function editMobileResume(name){alert('正在编辑：'+name+'。保存后不会影响其他简历');}
+function setPrimaryResume(btn,name){
+  document.querySelectorAll('#m-resume .resume-entry').forEach(function(x){x.classList.remove('primary');var b=x.querySelector('.primary-badge');if(b)b.remove()});
+  var entry=btn.closest('.resume-entry');if(entry){entry.classList.add('primary');var title=entry.querySelector('b');if(title)title.insertAdjacentHTML('afterend',' <span class="primary-badge" style="font-size:10px;padding:1px 6px;border-radius:4px;background:var(--pri);color:#fff">主简历</span>')}
+  alert('已将“'+name+'”设为主简历，后续岗位默认投递该简历');
+}
+function subscribeMoreServiceNotices(){
+  _serviceSubscribeCount++;
+  document.querySelectorAll('.subscribe-count').forEach(function(x){x.textContent=_serviceSubscribeCount});
+  alert('第 '+_serviceSubscribeCount+' 次订阅授权成功，可继续接收后续服务通知');
 }
 
 function mp(id){
@@ -2442,6 +2529,7 @@ function simulateResumeParse(){
     btn.disabled=false;
     btn.textContent='上传并解析';
     hm('resumeUploadModal');
+    if(_mobileResumeCount<3){_mobileResumeCount++;var ct=document.getElementById('resumeCountText');if(ct)ct.textContent='共 '+_mobileResumeCount+' / 3 份';}
     alert('简历解析成功，已自动填充表单，请核对后保存');
   },900);
 }
@@ -2637,6 +2725,17 @@ document.addEventListener('DOMContentLoaded',function(){
 
 
 <!-- ===== MOBILE POSITION MANAGEMENT ===== -->
+<!-- ===== MOBILE RECRUITMENT MANAGEMENT ===== -->
+<div class="page" id="m-wbRecruit">
+<div class="nav-bar"><span class="back" onclick="mp('m-workbench')">‹ 返回</span>招聘管理</div>
+<div class="content">
+<div class="search-box"><input placeholder="搜索姓名、手机号、应聘岗位"><span style="color:var(--pri);font-size:13px">搜索</span></div>
+<div class="flt-compact"><span class="flt-pill active">全部简历</span><span class="flt-pill">待邀约 12</span><span class="flt-pill">待面试 8</span><span class="flt-pill">已入职 126</span></div>
+<div class="section-title">候选人简历</div>
+<div class="card"><div style="display:flex;justify-content:space-between"><b>张伟</b><span class="tag">待邀约</span></div><div style="font-size:12px;color:var(--text-2);margin:7px 0">电子普工 · 28岁 · 3年经验<br>主简历：张伟_最新简历.pdf</div><div style="display:flex;gap:8px"><button class="btn btn-o" style="padding:7px;font-size:12px" onclick="alert('打开候选人完整简历')">查看简历</button><button class="btn btn-p" style="padding:7px;font-size:12px" onclick="alert('面试邀约已通过微信服务通知发送')">面试邀约</button></div></div>
+<div class="card"><div style="display:flex;justify-content:space-between"><b>李娜</b><span class="tag">待面试</span></div><div style="font-size:12px;color:var(--text-2);margin:7px 0">质检员 · 25岁 · 2年经验<br>主简历：李娜_质检简历.pdf</div><div style="display:flex;gap:8px"><button class="btn btn-o" style="padding:7px;font-size:12px" onclick="alert('打开候选人完整简历')">查看简历</button><button class="btn btn-p" style="padding:7px;font-size:12px" onclick="mp('m-wbInterview')">进入审核</button></div></div>
+</div></div>
+
 <div class="page" id="m-wbPosition">
 <div class="nav-bar"><span class="back" onclick="mp('m-workbench')"><svg viewBox="0 0 12 12" fill="none"><path d="M8 1L3 6l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> 返回</span>岗位管理<span style="position:absolute;right:12px;font-size:13px;font-weight:500;color:var(--pri);cursor:pointer" onclick="sm('mobAddPositionModal')">+ 新增</span></div>
 <div class="content">
