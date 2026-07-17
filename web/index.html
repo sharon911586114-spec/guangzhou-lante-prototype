@@ -221,6 +221,7 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 .fb-coef-input{width:60px;padding:4px 8px;border:1px solid #ffd591;border-radius:4px;font-size:13px;text-align:center;color:#d46b08;font-weight:500}
 .fb-coef-input:focus{outline:none;border-color:#ffa940;box-shadow:0 0 0 2px rgba(255,169,64,.2)}
 .fb-var-select{padding:4px 8px;border:1px solid #91caff;border-radius:4px;font-size:13px;background:#f5faff;color:var(--brand)}
+.switch{display:inline-flex;align-items:center;gap:10px;cursor:pointer;user-select:none;font-size:13px}.switch input{position:absolute;opacity:0;pointer-events:none}.switch-track{position:relative;width:44px;height:24px;border-radius:12px;background:#cbd5e1;transition:.2s}.switch-track:after{content:"";position:absolute;width:18px;height:18px;left:3px;top:3px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.25);transition:.2s}.switch input:checked+.switch-track{background:var(--brand)}.switch input:checked+.switch-track:after{transform:translateX(20px)}.switch-state{color:var(--text2);font-weight:500}
 
 </style>
 </head>
@@ -259,7 +260,7 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 <div class="mg">系统管理</div>
 <div class="mi" data-p="userList" onclick="sw(this)">用户列表</div>
 <div class="mi" data-p="role" onclick="sw(this)">角色权限</div>
-<div class="mi" data-p="dict" onclick="sw(this)">字典管理</div>
+<div class="mi" data-p="dict" onclick="sw(this)">字典设置</div>
 <div class="mi" data-p="config" onclick="sw(this)">系统设置</div>
 <div class="mi" data-p="account" onclick="sw(this)">账号设置</div>
 </div>
@@ -2024,15 +2025,15 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 
 <!-- ===== DICTIONARY ===== -->
 <div class="pg" id="p-dict">
-<div class="pt">字典管理</div>
+<div class="pt">字典设置</div>
+<div class="ib ib-b" style="margin-bottom:12px">字典配置已从系统设置中独立出来，并按业务功能模块划分标签，便于各模块分别维护可选项。</div>
 <div class="tabs">
-<div class="tab active" onclick="stab(this,'dict-position')">职位标签</div>
-<div class="tab" onclick="stab(this,'dict-user')">用户标签</div>
-<div class="tab" onclick="stab(this,'dict-posttype')">岗位类型</div>
-<div class="tab" onclick="stab(this,'dict-protype')">项目类型</div>
-
-<div class="tab" onclick="stab(this,'dict-edu')">学历</div>
-<div class="tab" onclick="stab(this,'dict-nation')">民族</div>
+<div class="tab active" onclick="stab(this,'dict-position')">招聘管理</div>
+<div class="tab" onclick="stab(this,'dict-user')">用户与简历</div>
+<div class="tab" onclick="stab(this,'dict-posttype')">岗位管理</div>
+<div class="tab" onclick="stab(this,'dict-protype')">项目管理</div>
+<div class="tab" onclick="stab(this,'dict-edu')">基础资料</div>
+<div class="tab" onclick="stab(this,'dict-nation')">身份资料</div>
 </div>
 
 <div class="tc show" id="dict-position"><div class="cd">
@@ -2137,7 +2138,7 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
       <div class="fg"><label>水印网址</label><input value="www.lantejob.com"></div>
     </div>
     <div class="fr" style="margin-top:12px">
-      <div class="fg"><label>启用水印</label><label style="font-size:13px;cursor:pointer"><input type="checkbox" checked> 开启简历水印</label></div>
+      <div class="fg"><label>启用水印</label><label class="switch"><input id="watermarkSwitch" type="checkbox" checked onchange="document.getElementById('watermarkSwitchText').textContent=this.checked?'已开启':'已关闭'"><span class="switch-track"></span><span class="switch-state" id="watermarkSwitchText">已开启</span></label></div>
       <div class="fg"><label>水印类型</label><select><option>文字水印</option><option>图片Logo水印</option></select></div>
     </div>
     <div class="fr" style="margin-top:12px">
@@ -2587,7 +2588,7 @@ function changeRosterBatchAction(){
   };
   box.innerHTML=map[sel.value]||'';
 }
-var names={dashboard:'数据看板',resume:'简历库',resumeDetail:'简历详情',resumeAdd:'新增简历',interview:'面试审核',onboard:'入职审核',roster:'花名册',empDetail:'花名册 / 员工详情',addEmployee:'花名册 / 新增员工',project:'项目管理',projectDetail:'项目管理 / 项目详情',projectEdit:'项目管理 / 编辑项目',position:'岗位管理',positionDetail:'岗位管理 / 岗位详情',positionAdd:'岗位管理 / 新增岗位',settle:'结算中心',settleCreate:'结算中心 / 新建结算',settleApproval:'结算中心 / 结算审批',settlePaySlip:'结算中心 / 工资条详情',dist:'分销裂变',distDetail:'分销裂变 / 渠道商详情',distCommChannel:'分销裂变 / 按渠道商配置佣金',role:'角色权限',roleAdd:'角色权限 / 新增角色',roleEdit:'角色权限 / 修改角色权限',dict:'字典管理',config:'系统设置',account:'账号设置',accountAdd:'账号设置 / 新增账号',salary:'系统设置 / 工资计算规则',watermark:'系统设置 / 简历水印',agreement:'系统设置 / 协议管理',formfields:'系统设置 / 字段管理',customer:'客户管理',customerDetail:'客户管理 / 客户详情',customerEdit:'客户管理 / 编辑客户',userList:'用户列表',entryCode:'入职码'}
+var names={dashboard:'数据看板',resume:'简历库',resumeDetail:'简历详情',resumeAdd:'新增简历',interview:'面试审核',onboard:'入职审核',roster:'花名册',empDetail:'花名册 / 员工详情',addEmployee:'花名册 / 新增员工',project:'项目管理',projectDetail:'项目管理 / 项目详情',projectEdit:'项目管理 / 编辑项目',position:'岗位管理',positionDetail:'岗位管理 / 岗位详情',positionAdd:'岗位管理 / 新增岗位',settle:'结算中心',settleCreate:'结算中心 / 新建结算',settleApproval:'结算中心 / 结算审批',settlePaySlip:'结算中心 / 工资条详情',dist:'分销裂变',distDetail:'分销裂变 / 渠道商详情',distCommChannel:'分销裂变 / 按渠道商配置佣金',role:'角色权限',roleAdd:'角色权限 / 新增角色',roleEdit:'角色权限 / 修改角色权限',dict:'字典设置',config:'系统设置',account:'账号设置',accountAdd:'账号设置 / 新增账号',salary:'系统设置 / 工资计算规则',watermark:'系统设置 / 简历水印',agreement:'系统设置 / 协议管理',formfields:'系统设置 / 字段管理',customer:'客户管理',customerDetail:'客户管理 / 客户详情',customerEdit:'客户管理 / 编辑客户',userList:'用户列表',entryCode:'入职码'}
 function sw(el){var p=el.dataset.p;document.querySelectorAll('.mi').forEach(m=>m.classList.remove('active'));el.classList.add('active');showPage(p)}
 function showPage(p){document.querySelectorAll('.pg').forEach(function(g){g.classList.remove('show')});var el=document.getElementById('p-'+p);if(!el){console.warn('Page not found: '+p);return}el.classList.add('show');var pn=document.getElementById('pn');if(pn)pn.textContent=names[p]||p}
 function goConfig(p){showPage(p);setMi('config')}
