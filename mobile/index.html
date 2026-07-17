@@ -358,10 +358,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Helvetica Neue'
 .active-filter-chips span:first-child{background:#eaf3ff;color:var(--pri)}
 .filter-result-count{font-size:11px;color:var(--text-3);white-space:nowrap;padding-left:8px;border-left:1px solid #eee}
 .job-card.thumb{display:flex;gap:12px;padding:12px;align-items:stretch}
-.job-thumb{width:92px;min-height:96px;flex-shrink:0;border-radius:10px;background:linear-gradient(145deg,#5b8ff9,#1677ff);color:#fff;display:flex;flex-direction:column;justify-content:flex-end;padding:10px;font-size:12px;line-height:1.35;box-shadow:inset 0 -30px 40px rgba(0,0,0,.12)}
-.job-thumb.orange{background:linear-gradient(145deg,#ffb15a,#e8794d)}
-.job-thumb.green{background:linear-gradient(145deg,#45c7b8,#009688)}
-.job-thumb.purple{background:linear-gradient(145deg,#9b7bea,#6856c8)}
+.job-thumb{width:92px;min-height:96px;flex-shrink:0;border-radius:10px;background-color:#d9e5f5;background-size:cover;background-position:center;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;padding:10px;font-size:12px;line-height:1.35;box-shadow:inset 0 -48px 42px rgba(0,0,0,.48);text-shadow:0 1px 2px rgba(0,0,0,.35)}
+.job-thumb.factory{background-image:url('https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&w=320&q=80')}
+.job-thumb.quality{background-image:url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=320&q=80')}
+.job-thumb.technician{background-image:url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=320&q=80')}
+.job-thumb.warehouse{background-image:url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=320&q=80')}
+.team-period{display:flex;gap:4px}.team-period button{border:1px solid var(--border);background:#fff;color:var(--text-2);border-radius:5px;padding:4px 7px;font-size:11px}.team-period button.active{background:var(--pri);border-color:var(--pri);color:#fff}
+.today-channel-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0}.today-channel-stats>div{padding:12px 4px;text-align:center;background:#f7faff;border-radius:9px}.today-channel-stats b{display:block;font-size:22px;color:var(--pri)}.today-channel-stats span{font-size:11px;color:var(--text-3)}
 .job-body{flex:1;min-width:0}.job-card.thumb .title{margin-bottom:6px}.job-card.thumb .meta{margin-bottom:6px;gap:7px}.job-card.thumb .tags{margin-bottom:4px}
 .wb-module-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:12px 0}
 .wb-module{background:#fff;border:1px solid var(--border);border-radius:12px;padding:13px 6px 11px;text-align:center;box-shadow:0 2px 8px rgba(31,55,88,.05);cursor:pointer}
@@ -440,25 +443,25 @@ body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Helvetica Neue'
 </div>
 
 <div class="section-title">热门岗位</div>
-<div class="job-card thumb" onclick="mp('m-job')"><div class="job-thumb">电子制造<br><b>环境实拍</b></div><div class="job-body">
+<div class="job-card thumb" onclick="mp('m-job')"><div class="job-thumb factory">电子制造<br><b>环境实拍</b></div><div class="job-body">
   <div class="title"><span>电子普工</span><span class="salary">5-7K</span></div>
   <div class="meta"><span>广州黄埔</span><span>50人</span><span>经验不限</span></div>
   <div class="tags"><span class="tag">普工</span><span class="tag">包吃住</span><span class="tag">五险一金</span></div>
   <div class="rating">&#9733;&#9733;&#9733;&#9733;&#9734; 4.2 (36评)</div>
 </div></div>
-<div class="job-card thumb" onclick="mp('m-job')"><div class="job-thumb orange">品质检测<br><b>洁净车间</b></div><div class="job-body">
+<div class="job-card thumb" onclick="mp('m-job')"><div class="job-thumb quality">品质检测<br><b>洁净车间</b></div><div class="job-body">
   <div class="title"><span>质检员</span><span class="salary">7-9K</span></div>
   <div class="meta"><span>广州南沙</span><span>20人</span><span>1年经验</span></div>
   <div class="tags"><span class="tag">质检</span><span class="tag">双休</span><span class="tag">绩效奖金</span></div>
   <div class="rating">&#9733;&#9733;&#9733;&#9733;&#9733; 4.5 (18评)</div>
 </div></div>
-<div class="job-card thumb" onclick="mp('m-job')"><div class="job-thumb green">技术岗位<br><b>专业培训</b></div><div class="job-body">
+<div class="job-card thumb" onclick="mp('m-job')"><div class="job-thumb technician">技术岗位<br><b>专业培训</b></div><div class="job-body">
   <div class="title"><span>高级技工</span><span class="salary">9-12K</span></div>
   <div class="meta"><span>广州增城</span><span>10人</span><span>3年经验</span></div>
   <div class="tags"><span class="tag">技工</span><span class="tag">技术培训</span></div>
   <div class="rating">&#9733;&#9733;&#9733;&#9734;&#9734; 3.8 (5评)</div>
 </div></div>
-<div class="job-card thumb" onclick="mp('m-job')"><div class="job-thumb purple">仓储物流<br><b>规范管理</b></div><div class="job-body">
+<div class="job-card thumb" onclick="mp('m-job')"><div class="job-thumb warehouse">仓储物流<br><b>规范管理</b></div><div class="job-body">
   <div class="title"><span>仓管员</span><span class="salary">6-8K</span></div>
   <div class="meta"><span>广州番禺</span><span>15人</span><span>经验不限</span></div>
   <div class="tags"><span class="tag">仓储</span><span class="tag">月休4天</span></div>
@@ -531,7 +534,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Helvetica Neue'
 
 
 </div>
-<div class="fixed-bottom-btn"><button class="btn btn-p" onclick="startJobApplication()">立即报名并投递简历</button></div>
+<div class="fixed-bottom-btn"><button class="btn btn-p" onclick="startJobApplication()">立即报名</button></div>
 </div>
 
 <!-- ===== ALL REVIEWS ===== -->
@@ -950,10 +953,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Helvetica Neue'
 <div class="apply-card" style="text-align:center;padding:30px 16px">
 <div style="font-size:48px;margin-bottom:12px"><span style="display:inline-block;width:48px;height:48px;color:var(--pri)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98"/></svg></span></div>
 <h3 style="font-size:18px;font-weight:600;margin-bottom:8px">成为渠道商</h3>
-<p style="font-size:13px;color:var(--text-2);line-height:1.8;margin-bottom:20px">推荐好友入职，赚取丰厚佣金<br>一级推荐10%佣金，二级推荐5%佣金</p>
+<p style="font-size:13px;color:var(--text-2);line-height:1.8;margin-bottom:20px">邀请伙伴成为渠道商，建立团队关系<br>报备求职者并跟进招聘进度</p>
 <button class="btn btn-p" onclick="mp('m-distApply')">申请成为渠道商</button>
 <button class="btn btn-o" style="margin-top:10px;padding:10px;font-size:14px" onclick="sm('bindReferralModal')">已有分销码，绑定邀请关系</button>
-<div style="margin-top:14px;background:var(--pri-l);border-radius:10px;padding:10px;text-align:left;font-size:12px;color:var(--text-2);line-height:1.7">成为渠道商有两种关系绑定方式：<br>1. 通过上级渠道商分享邀请链接进入申请，自动绑定上下级；<br>2. 手动输入上级分销码，校验后绑定关系。<br><b>仅支持一级、二级分销，二级渠道商不可继续发展下级。</b></div>
+<div style="margin-top:14px;background:var(--pri-l);border-radius:10px;padding:10px;text-align:left;font-size:12px;color:var(--text-2);line-height:1.7">支持通过邀请链接自动绑定团队关系，也可以手动输入上级分销码完成绑定。</div>
 </div>
 </div>
 <!-- Already a channel partner - show dashboard -->
@@ -969,14 +972,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Helvetica Neue'
 <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><h4 style="font-size:15px;font-weight:600;margin:0">我的渠道关系</h4><span style="font-size:12px;color:var(--pri)" onclick="sm('bindReferralModal')">手动绑定</span></div>
 <div style="font-size:13px;color:var(--text-2);line-height:1.8">我的分销码：<b style="color:var(--pri)">LT202607001</b><br>当前层级：<b>二级渠道商</b><br>上级渠道商：<b>刘洋（LT0001）</b><br>绑定方式：分享邀请自动绑定；如线下邀请，可手动输入分销码绑定。<br><span style="font-size:11px;color:var(--text-3)">当前已是二级，不可继续发展下级渠道商。</span></div>
 </div>
-<div class="dist-dashboard">
-<div class="dist-stat">
-<div class="stat-item"><div class="num green">12</div><div class="label">一级推荐</div></div>
-<div class="stat-item"><div class="num orange">5</div><div class="label">二级推荐</div></div>
-<div class="stat-item"><div class="num green">3</div><div class="label">今日推荐</div></div>
-<div class="stat-item"><div class="num orange">2</div><div class="label">今日入职</div></div>
-</div>
-</div>
+<div class="card" style="margin-top:12px"><div style="display:flex;justify-content:space-between;align-items:center"><b>今日招聘动态</b><span style="font-size:11px;color:var(--text-3)">截至 17:12</span></div><div class="today-channel-stats"><div onclick="alert('查看今日报备明细')"><b>8</b><span>当日报备</span></div><div onclick="alert('查看今日面试明细')"><b>5</b><span>当日面试</span></div><div onclick="alert('查看今日入职明细')"><b>2</b><span>当日入职</span></div></div></div>
 <div class="card" style="margin-top:12px">
 <div style="font-size:15px;font-weight:600;margin-bottom:10px">渠道商工作台</div>
 <div style="display:flex;gap:10px">
@@ -984,8 +980,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Helvetica Neue'
 <div style="font-size:22px">&#128221;</div><div style="font-size:12px;margin-top:4px;color:var(--pri)">报备求职者</div></div>
 <div style="flex:1;text-align:center;padding:12px 4px;border:1px solid var(--border2);border-radius:10px" onclick="document.getElementById('channel-team').scrollIntoView({behavior:'smooth'})">
 <div style="font-size:22px">&#128101;</div><div style="font-size:12px;margin-top:4px;color:var(--pri)">管理团队</div></div>
-<div style="flex:1;text-align:center;padding:12px 4px;border:1px solid var(--border2);border-radius:10px" onclick="document.getElementById('channel-jobs').scrollIntoView({behavior:'smooth'})">
-<div style="font-size:22px">&#128204;</div><div style="font-size:12px;margin-top:4px;color:var(--pri)">查看岗位</div></div>
 </div>
 </div>
 <div class="card">
@@ -999,35 +993,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Helvetica Neue'
 </div>
 </div>
 <div class="card" id="channel-team">
-<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px"><h4 style="font-size:15px">团队管理</h4><span style="font-size:12px;color:var(--pri)" onclick="alert('打开添加团队成员')">+ 添加成员</span></div>
-<div class="menu-item" style="padding:10px 0"><div class="left"><div class="avatar" style="width:36px;height:36px;font-size:14px">李</div><div><div style="font-size:14px">李明 <span style="font-size:11px;color:var(--pri)">一级</span></div><div style="font-size:12px;color:var(--text-3)">推荐3人 &middot; 入职1人</div></div></div><span style="font-size:12px;color:var(--text-3)">+&#165;300</span></div>
-<div class="menu-item" style="padding:10px 0"><div class="left"><div class="avatar" style="width:36px;height:36px;font-size:14px;background:linear-gradient(135deg,#E8794D,#F0906A)">王</div><div><div style="font-size:14px">王芳 <span style="font-size:11px;color:var(--pri)">一级</span></div><div style="font-size:12px;color:var(--text-3)">推荐5人 &middot; 入职2人</div></div></div><span style="font-size:12px;color:var(--text-3)">+&#165;600</span></div>
-<div class="menu-item" style="padding:10px 0"><div class="left"><div class="avatar" style="width:36px;height:36px;font-size:14px;background:linear-gradient(135deg,#5A6B8C,#6B7DA0)">陈</div><div><div style="font-size:14px">陈强 <span style="font-size:11px;color:var(--wn)">二级</span></div><div style="font-size:12px;color:var(--text-3)">推荐2人 &middot; 入职0人</div></div></div><span style="font-size:12px;color:var(--text-3)">+&#165;0</span></div>
-</div>
-<div class="card">
-<h4 style="font-size:15px;margin-bottom:8px">分销规则</h4>
-<p style="font-size:12px;color:var(--text-2);line-height:1.8">一级推荐：10%佣金比例<br>二级推荐：5%佣金比例<br>结算周期：按月结算<br>佣金 = 被推荐人实发工资 &times; 佣金比例</p>
-</div>
-<div class="card" id="channel-jobs" style="margin-top:12px">
-<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px"><h4 style="font-size:15px">推荐岗位</h4><span style="font-size:12px;color:var(--pri)" onclick="mp('m-job')">查看更多 &rarr;</span></div>
-<div class="job-card" style="margin-bottom:10px">
-<div class="title"><span>电子普工</span><span class="salary">5-7K</span></div>
-<div class="meta"><span>广州黄埔</span><span>50人</span><span>经验不限</span></div>
-<div class="tags"><span class="tag">普工</span><span class="tag">包吃住</span><span class="tag">五险一金</span></div>
-<div style="display:flex;justify-content:flex-end;margin-top:8px"><button class="btn btn-p" style="padding:6px 16px;font-size:13px" onclick="event.stopPropagation();mp('m-channelReport')">报备求职者</button></div>
-</div>
-<div class="job-card" style="margin-bottom:10px">
-<div class="title"><span>质检员</span><span class="salary">7-9K</span></div>
-<div class="meta"><span>广州南沙</span><span>20人</span><span>1年经验</span></div>
-<div class="tags"><span class="tag">质检</span><span class="tag">双休</span><span class="tag">绩效奖金</span></div>
-<div style="display:flex;justify-content:flex-end;margin-top:8px"><button class="btn btn-p" style="padding:6px 16px;font-size:13px" onclick="event.stopPropagation();mp('m-channelReport')">报备求职者</button></div>
-</div>
-<div class="job-card">
-<div class="title"><span>高级技工</span><span class="salary">9-12K</span></div>
-<div class="meta"><span>广州增城</span><span>10人</span><span>3年经验</span></div>
-<div class="tags"><span class="tag">技工</span><span class="tag">技术培训</span></div>
-<div style="display:flex;justify-content:flex-end;margin-top:8px"><button class="btn btn-p" style="padding:6px 16px;font-size:13px" onclick="event.stopPropagation();mp('m-channelReport')">报备求职者</button></div>
-</div>
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px"><h4 style="font-size:15px">团队招聘统计</h4><span style="font-size:12px;color:var(--pri)" onclick="alert('打开添加团队成员')">+ 添加成员</span></div>
+<div class="team-period" style="margin-bottom:10px"><button class="active" onclick="switchTeamPeriod(this,'今日')">今日</button><button onclick="switchTeamPeriod(this,'本周')">本周</button><button onclick="switchTeamPeriod(this,'本月')">本月</button><button onclick="switchTeamPeriod(this,'自定义')">自定义</button></div>
+<div style="display:grid;grid-template-columns:1.2fr repeat(3,.7fr);gap:4px;padding:7px 0;font-size:11px;color:var(--text-3);border-bottom:1px solid var(--border)"><span>团队成员</span><span>推荐</span><span>报名</span><span>入职</span></div>
+<div class="menu-item" style="padding:11px 0;display:grid;grid-template-columns:1.2fr repeat(3,.7fr);gap:4px;font-size:12px"><b>李明 <small style="color:var(--pri)">一级</small></b><span>6</span><span>4</span><span>1</span></div>
+<div class="menu-item" style="padding:11px 0;display:grid;grid-template-columns:1.2fr repeat(3,.7fr);gap:4px;font-size:12px"><b>王芳 <small style="color:var(--pri)">一级</small></b><span>5</span><span>3</span><span>1</span></div>
+<div class="menu-item" style="padding:11px 0;display:grid;grid-template-columns:1.2fr repeat(3,.7fr);gap:4px;font-size:12px"><b>陈强 <small style="color:var(--wn)">二级</small></b><span>2</span><span>1</span><span>0</span></div>
+<div id="teamPeriodHint" style="font-size:11px;color:var(--text-3);text-align:right;margin-top:8px">统计范围：今日 00:00 至今</div>
 </div>
 </div>
 </div>
@@ -1061,7 +1033,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Helvetica Neue'
 <div class="form-group"><label>备注说明</label><textarea rows="3" placeholder="请简要描述您的推广资源"></textarea></div>
 </div>
 <div class="card" style="background:#f7f7f7">
-<p style="font-size:12px;color:var(--text-2);line-height:1.8">&#9745; 我已阅读并同意《渠道商合作协议》<br><br>&#128204; 渠道商权益：<br>&bull; 专属分销码，分享即可推广<br>&bull; 一级推荐10%佣金，二级5%（最多二级）<br>&bull; 实时查看分销数据和预计收入<br>&bull; 按月自动结算佣金</p>
+<p style="font-size:12px;color:var(--text-2);line-height:1.8">&#9745; 我已阅读并同意《渠道商合作协议》<br><br>&#128204; 渠道商权益：<br>&bull; 拥有专属分销码，可邀请并管理团队成员<br>&bull; 支持报备求职者并查看招聘进度<br>&bull; 实时查看个人及团队招聘数据</p>
 </div>
 <button class="btn btn-p" style="margin:12px" onclick="applyChannel()">提交申请</button>
 </div>
@@ -1081,7 +1053,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Helvetica Neue'
 <div class="form-group"><label>手机号</label><input type="tel" placeholder="请输入手机号"></div>
 <div class="form-group"><label>身份证号</label><input placeholder="请输入身份证号"></div>
 <div class="form-group"><label>意向岗位</label><select><option>电子普工</option><option>质检员</option><option>高级技工</option><option>仓管员</option></select></div>
-<div class="form-group"><label>所属团队</label><select><option>我的团队（直属）</option><option>二级团队</option></select></div>
+<div class="form-group"><label>所属团队</label><select id="reportTeamLevel" onchange="toggleReportSubTeam(this)"><option value="self">我的团队（自己）</option><option value="sub">二级团队（选择下级）</option></select></div>
+<div class="form-group" id="reportSubTeamWrap" style="display:none"><label>选择对应下级</label><select><option>李明（一级渠道商 · LT1008）</option><option>王芳（一级渠道商 · LT1021）</option><option>陈强（二级团队 · LT2036）</option></select><div style="font-size:11px;color:var(--text-3);margin-top:5px">报备数据将计入所选下级的团队统计。</div></div>
 <div class="form-group"><label>备注说明</label><textarea rows="3" placeholder="补充说明（如到岗时间、特殊需求）"></textarea></div>
 </div>
 <button class="btn btn-p" style="margin:12px" onclick="submitReport()">提交报备</button>
@@ -2464,6 +2437,16 @@ function subscribeMoreServiceNotices(){
   _serviceSubscribeCount++;
   document.querySelectorAll('.subscribe-count').forEach(function(x){x.textContent=_serviceSubscribeCount});
   alert('第 '+_serviceSubscribeCount+' 次订阅授权成功，可继续接收后续服务通知');
+}
+function toggleReportSubTeam(sel){
+  var wrap=document.getElementById('reportSubTeamWrap');
+  if(wrap)wrap.style.display=sel.value==='sub'?'block':'none';
+}
+function switchTeamPeriod(btn,label){
+  var box=btn.parentElement;box.querySelectorAll('button').forEach(function(x){x.classList.remove('active')});btn.classList.add('active');
+  var hint=document.getElementById('teamPeriodHint');
+  if(hint)hint.textContent=label==='自定义'?'统计范围：请选择开始日期和结束日期':'统计范围：'+label;
+  if(label==='自定义')alert('请选择统计开始日期和结束日期');
 }
 
 function mp(id){
