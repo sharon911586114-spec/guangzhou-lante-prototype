@@ -2065,7 +2065,6 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 <div class="pgn"><span>共6条</span><button class="active">1</button><span>条/页 10</span></div>
 <div class="ib ib-b" style="margin-top:12px">用户标签用于标记简历/员工的技能证书、工作偏好等属性，支持多选。与职位标签分开管理。</div>
 </div></div>
-</div>
 
 <div class="tc" id="dict-posttype"><div class="cd">
 <div class="cd-h"><div class="cd-t">岗位类型管理</div><button class="btn btn-p btn-sm">+ 新增</button></div>
@@ -2122,6 +2121,7 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 </tbody></table></div>
 <div class="pgn"><span>共56条</span><button class="active">1</button><button>2</button><button>3</button><button>4</button><button>5</button><button>...</button><button>6</button><span>条/页 10</span></div>
 </div></div>
+</div>
 
 <!-- ===== CONFIG (系统设置) ===== -->
 <div class="pg" id="p-watermark">
@@ -2370,7 +2370,20 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 </div>
 
 <div class="tc show" id="cfg-salaryrule">
+<div class="cd" style="margin-bottom:14px">
+<div class="cd-h"><div><div class="cd-t">工资计算模板</div><div style="font-size:12px;color:var(--text3);margin-top:4px">将费用项和计算公式组合成可复用模板，并按项目或岗位指定发薪规则。</div></div><div style="display:flex;gap:8px"><button class="btn btn-sm" onclick="sm('salaryAssignModal')">指定使用范围</button><button class="btn btn-p btn-sm" onclick="sm('salaryTemplateModal')">+ 新增模板</button></div></div>
+<div class="tw"><table>
+<thead><tr><th>模板名称</th><th>模板编码</th><th>主要计算规则</th><th>费用项</th><th>使用范围</th><th>已关联对象</th><th>状态</th><th>操作</th></tr></thead>
+<tbody>
+<tr><td><b>标准工资计算</b><span class="tg tg-b" style="margin-left:6px">默认</span></td><td>SALARY_STD</td><td>岗位单价 × 实际工时</td><td>基本工资、绩效、社保、个税</td><td>全局默认</td><td>12个岗位 / 4个项目</td><td><span class="tg tg-g">启用</span></td><td><button class="btn-link" onclick="sm('salaryTemplateModal')">编辑</button><button class="btn-link" onclick="sm('salaryAssignModal')">指定范围</button></td></tr>
+<tr><td><b>日结工资模板</b></td><td>SALARY_DAILY</td><td>日薪 × 出勤天数 + 加班费</td><td>日薪、加班费、质量扣款</td><td>指定岗位</td><td>电子组装工、临时分拣员</td><td><span class="tg tg-g">启用</span></td><td><button class="btn-link" onclick="sm('salaryTemplateModal')">编辑</button><button class="btn-link" onclick="sm('salaryAssignModal')">指定范围</button></td></tr>
+<tr><td><b>项目承包工资模板</b></td><td>SALARY_PROJECT</td><td>项目计件金额 - 扣款</td><td>计件工资、绩效、扣款、个税</td><td>指定项目</td><td>佛山分拣项目</td><td><span class="tg tg-g">启用</span></td><td><button class="btn-link" onclick="sm('salaryTemplateModal')">编辑</button><button class="btn-link" onclick="sm('salaryAssignModal')">指定范围</button></td></tr>
+</tbody></table></div>
+<div class="ib ib-y" style="margin-top:10px">优先级：岗位指定模板 &gt; 项目指定模板 &gt; 全局默认模板。同一岗位只能绑定一个生效模板，变更后从所选生效日期开始用于发薪。</div>
+</div>
+
 <div class="cd">
+<div class="cd-h"><div class="cd-t">工资费用项配置</div></div>
 <div class="sbar" style="margin-bottom:12px">
 <input placeholder="费用名称　请输入" style="width:240px">
 <input placeholder="费用编码　请输入" style="width:240px">
@@ -2410,6 +2423,33 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 </div></div>
 </div>
 </div>
+
+<!-- ===== SALARY TEMPLATE MODAL ===== -->
+<div class="mo" id="salaryTemplateModal"><div class="ml" style="width:680px;max-height:86vh;overflow-y:auto">
+<div class="ml-t">设置工资计算模板</div>
+<div style="padding:16px 20px">
+<div class="fr"><div class="fg"><label>模板名称 *</label><input placeholder="如：电子组装工日结模板"></div><div class="fg"><label>模板编码 *</label><input placeholder="如：SALARY_POSITION_DAILY"></div></div>
+<div class="fr" style="margin-top:12px"><div class="fg"><label>计算周期</label><select><option>按月</option><option>按周</option><option>按日</option><option>完工一次性</option></select></div><div class="fg"><label>状态</label><select><option>启用</option><option>停用</option></select></div></div>
+<div class="rp-card" style="margin-top:14px;margin-bottom:0"><div class="rp-card-title">模板费用项</div><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;font-size:13px"><label><input type="checkbox" checked> 基本工资</label><label><input type="checkbox" checked> 绩效奖励</label><label><input type="checkbox"> 加班费</label><label><input type="checkbox"> 质量扣款</label><label><input type="checkbox" checked> 社保个人部分</label><label><input type="checkbox" checked> 个人所得税</label></div></div>
+<div class="fg" style="margin-top:14px"><label>工资计算公式</label><input value="岗位单价 × 实际工时 + 绩效奖励 - 社保个人部分 - 个人所得税"></div>
+<div class="fg" style="margin-top:12px"><label>模板说明</label><textarea rows="3" placeholder="填写适用场景和发薪说明"></textarea></div>
+</div>
+<div class="ml-f"><button class="btn" onclick="hm('salaryTemplateModal')">取消</button><button class="btn btn-p" onclick="hm('salaryTemplateModal');alert('工资计算模板已保存')">保存模板</button></div>
+</div></div>
+
+<!-- ===== SALARY TEMPLATE ASSIGN MODAL ===== -->
+<div class="mo" id="salaryAssignModal"><div class="ml" style="width:640px">
+<div class="ml-t">指定工资计算模板使用范围</div>
+<div style="padding:16px 20px">
+<div class="fg"><label>工资计算模板 *</label><select><option>标准工资计算</option><option>日结工资模板</option><option>项目承包工资模板</option></select></div>
+<div class="fg" style="margin-top:12px"><label>指定维度 *</label><div style="display:flex;gap:20px;padding:8px 0"><label><input type="radio" name="salaryAssignType" checked onchange="toggleSalaryAssignType('position')"> 单个岗位</label><label><input type="radio" name="salaryAssignType" onchange="toggleSalaryAssignType('project')"> 单个项目</label></div></div>
+<div class="fg" id="salaryAssignPosition"><label>选择岗位 *</label><select><option>电子组装工（电子普工项目）</option><option>QC质检员（质检员项目）</option><option>高级焊工（高级技工项目）</option><option>仓库管理员（仓管员项目）</option></select></div>
+<div class="fg" id="salaryAssignProject" style="display:none"><label>选择项目 *</label><select><option>电子普工</option><option>质检员</option><option>高级技工</option><option>佛山分拣项目</option></select></div>
+<div class="fr" style="margin-top:12px"><div class="fg"><label>生效日期 *</label><input type="date" value="2026-08-01"></div><div class="fg"><label>覆盖已有配置</label><select><option>确认后覆盖</option><option>不允许覆盖</option></select></div></div>
+<div class="ib ib-b" style="margin-top:12px">指定到岗位时优先级最高；指定到项目时适用于项目下未单独指定模板的岗位。</div>
+</div>
+<div class="ml-f"><button class="btn" onclick="hm('salaryAssignModal')">取消</button><button class="btn btn-p" onclick="hm('salaryAssignModal');alert('工资计算模板使用范围已保存，将按生效日期用于发薪')">确认指定</button></div>
+</div></div>
 
 <!-- Batch Upload Modal -->
 <div class="mo" id="batchUploadModal"><div class="ml" style="width:520px">
@@ -2568,10 +2608,14 @@ function goPositionAdd(){var t=document.getElementById('positionAddTitle');if(t)
 // 初始化时将新增岗位页提升到主内容容器，保证 showPage() 后可见。
 document.addEventListener('DOMContentLoaded',function(){
   var content=document.querySelector('.ct');
-  if(!content)return;
+  var app=document.getElementById('app');
+  if(!content||!app)return;
   // 独立页面不应嵌套在其他 .pg 内；统一提升可修复渠道商详情、功能模块、
   // 新增岗位等后补页面因父页面隐藏而出现空白的问题。
   Array.prototype.slice.call(document.querySelectorAll('.pg .pg')).forEach(function(page){content.appendChild(page)});
+  // 弹窗必须脱离页面容器，否则关闭/切换父页面后，即使添加 show 也会被父级 display:none 隐藏。
+  // 统一提升到应用根节点，修复合同管理、新增用户、新增合同等弹窗丢失问题。
+  Array.prototype.slice.call(document.querySelectorAll('.mo')).forEach(function(modal){app.appendChild(modal)});
 });
 function goPositionEdit(){var t=document.getElementById('positionAddTitle');if(t)t.textContent='编辑岗位 - 电子组装工';var n=document.getElementById('posName');if(n)n.value='电子组装工';var mn=document.getElementById('posSalMin');if(mn)mn.value='5000';var mx=document.getElementById('posSalMax');if(mx)mx.value='7000';var pn=document.getElementById('posPriceN');if(pn)pn.value='40';var po=document.getElementById('posPriceOt');if(po)po.value='60';var pc=document.getElementById('posCount');if(pc)pc.value='50';showPage('positionAdd');setMi('position')}
 function goDistDetail(){document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-distDetail').classList.add('show');document.getElementById('pn').textContent='分销裂变 / 渠道商详情';document.querySelector('[data-p=dist]').classList.add('active')}
@@ -2682,6 +2726,13 @@ document.addEventListener('DOMContentLoaded',function(){
 });
 
 try{changeRosterBatchAction()}catch(e){}
+
+function toggleSalaryAssignType(type){
+  var position=document.getElementById('salaryAssignPosition');
+  var project=document.getElementById('salaryAssignProject');
+  if(position)position.style.display=type==='position'?'':'none';
+  if(project)project.style.display=type==='project'?'':'none';
+}
 
 function openSalaryFeeModal(mode,name,code,setMode){
   var title=document.getElementById('salaryTplTitle');
