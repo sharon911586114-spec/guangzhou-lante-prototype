@@ -4,10 +4,227 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>广州澜特 - Web端后台管理系统原型 v18</title>
-<style>*{margin:0;padding:0;box-sizing:border-box}:root{--brand:#1677ff;--brand-hover:#0958d9;--brand-light:#e6f4ff;--success:#52c41a;--warning:#faad14;--danger:#ff4d4f;--bg:#f8fafc;--card:#fff;--text:rgba(0,0,0,.88);--text2:rgba(0,0,0,.65);--text3:rgba(0,0,0,.45);--border:#e8e8e8;--border2:#d9d9d9;--sidebar-bg:#ffffff;--sidebar-border:#f0f0f0;--radius:6px}body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Helvetica Neue',sans-serif;background:var(--bg);color:var(--text);font-size:14px;line-height:1.5;height:100vh;overflow:hidden}.login-page{display:flex;justify-content:center;align-items:center;min-height:100vh;background:linear-gradient(135deg,#1677ff,#0958d9)}.login-box{background:#fff;border-radius:var(--radius);padding:48px 40px;width:400px;box-shadow:0 8px 40px rgba(0,0,0,.12)}.login-box .logo{text-align:center;font-size:24px;font-weight:600;color:#1a1a1a;margin-bottom:32px}.login-box .logo span{color:var(--brand)}.lf .fg{margin-bottom:20px}.lf label{display:block;font-size:13px;color:var(--text2);margin-bottom:4px}.lf input{width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:var(--radius);font-size:14px;background:#fff;transition:border .2s}.lf input:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 2px var(--brand-light)}.lf button{width:100%;padding:12px;background:var(--brand);color:#fff;border:none;border-radius:var(--radius);font-size:14px;font-weight:500;cursor:pointer;transition:background .2s;margin-top:8px}.lf button:hover{background:var(--brand-hover)}.app{display:none}.app.show{display:flex}.sb{width:200px;background:var(--sidebar-bg);color:var(--text);position:fixed;left:0;top:0;bottom:0;z-index:100;overflow-y:auto;font-size:13px;border-right:1px solid var(--sidebar-border)}.sb-logo{padding:20px 16px;font-size:15px;font-weight:600;color:#1a1a1a;border-bottom:1px solid var(--sidebar-border)}.sb-menu{padding:8px 0 32px 0}.sb-menu .mg{padding:16px 16px 4px;font-size:11px;color:var(--text3);letter-spacing:0;font-weight:500}.sb-menu .mi{padding:9px 16px;cursor:pointer;display:flex;align-items:center;gap:8px;border-left:3px solid transparent;transition:all .1s;color:var(--text2);border-radius:0 6px 6px 0;margin-right:8px}.sb-menu .mi:hover{background:var(--brand-light);color:var(--brand)}.sb-menu .mi.active{background:var(--brand-light);color:var(--brand);border-left-color:var(--brand);font-weight:500}.main{flex:1;margin-left:200px;height:100vh;overflow-y:auto;background:var(--bg)}.tb{background:#fff;height:48px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:50;box-shadow:0 1px 4px rgba(0,0,0,.04)}.tb .bc{font-size:13px;color:var(--text3)}.tb .bc b{color:var(--text);font-weight:500}.tb-r{display:flex;align-items:center;gap:12px}.tb-r .tb-r .ls button{border:none;background:none;padding:4px 10px;border-radius:3px;font-size:11px;cursor:pointer;color:var(--text3)}.tb-r .ls button.active{background:#fff;color:var(--brand);font-weight:500}.tb-r .av{width:28px;height:28px;border-radius:var(--radius);background:var(--brand);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500}.ct{padding:20px}.pg{display:none}.pg.show{display:block}.pt{font-size:18px;font-weight:600;margin-bottom:16px;color:rgba(0,0,0,.88)}.cd{background:var(--card);border-radius:var(--radius);padding:20px;border:1px solid var(--border);margin-bottom:16px;box-shadow:0 1px 4px rgba(0,0,0,.04)}.cd-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}.cd-t{font-size:15px;font-weight:600;color:#1a1a1a}.sg{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}.sc{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:16px;display:flex;align-items:center;gap:12px;transition:all .2s;box-shadow:0 2px 8px rgba(0,0,0,.04)}.sc:hover{box-shadow:0 4px 12px rgba(0,0,0,.08);border-color:var(--brand-light)}.sc .si{width:40px;height:40px;border-radius:var(--radius);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600}.sc .sv .n{font-size:22px;font-weight:600;color:#1a1a1a}.sc .sv .l{font-size:12px;color:var(--text3);margin-top:2px}.tw{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:13px}thead th{background:#f8fafc;padding:12px;font-weight:500;color:var(--text2);border-bottom:1px solid var(--border);white-space:nowrap;text-align:left;transition:background .2s}tbody td{padding:12px;border-bottom:1px solid var(--border);color:var(--text)}tbody tr:hover td{background:#fafafa}tbody tr:hover{background:#fafafa}tbody tr:last-child td{border-bottom:none}table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:var(--brand)}.tg{display:inline-block;padding:2px 8px;border-radius:3px;font-size:11px;font-weight:400;margin:1px}.tg-b{background:var(--brand-light);color:var(--brand)}.tg-g{background:#e8f8ef;color:var(--success)}.tg-o{background:#fde8c8;color:var(--warning)}.tg-r{background:#fbe5e3;color:var(--danger)}.tg-y{background:#f3f3f3;color:var(--text3)}.tg-p{background:#f3e8fe;color:#8b5cf6}.btn{padding:7px 16px;border:1px solid var(--border);border-radius:var(--radius);font-size:13px;cursor:pointer;display:inline-flex;align-items:center;gap:4px;transition:all .15s;background:#fff;color:var(--text2)}.btn-p{background:var(--brand);color:#fff;border-color:var(--brand)}.btn-p:hover{background:var(--brand-hover);border-color:var(--brand-hover)}.btn-s{background:var(--success);color:#fff;border-color:var(--success)}.btn-d{background:var(--danger);color:#fff;border-color:var(--danger)}.btn-sm{padding:4px 12px;font-size:12px}.btn-link{background:none;border:none;color:var(--brand);padding:4px 8px;font-size:13px;cursor:pointer}.pgn{display:flex;align-items:center;justify-content:right;gap:8px;margin-top:16px;font-size:12px;color:var(--text3)}.pgn button{min-width:28px;height:28px;border:1px solid var(--border);background:#fff;border-radius:3px;cursor:pointer;font-size:12px;color:var(--text2)}.pgn button.active{background:var(--brand);color:#fff;border-color:var(--brand)}.pgn span{color:var(--text3)}.fr{display:flex;gap:16px;margin-bottom:16px;flex-wrap:wrap}.fg{flex:1;min-width:180px}.fg label{display:block;font-size:13px;color:var(--text2);margin-bottom:4px;font-weight:400}.fg input,.fg select,.fg textarea{width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius);font-size:13px;background:#fff;transition:border .2s}.fg input:focus,.fg select:focus,.fg textarea:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 2px var(--brand-light)}.sbar{display:flex;gap:12px;margin-bottom:16px;align-items:center;flex-wrap:wrap}.sbar input,.sbar select{padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius);font-size:13px;background:#fff}.sbar input:focus,.sbar select:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 2px var(--brand-light)}.mo{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:200;justify-content:center;align-items:center}.mo.show{display:flex}.ml{background:#fff;border-radius:12px;padding:24px;width:640px;max-width:90%;max-height:80vh;overflow-y:auto;box-shadow:0 12px 40px rgba(0,0,0,.12)}.ml-t{font-size:16px;font-weight:600;margin-bottom:20px;color:#1a1a1a}.ml-f{display:flex;justify-content:flex-end;gap:12px;margin-top:20px;padding-top:16px;border-top:1px solid var(--border)}.uz{border:1px dashed var(--border);border-radius:var(--radius);padding:32px;text-align:center;cursor:pointer;transition:border .2s;background:#fafafa}.uz:hover{border-color:var(--brand);background:var(--brand-light)}.uz p{color:var(--text3);margin-top:8px;font-size:13px}.uz-mini{width:80px;height:60px;border:1px dashed var(--border2);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--text3);cursor:pointer;background:#fafafa}.ef-group{margin-bottom:18px}.ef-group-t{font-size:13px;font-weight:600;color:var(--text);margin-bottom:10px;display:flex;align-items:center}.ef-files{display:flex;flex-wrap:wrap;gap:12px}.ef-card{width:150px;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff;transition:box-shadow .2s}.ef-card:hover{box-shadow:0 2px 12px rgba(0,0,0,.1)}.ef-thumb{position:relative;height:96px;display:flex;align-items:center;justify-content:center;font-size:38px;background:linear-gradient(135deg,#eef4ff,#f6f9ff);cursor:pointer}.ef-thumb-file{background:linear-gradient(135deg,#fff1f0,#fff7f6)}.ef-badge{position:absolute;left:6px;top:6px;background:rgba(0,0,0,.55);color:#fff;font-size:10px;padding:1px 6px;border-radius:4px}.ef-badge-pdf{background:var(--danger)}.ef-name{font-size:12px;color:var(--text);padding:8px 8px 2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ef-meta{font-size:11px;color:var(--text3);padding:0 8px 6px}.ef-ops{display:flex;border-top:1px solid var(--border)}.ef-ops a{flex:1;text-align:center;font-size:12px;color:var(--brand);padding:6px 0;cursor:pointer;border-right:1px solid var(--border)}.ef-ops a:last-child{border-right:none}.ef-ops a:hover{background:var(--brand-light)}.ef-add{width:150px;height:150px;border:1px dashed var(--border2);border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--text3);font-size:12px;text-align:center;cursor:pointer;background:#fafafa;padding:0 12px}.ef-add:hover{border-color:var(--brand);color:var(--brand);background:var(--brand-light)}.ef-add-ico{font-size:28px;line-height:1}.ib{border-radius:var(--radius);padding:12px 16px;margin-bottom:12px;font-size:13px;line-height:1.6}.ib-b{background:var(--brand-light);border:1px solid #c5d8f0;color:var(--text2)}.ib-o{background:#fde8c8;border:1px solid #f0c78a;color:var(--text2)}.ib-g{background:#e8f8ef;border:1px solid #bce8d0;color:var(--text2)}.pb{width:100%;height:4px;background:#f3f3f3;border-radius:2px;overflow:hidden}.pb .fl{height:100%;border-radius:2px;transition:width .3s}.cb{display:flex;align-items:flex-end;gap:8px;height:180px;padding:16px 0}.cb .br{flex:1;background:var(--brand);border-radius:3px 3px 0 0;position:relative;min-height:16px}.cb .br .v{position:absolute;top:-18px;left:50%;transform:translateX(-50%);font-size:11px;color:var(--text2)}.cb .br .lb{position:absolute;bottom:-16px;left:50%;transform:translateX(-50%);font-size:11px;color:var(--text3)}.tabs{display:flex;gap:0;border-bottom:1px solid var(--border);margin-bottom:16px}.tab{padding:8px 20px;cursor:pointer;font-size:14px;color:var(--text3);border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .1s}.tab.active{color:var(--brand);border-bottom-color:var(--brand);font-weight:500}.tc{display:none}.tc.show{display:block}.rg{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.rc{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:16px}.rc h4{font-size:14px;font-weight:500;margin-bottom:12px;display:flex;align-items:center;gap:6px}.rc .pl{list-style:none}.rc .pl li{font-size:12px;color:var(--text2);padding:3px 0;padding-left:16px;position:relative}.rc .pl li::before{content:'';position:absolute;left:0;top:7px;width:6px;height:6px;border-radius:50%;background:var(--success)}.wp{position:relative;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:24px;min-height:160px}.wp::after{content:'广州澜特 www.lantejob.com';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(-30deg);font-size:24px;color:rgba(0,0,0,.06);white-space:nowrap;pointer-events:none}.qr{text-align:center;padding:16px}.qr .qb{width:180px;height:180px;background:#fafafa;border:1px dashed var(--border);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:48px;color:var(--text3)}.tag-select{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}.tag-select .ts-item{padding:6px 12px;border:1px solid var(--border);border-radius:var(--radius);font-size:12px;cursor:pointer;transition:all .1s;background:#fff;color:var(--text2)}.tag-select .ts-item.selected{background:var(--brand-light);color:var(--brand);border-color:var(--brand)}.approval-info{background:#fafafa;border-radius:var(--radius);padding:16px;border:1px solid var(--border)}.approval-info .row{display:flex;margin-bottom:8px;font-size:13px}.approval-info .row .k{width:80px;color:var(--text3)}.approval-info .row .v{flex:1;color:var(--text)}.tbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}.tbar-l,.tbar-r{display:flex;gap:8px;align-items:center}.rp-back{display:inline-flex;align-items:center;gap:4px;margin-bottom:16px;cursor:pointer;color:var(--brand);font-size:13px}.rp-back:hover{text-decoration:underline}.rp-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}.rp-header h2{font-size:18px;font-weight:600;display:flex;align-items:center;gap:8px}.rp-actions{display:flex;gap:8px}.rp-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:16px}.rp-card-title{font-size:15px;font-weight:600;margin-bottom:16px;color:#1a1a1a;display:flex;justify-content:space-between;align-items:center}.rp-fields{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.rp-field{display:flex;align-items:center;gap:8px}.rp-field .lbl{width:72px;font-size:13px;color:var(--text3);flex-shrink:0}.rp-field .val{font-size:13px;color:var(--text)}.rp-field input,.rp-field select{flex:1;padding:6px 10px;border:1px solid transparent;border-radius:4px;font-size:13px;background:transparent}#p-resumeDetail.editing .rp-field input,#p-resumeDetail.editing .rp-field select,#p-resumeAdd .rp-field input,#p-resumeAdd .rp-field select{border-color:var(--border);background:#fff}#p-resumeDetail.editing .rp-field input:focus,#p-resumeDetail.editing .rp-field select:focus{border-color:var(--brand);box-shadow:0 0 0 2px var(--brand-light);outline:none}.rp-field textarea{flex:1;padding:6px 10px;border:1px solid transparent;border-radius:4px;font-size:13px;background:transparent;resize:vertical;min-height:36px}#p-resumeDetail.editing .rp-field textarea,#p-resumeAdd .rp-field textarea{border-color:var(--border);background:#fff}.rp-entry{background:#fafafa;border:1px solid var(--border);border-radius:var(--radius);padding:16px;margin-bottom:12px;position:relative}.rp-entry-del{position:absolute;top:12px;right:12px;display:none}#p-resumeDetail.editing .rp-entry-del,#p-resumeAdd .rp-entry-del{display:inline-flex}.rp-add{display:inline-flex;align-items:center;gap:4px;margin-left:auto;padding:4px 14px;border:1px solid var(--brand);border-radius:var(--radius);background:var(--brand-light);color:var(--brand);font-size:13px;cursor:pointer;transition:all .2s;display:none}#p-resumeDetail.editing .rp-add,#p-resumeAdd .rp-add,#empResumeCard.editing .rp-add{display:inline-flex}.rp-add:hover{background:var(--brand);color:#fff}.eng-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.eng-item{background:#fafafa;border-radius:var(--radius);padding:12px;text-align:center}.eng-item .lbl{font-size:12px;color:var(--text3);margin-bottom:6px}.eng-item select{width:100%;padding:6px 10px;border:1px solid transparent;border-radius:4px;font-size:13px;background:transparent;text-align:center}#p-resumeDetail.editing .eng-item select,#p-resumeAdd .eng-item select{border-color:var(--border);background:#fff}.parse-stat{display:flex;gap:12px;margin-bottom:16px}.parse-stat .ps-item{flex:1;background:#fafafa;border:1px solid var(--border);border-radius:var(--radius);padding:12px;text-align:center}.parse-stat .ps-item .n{font-size:20px;font-weight:600}.parse-stat .ps-item .l{font-size:12px;color:var(--text3);margin-top:2px}.parse-bar{margin-bottom:16px}.parse-bar-head{display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px}.parse-bar-track{width:100%;height:8px;background:#f3f3f3;border-radius:4px;overflow:hidden}.parse-bar-fill{height:100%;background:var(--brand);border-radius:4px;transition:width .3s}.ts-list{max-height:360px;overflow-y:auto}.ts-col{display:flex;align-items:center;gap:8px;padding:8px 12px;border-bottom:1px solid var(--border);font-size:13px}.ts-col input[type="checkbox"]{width:14px;height:14px;accent-color:var(--brand)}.ts-col .ts-name{flex:1}.ts-col .ts-btn{width:24px;height:24px;border:1px solid var(--border);border-radius:3px;background:#fff;cursor:pointer;font-size:12px;display:flex;align-items:center;justify-content:center}.ts-col .ts-btn:hover{border-color:var(--brand);color:var(--brand)}.flow-bar{display:flex;align-items:center;gap:0;margin-bottom:16px;flex-wrap:wrap}.flow-step{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:8px 16px;font-size:13px;color:var(--text2)}.flow-step.active{background:var(--brand-light);border-color:var(--brand);color:var(--brand);font-weight:500}.flow-arrow{padding:0 8px;color:var(--text3);font-size:16px}.price-cfg{margin-top:8px}.price-tbl{width:100%;border-collapse:collapse;font-size:13px;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}.price-tbl thead th{background:#f8fafc;padding:11px 12px;font-weight:600;color:var(--text2);border-bottom:1px solid var(--border);white-space:nowrap;text-align:left;font-size:12px;letter-spacing:.3px}.price-tbl tbody td{padding:10px 12px;border-bottom:1px solid var(--border);color:var(--text);vertical-align:middle}.price-tbl tbody tr:last-child td{border-bottom:none}.price-tbl tbody tr:hover td{background:#fafcff}.cell-input,.cell-select{width:100%;padding:6px 10px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:#fff;transition:border .2s,box-shadow .2s;color:var(--text)}.cell-input:focus,.cell-select:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 2px var(--brand-light)}.cell-select{padding-right:28px}.btn-add-row{width:100%;padding:9px;margin-top:10px;border:1px dashed #91caff;background:#f5faff;color:var(--brand);border-radius:6px;font-size:13px;cursor:pointer;transition:all .15s}.btn-add-row:hover{background:var(--brand-light);border-color:var(--brand)}.price-val{font-weight:600;color:var(--brand)}.settle-form .rp-field input,.settle-form .rp-field select,.settle-form .rp-field textarea{border-color:var(--border);background:#fff}.settle-form .rp-field input:focus,.settle-form .rp-field select:focus,.settle-form .rp-field textarea:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 2px var(--brand-light)}.import-zone{border:1px dashed #91caff;background:#f5faff;border-radius:8px;padding:28px 20px;text-align:center;cursor:pointer;transition:all .15s}.import-zone:hover{background:var(--brand-light);border-color:var(--brand)}.fb{margin-top:12px}.fb-seg{display:inline-flex;align-items:center;gap:4px;padding:6px 10px;border:1px solid var(--border);border-radius:6px;background:#fff;font-size:13px;min-height:32px}.fb-seg.var{border-color:#91caff;background:#f5faff;color:var(--brand);font-weight:500}.fb-seg.coef{border-color:#ffd591;background:#fffbe6;color:#d46b08}.fb-seg.op{border:none;background:none;font-size:16px;font-weight:700;color:var(--text2);padding:0 2px;cursor:pointer}.fb-seg.paren{border:1px solid #d9d9d9;background:#fafafa;font-weight:700;color:var(--text2)}.fb-del{margin-left:4px;color:var(--danger);cursor:pointer;font-size:14px;line-height:1}.fb-del:hover{opacity:.7}.fb-btn:hover{border-color:var(--brand);color:var(--brand)}.fb-btn.op-btn{min-width:36px;text-align:center;font-weight:600;font-size:14px}.fb-coef-input{width:60px;padding:4px 8px;border:1px solid #ffd591;border-radius:4px;font-size:13px;text-align:center;color:#d46b08;font-weight:500}.fb-coef-input:focus{outline:none;border-color:#ffa940;box-shadow:0 0 0 2px rgba(255,169,64,.2)}.switch{display:inline-flex;align-items:center;gap:10px;cursor:pointer;user-select:none;font-size:13px}.switch input{position:absolute;opacity:0;pointer-events:none}.switch-track{position:relative;width:44px;height:24px;border-radius:12px;background:#cbd5e1;transition:.2s}.switch-track:after{content:"";position:absolute;width:18px;height:18px;left:3px;top:3px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.25);transition:.2s}.switch input:checked+.switch-track{background:var(--brand)}.switch input:checked+.switch-track:after{transform:translateX(20px)}.switch-state{color:var(--text2);font-weight:500}</style>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--brand:#1677ff;--brand-hover:#0958d9;--brand-light:#e6f4ff;--success:#52c41a;--warning:#faad14;--danger:#ff4d4f;--ok:#52c41a;--bg:#f8fafc;--card:#fff;--text:rgba(0,0,0,.88);--text1:rgba(0,0,0,.88);--text-1:rgba(0,0,0,.88);--text2:rgba(0,0,0,.65);--text-2:rgba(0,0,0,.65);--text3:rgba(0,0,0,.45);--text-3:rgba(0,0,0,.45);--border:#e8e8e8;--border2:#d9d9d9;--sidebar-bg:#ffffff;--sidebar-border:#f0f0f0;--radius:6px}
+body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Helvetica Neue',sans-serif;background:var(--bg);color:var(--text);font-size:14px;line-height:1.5;height:100vh;overflow:hidden}
+.login-page{display:flex;justify-content:center;align-items:center;min-height:100vh;background:linear-gradient(135deg,#1677ff,#0958d9)}
+.login-box{background:#fff;border-radius:var(--radius);padding:48px 40px;width:400px;box-shadow:0 8px 40px rgba(0,0,0,.12)}
+.login-box .logo{text-align:center;font-size:24px;font-weight:600;color:#1a1a1a;margin-bottom:32px}
+.login-box .logo span{color:var(--brand)}
+.lf .fg{margin-bottom:20px}
+.lf label{display:block;font-size:13px;color:var(--text2);margin-bottom:4px}
+.lf input{width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:var(--radius);font-size:14px;background:#fff;transition:border .2s}
+.lf input:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 2px var(--brand-light)}
+.lf button{width:100%;padding:12px;background:var(--brand);color:#fff;border:none;border-radius:var(--radius);font-size:14px;font-weight:500;cursor:pointer;transition:background .2s;margin-top:8px}
+.lf button:hover{background:var(--brand-hover)}
+.app{display:none}.app.show{display:flex}
+.sb{width:200px;background:var(--sidebar-bg);color:var(--text);position:fixed;left:0;top:0;bottom:0;z-index:100;overflow-y:auto;font-size:13px;border-right:1px solid var(--sidebar-border)}
+.sb-logo{padding:20px 16px;font-size:15px;font-weight:600;color:#1a1a1a;border-bottom:1px solid var(--sidebar-border)}
+.sb-menu{padding:8px 0 32px 0}
+.sb-menu .mg{padding:16px 16px 4px;font-size:11px;color:var(--text3);letter-spacing:0;font-weight:500}
+.sb-menu .mi{padding:9px 16px;cursor:pointer;display:flex;align-items:center;gap:8px;border-left:3px solid transparent;transition:all .1s;color:var(--text2);border-radius:0 6px 6px 0;margin-right:8px}
+.sb-menu .mi:hover{background:var(--brand-light);color:var(--brand)}
+.sb-menu .mi.active{background:var(--brand-light);color:var(--brand);border-left-color:var(--brand);font-weight:500}
+.main{flex:1;margin-left:200px;height:100vh;overflow-y:auto;background:var(--bg)}
+.tb{background:#fff;height:48px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:50;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+.tb .bc{font-size:13px;color:var(--text3)}.tb .bc b{color:var(--text);font-weight:500}
+.tb-r{display:flex;align-items:center;gap:12px}
+.tb-r .ls{background:var(--brand-light);border-radius:4px;padding:2px;display:flex}
+.tb-r .ls button{border:none;background:none;padding:4px 10px;border-radius:3px;font-size:11px;cursor:pointer;color:var(--text3)}
+.tb-r .ls button.active{background:#fff;color:var(--brand);font-weight:500}
+.tb-r .av{width:28px;height:28px;border-radius:var(--radius);background:var(--brand);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500}
+.ct{padding:20px}
+.pg{display:none}.pg.show{display:block}
+.pt{font-size:18px;font-weight:600;margin-bottom:16px;color:rgba(0,0,0,.88)}
+.cd{background:var(--card);border-radius:var(--radius);padding:20px;border:1px solid var(--border);margin-bottom:16px;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+.cd-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.cd-t{font-size:15px;font-weight:600;color:#1a1a1a}
+.sg{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}
+.sc{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:16px;display:flex;align-items:center;gap:12px;transition:all .2s;box-shadow:0 2px 8px rgba(0,0,0,.04)}.sc:hover{box-shadow:0 4px 12px rgba(0,0,0,.08);border-color:var(--brand-light)}
+.sc .si{width:40px;height:40px;border-radius:var(--radius);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600}
+.sc .sv .n{font-size:22px;font-weight:600;color:#1a1a1a}
+.sc .sv .l{font-size:12px;color:var(--text3);margin-top:2px}
+.tw{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:13px}
+thead th{background:#f8fafc;padding:12px;font-weight:500;color:var(--text2);border-bottom:1px solid var(--border);white-space:nowrap;text-align:left;transition:background .2s}
+tbody td{padding:12px;border-bottom:1px solid var(--border);color:var(--text)}tbody tr:hover td{background:#fafafa}
+tbody tr:hover{background:#fafafa}
+tbody tr:last-child td{border-bottom:none}
+table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:var(--brand)}
+.tg{display:inline-block;padding:2px 8px;border-radius:3px;font-size:11px;font-weight:400;margin:1px}
+.tg-b{background:var(--brand-light);color:var(--brand)}.tg-g{background:#e8f8ef;color:var(--success)}
+.tg-o{background:#fde8c8;color:var(--warning)}.tg-r{background:#fbe5e3;color:var(--danger)}.tg-y{background:#f3f3f3;color:var(--text3)}
+.tg-p{background:#f3e8fe;color:#8b5cf6}
+.btn{padding:7px 16px;border:1px solid var(--border);border-radius:var(--radius);font-size:13px;cursor:pointer;display:inline-flex;align-items:center;gap:4px;transition:all .15s;background:#fff;color:var(--text2)}
+.btn-p{background:var(--brand);color:#fff;border-color:var(--brand)}.btn-p:hover{background:var(--brand-hover);border-color:var(--brand-hover)}
+.btn-s{background:var(--success);color:#fff;border-color:var(--success)}
+.btn-d{background:var(--danger);color:#fff;border-color:var(--danger)}
+.btn-sm{padding:4px 12px;font-size:12px}
+.btn-link{background:none;border:none;color:var(--brand);padding:4px 8px;font-size:13px;cursor:pointer}
+.pgn{display:flex;align-items:center;justify-content:right;gap:8px;margin-top:16px;font-size:12px;color:var(--text3)}
+.pgn button{min-width:28px;height:28px;border:1px solid var(--border);background:#fff;border-radius:3px;cursor:pointer;font-size:12px;color:var(--text2)}
+.pgn button.active{background:var(--brand);color:#fff;border-color:var(--brand)}
+.pgn span{color:var(--text3)}
+.fr{display:flex;gap:16px;margin-bottom:16px;flex-wrap:wrap}
+.fg{flex:1;min-width:180px}
+.fg label{display:block;font-size:13px;color:var(--text2);margin-bottom:4px;font-weight:400}
+.fg input,.fg select,.fg textarea{width:100%;padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius);font-size:13px;background:#fff;transition:border .2s}
+.fg input:focus,.fg select:focus,.fg textarea:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 2px var(--brand-light)}
+.sbar{display:flex;gap:12px;margin-bottom:16px;align-items:center;flex-wrap:wrap}
+.sbar input,.sbar select{padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius);font-size:13px;background:#fff}
+.sbar input:focus,.sbar select:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 2px var(--brand-light)}
+.mo{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:200;justify-content:center;align-items:center}
+.mo.show{display:flex}
+.ml{background:#fff;border-radius:12px;padding:24px;width:640px;max-width:90%;max-height:80vh;overflow-y:auto;box-shadow:0 12px 40px rgba(0,0,0,.12)}
+.ml-t{font-size:16px;font-weight:600;margin-bottom:20px;color:#1a1a1a}
+.ml-f{display:flex;justify-content:flex-end;gap:12px;margin-top:20px;padding-top:16px;border-top:1px solid var(--border)}
+.uz{border:1px dashed var(--border);border-radius:var(--radius);padding:32px;text-align:center;cursor:pointer;transition:border .2s;background:#fafafa}
+.uz:hover{border-color:var(--brand);background:var(--brand-light)}
+.uz p{color:var(--text3);margin-top:8px;font-size:13px}
+.uz-mini{width:80px;height:60px;border:1px dashed var(--border2);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--text3);cursor:pointer;background:#fafafa}
+.ef-group{margin-bottom:18px}
+.ef-group-t{font-size:13px;font-weight:600;color:var(--text);margin-bottom:10px;display:flex;align-items:center}
+.ef-files{display:flex;flex-wrap:wrap;gap:12px}
+.ef-card{width:150px;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff;transition:box-shadow .2s}
+.ef-card:hover{box-shadow:0 2px 12px rgba(0,0,0,.1)}
+.ef-thumb{position:relative;height:96px;display:flex;align-items:center;justify-content:center;font-size:38px;background:linear-gradient(135deg,#eef4ff,#f6f9ff);cursor:pointer}
+.ef-thumb-file{background:linear-gradient(135deg,#fff1f0,#fff7f6)}
+.ef-badge{position:absolute;left:6px;top:6px;background:rgba(0,0,0,.55);color:#fff;font-size:10px;padding:1px 6px;border-radius:4px}
+.ef-badge-pdf{background:var(--danger)}
+.ef-name{font-size:12px;color:var(--text);padding:8px 8px 2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ef-meta{font-size:11px;color:var(--text3);padding:0 8px 6px}
+.ef-ops{display:flex;border-top:1px solid var(--border)}
+.ef-ops a{flex:1;text-align:center;font-size:12px;color:var(--brand);padding:6px 0;cursor:pointer;border-right:1px solid var(--border)}
+.ef-ops a:last-child{border-right:none}
+.ef-ops a:hover{background:var(--brand-light)}
+.ef-add{width:150px;height:150px;border:1px dashed var(--border2);border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--text3);font-size:12px;text-align:center;cursor:pointer;background:#fafafa;padding:0 12px}
+.ef-add:hover{border-color:var(--brand);color:var(--brand);background:var(--brand-light)}
+.ef-add-ico{font-size:28px;line-height:1}
+.ib{border-radius:var(--radius);padding:12px 16px;margin-bottom:12px;font-size:13px;line-height:1.6}
+.ib-b{background:var(--brand-light);border:1px solid #c5d8f0;color:var(--text2)}
+.ib-o{background:#fde8c8;border:1px solid #f0c78a;color:var(--text2)}
+.ib-g{background:#e8f8ef;border:1px solid #bce8d0;color:var(--text2)}
+.ib-w{background:#fff;color:var(--text2);border:1px solid var(--border)}
+.pb{width:100%;height:4px;background:#f3f3f3;border-radius:2px;overflow:hidden}
+.pb .fl{height:100%;border-radius:2px;transition:width .3s}
+.cb{display:flex;align-items:flex-end;gap:8px;height:180px;padding:16px 0}
+.cb .br{flex:1;background:var(--brand);border-radius:3px 3px 0 0;position:relative;min-height:16px}
+.cb .br .v{position:absolute;top:-18px;left:50%;transform:translateX(-50%);font-size:11px;color:var(--text2)}
+.cb .br .lb{position:absolute;bottom:-16px;left:50%;transform:translateX(-50%);font-size:11px;color:var(--text3)}
+.tabs{display:flex;gap:0;border-bottom:1px solid var(--border);margin-bottom:16px}
+.tab{padding:8px 20px;cursor:pointer;font-size:14px;color:var(--text3);border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .1s}
+.tab.active{color:var(--brand);border-bottom-color:var(--brand);font-weight:500}
+.tc{display:none}.tc.show{display:block}
+.rg{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.rc{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:16px}
+.rc h4{font-size:14px;font-weight:500;margin-bottom:12px;display:flex;align-items:center;gap:6px}
+.rc .pl{list-style:none}
+.rc .pl li{font-size:12px;color:var(--text2);padding:3px 0;padding-left:16px;position:relative}
+.rc .pl li::before{content:'';position:absolute;left:0;top:7px;width:6px;height:6px;border-radius:50%;background:var(--success)}
+.wp{position:relative;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:24px;min-height:160px}
+.wp::after{content:'广州澜特 www.lantejob.com';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(-30deg);font-size:24px;color:rgba(0,0,0,.06);white-space:nowrap;pointer-events:none}
+.qr{text-align:center;padding:16px}
+.qr .qb{width:180px;height:180px;background:#fafafa;border:1px dashed var(--border);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:48px;color:var(--text3)}
+.tag-select{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.tag-select .ts-item{padding:6px 12px;border:1px solid var(--border);border-radius:var(--radius);font-size:12px;cursor:pointer;transition:all .1s;background:#fff;color:var(--text2)}
+.tag-select .ts-item.selected{background:var(--brand-light);color:var(--brand);border-color:var(--brand)}
+.approval-info{background:#fafafa;border-radius:var(--radius);padding:16px;border:1px solid var(--border)}
+.approval-info .row{display:flex;margin-bottom:8px;font-size:13px}
+.approval-info .row .k{width:80px;color:var(--text3)}.approval-info .row .v{flex:1;color:var(--text)}
+.tbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.tbar-l,.tbar-r{display:flex;gap:8px;align-items:center}
+.rp-back{display:inline-flex;align-items:center;gap:4px;margin-bottom:16px;cursor:pointer;color:var(--brand);font-size:13px}
+.rp-back:hover{text-decoration:underline}
+.rp-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.rp-header h2{font-size:18px;font-weight:600;display:flex;align-items:center;gap:8px}
+.rp-actions{display:flex;gap:8px}
+.rp-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:16px}
+.rp-card-title{font-size:15px;font-weight:600;margin-bottom:16px;color:#1a1a1a;display:flex;justify-content:space-between;align-items:center}
+.rp-fields{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.rp-field{display:flex;align-items:center;gap:8px}
+.rp-field .lbl{width:72px;font-size:13px;color:var(--text3);flex-shrink:0}
+.rp-field .val{font-size:13px;color:var(--text)}
+.rp-field input,.rp-field select{flex:1;padding:6px 10px;border:1px solid transparent;border-radius:4px;font-size:13px;background:transparent}
+#p-resumeDetail.editing .rp-field input,#p-resumeDetail.editing .rp-field select,#p-resumeAdd .rp-field input,#p-resumeAdd .rp-field select{border-color:var(--border);background:#fff}
+#p-resumeDetail.editing .rp-field input:focus,#p-resumeDetail.editing .rp-field select:focus{border-color:var(--brand);box-shadow:0 0 0 2px var(--brand-light);outline:none}
+.rp-field textarea{flex:1;padding:6px 10px;border:1px solid transparent;border-radius:4px;font-size:13px;background:transparent;resize:vertical;min-height:36px}
+#p-resumeDetail.editing .rp-field textarea,#p-resumeAdd .rp-field textarea{border-color:var(--border);background:#fff}
+.rp-entry{background:#fafafa;border:1px solid var(--border);border-radius:var(--radius);padding:16px;margin-bottom:12px;position:relative}
+.rp-entry-del{position:absolute;top:12px;right:12px;display:none}
+#p-resumeDetail.editing .rp-entry-del,#p-resumeAdd .rp-entry-del{display:inline-flex}
+.rp-add{display:inline-flex;align-items:center;gap:4px;margin-left:auto;padding:4px 14px;border:1px solid var(--brand);border-radius:var(--radius);background:var(--brand-light);color:var(--brand);font-size:13px;cursor:pointer;transition:all .2s;display:none}
+#p-resumeDetail.editing .rp-add,#p-resumeAdd .rp-add,#empResumeCard.editing .rp-add{display:inline-flex}
+.rp-add:hover{background:var(--brand);color:#fff}
+.eng-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.eng-item{background:#fafafa;border-radius:var(--radius);padding:12px;text-align:center}
+.eng-item .lbl{font-size:12px;color:var(--text3);margin-bottom:6px}
+.eng-item select{width:100%;padding:6px 10px;border:1px solid transparent;border-radius:4px;font-size:13px;background:transparent;text-align:center}
+#p-resumeDetail.editing .eng-item select,#p-resumeAdd .eng-item select{border-color:var(--border);background:#fff}
+.parse-stat{display:flex;gap:12px;margin-bottom:16px}
+.parse-stat .ps-item{flex:1;background:#fafafa;border:1px solid var(--border);border-radius:var(--radius);padding:12px;text-align:center}
+.parse-stat .ps-item .n{font-size:20px;font-weight:600}
+.parse-stat .ps-item .l{font-size:12px;color:var(--text3);margin-top:2px}
+.parse-bar{margin-bottom:16px}
+.parse-bar-head{display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px}
+.parse-bar-track{width:100%;height:8px;background:#f3f3f3;border-radius:4px;overflow:hidden}
+.parse-bar-fill{height:100%;background:var(--brand);border-radius:4px;transition:width .3s}
+.ts-list{max-height:360px;overflow-y:auto}
+.ts-col{display:flex;align-items:center;gap:8px;padding:8px 12px;border-bottom:1px solid var(--border);font-size:13px}
+.ts-col input[type="checkbox"]{width:14px;height:14px;accent-color:var(--brand)}
+.ts-col .ts-name{flex:1}
+.ts-col .ts-btn{width:24px;height:24px;border:1px solid var(--border);border-radius:3px;background:#fff;cursor:pointer;font-size:12px;display:flex;align-items:center;justify-content:center}
+.ts-col .ts-btn:hover{border-color:var(--brand);color:var(--brand)}
+.flow-bar{display:flex;align-items:center;gap:0;margin-bottom:16px;flex-wrap:wrap}
+.flow-step{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:8px 16px;font-size:13px;color:var(--text2)}
+.flow-step.active{background:var(--brand-light);border-color:var(--brand);color:var(--brand);font-weight:500}
+.flow-arrow{padding:0 8px;color:var(--text3);font-size:16px}
+
+/* ===== 项目单价配置 - 策略表格 (v8 细化) ===== */
+.price-cfg{margin-top:8px}
+.price-tbl{width:100%;border-collapse:collapse;font-size:13px;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fff}
+.price-tbl thead th{background:#f8fafc;padding:11px 12px;font-weight:600;color:var(--text2);border-bottom:1px solid var(--border);white-space:nowrap;text-align:left;font-size:12px;letter-spacing:.3px}
+.price-tbl tbody td{padding:10px 12px;border-bottom:1px solid var(--border);color:var(--text);vertical-align:middle}
+.price-tbl tbody tr:last-child td{border-bottom:none}
+.price-tbl tbody tr:hover td{background:#fafcff}
+.cell-input,.cell-select{width:100%;padding:6px 10px;border:1px solid var(--border);border-radius:6px;font-size:13px;background:#fff;transition:border .2s,box-shadow .2s;color:var(--text)}
+.cell-input:focus,.cell-select:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 2px var(--brand-light)}
+.cell-select{padding-right:28px}
+.btn-add-row{width:100%;padding:9px;margin-top:10px;border:1px dashed #91caff;background:#f5faff;color:var(--brand);border-radius:6px;font-size:13px;cursor:pointer;transition:all .15s}
+.btn-add-row:hover{background:var(--brand-light);border-color:var(--brand)}
+.price-val{font-weight:600;color:var(--brand)}
+
+/* ===== 结算创建/分销详情 v9 ===== */
+.settle-form .rp-field input,.settle-form .rp-field select,.settle-form .rp-field textarea{border-color:var(--border);background:#fff}
+.settle-form .rp-field input:focus,.settle-form .rp-field select:focus,.settle-form .rp-field textarea:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 2px var(--brand-light)}
+.import-zone{border:1px dashed #91caff;background:#f5faff;border-radius:8px;padding:28px 20px;text-align:center;cursor:pointer;transition:all .15s}
+.import-zone:hover{background:var(--brand-light);border-color:var(--brand)}
+
+/* ===== 公式配置器 ===== */
+.fb{margin-top:12px}
+.fb-row{display:flex;align-items:center;gap:6px;margin-bottom:8px;flex-wrap:wrap}
+.fb-seg{display:inline-flex;align-items:center;gap:4px;padding:6px 10px;border:1px solid var(--border);border-radius:6px;background:#fff;font-size:13px;min-height:32px}
+.fb-seg.var{border-color:#91caff;background:#f5faff;color:var(--brand);font-weight:500}
+.fb-seg.coef{border-color:#ffd591;background:#fffbe6;color:#d46b08}
+.fb-seg.op{border:none;background:none;font-size:16px;font-weight:700;color:var(--text2);padding:0 2px;cursor:pointer}
+.fb-seg.paren{border:1px solid #d9d9d9;background:#fafafa;font-weight:700;color:var(--text2)}
+.fb-del{margin-left:4px;color:var(--danger);cursor:pointer;font-size:14px;line-height:1}
+.fb-del:hover{opacity:.7}
+.fb-add-row{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.fb-btn{padding:5px 12px;border:1px solid var(--border);border-radius:6px;font-size:12px;cursor:pointer;background:#fff;transition:all .15s}
+.fb-btn:hover{border-color:var(--brand);color:var(--brand)}
+.fb-btn.op-btn{min-width:36px;text-align:center;font-weight:600;font-size:14px}
+.fb-preview{margin-top:12px;padding:14px 16px;background:#f8fafc;border:1px solid var(--border);border-radius:8px}
+.fb-preview-label{font-size:12px;color:var(--text3);margin-bottom:6px}
+.fb-preview-formula{font-size:15px;font-weight:600;color:var(--brand);font-family:'SF Mono','Monaco','Courier New',monospace;letter-spacing:.5px}
+.fb-coef-input{width:60px;padding:4px 8px;border:1px solid #ffd591;border-radius:4px;font-size:13px;text-align:center;color:#d46b08;font-weight:500}
+.fb-coef-input:focus{outline:none;border-color:#ffa940;box-shadow:0 0 0 2px rgba(255,169,64,.2)}
+.fb-var-select{padding:4px 8px;border:1px solid #91caff;border-radius:4px;font-size:13px;background:#f5faff;color:var(--brand)}
+.switch{display:inline-flex;align-items:center;gap:10px;cursor:pointer;user-select:none;font-size:13px}.switch input{position:absolute;opacity:0;pointer-events:none}.switch-track{position:relative;width:44px;height:24px;border-radius:12px;background:#cbd5e1;transition:.2s}.switch-track:after{content:"";position:absolute;width:18px;height:18px;left:3px;top:3px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.25);transition:.2s}.switch input:checked+.switch-track{background:var(--brand)}.switch input:checked+.switch-track:after{transform:translateX(20px)}.switch-state{color:var(--text2);font-weight:500}
+
+</style>
 </head>
 <body>
-
 <div class="login-page" id="loginPage">
 <div class="login-box">
 <div class="logo"><span>广州澜特</span> 管理后台</div>
@@ -54,7 +271,6 @@
 </div>
 </div>
 <div class="ct">
-
 <div class="pg show" id="p-dashboard">
 <div class="pt">数据看板</div>
 <div class="sg">
@@ -77,7 +293,6 @@
 </tbody></table></div>
 <div class="pgn"><span>共432条</span><button class="active">1</button><button class="">2</button><button class="">3</button><button class="">4</button><button class="">5</button><button>...</button><button>44</button><span>条/页 10</span></div></div>
 </div>
-
 <div class="pg" id="p-resume">
 <div class="pt">简历库</div>
 <div class="tabs"><div class="tab active" onclick="stab(this,'resume-list')">简历列表</div><div class="tab" onclick="stab(this,'resume-parse')">解析简历</div></div>
@@ -109,14 +324,13 @@
 <div class="tc" id="resume-parse">
 <div class="cd">
 <div class="cd-t">解析简历</div>
-
 <div class="uz" onclick="document.getElementById('resumeFileInput').click()"
      ondragover="event.preventDefault();this.style.borderColor='var(--brand)';this.style.background='var(--brand-light)'"
      ondragleave="this.style.borderColor='var(--border2)';this.style.background=''"
      ondrop="event.preventDefault();this.style.borderColor='var(--border2)';this.style.background='';sm('parseProgressModal')"
      style="border:2px dashed var(--border2);border-radius:12px;padding:40px 20px;text-align:center;background:#fafbfc;cursor:pointer;transition:all .25s">
   <div style="font-size:42px;margin-bottom:10px">&#9205;</div>
-  <p style="font-size:15px;color:var(--text);margin-bottom:4px;font-weight:500">点击或拖拽上传简历文件（一次最多叠100份）</p>
+  <p style="font-size:15px;color:var(--text1);margin-bottom:4px;font-weight:500">点击或拖拽上传简历文件（一次最多叠100份）</p>
   <p style="font-size:12px;color:var(--text3)">支持 PDF / Word /JPG / PNG，中文或英文均可，自动解析后填入简历列表</p>
   <input type="file" id="resumeFileInput" multiple accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" style="display:none" onchange="sm('parseProgressModal')">
 </div>
@@ -126,7 +340,6 @@
 <div class="ib ib-b" style="margin-top:14px;background:#f0f7ff;border:1px solid #d4e8fc;border-radius:8px;padding:10px 14px;font-size:13px">
   解析完成的简历将自动加入<b>简历队列</b>。支持后台执行，可离开当前页面。列表中「解析中」文件可点击<strong style="color:var(--brand)">「查看进度」</strong>查看实时解析百分比。
 </div>
-
 <div style="margin-top:18px"><table>
 <thead><tr><th>文件名</th><th>格式</th><th>语言</th><th>状态</th><th>识别姓名</th><th>操作</th></tr></thead>
 <tbody>
@@ -137,7 +350,6 @@
 </div>
 </div>
 </div>
-
 <div class="pg" id="p-resumeDetail">
 <div class="rp-back" onclick="backToResume()">&larr; 返回简历列表</div>
 <div class="rp-header">
@@ -227,7 +439,6 @@
 
 </div>
 </div>
-
 <div class="pg" id="p-resumeAdd">
 <div class="rp-back" onclick="backToResume()">&larr; 返回简历列表</div>
 <div class="rp-header">
@@ -307,7 +518,6 @@
 </div>
 </div>
 </div>
-
 <div class="pg" id="p-interview">
 <div class="pt">面试审核</div>
 <div class="sg">
@@ -377,48 +587,46 @@
 <div class="row"><span class="k">期望薪资</span><span class="v">9,000-12,000 元/月</span></div>
 <div class="row"><span class="k">工作经历</span><span class="v" style="font-size:12px">东莞XX制造厂 - 技工 (2020.06-2026.06)</span></div>
 </div>
-
 <div class="approval-info" style="margin-top:24px;margin-bottom:14px">
 <div class="row"><span class="k" style="font-weight:600">材料上传</span><span class="v"><span style="font-size:12px;color:var(--text3)">支持上传体检报告、身份证、银行卡、资质证件</span></span></div>
 </div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px">
 <div style="border:1.5px dashed var(--border2);border-radius:8px;padding:18px;text-align:center;cursor:pointer;background:#fafafa" onclick="this.style.borderColor='var(--brand)'">
 <div style="font-size:24px;margin-bottom:6px">&#128196;</div>
-<div style="font-size:13px;color:var(--text);font-weight:500">体检报告</div>
-<div style="font-size:11px;color:var(--text3);margin-top:2px">未上传</div>
+<div style="font-size:13px;color:var(--text-1);font-weight:500">体检报告</div>
+<div style="font-size:11px;color:var(--text-3);margin-top:2px">未上传</div>
 </div>
 <div style="border:1.5px dashed var(--border2);border-radius:8px;padding:18px;background:#fafafa">
-<div style="font-size:13px;color:var(--text);font-weight:500;margin-bottom:12px;text-align:center">身份证（正反面）</div>
+<div style="font-size:13px;color:var(--text-1);font-weight:500;margin-bottom:12px;text-align:center">身份证（正反面）</div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
 <div style="border:1px dashed var(--border);border-radius:6px;padding:14px;text-align:center;cursor:pointer" onclick="this.style.borderColor='var(--brand)'">
 <div style="font-size:20px;margin-bottom:4px">&#128179;</div>
-<div style="font-size:11px;color:var(--text2)">正面</div>
-<div style="font-size:10px;color:var(--text3)">未上传</div>
+<div style="font-size:11px;color:var(--text-2)">正面</div>
+<div style="font-size:10px;color:var(--text-3)">未上传</div>
 </div>
 <div style="border:1px dashed var(--border);border-radius:6px;padding:14px;text-align:center;cursor:pointer" onclick="this.style.borderColor='var(--brand)'">
 <div style="font-size:20px;margin-bottom:4px">&#128179;</div>
-<div style="font-size:11px;color:var(--text2)">反面</div>
-<div style="font-size:10px;color:var(--text3)">未上传</div>
+<div style="font-size:11px;color:var(--text-2)">反面</div>
+<div style="font-size:10px;color:var(--text-3)">未上传</div>
 </div>
 </div>
 </div>
 <div style="border:1.5px dashed var(--border2);border-radius:8px;padding:18px;text-align:center;cursor:pointer;background:#fafafa">
 <div style="font-size:24px;margin-bottom:6px">&#128179;</div>
-<div style="font-size:13px;color:var(--text);font-weight:500">银行卡</div>
-<div style="font-size:11px;color:var(--text3);margin-top:2px">未上传</div>
+<div style="font-size:13px;color:var(--text-1);font-weight:500">银行卡</div>
+<div style="font-size:11px;color:var(--text-3);margin-top:2px">未上传</div>
 </div>
 </div>
 <div style="border:1.5px dashed var(--border2);border-radius:8px;padding:18px;text-align:center;cursor:pointer;background:#fafafa;margin-bottom:16px">
 <div style="font-size:24px;margin-bottom:6px">&#127891;</div>
-<div style="font-size:13px;color:var(--text);font-weight:500">资质证件（支持多张）</div>
-<div style="font-size:11px;color:var(--text3);margin-top:2px">未上传</div>
+<div style="font-size:13px;color:var(--text-1);font-weight:500">资质证件（支持多张）</div>
+<div style="font-size:11px;color:var(--text-3);margin-top:2px">未上传</div>
 </div>
 
 <div class="fg" style="margin-top:16px"><label>审核意见</label><textarea rows="3" placeholder="请输入审核意见..."></textarea></div>
 <div class="ml-f"><button class="btn" onclick="hm('interviewModal')">取消</button><button class="btn btn-d" onclick="hm('interviewModal');alert('面试审核已拒绝，已通知候选人')">面试不通过</button><button class="btn btn-s" onclick="hm('interviewModal');alert('面试审核已通过，候选人状态将变更为「待确认面试」，等待其确认后进入入职环节')">面试通过</button></div>
 </div></div>
 </div>
-
 <div class="pg" id="p-onboard">
 <div class="pt">入职审核</div>
 <div class="sg">
@@ -465,43 +673,42 @@
 <div class="row"><span class="k">计划入职</span><span class="v">2026-07-08</span></div>
 <div class="row"><span class="k">渠道来源</span><span class="v"><input style="width:110px;border:1px solid var(--border);border-radius:4px;padding:2px 6px;font-size:12px" placeholder="手动输入"><select style="width:120px;margin-left:6px;border:1px solid var(--border);border-radius:4px;padding:2px 6px;font-size:12px"><option>从渠道列表选择</option><option>刘洋(LT0001)</option><option>杨光(LT0003)</option><option>陈芳(LT0005)</option></select></span></div>
 </div>
-
 <div class="approval-info" style="margin-top:24px;margin-bottom:14px">
 <div class="row"><span class="k" style="font-weight:600">入职材料</span><span class="v"><span style="font-size:12px;color:var(--text3)">以下为候选人已上传的材料</span></span></div>
 </div>
-<div style="font-size:13px;color:var(--text2);font-weight:500;margin:6px 0 14px">证件材料</div>
+<div style="font-size:13px;color:var(--text-2);font-weight:500;margin:6px 0 14px">证件材料</div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px">
 <div style="border:1px solid var(--border);border-radius:8px;padding:16px;text-align:center;background:#f7f7f7">
 <div style="width:100%;height:60px;background:linear-gradient(135deg,#e8f5e9,#c8e6c9);border-radius:4px;display:flex;align-items:center;justify-content:center;margin-bottom:10px;font-size:22px">&#128196;</div>
-<div style="font-size:12px;color:var(--text2);font-weight:500">体检报告</div>
-<div style="font-size:11px;color:var(--success);margin-top:2px">✓ 已上传</div>
+<div style="font-size:12px;color:var(--text-2);font-weight:500">体检报告</div>
+<div style="font-size:11px;color:var(--ok);margin-top:2px">✓ 已上传</div>
 </div>
 <div style="border:1px solid var(--border);border-radius:8px;padding:16px;background:#f7f7f7">
-<div style="font-size:12px;color:var(--text2);font-weight:500;margin-bottom:10px;text-align:center">身份证（正反面）</div>
+<div style="font-size:12px;color:var(--text-2);font-weight:500;margin-bottom:10px;text-align:center">身份证（正反面）</div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
 <div style="border:1px dashed var(--border);border-radius:6px;padding:10px;text-align:center;background:#fff">
 <div style="height:36px;background:linear-gradient(135deg,#e8eaf6,#c5cae9);border-radius:4px;display:flex;align-items:center;justify-content:center;margin-bottom:6px;font-size:18px">&#128179;</div>
-<div style="font-size:11px;color:var(--text2)">正面</div>
-<div style="font-size:10px;color:var(--success)">✓ 已上传</div>
+<div style="font-size:11px;color:var(--text-2)">正面</div>
+<div style="font-size:10px;color:var(--ok)">✓ 已上传</div>
 </div>
 <div style="border:1px dashed var(--border);border-radius:6px;padding:10px;text-align:center;background:#fff">
 <div style="height:36px;background:linear-gradient(135deg,#e8eaf6,#c5cae9);border-radius:4px;display:flex;align-items:center;justify-content:center;margin-bottom:6px;font-size:18px">&#128179;</div>
-<div style="font-size:11px;color:var(--text2)">反面</div>
-<div style="font-size:10px;color:var(--success)">✓ 已上传</div>
+<div style="font-size:11px;color:var(--text-2)">反面</div>
+<div style="font-size:10px;color:var(--ok)">✓ 已上传</div>
 </div>
 </div>
 </div>
 <div style="border:1px solid var(--border);border-radius:8px;padding:16px;text-align:center;background:#f7f7f7">
 <div style="width:100%;height:60px;background:linear-gradient(135deg,#fff3e0,#ffe0b2);border-radius:4px;display:flex;align-items:center;justify-content:center;margin-bottom:10px;font-size:22px">&#128179;</div>
-<div style="font-size:12px;color:var(--text2);font-weight:500">银行卡</div>
-<div style="font-size:11px;color:var(--success);margin-top:2px">✓ 已上传</div>
+<div style="font-size:12px;color:var(--text-2);font-weight:500">银行卡</div>
+<div style="font-size:11px;color:var(--ok);margin-top:2px">✓ 已上传</div>
 </div>
 </div>
-<div style="font-size:13px;color:var(--text2);font-weight:500;margin:0 0 14px">资质证件</div>
+<div style="font-size:13px;color:var(--text-2);font-weight:500;margin:0 0 14px">资质证件</div>
 <div style="border:1px solid var(--border);border-radius:8px;padding:16px;text-align:center;background:#f7f7f7;margin-bottom:18px">
 <div style="width:100%;height:50px;background:linear-gradient(135deg,#fce4ec,#f8bbd0);border-radius:4px;display:flex;align-items:center;justify-content:center;margin-bottom:10px;font-size:20px">&#127891;</div>
-<div style="font-size:12px;color:var(--text2);font-weight:500">低压电工证</div>
-<div style="font-size:11px;color:var(--success);margin-top:2px">✓ 已上传</div>
+<div style="font-size:12px;color:var(--text-2);font-weight:500">低压电工证</div>
+<div style="font-size:11px;color:var(--ok);margin-top:2px">✓ 已上传</div>
 </div>
 <div class="fr" style="gap:20px">
 <div class="fg"><label>结算方式</label><select><option>请选择</option><option selected>按月</option><option>按日</option><option>按周</option><option>一次性结算</option></select></div>
@@ -511,7 +718,6 @@
 <div class="ib" style="margin-top:6px;font-size:12px;color:var(--text2)">上述结算单价将在发起电子签约时自动写入合同「劳动报酬」条款。</div>
 <div class="fg" style="margin-top:20px"><label>审核意见</label><textarea rows="3" placeholder="请输入审核意见..."></textarea></div>
 <div class="ib ib-b" style="margin-top:8px">结算方式在入职审核时确认，将作为该员工在此项目上的结算依据。后续在结算中心导入工时表时自动匹配计算。</div>
-
 <div style="margin-top:20px;border:1px solid #91caff;border-radius:8px;background:linear-gradient(135deg,#f0f7ff,#e6f4ff);padding:16px 18px">
 <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
 <span style="display:inline-flex;width:24px;height:24px;align-items:center;justify-content:center;background:var(--brand);border-radius:6px;color:#fff"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l7 3v6c0 4.5-3 8.5-7 9.5-4-1-7-5-7-9.5V5l7-3z"/><path d="M9 12l2 2 4-4"/></svg></span>
@@ -527,7 +733,6 @@
 
 <div class="ml-f"><button class="btn" onclick="hm('onboardModal')">取消</button><button class="btn btn-d" onclick="hm('onboardModal');alert('入职审核已拒绝，已通知候选人')">拒绝入职</button><button class="btn" style="border-color:var(--warning);color:var(--warning)" onclick="hm('onboardModal');sm('transferModal')">转岗</button><button class="btn btn-s" onclick="hm('onboardModal');sm('esignInitModal')">通过并发起电子签约</button></div>
 </div></div>
-
 <div class="mo" id="esignInitModal"><div class="ml" style="width:540px">
 <div class="ml-t" style="display:flex;align-items:center;gap:8px"><span style="display:inline-flex;width:22px;height:22px;align-items:center;justify-content:center;background:var(--brand);border-radius:5px;color:#fff"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l7 3v6c0 4.5-3 8.5-7 9.5-4-1-7-5-7-9.5V5l7-3z"/><path d="M9 12l2 2 4-4"/></svg></span>发起电子签约 · 腾讯电子签</div>
 <div class="ib ib-b" style="margin-bottom:14px">审核已通过。确认后将通过腾讯电子签发起合同签署，员工需完成人脸核身与电子签名。</div>
@@ -545,7 +750,6 @@
 <div style="margin-top:14px;padding:10px 14px;background:#f7f7f7;border-radius:6px;font-size:12px;color:var(--text2);line-height:1.7">上方<b>结算方式与单价</b>取自入职审核确认结果，将自动写入合同<b>「第三条 劳动报酬」</b>条款。员工完成签署后，合同将自动归档至<b>员工文件</b>，员工状态更新为<b>在职</b>并加入花名册。</div>
 <div class="ml-f"><button class="btn" onclick="hm('esignInitModal')">取消</button><button class="btn btn-s" onclick="hm('esignInitModal');alert('已通过腾讯电子签向 孙明（138****1122）发送签署链接，短信已下发。员工完成人脸核身+电子签名后将自动加入花名册。');showPage('roster')">确认发起签约</button></div>
 </div></div>
-
 <div class="mo" id="transferModal"><div class="ml" style="width:520px">
 <div class="ml-t">转岗入职</div>
 <div class="ib ib-b">该员工不符合当前岗位要求，可转岗至其他项目入职，转岗通过后等同于入职操作。</div>
@@ -561,7 +765,6 @@
 <div class="ml-f"><button class="btn" onclick="hm('transferModal')">取消</button><button class="btn btn-p" onclick="hm('transferModal')">确认转岗入职</button></div>
 </div></div>
 </div>
-
 <div class="pg" id="p-roster">
 <div class="pt">花名册管理</div>
 <div class="tabs"><div class="tab active" onclick="stab(this,'roster-active')">在职员工</div><div class="tab" onclick="stab(this,'roster-left')">离职员工</div><div class="tab" onclick="stab(this,'roster-upload')">批量上传</div></div>
@@ -609,7 +812,6 @@
 </div></div>
 
 </div>
-
 <div class="pg" id="p-entryCode">
 <div class="pt">入职码</div>
 <div class="cd">
@@ -619,7 +821,6 @@
 <div class="qr"><div class="qb" style="padding:0;border:none;background:none"><svg width="160" height="160" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg"><rect width="160" height="160" fill="#fff" rx="4"/><g fill="#1a1a1a"><rect x="0" y="0" width="8" height="8"/><rect x="8" y="0" width="8" height="8"/><rect x="16" y="0" width="8" height="8"/><rect x="24" y="0" width="8" height="8"/><rect x="48" y="0" width="8" height="8"/><rect x="64" y="0" width="8" height="8"/><rect x="96" y="0" width="8" height="8"/><rect x="104" y="0" width="8" height="8"/><rect x="112" y="0" width="8" height="8"/><rect x="128" y="0" width="8" height="8"/><rect x="144" y="0" width="8" height="8"/><rect x="152" y="0" width="8" height="8"/><rect x="0" y="8" width="8" height="8"/><rect x="8" y="8" width="8" height="8"/><rect x="16" y="8" width="8" height="8"/><rect x="24" y="8" width="8" height="8"/><rect x="72" y="8" width="8" height="8"/><rect x="88" y="8" width="8" height="8"/><rect x="104" y="8" width="8" height="8"/><rect x="120" y="8" width="8" height="8"/><rect x="144" y="8" width="8" height="8"/><rect x="152" y="8" width="8" height="8"/><rect x="8" y="16" width="8" height="8"/><rect x="24" y="16" width="8" height="8"/><rect x="56" y="16" width="8" height="8"/><rect x="88" y="16" width="8" height="8"/><rect x="128" y="16" width="8" height="8"/><rect x="136" y="16" width="8" height="8"/><rect x="144" y="16" width="8" height="8"/><rect x="152" y="16" width="8" height="8"/><rect x="16" y="24" width="8" height="8"/><rect x="24" y="24" width="8" height="8"/><rect x="48" y="24" width="8" height="8"/><rect x="72" y="24" width="8" height="8"/><rect x="112" y="24" width="8" height="8"/><rect x="136" y="24" width="8" height="8"/><rect x="144" y="24" width="8" height="8"/><rect x="0" y="32" width="8" height="8"/><rect x="16" y="32" width="8" height="8"/><rect x="32" y="32" width="8" height="8"/><rect x="56" y="32" width="8" height="8"/><rect x="64" y="32" width="8" height="8"/><rect x="88" y="32" width="8" height="8"/><rect x="96" y="32" width="8" height="8"/><rect x="128" y="32" width="8" height="8"/><rect x="136" y="32" width="8" height="8"/><rect x="8" y="40" width="8" height="8"/><rect x="24" y="40" width="8" height="8"/><rect x="40" y="40" width="8" height="8"/><rect x="48" y="40" width="8" height="8"/><rect x="56" y="40" width="8" height="8"/><rect x="64" y="40" width="8" height="8"/><rect x="72" y="40" width="8" height="8"/><rect x="80" y="40" width="8" height="8"/><rect x="88" y="40" width="8" height="8"/><rect x="96" y="40" width="8" height="8"/><rect x="104" y="40" width="8" height="8"/><rect x="112" y="40" width="8" height="8"/><rect x="120" y="40" width="8" height="8"/><rect x="128" y="40" width="8" height="8"/><rect x="152" y="40" width="8" height="8"/><rect x="16" y="48" width="8" height="8"/><rect x="24" y="48" width="8" height="8"/><rect x="32" y="48" width="8" height="8"/><rect x="40" y="48" width="8" height="8"/><rect x="56" y="48" width="8" height="8"/><rect x="72" y="48" width="8" height="8"/><rect x="80" y="48" width="8" height="8"/><rect x="96" y="48" width="8" height="8"/><rect x="120" y="48" width="8" height="8"/><rect x="136" y="48" width="8" height="8"/><rect x="0" y="56" width="8" height="8"/><rect x="8" y="56" width="8" height="8"/><rect x="40" y="56" width="8" height="8"/><rect x="48" y="56" width="8" height="8"/><rect x="56" y="56" width="8" height="8"/><rect x="72" y="56" width="8" height="8"/><rect x="80" y="56" width="8" height="8"/><rect x="120" y="56" width="8" height="8"/><rect x="144" y="56" width="8" height="8"/><rect x="152" y="56" width="8" height="8"/><rect x="16" y="64" width="8" height="8"/><rect x="24" y="64" width="8" height="8"/><rect x="40" y="64" width="8" height="8"/><rect x="56" y="64" width="8" height="8"/><rect x="64" y="64" width="8" height="8"/><rect x="72" y="64" width="8" height="8"/><rect x="104" y="64" width="8" height="8"/><rect x="128" y="64" width="8" height="8"/><rect x="144" y="64" width="8" height="8"/><rect x="8" y="72" width="8" height="8"/><rect x="16" y="72" width="8" height="8"/><rect x="48" y="72" width="8" height="8"/><rect x="64" y="72" width="8" height="8"/><rect x="72" y="72" width="8" height="8"/><rect x="80" y="72" width="8" height="8"/><rect x="96" y="72" width="8" height="8"/><rect x="128" y="72" width="8" height="8"/><rect x="8" y="80" width="8" height="8"/><rect x="48" y="80" width="8" height="8"/><rect x="56" y="80" width="8" height="8"/><rect x="96" y="80" width="8" height="8"/><rect x="152" y="80" width="8" height="8"/><rect x="8" y="88" width="8" height="8"/><rect x="24" y="88" width="8" height="8"/><rect x="32" y="88" width="8" height="8"/><rect x="56" y="88" width="8" height="8"/><rect x="112" y="88" width="8" height="8"/><rect x="136" y="88" width="8" height="8"/><rect x="152" y="88" width="8" height="8"/><rect x="16" y="96" width="8" height="8"/><rect x="24" y="96" width="8" height="8"/><rect x="32" y="96" width="8" height="8"/><rect x="48" y="96" width="8" height="8"/><rect x="64" y="96" width="8" height="8"/><rect x="72" y="96" width="8" height="8"/><rect x="80" y="96" width="8" height="8"/><rect x="88" y="96" width="8" height="8"/><rect x="104" y="96" width="8" height="8"/><rect x="120" y="96" width="8" height="8"/><rect x="0" y="104" width="8" height="8"/><rect x="8" y="104" width="8" height="8"/><rect x="16" y="104" width="8" height="8"/><rect x="24" y="104" width="8" height="8"/><rect x="32" y="104" width="8" height="8"/><rect x="40" y="104" width="8" height="8"/><rect x="48" y="104" width="8" height="8"/><rect x="64" y="104" width="8" height="8"/><rect x="72" y="104" width="8" height="8"/><rect x="96" y="104" width="8" height="8"/><rect x="112" y="104" width="8" height="8"/><rect x="128" y="104" width="8" height="8"/><rect x="144" y="104" width="8" height="8"/><rect x="16" y="112" width="8" height="8"/><rect x="40" y="112" width="8" height="8"/><rect x="64" y="112" width="8" height="8"/><rect x="88" y="112" width="8" height="8"/><rect x="104" y="112" width="8" height="8"/><rect x="112" y="112" width="8" height="8"/><rect x="128" y="112" width="8" height="8"/><rect x="136" y="112" width="8" height="8"/><rect x="144" y="112" width="8" height="8"/><rect x="152" y="112" width="8" height="8"/><rect x="0" y="120" width="8" height="8"/><rect x="24" y="120" width="8" height="8"/><rect x="56" y="120" width="8" height="8"/><rect x="72" y="120" width="8" height="8"/><rect x="88" y="120" width="8" height="8"/><rect x="104" y="120" width="8" height="8"/><rect x="144" y="120" width="8" height="8"/><rect x="152" y="120" width="8" height="8"/><rect x="0" y="128" width="8" height="8"/><rect x="8" y="128" width="8" height="8"/><rect x="16" y="128" width="8" height="8"/><rect x="32" y="128" width="8" height="8"/><rect x="40" y="128" width="8" height="8"/><rect x="48" y="128" width="8" height="8"/><rect x="96" y="128" width="8" height="8"/><rect x="104" y="128" width="8" height="8"/><rect x="112" y="128" width="8" height="8"/><rect x="128" y="128" width="8" height="8"/><rect x="136" y="128" width="8" height="8"/><rect x="144" y="128" width="8" height="8"/><rect x="16" y="136" width="8" height="8"/><rect x="32" y="136" width="8" height="8"/><rect x="40" y="136" width="8" height="8"/><rect x="64" y="136" width="8" height="8"/><rect x="80" y="136" width="8" height="8"/><rect x="112" y="136" width="8" height="8"/><rect x="128" y="136" width="8" height="8"/><rect x="136" y="136" width="8" height="8"/><rect x="144" y="136" width="8" height="8"/><rect x="48" y="144" width="8" height="8"/><rect x="56" y="144" width="8" height="8"/><rect x="64" y="144" width="8" height="8"/><rect x="72" y="144" width="8" height="8"/><rect x="88" y="144" width="8" height="8"/><rect x="120" y="144" width="8" height="8"/><rect x="128" y="144" width="8" height="8"/><rect x="152" y="144" width="8" height="8"/><rect x="0" y="152" width="8" height="8"/><rect x="8" y="152" width="8" height="8"/><rect x="32" y="152" width="8" height="8"/><rect x="56" y="152" width="8" height="8"/><rect x="64" y="152" width="8" height="8"/><rect x="80" y="152" width="8" height="8"/><rect x="88" y="152" width="8" height="8"/><rect x="104" y="152" width="8" height="8"/><rect x="112" y="152" width="8" height="8"/><rect x="136" y="152" width="8" height="8"/><rect x="0" y="0" width="40" height="40" fill="#1a1a1a"/><rect x="6" y="6" width="28" height="28" fill="#fff"/><rect x="12" y="12" width="16" height="16" fill="#1a1a1a"/><rect x="112" y="0" width="40" height="40" fill="#1a1a1a"/><rect x="118" y="6" width="28" height="28" fill="#fff"/><rect x="124" y="12" width="16" height="16" fill="#1a1a1a"/><rect x="0" y="112" width="40" height="40" fill="#1a1a1a"/><rect x="6" y="118" width="28" height="28" fill="#fff"/><rect x="12" y="124" width="16" height="16" fill="#1a1a1a"/></g></svg></div><p style="font-size:15px;font-weight:500;color:#1a1a1a;margin-bottom:4px">扫码入职登记</p><p style="font-size:13px;color:var(--text3)">扫码 &rarr; 填写信息 &rarr; 审核通过 &rarr; 正式入职</p></div>
 </div>
 </div>
-
 <div class="pg" id="p-empDetail">
 <div class="rp-back" onclick="showPage(_lastPage||'roster');document.querySelector('[data-p=roster]').classList.add('active')">&larr; 返回花名册</div>
 <div class="rp-header">
@@ -641,7 +842,6 @@
 <div class="rp-field"><span class="lbl">渠道来源</span><span class="val">刘洋(LT0001)</span></div>
 </div>
 </div>
-
 <div class="rp-card" id="empWorkCard">
 <div class="rp-card-title">员工在职信息 <button class="btn btn-sm" id="empWorkEditBtn" onclick="toggleEmpWorkEdit()">编辑</button></div>
 <div class="rp-fields">
@@ -752,7 +952,6 @@
 <div class="rp-card">
 <div class="rp-card-title">员工文件 <button class="btn btn-sm btn-p" onclick="sm('empFileUploadModal')">+ 上传文件</button></div>
 <div style="font-size:12px;color:var(--text3);margin:-4px 0 14px">集中归档员工入职影像件与资质材料，支持在线预览、下载与替换。带 <span style="color:var(--danger)">*</span> 为入职必备文件。</div>
-
 <div class="ef-group">
 <div class="ef-group-t">身份证 <span style="color:var(--danger)">*</span> <span class="tg tg-g" style="margin-left:6px">已上传</span></div>
 <div class="ef-files">
@@ -760,21 +959,18 @@
 <div class="ef-card"><div class="ef-thumb" onclick="sm('empFilePreviewModal')">🪪<span class="ef-badge">反面</span></div><div class="ef-name">身份证-反面.jpg</div><div class="ef-meta">1.1MB · 2026-07-01</div><div class="ef-ops"><a onclick="sm('empFilePreviewModal')">预览</a><a onclick="alert('开始下载：身份证-反面.jpg')">下载</a><a onclick="sm('empFileUploadModal')">替换</a></div></div>
 </div>
 </div>
-
 <div class="ef-group">
 <div class="ef-group-t">银行卡 <span style="color:var(--danger)">*</span> <span class="tg tg-g" style="margin-left:6px">已上传</span></div>
 <div class="ef-files">
 <div class="ef-card"><div class="ef-thumb" onclick="sm('empFilePreviewModal')">💳<span class="ef-badge">正面</span></div><div class="ef-name">工资卡-正面.jpg</div><div class="ef-meta">0.9MB · 2026-07-01</div><div class="ef-ops"><a onclick="sm('empFilePreviewModal')">预览</a><a onclick="alert('开始下载：工资卡-正面.jpg')">下载</a><a onclick="sm('empFileUploadModal')">替换</a></div></div>
 </div>
 </div>
-
 <div class="ef-group">
 <div class="ef-group-t">体检报告 <span class="tg tg-g" style="margin-left:6px">已上传</span></div>
 <div class="ef-files">
 <div class="ef-card"><div class="ef-thumb ef-thumb-file" onclick="sm('empFilePreviewModal')">📄<span class="ef-badge ef-badge-pdf">PDF</span></div><div class="ef-name">入职体检报告.pdf</div><div class="ef-meta">2.4MB · 2026-06-28</div><div class="ef-ops"><a onclick="sm('empFilePreviewModal')">预览</a><a onclick="alert('开始下载：入职体检报告.pdf')">下载</a><a onclick="sm('empFileUploadModal')">替换</a></div></div>
 </div>
 </div>
-
 <div class="ef-group">
 <div class="ef-group-t">资质证书 <span class="tg tg-b" style="margin-left:6px">2项</span></div>
 <div class="ef-files">
@@ -782,7 +978,6 @@
 <div class="ef-card"><div class="ef-thumb ef-thumb-file" onclick="sm('empFilePreviewModal')">📄<span class="ef-badge ef-badge-pdf">PDF</span></div><div class="ef-name">大专学历证书.pdf</div><div class="ef-meta">1.6MB · 2026-07-01</div><div class="ef-ops"><a onclick="sm('empFilePreviewModal')">预览</a><a onclick="alert('开始下载：大专学历证书.pdf')">下载</a><a onclick="sm('empFileUploadModal')">替换</a></div></div>
 </div>
 </div>
-
 <div class="ef-group">
 <div class="ef-group-t">其他材料 <span class="tg tg-y" style="margin-left:6px">待补充</span></div>
 <div class="ef-files">
@@ -813,7 +1008,6 @@
 </div>
 </div>
 </div>
-
 <div class="pg" id="p-addEmployee">
 <div class="rp-back" onclick="goRosterPage()">&larr; 返回花名册</div>
 <div class="rp-header">
@@ -852,7 +1046,6 @@
 
 <div class="rp-header" style="border:none;margin-top:8px"><div></div><div class="rp-actions"><button class="btn" onclick="goRosterPage()">取消</button><button class="btn btn-p" onclick="alert('员工已添加到花名册，正在为你返回花名册');goRosterPage()">保存并直接入职</button></div></div>
 </div>
-
 <div class="pg" id="p-project">
 <div class="pt">项目管理</div>
 <div class="sbar"><input placeholder="搜索项目名称" style="width:220px"><select><option>全部状态</option><option>进行中</option><option>已停用</option></select><button class="btn btn-p btn-sm">搜索</button><button class="btn btn-sm">重置</button><button class="btn btn-p" onclick="sm('addProject')">+ 新增项目</button></div>
@@ -902,7 +1095,6 @@
 <div class="ml-f"><button class="btn" onclick="hm('addProject')">取消</button><button class="btn btn-p" onclick="hm('addProject')">确认新增</button></div>
 </div></div>
 </div>
-
 <div class="pg" id="p-position">
 <div class="pt">岗位管理</div>
 <div class="sbar"><input placeholder="搜索岗位名称" style="width:220px"><select><option>全部状态</option><option>招聘中</option><option>已停招</option></select><select><option>全部项目</option><option>电子普工</option><option>质检员</option><option>高级技工</option><option>仓管员</option></select><button class="btn btn-p btn-sm">搜索</button><button class="btn btn-sm">重置</button><button class="btn btn-p" onclick="goPositionAdd()">+ 新增岗位</button></div>
@@ -918,7 +1110,6 @@
 </tbody></table></div>
 <div class="pgn"><span>共28条</span><button class="active">1</button><button class="">2</button><button class="">3</button><span>条/页 10</span></div></div>
 </div>
-
 <div class="pg" id="p-positionDetail">
 <div class="rp-back" onclick="showPage('position');document.querySelector('[data-p=position]').classList.add('active')">&larr; 返回岗位管理</div>
 <div class="rp-header">
@@ -1005,7 +1196,6 @@
 </div>
 </div>
 </div>
-
 <div class="pg" id="p-projectDetail">
 <div class="rp-back" onclick="showPage('project');document.querySelector('[data-p=project]').classList.add('active')">&larr; 返回项目管理</div>
 <div class="rp-header">
@@ -1059,7 +1249,6 @@
 </tbody></table></div>
 </div>
 </div>
-
 <div class="pg" id="p-projectEdit">
 <div class="rp-back" onclick="showPage('project');document.querySelector('[data-p=project]').classList.add('active')">&larr; 返回项目管理</div>
 <div class="rp-header">
@@ -1116,7 +1305,6 @@
 <div class="pgn"><span>共2条</span><button class="active">1</button><span>条/页 10</span></div>
 </div>
 </div>
-
 <div class="mo" id="pushModal"><div class="ml" style="width:560px">
 <div class="ml-t">项目推送</div>
 <div class="approval-info">
@@ -1133,7 +1321,6 @@
 <div class="ib ib-b" style="margin-top:8px">支持二次推送，系统将记录每次推送的对象和時間。重复推送时会过滤已查看/已报名的用户。</div>
 <div class="ml-f"><button class="btn" onclick="hm('pushModal')">取消</button><button class="btn btn-p" onclick="hm('pushModal')">确认推送</button></div>
 </div></div>
-
 <div class="mo" id="addContractModal"><div class="ml" style="width:520px">
 <div class="ml-t">新增合同</div>
 <div class="fr">
@@ -1143,7 +1330,6 @@
 <div class="fg" style="margin-top:12px"><label>上传合同附件</label><div class="uz" style="padding:10px 12px;cursor:pointer;border:1px dashed var(--border);border-radius:6px;text-align:center;background:#fafafa"><span style="font-size:13px;color:var(--text3)">点击上传合同文件（PDF/Word）</span></div></div>
 <div class="ml-f"><button class="btn" onclick="hm('addContractModal')">取消</button><button class="btn btn-p" onclick="hm('addContractModal')">确认新增</button></div>
 </div></div>
-
 <div class="pg" id="p-settle">
 <div class="pt">结算中心</div>
 <div class="sg">
@@ -1162,7 +1348,6 @@
 </tbody></table></div>
 <div class="pgn"><span>共128条</span><button class="active">1</button><button class="">2</button><button class="">3</button><button class="">4</button><button class="">5</button><button>...</button><button>13</button><span>条/页 10</span></div></div>
 </div>
-
 <div class="pg" id="p-settleApproval">
 <div class="rp-back" onclick="showPage('settle');document.querySelector('[data-p=settle]').classList.add('active')">&larr; 返回结算中心</div>
 <div class="rp-header">
@@ -1244,7 +1429,6 @@
 </div>
 </div>
 </div>
-
 <div class="pg" id="p-settleCreate">
 <div class="rp-back" onclick="showPage('settle');document.querySelector('[data-p=settle]').classList.add('active')">&larr; 返回结算中心</div>
 <div class="rp-header">
@@ -1297,7 +1481,6 @@
 </div>
 </div>
 </div>
-
 <div class="pg" id="p-dist">
 <div class="pt">分销裂变</div>
 <div class="sg">
@@ -1327,7 +1510,6 @@
 </div>
 
 <div class="tc" id="dist-rule">
-
 <div class="cd">
 <div class="cd-h"><div class="cd-t">佣金结算方式</div></div>
 <div class="ib ib-b" style="margin-bottom:16px">系统支持多种佣金计算方式，可按需组合配置。每种方式支持固定金额或按单位（天/小时）计费。</div>
@@ -1337,7 +1519,6 @@
 <label style="display:flex;align-items:center;gap:6px;padding:12px 16px;border:1px solid var(--border);border-radius:var(--radius);cursor:pointer;font-size:14px"><input type="radio" name="commType" style="accent-color:var(--brand);width:16px;height:16px">固定金额（一次性介绍费）</label>
 </div>
 </div>
-
 <div class="cd">
 <div class="cd-h"><div class="cd-t">方式一：在职天数佣金</div><span class="tg tg-g" style="font-size:11px;padding:2px 8px">推荐配置</span></div>
 <div class="ib ib-b">员工在某个岗位连续在职满 X 天，即可触发佣金结算。支持一次性发放或按天累计发放。</div>
@@ -1357,7 +1538,6 @@
 </div>
 <div class="ib ib-y" style="margin-top:8px;font-size:12px">💡 阶梯说明：满足更高档位条件时，该档位佣金叠加发放（非替换）。例如在职90天同时触发第1+2+3档。</div>
 </div>
-
 <div class="cd">
 <div class="cd-h"><div class="cd-t">方式二：满岗条件佣金</div></div>
 <div class="ib ib-b">员工在岗位满岗（达到规定天数或工时）后触发佣金。支持按天、按小时等多种计量单位。</div>
@@ -1377,7 +1557,6 @@
 </div>
 <div class="ib ib-y" style="margin-top:8px;font-size:12px">💡 单位可自定义：天数(天)、工时(小时)、出勤天数。佣金可设为一次性或按单位周期性发放。</div>
 </div>
-
 <div class="cd">
 <div class="cd-h"><div class="cd-t">方式三：固定金额（一次性介绍费）</div></div>
 <div class="fr">
@@ -1386,7 +1565,6 @@
 </div>
 <div class="ib ib-b" style="margin-top:10px">固定金额模式：入职即发一次性介绍费，不依赖在职时长。渠道商等级关联中可配置倍率叠加，实现差异化的佣金策略。</div>
 </div>
-
 <div class="cd">
 <div class="cd-h"><div class="cd-t">按渠道商配置佣金</div></div>
 <div class="ib ib-b" style="margin-bottom:16px">岗位维度的佣金已在「岗位管理」中维护；本处仅保留渠道商维度的佣金覆盖配置。</div>
@@ -1400,7 +1578,6 @@
 </tbody></table></div>
 <div style="margin-top:10px"><button class="btn btn-p btn-sm" onclick="goDistCommChannel()">+ 新增渠道商佣金配置</button></div>
 </div>
-
 <div class="cd">
 <div class="cd-h"><div class="cd-t">渠道商等级与佣金倍率</div><button class="btn btn-p btn-sm" onclick="sm('addDistLevelModal')">+ 新增等级</button></div>
 <div class="tw"><table>
@@ -1415,7 +1592,6 @@
 <div style="margin-top:16px;text-align:right"><button class="btn btn-p">保存所有佣金规则配置</button></div>
 </div>
 </div>
-
 <div class="mo" id="addDistLevelModal"><div class="ml" style="width:520px">
 <div class="ml-t">新增渠道商等级</div>
 <div style="padding:16px 20px">
@@ -1438,7 +1614,6 @@
 <div class="fg" style="margin-top:12px"><label>备注</label><textarea rows="2" placeholder="请输入备注..."></textarea></div>
 <div class="ml-f"><button class="btn" onclick="hm('addChannelModal')">取消</button><button class="btn btn-p" onclick="hm('addChannelModal')">确认新增</button></div>
 </div></div>
-
 <div class="pg" id="p-distCommChannel">
 <div class="rp-back" onclick="goBackDistRule()">&larr; 返回分销规则配置</div>
 <div class="rp-header">
@@ -1466,7 +1641,6 @@
 <div style="margin-top:10px"><button class="btn btn-p btn-sm">+ 新增档位</button></div>
 </div>
 </div>
-
 <div class="pg" id="p-distDetail">
 <div class="rp-back" onclick="showPage('dist');document.querySelector('[data-p=dist]').classList.add('active')">&larr; 返回渠道商列表</div>
 <div class="rp-header">
@@ -1536,7 +1710,6 @@
 </div>
 </div>
 </div>
-
 <div class="pg" id="p-settlePaySlip">
 <div class="rp-back" onclick="showPage('settleApproval')">&larr; 返回结算审批</div>
 <div class="rp-header">
@@ -1597,7 +1770,6 @@
 </div>
 </div>
 </div>
-
 <div class="pg" id="p-account">
 <div class="pt">账号设置</div>
 <div class="cd">
@@ -1639,7 +1811,6 @@
 <div class="pgn"><span>共4条</span><button class="active">1</button><span>条/页 10</span></div>
 </div>
 </div>
-
 <div class="pg" id="p-accountAdd">
 <div class="rp-back" onclick="showPage('account');setMi('account')">&larr; 返回账号设置</div>
 <div class="rp-header">
@@ -1680,7 +1851,6 @@
 <div class="rp-field" id="accAddProjGrp" style="display:none;margin-top:12px;max-width:420px"><span class="lbl">授权项目</span><select multiple size="4" style="height:auto"><option>东莞仓管项目</option><option>佛山分拣项目</option><option>深圳质检项目</option><option>广州电子组装项目</option></select></div>
 </div>
 </div>
-
 <div class="pg" id="p-role">
 <div class="pt">角色权限与组织架构</div>
 <div class="cd"><div class="cd-h"><div class="cd-t">角色管理</div><button class="btn btn-p btn-sm" onclick="goRoleAdd()">+ 新增角色</button></div>
@@ -1695,7 +1865,6 @@
 </div></div>
 
 </div>
-
 <div class="pg" id="p-roleAdd">
 <div class="rp-back" onclick="showPage('role');document.querySelector('[data-p=role]').classList.add('active')">&larr; 返回角色权限</div>
 <div class="rp-header">
@@ -1729,7 +1898,6 @@
 </tbody></table></div>
 </div>
 </div>
-
 <div class="pg" id="p-roleEdit">
 <div class="rp-back" onclick="showPage('role');document.querySelector('[data-p=role]').classList.add('active')">&larr; 返回角色权限</div>
 <div class="rp-header">
@@ -1761,7 +1929,6 @@
 </tbody></table></div>
 </div>
 </div>
-
 <div class="pg" id="p-dict">
 <div class="pt">字典设置</div>
 <div class="ib ib-b" style="margin-bottom:12px">字典配置已从系统设置中独立出来，并按业务功能模块划分标签，便于各模块分别维护可选项。</div>
@@ -1860,7 +2027,6 @@
 <div class="pgn"><span>共56条</span><button class="active">1</button><button>2</button><button>3</button><button>4</button><button>5</button><button>...</button><button>6</button><span>条/页 10</span></div>
 </div></div>
 </div>
-
 <div class="pg" id="p-watermark">
 <div class="rp-back" onclick="goConfig('config')">&larr; 返回系统设置</div>
 <div class="rp-header"><h2>简历水印配置</h2></div>
@@ -1900,7 +2066,6 @@
 <div class="rp-header"><h2>协议管理</h2><button class="btn btn-p btn-sm" onclick="document.getElementById('agrTitle').textContent='新增协议版本';sm('agreementEditModal')">+ 新增协议版本</button></div>
 <div class="cd"><div class="cd-t">个人信息保护协议管理</div>
 <div class="ib ib-o">维护平台的个人信息保护协议、用户授权条款等法律文本。支持多版本管理，更新后需重新提交微信审核。</div>
-
 <div class="cd-h" style="margin-top:14px;font-size:14px">协议版本列表</div>
 <table style="width:100%;border-collapse:collapse;margin-top:8px">
 <thead><tr style="background:#fafafa">
@@ -1943,12 +2108,10 @@
 </tr>
 </tbody>
 </table>
-
 <div style="display:flex;gap:8px;margin-top:14px">
 <button class="btn btn-p btn-sm" onclick="sm('agreementEditModal')">+ 新增协议版本</button>
 <button class="btn btn-o btn-sm">导出协议记录</button>
 </div>
-
 <div class="ib ib-g" style="margin-top:14px">
 <b style="color:var(--success)">协议使用说明</b><br>
 &#9745; 用户首次登录或授权时自动弹窗展示当前启用的协议<br>
@@ -2157,7 +2320,6 @@
 </div></div>
 </div>
 </div>
-
 <div class="mo" id="salaryTemplateModal"><div class="ml" style="width:680px;max-height:86vh;overflow-y:auto">
 <div class="ml-t">设置工资计算模板</div>
 <div style="padding:16px 20px">
@@ -2169,7 +2331,6 @@
 </div>
 <div class="ml-f"><button class="btn" onclick="hm('salaryTemplateModal')">取消</button><button class="btn btn-p" onclick="hm('salaryTemplateModal');alert('工资计算模板已保存')">保存模板</button></div>
 </div></div>
-
 <div class="mo" id="salaryAssignModal"><div class="ml" style="width:640px">
 <div class="ml-t">指定工资计算模板使用范围</div>
 <div style="padding:16px 20px">
@@ -2182,7 +2343,6 @@
 </div>
 <div class="ml-f"><button class="btn" onclick="hm('salaryAssignModal')">取消</button><button class="btn btn-p" onclick="hm('salaryAssignModal');alert('工资计算模板使用范围已保存，将按生效日期用于发薪')">确认指定</button></div>
 </div></div>
-
 <div class="mo" id="batchUploadModal"><div class="ml" style="width:520px">
 <div class="ml-t">批量上传简历</div>
 <div class="uz"><p>点击或拖拽文件批量上传</p><p style="font-size:12px;color:var(--text3)">支持Excel批量导入 / 多简历同时上传</p></div>
@@ -2193,7 +2353,6 @@
 <div class="ib ib-b" style="margin-top:8px">上传后系统自动查重，重复数据可选择覆盖或跳过。新用户登录时根据手机号+身份证校验已有账号，匹配成功一键激活。</div>
 <div class="ml-f"><button class="btn" onclick="hm('batchUploadModal')">取消</button><button class="btn btn-p" onclick="hm('batchUploadModal')">确认上传</button></div>
 </div></div>
-
 <div class="mo" id="parseProgressModal"><div class="ml" style="width:520px">
 <div class="ml-t">简历解析进度</div>
 <div class="parse-stat">
@@ -2226,14 +2385,12 @@
 <div class="ib ib-b" style="margin-top:12px">解析完成的简历将自动进入<b>简历列表</b>。支持后台执行，可离开当前页面，进度持续更新。失败的简历可点击「重新解析」重试。</div>
 <div class="ml-f"><button class="btn btn-p" onclick="hm('parseProgressModal')">关闭</button></div>
 </div></div>
-
 <div class="mo" id="importTimesheetModal"><div class="ml" style="width:480px">
 <div class="ml-t">导入员工工时表</div>
 <div class="uz"><p>点击或拖拽上传工时表文件</p><p style="font-size:12px;color:var(--text3)">支持 Excel (.xlsx) 格式，系统自动匹配员工并计算工资</p></div>
 <div class="ib ib-b" style="margin-top:12px">系统将根据员工姓名+手机号自动匹配花名册中的员工信息，根据入职审核时配置的结算方式和员工单价计算工资、个税、社保。</div>
 <div class="ml-f"><button class="btn" onclick="hm('importTimesheetModal')">取消</button><button class="btn btn-p" onclick="hm('importTimesheetModal')">确认导入</button></div>
 </div></div>
-
 <div class="mo" id="tableSettingsModal"><div class="ml" style="width:480px">
 <div class="ml-t">表格设置</div>
 <div class="ib ib-b">勾选需要展示的列，点击箭头调整列顺序</div>
@@ -2252,14 +2409,12 @@
 </div>
 <div class="ml-f"><button class="btn btn-sm" onclick="selectAllCols()">全选</button><button class="btn btn-sm">重置</button><button class="btn" onclick="hm('tableSettingsModal')">取消</button><button class="btn btn-p" onclick="hm('tableSettingsModal')">保存</button></div>
 </div></div>
-
 <div class="mo" id="exportModal"><div class="ml" style="width:420px">
 <div class="ml-t">数据导出</div>
 <div class="fg"><label>导出范围</label><select><option>导出选中数据</option><option>导出当前页</option><option>导出全部数据</option></select></div>
 <div class="ib ib-b" style="margin-top:8px">导出格式：Excel (.xlsx)</div>
 <div class="ml-f"><button class="btn" onclick="hm('exportModal')">取消</button><button class="btn btn-p" onclick="hm('exportModal')">确认导出</button></div>
 </div></div>
-
 <div class="mo" id="resignModal"><div class="ml" style="width:480px">
 <div class="ml-t">办理离职</div>
 <div style="padding:20px">
@@ -2278,7 +2433,6 @@
 </div>
 <div class="ml-f"><button class="btn" onclick="hm('resignModal')">取消</button><button class="btn" style="background:var(--danger);color:#fff" onclick="completeWebResign()">确认办理离职</button></div>
 </div></div>
-
 <div class="mo" id="rosterBatchModal"><div class="ml" style="width:560px">
 <div class="ml-t">员工管理 - 已选中员工批量操作</div>
 <div style="padding:20px">
@@ -2291,8 +2445,199 @@
 <div class="ml-f"><button class="btn" onclick="hm('rosterBatchModal')">取消</button><button class="btn btn-p" onclick="hm('rosterBatchModal');alert('批量操作已完成')">确认操作</button></div>
 </div></div>
 
-<script>var _lastPage='roster'; function login(){document.getElementById('loginPage').style.display='none';document.getElementById('app').classList.add('show')} function goDistCommChannel(){showPage('distCommChannel');setMi('dist')} function goBackDistRule(){showPage('dist');setMi('dist');var t=document.querySelector('#p-dist .tabs .tab:nth-child(2)');if(t)t.click()} function changeRosterBatchAction(){ var sel=document.getElementById('rosterBatchAction'); var box=document.getElementById('rosterBatchFields'); if(!sel||!box)return; var css='width:100%;padding:8px 12px;border:1px solid var(--border2);border-radius:var(--radius);font-size:14px'; var map={ project:'<div class="fg"><label>目标项目</label><select style="'+css+'"><option>电子普工</option><option>质检员</option><option>高级技工</option><option>仓管员</option></select></div><div class="fg" style="margin-top:12px"><label>目标岗位</label><select style="'+css+'"><option>电子组装工</option><option>QC质检员</option><option>高级焊工</option><option>仓库管理员</option></select></div>', price:'<div class="fg"><label>员工单价</label><input style="'+css+'" placeholder="如：22 元/时"></div><div class="fg" style="margin-top:12px"><label>生效日期</label><input type="date" style="'+css+'"></div>', leave:'<div class="fg"><label>离职日期</label><input type="date" style="'+css+'"></div><div class="fg" style="margin-top:12px"><label>离职原因</label><select style="'+css+'"><option>个人原因</option><option>项目结束</option><option>旷工离职</option><option>其他</option></select></div>', settle:'<div class="fg"><label>结算方式</label><select style="'+css+'"><option>按月</option><option>按日</option><option>按小时</option><option>一次性</option></select></div>', export:'<div class="fg"><label>导出范围</label><select style="'+css+'"><option>仅导出已选员工</option><option>导出已选员工及在职信息</option><option>导出已选员工完整档案</option></select></div>' }; box.innerHTML=map[sel.value]||''; } var names={dashboard:'数据看板',resume:'简历库',resumeDetail:'简历详情',resumeAdd:'新增简历',interview:'面试审核',onboard:'入职审核',roster:'花名册',empDetail:'花名册 / 员工详情',addEmployee:'花名册 / 新增员工',project:'项目管理',projectDetail:'项目管理 / 项目详情',projectEdit:'项目管理 / 编辑项目',position:'岗位管理',positionDetail:'岗位管理 / 岗位详情',positionAdd:'岗位管理 / 新增岗位',settle:'结算中心',settleCreate:'结算中心 / 新建结算',settleApproval:'结算中心 / 结算审批',settlePaySlip:'结算中心 / 工资条详情',dist:'分销裂变',distDetail:'分销裂变 / 渠道商详情',distCommChannel:'分销裂变 / 按渠道商配置佣金',role:'角色权限',roleAdd:'角色权限 / 新增角色',roleEdit:'角色权限 / 修改角色权限',dict:'字典设置',config:'系统设置',account:'账号设置',accountAdd:'账号设置 / 新增账号',salary:'系统设置 / 工资计算规则',watermark:'系统设置 / 简历水印',agreement:'系统设置 / 协议管理',formfields:'系统设置 / 字段管理',customer:'客户管理',customerDetail:'客户管理 / 客户详情',customerEdit:'客户管理 / 编辑客户',userList:'用户列表',entryCode:'入职码'} function sw(el){var p=el.dataset.p;document.querySelectorAll('.mi').forEach(m=>m.classList.remove('active'));el.classList.add('active');showPage(p)} function showPage(p){document.querySelectorAll('.pg').forEach(function(g){g.classList.remove('show')});var el=document.getElementById('p-'+p);if(!el){console.warn('Page not found: '+p);return}el.classList.add('show');var pn=document.getElementById('pn');if(pn)pn.textContent=names[p]||p} function goConfig(p){showPage(p);setMi('config')} function toggleEntryCodeCustom(sel){var w=document.getElementById('entryCodeCustomWrap');if(w)w.style.display=(sel.value==='custom')?'':'none'} function toggleInterviewFields(sel){var v=sel.value;var loc=document.getElementById('interviewLocWrap');var time=document.getElementById('interviewTimeWrap');var extra=document.getElementById('interviewExtraWrap');var show=(v==='yes');if(loc)loc.style.display=show?'':'none';if(time)time.style.display=show?'':'none';if(extra)extra.style.display=show?'':'none'} function openFieldEdit(btn){if(btn){var r=btn.closest('tr');if(r){var n=r.querySelector('td:nth-child(2)');if(n)document.getElementById('feName').value=n.textContent.trim();var k=r.querySelector('td:nth-child(3)');if(k)document.getElementById('feKey').value=k.textContent.trim()}}else{document.getElementById('feName').value='';document.getElementById('feKey').value=''}sm('fieldEditModal')} function feTypeChange(sel){var g=document.getElementById('feOptionsGrp');if(g)g.style.display=(sel.value==='下拉选择'||sel.value==='单选'||sel.value==='多选')?'block':'none'} function goResumeDetail(){document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-resumeDetail').classList.add('show');document.getElementById('pn').textContent='简历库 / 简历详情';document.querySelector('[data-p=resume]').classList.add('active')} function goResumeAdd(){document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-resumeAdd').classList.add('show');document.getElementById('pn').textContent='简历库 / 新增简历';document.querySelector('[data-p=resume]').classList.add('active')} function goSettleCreate(){document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-settleCreate').classList.add('show');document.getElementById('pn').textContent='结算中心 / 新建结算';document.querySelector('[data-p=settle]').classList.add('active')} function backToResume(){showPage('resume');document.querySelector('[data-p=resume]').classList.add('active')} function goEmpDetail(){var current=document.querySelector('.pg.show');if(current)_lastPage=current.id.replace('p-','');document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-empDetail').classList.add('show');document.getElementById('pn').textContent='花名册 / 员工详情';document.querySelector('[data-p=roster]').classList.add('active')} function goProjectEdit(){document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-projectEdit').classList.add('show');document.getElementById('pn').textContent='项目管理 / 编辑项目';document.querySelector('[data-p=project]').classList.add('active')} function goProjectDetail(){document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-projectDetail').classList.add('show');document.getElementById('pn').textContent='项目管理 / 项目详情';document.querySelector('[data-p=project]').classList.add('active')} function goSettleApproval(){document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-settleApproval').classList.add('show');document.getElementById('pn').textContent='结算中心 / 结算审批';document.querySelector('[data-p=settle]').classList.add('active')} function goPositionAdd(){var t=document.getElementById('positionAddTitle');if(t)t.textContent='新增岗位';var n=document.getElementById('posName');if(n)n.value='';var mn=document.getElementById('posSalMin');if(mn)mn.value='';var mx=document.getElementById('posSalMax');if(mx)mx.value='';var pn=document.getElementById('posPriceN');if(pn)pn.value='';var po=document.getElementById('posPriceOt');if(po)po.value='';var pc=document.getElementById('posCount');if(pc)pc.value='';showPage('positionAdd');setMi('position')} // 部分后补页面位于分销页之后，浏览器解析时可能被包进隐藏的 p-dist。 // 初始化时将新增岗位页提升到主内容容器，保证 showPage() 后可见。 document.addEventListener('DOMContentLoaded',function(){ var content=document.querySelector('.ct'); var app=document.getElementById('app'); if(!content||!app)return; // 独立页面不应嵌套在其他 .pg 内；统一提升可修复渠道商详情、功能模块、 // 新增岗位等后补页面因父页面隐藏而出现空白的问题。 Array.prototype.slice.call(document.querySelectorAll('.pg .pg')).forEach(function(page){content.appendChild(page)}); // 弹窗必须脱离页面容器，否则关闭/切换父页面后，即使添加 show 也会被父级 display:none 隐藏。 // 统一提升到应用根节点，修复合同管理、新增用户、新增合同等弹窗丢失问题。 Array.prototype.slice.call(document.querySelectorAll('.mo')).forEach(function(modal){app.appendChild(modal)}); }); function goPositionEdit(){var t=document.getElementById('positionAddTitle');if(t)t.textContent='编辑岗位 - 电子组装工';var n=document.getElementById('posName');if(n)n.value='电子组装工';var mn=document.getElementById('posSalMin');if(mn)mn.value='5000';var mx=document.getElementById('posSalMax');if(mx)mx.value='7000';var pn=document.getElementById('posPriceN');if(pn)pn.value='40';var po=document.getElementById('posPriceOt');if(po)po.value='60';var pc=document.getElementById('posCount');if(pc)pc.value='50';showPage('positionAdd');setMi('position')} function goDistDetail(){document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-distDetail').classList.add('show');document.getElementById('pn').textContent='分销裂变 / 渠道商详情';document.querySelector('[data-p=dist]').classList.add('active')} function goPositionDetail(){document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-positionDetail').classList.add('show');document.getElementById('pn').textContent='岗位管理 / 岗位详情';document.querySelector('[data-p=position]').classList.add('active')} function goRoleAdd(){document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-roleAdd').classList.add('show');document.getElementById('pn').textContent='角色权限 / 新增角色';document.querySelector('[data-p=role]').classList.add('active')} function goRoleEdit(){document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-roleEdit').classList.add('show');document.getElementById('pn').textContent='角色权限 / 修改角色权限';document.querySelector('[data-p=role]').classList.add('active')} function goInterviewConfirm(){document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-interview').classList.add('show');document.getElementById('pn').textContent='面试审核 / 待确认';document.querySelectorAll('.mi').forEach(m=>m.classList.remove('active'));var mi=document.querySelector('[data-p=interview]');if(mi)mi.classList.add('active');var ip=document.getElementById('p-interview');ip.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));ip.querySelectorAll('.tc').forEach(c=>c.classList.remove('show'));var ct=Array.prototype.slice.call(ip.querySelectorAll('.tab')).filter(function(t){return t.textContent.trim()=='待确认'})[0];if(ct)ct.classList.add('active');document.getElementById('interview-confirm').classList.add('show')} function goRosterPage(){document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-roster').classList.add('show');document.getElementById('pn').textContent='花名册';document.querySelectorAll('.mi').forEach(m=>m.classList.remove('active'));var mi=document.querySelector('[data-p=roster]');if(mi)mi.classList.add('active')} function goAddEmployee(){document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-addEmployee').classList.add('show');document.getElementById('pn').textContent='花名册 / 新增员工';document.querySelectorAll('.mi').forEach(m=>m.classList.remove('active'));var mi=document.querySelector('[data-p=roster]');if(mi)mi.classList.add('active')} function setMi(p){document.querySelectorAll('.mi').forEach(m=>m.classList.remove('active'));var mi=document.querySelector('[data-p='+p+']');if(mi)mi.classList.add('active')} function goAccountAdd(){var t=document.getElementById('accountAddTitle');if(t)t.textContent='新增账号';var n=document.getElementById('accName');if(n)n.value='';var ph=document.getElementById('accPhone');if(ph)ph.value='';showPage('accountAdd');document.getElementById('pn').textContent='账号设置 / 新增账号';setMi('account')} function goAccountEdit(){var t=document.getElementById('accountAddTitle');if(t)t.textContent='编辑账号';var n=document.getElementById('accName');if(n)n.value='赵敏';var ph=document.getElementById('accPhone');if(ph)ph.value='13600004455';showPage('accountAdd');document.getElementById('pn').textContent='账号设置 / 编辑账号';setMi('account')} function stab(el,tid){var pg=el.closest('.pg');if(!pg)return;el.parentElement.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));el.classList.add('active');pg.querySelectorAll('.tc').forEach(c=>c.classList.remove('show'));document.getElementById(tid).classList.add('show')} function sm(id){document.getElementById(id).classList.add('show')} function hm(id){document.getElementById(id).classList.remove('show')} function toggleAll(cb){var table=cb.closest('table');if(table)table.querySelectorAll('tbody input[type="checkbox"]').forEach(c=>c.checked=cb.checked)} function toggleResumeEdit(){var page=document.getElementById('p-resumeDetail');var btn=document.getElementById('editBtn');var isEditing=page.classList.contains('editing');if(isEditing){page.classList.remove('editing');btn.textContent='编辑';btn.className='btn'}else{page.classList.add('editing');btn.textContent='保存';btn.className='btn btn-p'}page.querySelectorAll('input,select,textarea').forEach(f=>{if(f.type==='checkbox'||f.type==='button')return;if(isEditing){f.setAttribute('readonly','');if(f.tagName==='SELECT')f.setAttribute('disabled','')}else{f.removeAttribute('readonly');if(f.tagName==='SELECT')f.removeAttribute('disabled')}});page.querySelectorAll('.rp-add,.rp-entry-del').forEach(el=>{el.style.display=isEditing?'none':''})} function addEntry(btn,type){var card=btn.closest('.rp-card');var entry=document.createElement('div');entry.className='rp-entry';var fields='';if(type==='work'){fields='<button class="btn btn-sm rp-entry-del" onclick="removeEntry(this)">删除</button><div class="rp-fields"><div class="rp-field"><span class="lbl">公司名称</span><input placeholder="请输入公司名称"></div><div class="rp-field"><span class="lbl">职位</span><input placeholder="请输入职位"></div><div class="rp-field"><span class="lbl">工作时间</span><input placeholder="如：2023.03 - 2026.06"></div></div><div class="rp-field" style="margin-top:8px"><span class="lbl">工作描述</span><textarea placeholder="请输入工作描述"></textarea></div>'}else if(type==='edu'){fields='<button class="btn btn-sm rp-entry-del" onclick="removeEntry(this)">删除</button><div class="rp-fields"><div class="rp-field"><span class="lbl">学校名称</span><input placeholder="请输入学校名称"></div><div class="rp-field"><span class="lbl">专业</span><input placeholder="请输入专业"></div><div class="rp-field"><span class="lbl">学历</span><select><option>请选择</option><option>高中</option><option>中专</option><option>大专</option><option>本科</option><option>硕士</option></select></div><div class="rp-field"><span class="lbl">就读时间</span><input placeholder="如：2017.09 - 2020.06"></div></div>'}else if(type==='train'){fields='<button class="btn btn-sm rp-entry-del" onclick="removeEntry(this)">删除</button><div class="rp-fields"><div class="rp-field"><span class="lbl">培训名称</span><input placeholder="请输入培训名称"></div><div class="rp-field"><span class="lbl">培训机构</span><input placeholder="请输入培训机构"></div><div class="rp-field"><span class="lbl">培训时间</span><input placeholder="如：2022.03 - 2022.06"></div><div class="rp-field"><span class="lbl">获得证书</span><input placeholder="请输入获得证书"></div></div>'}entry.innerHTML=fields;card.appendChild(entry)} function removeEntry(btn){btn.closest('.rp-entry').remove()} function selectAllCols(){document.querySelectorAll('#tableSettingsModal .ts-col input[type=checkbox]').forEach(c=>c.checked=true)} document.querySelectorAll('.tag-select .ts-item').forEach(item=>{item.onclick=function(){this.classList.toggle('selected')}}) function toggleEmpResumeEdit(){var card=document.getElementById('empResumeCard');var btn=document.getElementById('empEditBtn');if(card.classList.contains('editing')){card.classList.remove('editing');btn.textContent='编辑';btn.className='btn btn-sm'}else{card.classList.add('editing');btn.textContent='保存';btn.className='btn btn-sm btn-p'}} function toggleEmpWorkEdit(){var card=document.getElementById('empWorkCard');var btn=document.getElementById('empWorkEditBtn');var saveRow=document.getElementById('empWorkSaveRow');var isEditing=card.classList.contains('editing');if(isEditing){card.classList.remove('editing');btn.textContent='编辑';btn.className='btn btn-sm';if(saveRow)saveRow.style.display='none'}else{card.classList.add('editing');btn.textContent='取消编辑';btn.className='btn btn-sm btn-o';if(saveRow)saveRow.style.display=''}card.querySelectorAll('.val').forEach(function(v){v.style.display=isEditing?'':'none'});card.querySelectorAll('input[style*=\"display:none\"],select[style*=\"display:none\"],#empWorkSaveRow').forEach(function(el){el.style.display=isEditing?'none':''});var dates=card.querySelectorAll('input[type=date]');dates.forEach(function(d){d.style.display=isEditing?'none':''});var extras=card.querySelectorAll('#empWorkCard>div>div>div>div>span:not(.lbl):not(.val)');extras.forEach(function(s){if(s.style&&s.style.display==='none')s.style.display=isEditing?'none':''})} // Formula Builder (supports multiple builders) var FB_VARS=['标准工时','实际工时','加班工时','周末工时','节假日工时','员工单价','项目单价','岗位单价','出勤天数','绩效评分','个税应缴金额','社保个人部分','社保单位部分','公积金个人部分','公积金单位部分','基础工资','应发工资','实发工资']; function addFormulaSegment(type,val,builderId,previewId){ builderId=builderId||'salaryFormulaBuilder'; previewId=previewId||'formulaPreview'; var fb=document.getElementById(builderId); if(!fb)return; if(type==='var'){ var picker=document.getElementById('fb-var-picker'); if(!picker){picker=document.createElement('div');picker.id='fb-var-picker';picker.className='fb-var-picker';picker.style.cssText='display:none;position:fixed;z-index:9999;background:#fff;border:1px solid var(--border);border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,.12);max-height:300px;overflow-y:auto;min-width:180px';document.body.appendChild(picker);} var btn=event.target;var rect=btn.getBoundingClientRect(); picker.style.left=rect.left+'px';picker.style.top=(rect.bottom+4)+'px';picker.style.display='block'; picker.innerHTML='<div style="padding:8px 12px;font-size:12px;color:var(--text3);border-bottom:1px solid var(--border);font-weight:500">选择变量</div>'+FB_VARS.map(function(v){return '<div class="fb-var-opt" style="padding:9px 14px;cursor:pointer;font-size:13px;border-bottom:1px solid #f5f5f5" onclick="pickVar(\''+v+'\',\''+builderId+'\',\''+previewId+'\')">'+v+'</div>'}).join(''); setTimeout(function(){var cf=function(e){if(!picker.contains(e.target)&&e.target!==btn){picker.style.display='none';document.removeEventListener('click',cf)}};setTimeout(function(){document.addEventListener('click',cf)},100)},50); return; } var row=document.createElement('div');row.className='fb-row'; if(type==='op'){row.innerHTML='<span class="fb-seg op">'+val+'</span><span class="fb-del" onclick="this.parentElement.remove();updateFormulaPreview(\''+builderId+'\',\''+previewId+'\')">x</span>';} else if(type==='coef'){row.innerHTML='<span class="fb-seg coef">\u7cfb\u6570 <input class="fb-coef-input" value="'+(val||'1.0')+'" onchange="updateFormulaPreview(\''+builderId+'\',\''+previewId+'\')"></span><span class="fb-del" onclick="this.parentElement.remove();updateFormulaPreview(\''+builderId+'\',\''+previewId+'\')">x</span>';} else if(type==='paren'){row.innerHTML='<span class="fb-seg paren">'+val+'</span><span class="fb-del" onclick="this.parentElement.remove();updateFormulaPreview(\''+builderId+'\',\''+previewId+'\')">x</span>';} fb.insertBefore(row,fb.querySelector('.fb-add-row'));updateFormulaPreview(builderId,previewId); } function pickVar(v,builderId,previewId){var p=document.getElementById('fb-var-picker');if(p)p.style.display='none';var fb=document.getElementById(builderId);if(!fb)return;var row=document.createElement('div');row.className='fb-row';row.innerHTML='<span class="fb-seg var" style="padding:6px 12px">'+v+'<span style="margin-left:6px;font-size:11px;color:var(--text3)">\u25bc</span></span><span class="fb-del" onclick="this.parentElement.remove();updateFormulaPreview(\''+builderId+'\',\''+previewId+'\')">x</span>';fb.insertBefore(row,fb.querySelector('.fb-add-row'));updateFormulaPreview(builderId,previewId);} function updateFormulaPreview(builderId,previewId){ builderId=builderId||'salaryFormulaBuilder'; previewId=previewId||'formulaPreview'; var fb=document.getElementById(builderId); if(!fb)return; var parts=[]; fb.querySelectorAll('.fb-row').forEach(function(row){ row.querySelectorAll('.fb-seg').forEach(function(seg){ if(seg.classList.contains('op')){parts.push(seg.textContent.trim());} else if(seg.classList.contains('paren')){parts.push(seg.textContent.trim());} else if(seg.classList.contains('coef')){var inp=seg.querySelector('input');parts.push(inp?inp.value:seg.textContent.trim());} else if(seg.classList.contains('var')){var sel=seg.querySelector('select');parts.push(sel?sel.value:seg.textContent.replace(/[▼▽]/g,'').trim());} }); }); var formula=parts.join(' ').replace(/\s+/g,' ').trim(); var el=document.getElementById(previewId); if(el)el.textContent=formula||'\u8bf7\u6dfb\u52a0\u516c\u5f0f\u6bb5'; } // Salary fee item modal is initialized by openSalaryFeeModal/changeFeeSetMode. document.addEventListener('DOMContentLoaded',function(){ try{changeFeeSetMode()}catch(e){} }); // Customer / UserList navigation. Entry-code generation now only requires 岗位 + 有效期. function goCustomerDetail(){document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-customerDetail').classList.add('show');document.getElementById('pn').textContent='客户管理 / 客户详情';document.querySelectorAll('.mi').forEach(m=>m.classList.remove('active'));var mi=document.querySelector('[data-p=customer]');if(mi)mi.classList.add('active')} function goCustomerEdit(){document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-customerEdit').classList.add('show');document.getElementById('pn').textContent='客户管理 / 编辑客户';document.querySelectorAll('.mi').forEach(m=>m.classList.remove('active'));var mi=document.querySelector('[data-p=customer]');if(mi)mi.classList.add('active')} function goUserDetail(){document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-userList').classList.add('show');document.getElementById('pn').textContent='用户列表';document.querySelectorAll('.mi').forEach(m=>m.classList.remove('active'));var mi=document.querySelector('[data-p=userList]');if(mi)mi.classList.add('active')} function completeWebResign(){ hm('resignModal'); var status=document.querySelector('#p-empDetail .tg-g'); if(status){status.textContent='已离职';status.className='tg tg-r'} alert('离职办理完成，员工已移至已离职列表，结算截止日期已同步'); goRosterPage(); var tabs=document.querySelectorAll('#p-roster .tab'); tabs.forEach(function(t){if(t.textContent.trim()==='离职员工')t.click()}); } function runPrototypeSearch(bar){ var scope=bar.closest('.tc')||bar.closest('.pg'); if(!scope)return; var values=[]; bar.querySelectorAll('input,select').forEach(function(c){var v=(c.value||'').trim();if(v&&!/^(\u5168\u90e8|\u8bf7\u9009\u62e9|\u7b80\u5386\u72b6\u6001：\u5168部|账号状态：全部)/.test(v))values.push(v.toLowerCase())}); var rows=scope.querySelectorAll('table tbody tr'),shown=0; rows.forEach(function(row){var text=row.textContent.toLowerCase();var hit=values.every(function(v){return text.indexOf(v)>-1});row.style.display=hit?'':'none';if(hit)shown++}); var pager=scope.querySelector('.pgn span');if(pager&&rows.length)pager.textContent='当前显示 '+shown+' 条'; } function resetPrototypeSearch(bar){ bar.querySelectorAll('input').forEach(function(i){if(i.type!=='checkbox'&&i.type!=='radio')i.value=''}); bar.querySelectorAll('select').forEach(function(s){s.selectedIndex=0}); var scope=bar.closest('.tc')||bar.closest('.pg');if(scope)scope.querySelectorAll('table tbody tr').forEach(function(r){r.style.display=''}); } document.addEventListener('DOMContentLoaded',function(){ document.querySelectorAll('.sbar').forEach(function(bar){ bar.querySelectorAll('button').forEach(function(btn){var label=btn.textContent.trim();if(label==='搜索'&&!btn.onclick)btn.onclick=function(){runPrototypeSearch(bar)};if(label==='重置'&&!btn.onclick)btn.onclick=function(){resetPrototypeSearch(bar)}}); bar.querySelectorAll('input').forEach(function(input){input.addEventListener('keydown',function(e){if(e.key==='Enter')runPrototypeSearch(bar)})}); }); document.querySelectorAll('.pgn').forEach(function(pager){pager.querySelectorAll('button').forEach(function(btn){btn.onclick=function(){if(this.textContent.trim()==='...')return;pager.querySelectorAll('button').forEach(function(b){b.classList.remove('active')});this.classList.add('active')}})}); document.querySelectorAll('table tbody input[type="checkbox"]').forEach(function(cb){cb.addEventListener('change',function(){var tr=this.closest('tr');if(tr)tr.style.background=this.checked?'var(--brand-light)':''})}); }); try{changeRosterBatchAction()}catch(e){} function toggleSalaryAssignType(type){ var position=document.getElementById('salaryAssignPosition'); var project=document.getElementById('salaryAssignProject'); if(position)position.style.display=type==='position'?'':'none'; if(project)project.style.display=type==='project'?'':'none'; } function openSalaryFeeModal(mode,name,code,setMode){ var title=document.getElementById('salaryTplTitle'); if(title)title.textContent=(mode==='edit'?'编辑费用项':'新增费用项'); var n=document.getElementById('tplName'); if(n)n.value=name||''; var c=document.getElementById('tplCode'); if(c)c.value=code||''; var m=document.getElementById('feeSetMode'); if(m)m.value=setMode||'manual'; changeFeeSetMode(); sm('salaryTplModal'); } function editSalaryTpl(idx){ var names=['基本工资','绩效奖励','个人所得税']; var codes=['BASE_WAGE','PERFORMANCE','TAX']; var modes=['calc','manual','read']; openSalaryFeeModal('edit',names[idx]||'',codes[idx]||'',modes[idx]||'manual'); } function changeFeeSetMode(){ var mode=document.getElementById('feeSetMode'); var box=document.getElementById('feeModePanel'); if(!mode||!box)return; if(mode.value==='manual'){ box.innerHTML='<div class="ib ib-b" style="padding:10px 12px">直接填写：结算时由财务人员录入金额，可用于绩效奖励、质量扣款、社保个人部分等需要人工确认的费用项。</div>'; }else if(mode.value==='read'){ box.innerHTML='<div class="ib ib-b" style="padding:12px"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px"><b>系统读数来源</b><span style="font-size:12px;color:var(--text3)">结算核算时自动获取，无需手工填写</span></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:10px"><label style="border:1px solid var(--border);border-radius:6px;padding:12px;display:block"><input type="radio" name="readSrc"> 未核销售支金额<div style="font-size:12px;color:var(--text3);margin-top:4px">读取该员工已审批、尚未通过工资完成抵扣的借支余额。</div><div class="tg tg-y" style="margin-top:6px">结算时自动带入，只读</div></label><label style="border:1px solid var(--border);border-radius:6px;padding:12px;display:block"><input type="radio" name="readSrc"> 本次个税金额<div style="font-size:12px;color:var(--text3);margin-top:4px">读取系统根据应税收入及固定个税公式计算出的本次应扣税额。</div><div class="tg tg-y" style="margin-top:6px">随应税金额自动重算，只读</div></label></div><div class="ib ib-o" style="margin-top:10px;font-size:12px">系统读数不可直接修改。如来源数据发生变化，应更新借支记录或重新执行个税计算，系统会同步刷新本次结算金额。</div></div>'; }else{ box.innerHTML='<div class="ib ib-b" style="padding:12px"><div style="display:flex;gap:8px;margin-bottom:12px"><button class="btn btn-p btn-sm">运算公式</button><button class="btn btn-sm">条件公式</button></div><div style="border:1px solid var(--border);border-radius:8px;padding:12px;background:#fff"><b>运算公式</b><div style="font-size:12px;color:var(--text3);margin:8px 0 12px">选择推荐公式，或依次设置起始因子、运算符和运算项。</div><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px"><div class="ib ib-b" style="margin:0;padding:10px"><b>基本工资</b><br><span style="font-size:12px;color:var(--text3)">岗位单价 × 工时</span></div><div class="ib ib-b" style="margin:0;padding:10px"><b>日薪</b><br><span style="font-size:12px;color:var(--text3)">岗位单价 × 计薪天数</span></div><div class="ib ib-b" style="margin:0;padding:10px"><b>月薪</b><br><span style="font-size:12px;color:var(--text3)">岗位单价 × 计薪月数</span></div></div><div class="fr"><div class="fg"><label>起始因子</label><select><option>岗位单价</option><option>工时</option><option>计薪天数</option><option>计薪月数</option><option>费用_基本工资</option><option>费用_绩效奖励</option><option>费用_质量扣款</option></select></div></div><div class="fr"><div class="fg"><label>运算符</label><select><option>×</option><option>+</option><option>-</option><option>÷</option></select></div></div><div class="fr"><div class="fg"><label>运算项 1</label><select><option>运算因子</option><option>系数</option></select></div><div class="fg"><label>&nbsp;</label><select><option>工时</option><option>计薪天数</option><option>计薪月数</option><option>费用_个人所得税</option></select></div></div><button class="btn btn-sm" style="border-style:dashed;color:var(--brand)">+ 增加运算项</button><div class="ib ib-g" style="margin-top:12px"><div style="font-size:12px">公式校验通过</div><b>岗位单价 × 工时</b><br><b>示例结果：¥4,400.00</b></div></div></div>'; } }</script>
+<script>
+var _lastPage='roster';
+function login(){document.getElementById('loginPage').style.display='none';document.getElementById('app').classList.add('show')}
+function goDistCommChannel(){showPage('distCommChannel');setMi('dist')}
+function goBackDistRule(){showPage('dist');setMi('dist');var t=document.querySelector('#p-dist .tabs .tab:nth-child(2)');if(t)t.click()}
 
+function changeRosterBatchAction(){
+  var sel=document.getElementById('rosterBatchAction');
+  var box=document.getElementById('rosterBatchFields');
+  if(!sel||!box)return;
+  var css='width:100%;padding:8px 12px;border:1px solid var(--border2);border-radius:var(--radius);font-size:14px';
+  var map={
+    project:'<div class="fg"><label>目标项目</label><select style="'+css+'"><option>电子普工</option><option>质检员</option><option>高级技工</option><option>仓管员</option></select></div><div class="fg" style="margin-top:12px"><label>目标岗位</label><select style="'+css+'"><option>电子组装工</option><option>QC质检员</option><option>高级焊工</option><option>仓库管理员</option></select></div>',
+    price:'<div class="fg"><label>员工单价</label><input style="'+css+'" placeholder="如：22 元/时"></div><div class="fg" style="margin-top:12px"><label>生效日期</label><input type="date" style="'+css+'"></div>',
+    leave:'<div class="fg"><label>离职日期</label><input type="date" style="'+css+'"></div><div class="fg" style="margin-top:12px"><label>离职原因</label><select style="'+css+'"><option>个人原因</option><option>项目结束</option><option>旷工离职</option><option>其他</option></select></div>',
+    settle:'<div class="fg"><label>结算方式</label><select style="'+css+'"><option>按月</option><option>按日</option><option>按小时</option><option>一次性</option></select></div>',
+    export:'<div class="fg"><label>导出范围</label><select style="'+css+'"><option>仅导出已选员工</option><option>导出已选员工及在职信息</option><option>导出已选员工完整档案</option></select></div>'
+  };
+  box.innerHTML=map[sel.value]||'';
+}
+var names={dashboard:'数据看板',resume:'简历库',resumeDetail:'简历详情',resumeAdd:'新增简历',interview:'面试审核',onboard:'入职审核',roster:'花名册',empDetail:'花名册 / 员工详情',addEmployee:'花名册 / 新增员工',project:'项目管理',projectDetail:'项目管理 / 项目详情',projectEdit:'项目管理 / 编辑项目',position:'岗位管理',positionDetail:'岗位管理 / 岗位详情',positionAdd:'岗位管理 / 新增岗位',settle:'结算中心',settleCreate:'结算中心 / 新建结算',settleApproval:'结算中心 / 结算审批',settlePaySlip:'结算中心 / 工资条详情',dist:'分销裂变',distDetail:'分销裂变 / 渠道商详情',distCommChannel:'分销裂变 / 按渠道商配置佣金',role:'角色权限',roleAdd:'角色权限 / 新增角色',roleEdit:'角色权限 / 修改角色权限',dict:'字典设置',config:'系统设置',account:'账号设置',accountAdd:'账号设置 / 新增账号',salary:'系统设置 / 工资计算规则',watermark:'系统设置 / 简历水印',agreement:'系统设置 / 协议管理',formfields:'系统设置 / 字段管理',customer:'客户管理',customerDetail:'客户管理 / 客户详情',customerEdit:'客户管理 / 编辑客户',userList:'用户列表',entryCode:'入职码'}
+function sw(el){var p=el.dataset.p;document.querySelectorAll('.mi').forEach(m=>m.classList.remove('active'));el.classList.add('active');showPage(p)}
+function showPage(p){document.querySelectorAll('.pg').forEach(function(g){g.classList.remove('show')});var el=document.getElementById('p-'+p);if(!el){console.warn('Page not found: '+p);return}el.classList.add('show');var pn=document.getElementById('pn');if(pn)pn.textContent=names[p]||p}
+function goConfig(p){showPage(p);setMi('config')}
+function toggleEntryCodeCustom(sel){var w=document.getElementById('entryCodeCustomWrap');if(w)w.style.display=(sel.value==='custom')?'':'none'}
+function toggleInterviewFields(sel){var v=sel.value;var loc=document.getElementById('interviewLocWrap');var time=document.getElementById('interviewTimeWrap');var extra=document.getElementById('interviewExtraWrap');var show=(v==='yes');if(loc)loc.style.display=show?'':'none';if(time)time.style.display=show?'':'none';if(extra)extra.style.display=show?'':'none'}
+function openFieldEdit(btn){if(btn){var r=btn.closest('tr');if(r){var n=r.querySelector('td:nth-child(2)');if(n)document.getElementById('feName').value=n.textContent.trim();var k=r.querySelector('td:nth-child(3)');if(k)document.getElementById('feKey').value=k.textContent.trim()}}else{document.getElementById('feName').value='';document.getElementById('feKey').value=''}sm('fieldEditModal')}
+function feTypeChange(sel){var g=document.getElementById('feOptionsGrp');if(g)g.style.display=(sel.value==='下拉选择'||sel.value==='单选'||sel.value==='多选')?'block':'none'}
+function goResumeDetail(){document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-resumeDetail').classList.add('show');document.getElementById('pn').textContent='简历库 / 简历详情';document.querySelector('[data-p=resume]').classList.add('active')}
+function goResumeAdd(){document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-resumeAdd').classList.add('show');document.getElementById('pn').textContent='简历库 / 新增简历';document.querySelector('[data-p=resume]').classList.add('active')}
+function goSettleCreate(){document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-settleCreate').classList.add('show');document.getElementById('pn').textContent='结算中心 / 新建结算';document.querySelector('[data-p=settle]').classList.add('active')}
+function backToResume(){showPage('resume');document.querySelector('[data-p=resume]').classList.add('active')}
+function goEmpDetail(){var current=document.querySelector('.pg.show');if(current)_lastPage=current.id.replace('p-','');document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-empDetail').classList.add('show');document.getElementById('pn').textContent='花名册 / 员工详情';document.querySelector('[data-p=roster]').classList.add('active')}
+function goProjectEdit(){document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-projectEdit').classList.add('show');document.getElementById('pn').textContent='项目管理 / 编辑项目';document.querySelector('[data-p=project]').classList.add('active')}
+function goProjectDetail(){document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-projectDetail').classList.add('show');document.getElementById('pn').textContent='项目管理 / 项目详情';document.querySelector('[data-p=project]').classList.add('active')}
+function goSettleApproval(){document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-settleApproval').classList.add('show');document.getElementById('pn').textContent='结算中心 / 结算审批';document.querySelector('[data-p=settle]').classList.add('active')}
+function goPositionAdd(){var t=document.getElementById('positionAddTitle');if(t)t.textContent='新增岗位';var n=document.getElementById('posName');if(n)n.value='';var mn=document.getElementById('posSalMin');if(mn)mn.value='';var mx=document.getElementById('posSalMax');if(mx)mx.value='';var pn=document.getElementById('posPriceN');if(pn)pn.value='';var po=document.getElementById('posPriceOt');if(po)po.value='';var pc=document.getElementById('posCount');if(pc)pc.value='';showPage('positionAdd');setMi('position')}
+// 部分后补页面位于分销页之后，浏览器解析时可能被包进隐藏的 p-dist。
+// 初始化时将新增岗位页提升到主内容容器，保证 showPage() 后可见。
+document.addEventListener('DOMContentLoaded',function(){
+  var content=document.querySelector('.ct');
+  var app=document.getElementById('app');
+  if(!content||!app)return;
+  // 独立页面不应嵌套在其他 .pg 内；统一提升可修复渠道商详情、功能模块、
+  // 新增岗位等后补页面因父页面隐藏而出现空白的问题。
+  Array.prototype.slice.call(document.querySelectorAll('.pg .pg')).forEach(function(page){content.appendChild(page)});
+  // 弹窗必须脱离页面容器，否则关闭/切换父页面后，即使添加 show 也会被父级 display:none 隐藏。
+  // 统一提升到应用根节点，修复合同管理、新增用户、新增合同等弹窗丢失问题。
+  Array.prototype.slice.call(document.querySelectorAll('.mo')).forEach(function(modal){app.appendChild(modal)});
+});
+function goPositionEdit(){var t=document.getElementById('positionAddTitle');if(t)t.textContent='编辑岗位 - 电子组装工';var n=document.getElementById('posName');if(n)n.value='电子组装工';var mn=document.getElementById('posSalMin');if(mn)mn.value='5000';var mx=document.getElementById('posSalMax');if(mx)mx.value='7000';var pn=document.getElementById('posPriceN');if(pn)pn.value='40';var po=document.getElementById('posPriceOt');if(po)po.value='60';var pc=document.getElementById('posCount');if(pc)pc.value='50';showPage('positionAdd');setMi('position')}
+function goDistDetail(){document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-distDetail').classList.add('show');document.getElementById('pn').textContent='分销裂变 / 渠道商详情';document.querySelector('[data-p=dist]').classList.add('active')}
+function goPositionDetail(){document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-positionDetail').classList.add('show');document.getElementById('pn').textContent='岗位管理 / 岗位详情';document.querySelector('[data-p=position]').classList.add('active')}
+function goRoleAdd(){document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-roleAdd').classList.add('show');document.getElementById('pn').textContent='角色权限 / 新增角色';document.querySelector('[data-p=role]').classList.add('active')}
+function goRoleEdit(){document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-roleEdit').classList.add('show');document.getElementById('pn').textContent='角色权限 / 修改角色权限';document.querySelector('[data-p=role]').classList.add('active')}
+function goInterviewConfirm(){document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-interview').classList.add('show');document.getElementById('pn').textContent='面试审核 / 待确认';document.querySelectorAll('.mi').forEach(m=>m.classList.remove('active'));var mi=document.querySelector('[data-p=interview]');if(mi)mi.classList.add('active');var ip=document.getElementById('p-interview');ip.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));ip.querySelectorAll('.tc').forEach(c=>c.classList.remove('show'));var ct=Array.prototype.slice.call(ip.querySelectorAll('.tab')).filter(function(t){return t.textContent.trim()=='待确认'})[0];if(ct)ct.classList.add('active');document.getElementById('interview-confirm').classList.add('show')}
+function goRosterPage(){document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-roster').classList.add('show');document.getElementById('pn').textContent='花名册';document.querySelectorAll('.mi').forEach(m=>m.classList.remove('active'));var mi=document.querySelector('[data-p=roster]');if(mi)mi.classList.add('active')}
+function goAddEmployee(){document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-addEmployee').classList.add('show');document.getElementById('pn').textContent='花名册 / 新增员工';document.querySelectorAll('.mi').forEach(m=>m.classList.remove('active'));var mi=document.querySelector('[data-p=roster]');if(mi)mi.classList.add('active')}
+function setMi(p){document.querySelectorAll('.mi').forEach(m=>m.classList.remove('active'));var mi=document.querySelector('[data-p='+p+']');if(mi)mi.classList.add('active')}
+function goAccountAdd(){var t=document.getElementById('accountAddTitle');if(t)t.textContent='新增账号';var n=document.getElementById('accName');if(n)n.value='';var ph=document.getElementById('accPhone');if(ph)ph.value='';showPage('accountAdd');document.getElementById('pn').textContent='账号设置 / 新增账号';setMi('account')}
+function goAccountEdit(){var t=document.getElementById('accountAddTitle');if(t)t.textContent='编辑账号';var n=document.getElementById('accName');if(n)n.value='赵敏';var ph=document.getElementById('accPhone');if(ph)ph.value='13600004455';showPage('accountAdd');document.getElementById('pn').textContent='账号设置 / 编辑账号';setMi('account')}
+function stab(el,tid){var pg=el.closest('.pg');if(!pg)return;el.parentElement.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));el.classList.add('active');pg.querySelectorAll('.tc').forEach(c=>c.classList.remove('show'));document.getElementById(tid).classList.add('show')}
+function sm(id){document.getElementById(id).classList.add('show')}
+function hm(id){document.getElementById(id).classList.remove('show')}
+function toggleAll(cb){var table=cb.closest('table');if(table)table.querySelectorAll('tbody input[type="checkbox"]').forEach(c=>c.checked=cb.checked)}
+function toggleResumeEdit(){var page=document.getElementById('p-resumeDetail');var btn=document.getElementById('editBtn');var isEditing=page.classList.contains('editing');if(isEditing){page.classList.remove('editing');btn.textContent='编辑';btn.className='btn'}else{page.classList.add('editing');btn.textContent='保存';btn.className='btn btn-p'}page.querySelectorAll('input,select,textarea').forEach(f=>{if(f.type==='checkbox'||f.type==='button')return;if(isEditing){f.setAttribute('readonly','');if(f.tagName==='SELECT')f.setAttribute('disabled','')}else{f.removeAttribute('readonly');if(f.tagName==='SELECT')f.removeAttribute('disabled')}});page.querySelectorAll('.rp-add,.rp-entry-del').forEach(el=>{el.style.display=isEditing?'none':''})}
+function addEntry(btn,type){var card=btn.closest('.rp-card');var entry=document.createElement('div');entry.className='rp-entry';var fields='';if(type==='work'){fields='<button class="btn btn-sm rp-entry-del" onclick="removeEntry(this)">删除</button><div class="rp-fields"><div class="rp-field"><span class="lbl">公司名称</span><input placeholder="请输入公司名称"></div><div class="rp-field"><span class="lbl">职位</span><input placeholder="请输入职位"></div><div class="rp-field"><span class="lbl">工作时间</span><input placeholder="如：2023.03 - 2026.06"></div></div><div class="rp-field" style="margin-top:8px"><span class="lbl">工作描述</span><textarea placeholder="请输入工作描述"></textarea></div>'}else if(type==='edu'){fields='<button class="btn btn-sm rp-entry-del" onclick="removeEntry(this)">删除</button><div class="rp-fields"><div class="rp-field"><span class="lbl">学校名称</span><input placeholder="请输入学校名称"></div><div class="rp-field"><span class="lbl">专业</span><input placeholder="请输入专业"></div><div class="rp-field"><span class="lbl">学历</span><select><option>请选择</option><option>高中</option><option>中专</option><option>大专</option><option>本科</option><option>硕士</option></select></div><div class="rp-field"><span class="lbl">就读时间</span><input placeholder="如：2017.09 - 2020.06"></div></div>'}else if(type==='train'){fields='<button class="btn btn-sm rp-entry-del" onclick="removeEntry(this)">删除</button><div class="rp-fields"><div class="rp-field"><span class="lbl">培训名称</span><input placeholder="请输入培训名称"></div><div class="rp-field"><span class="lbl">培训机构</span><input placeholder="请输入培训机构"></div><div class="rp-field"><span class="lbl">培训时间</span><input placeholder="如：2022.03 - 2022.06"></div><div class="rp-field"><span class="lbl">获得证书</span><input placeholder="请输入获得证书"></div></div>'}entry.innerHTML=fields;card.appendChild(entry)}
+function removeEntry(btn){btn.closest('.rp-entry').remove()}
+function selectAllCols(){document.querySelectorAll('#tableSettingsModal .ts-col input[type=checkbox]').forEach(c=>c.checked=true)}
+document.querySelectorAll('.tag-select .ts-item').forEach(item=>{item.onclick=function(){this.classList.toggle('selected')}})
+function toggleEmpResumeEdit(){var card=document.getElementById('empResumeCard');var btn=document.getElementById('empEditBtn');if(card.classList.contains('editing')){card.classList.remove('editing');btn.textContent='编辑';btn.className='btn btn-sm'}else{card.classList.add('editing');btn.textContent='保存';btn.className='btn btn-sm btn-p'}}
+function toggleEmpWorkEdit(){var card=document.getElementById('empWorkCard');var btn=document.getElementById('empWorkEditBtn');var saveRow=document.getElementById('empWorkSaveRow');var isEditing=card.classList.contains('editing');if(isEditing){card.classList.remove('editing');btn.textContent='编辑';btn.className='btn btn-sm';if(saveRow)saveRow.style.display='none'}else{card.classList.add('editing');btn.textContent='取消编辑';btn.className='btn btn-sm btn-o';if(saveRow)saveRow.style.display=''}card.querySelectorAll('.val').forEach(function(v){v.style.display=isEditing?'':'none'});card.querySelectorAll('input[style*=\"display:none\"],select[style*=\"display:none\"],#empWorkSaveRow').forEach(function(el){el.style.display=isEditing?'none':''});var dates=card.querySelectorAll('input[type=date]');dates.forEach(function(d){d.style.display=isEditing?'none':''});var extras=card.querySelectorAll('#empWorkCard>div>div>div>div>span:not(.lbl):not(.val)');extras.forEach(function(s){if(s.style&&s.style.display==='none')s.style.display=isEditing?'none':''})}
+
+// Formula Builder (supports multiple builders)
+var FB_VARS=['标准工时','实际工时','加班工时','周末工时','节假日工时','员工单价','项目单价','岗位单价','出勤天数','绩效评分','个税应缴金额','社保个人部分','社保单位部分','公积金个人部分','公积金单位部分','基础工资','应发工资','实发工资'];
+function addFormulaSegment(type,val,builderId,previewId){
+builderId=builderId||'salaryFormulaBuilder';
+previewId=previewId||'formulaPreview';
+var fb=document.getElementById(builderId);
+if(!fb)return;
+if(type==='var'){
+  var picker=document.getElementById('fb-var-picker');
+  if(!picker){picker=document.createElement('div');picker.id='fb-var-picker';picker.className='fb-var-picker';picker.style.cssText='display:none;position:fixed;z-index:9999;background:#fff;border:1px solid var(--border);border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,.12);max-height:300px;overflow-y:auto;min-width:180px';document.body.appendChild(picker);}
+  var btn=event.target;var rect=btn.getBoundingClientRect();
+  picker.style.left=rect.left+'px';picker.style.top=(rect.bottom+4)+'px';picker.style.display='block';
+  picker.innerHTML='<div style="padding:8px 12px;font-size:12px;color:var(--text3);border-bottom:1px solid var(--border);font-weight:500">选择变量</div>'+FB_VARS.map(function(v){return '<div class="fb-var-opt" style="padding:9px 14px;cursor:pointer;font-size:13px;border-bottom:1px solid #f5f5f5" onclick="pickVar(\''+v+'\',\''+builderId+'\',\''+previewId+'\')">'+v+'</div>'}).join('');
+  setTimeout(function(){var cf=function(e){if(!picker.contains(e.target)&&e.target!==btn){picker.style.display='none';document.removeEventListener('click',cf)}};setTimeout(function(){document.addEventListener('click',cf)},100)},50);
+  return;
+}
+var row=document.createElement('div');row.className='fb-row';
+if(type==='op'){row.innerHTML='<span class="fb-seg op">'+val+'</span><span class="fb-del" onclick="this.parentElement.remove();updateFormulaPreview(\''+builderId+'\',\''+previewId+'\')">x</span>';}
+else if(type==='coef'){row.innerHTML='<span class="fb-seg coef">\u7cfb\u6570 <input class="fb-coef-input" value="'+(val||'1.0')+'" onchange="updateFormulaPreview(\''+builderId+'\',\''+previewId+'\')"></span><span class="fb-del" onclick="this.parentElement.remove();updateFormulaPreview(\''+builderId+'\',\''+previewId+'\')">x</span>';}
+else if(type==='paren'){row.innerHTML='<span class="fb-seg paren">'+val+'</span><span class="fb-del" onclick="this.parentElement.remove();updateFormulaPreview(\''+builderId+'\',\''+previewId+'\')">x</span>';}
+fb.insertBefore(row,fb.querySelector('.fb-add-row'));updateFormulaPreview(builderId,previewId);
+}
+function pickVar(v,builderId,previewId){var p=document.getElementById('fb-var-picker');if(p)p.style.display='none';var fb=document.getElementById(builderId);if(!fb)return;var row=document.createElement('div');row.className='fb-row';row.innerHTML='<span class="fb-seg var" style="padding:6px 12px">'+v+'<span style="margin-left:6px;font-size:11px;color:var(--text3)">\u25bc</span></span><span class="fb-del" onclick="this.parentElement.remove();updateFormulaPreview(\''+builderId+'\',\''+previewId+'\')">x</span>';fb.insertBefore(row,fb.querySelector('.fb-add-row'));updateFormulaPreview(builderId,previewId);}
+function updateFormulaPreview(builderId,previewId){
+builderId=builderId||'salaryFormulaBuilder';
+previewId=previewId||'formulaPreview';
+var fb=document.getElementById(builderId);
+if(!fb)return;
+var parts=[];
+fb.querySelectorAll('.fb-row').forEach(function(row){
+row.querySelectorAll('.fb-seg').forEach(function(seg){
+if(seg.classList.contains('op')){parts.push(seg.textContent.trim());}
+else if(seg.classList.contains('paren')){parts.push(seg.textContent.trim());}
+else if(seg.classList.contains('coef')){var inp=seg.querySelector('input');parts.push(inp?inp.value:seg.textContent.trim());}
+else if(seg.classList.contains('var')){var sel=seg.querySelector('select');parts.push(sel?sel.value:seg.textContent.replace(/[▼▽]/g,'').trim());}
+});
+});
+var formula=parts.join(' ').replace(/\s+/g,' ').trim();
+var el=document.getElementById(previewId);
+if(el)el.textContent=formula||'\u8bf7\u6dfb\u52a0\u516c\u5f0f\u6bb5';
+}
+
+// Salary fee item modal is initialized by openSalaryFeeModal/changeFeeSetMode.
+document.addEventListener('DOMContentLoaded',function(){
+  try{changeFeeSetMode()}catch(e){}
+});
+
+// Customer / UserList navigation. Entry-code generation now only requires 岗位 + 有效期.
+function goCustomerDetail(){document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-customerDetail').classList.add('show');document.getElementById('pn').textContent='客户管理 / 客户详情';document.querySelectorAll('.mi').forEach(m=>m.classList.remove('active'));var mi=document.querySelector('[data-p=customer]');if(mi)mi.classList.add('active')}
+function goCustomerEdit(){document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-customerEdit').classList.add('show');document.getElementById('pn').textContent='客户管理 / 编辑客户';document.querySelectorAll('.mi').forEach(m=>m.classList.remove('active'));var mi=document.querySelector('[data-p=customer]');if(mi)mi.classList.add('active')}
+function goUserDetail(){document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-userList').classList.add('show');document.getElementById('pn').textContent='用户列表';document.querySelectorAll('.mi').forEach(m=>m.classList.remove('active'));var mi=document.querySelector('[data-p=userList]');if(mi)mi.classList.add('active')}
+function completeWebResign(){
+  hm('resignModal');
+  var status=document.querySelector('#p-empDetail .tg-g');
+  if(status){status.textContent='已离职';status.className='tg tg-r'}
+  alert('离职办理完成，员工已移至已离职列表，结算截止日期已同步');
+  goRosterPage();
+  var tabs=document.querySelectorAll('#p-roster .tab');
+  tabs.forEach(function(t){if(t.textContent.trim()==='离职员工')t.click()});
+}
+function runPrototypeSearch(bar){
+  var scope=bar.closest('.tc')||bar.closest('.pg');
+  if(!scope)return;
+  var values=[];
+  bar.querySelectorAll('input,select').forEach(function(c){var v=(c.value||'').trim();if(v&&!/^(\u5168\u90e8|\u8bf7\u9009\u62e9|\u7b80\u5386\u72b6\u6001：\u5168部|账号状态：全部)/.test(v))values.push(v.toLowerCase())});
+  var rows=scope.querySelectorAll('table tbody tr'),shown=0;
+  rows.forEach(function(row){var text=row.textContent.toLowerCase();var hit=values.every(function(v){return text.indexOf(v)>-1});row.style.display=hit?'':'none';if(hit)shown++});
+  var pager=scope.querySelector('.pgn span');if(pager&&rows.length)pager.textContent='当前显示 '+shown+' 条';
+}
+function resetPrototypeSearch(bar){
+  bar.querySelectorAll('input').forEach(function(i){if(i.type!=='checkbox'&&i.type!=='radio')i.value=''});
+  bar.querySelectorAll('select').forEach(function(s){s.selectedIndex=0});
+  var scope=bar.closest('.tc')||bar.closest('.pg');if(scope)scope.querySelectorAll('table tbody tr').forEach(function(r){r.style.display=''});
+}
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('.sbar').forEach(function(bar){
+    bar.querySelectorAll('button').forEach(function(btn){var label=btn.textContent.trim();if(label==='搜索'&&!btn.onclick)btn.onclick=function(){runPrototypeSearch(bar)};if(label==='重置'&&!btn.onclick)btn.onclick=function(){resetPrototypeSearch(bar)}});
+    bar.querySelectorAll('input').forEach(function(input){input.addEventListener('keydown',function(e){if(e.key==='Enter')runPrototypeSearch(bar)})});
+  });
+  document.querySelectorAll('.pgn').forEach(function(pager){pager.querySelectorAll('button').forEach(function(btn){btn.onclick=function(){if(this.textContent.trim()==='...')return;pager.querySelectorAll('button').forEach(function(b){b.classList.remove('active')});this.classList.add('active')}})});
+  document.querySelectorAll('table tbody input[type="checkbox"]').forEach(function(cb){cb.addEventListener('change',function(){var tr=this.closest('tr');if(tr)tr.style.background=this.checked?'var(--brand-light)':''})});
+});
+
+try{changeRosterBatchAction()}catch(e){}
+
+function toggleSalaryAssignType(type){
+  var position=document.getElementById('salaryAssignPosition');
+  var project=document.getElementById('salaryAssignProject');
+  if(position)position.style.display=type==='position'?'':'none';
+  if(project)project.style.display=type==='project'?'':'none';
+}
+
+function openSalaryFeeModal(mode,name,code,setMode){
+  var title=document.getElementById('salaryTplTitle');
+  if(title)title.textContent=(mode==='edit'?'编辑费用项':'新增费用项');
+  var n=document.getElementById('tplName'); if(n)n.value=name||'';
+  var c=document.getElementById('tplCode'); if(c)c.value=code||'';
+  var m=document.getElementById('feeSetMode'); if(m)m.value=setMode||'manual';
+  changeFeeSetMode();
+  sm('salaryTplModal');
+}
+function editSalaryTpl(idx){
+  var names=['基本工资','绩效奖励','个人所得税'];
+  var codes=['BASE_WAGE','PERFORMANCE','TAX'];
+  var modes=['calc','manual','read'];
+  openSalaryFeeModal('edit',names[idx]||'',codes[idx]||'',modes[idx]||'manual');
+}
+function changeFeeSetMode(){
+  var mode=document.getElementById('feeSetMode');
+  var box=document.getElementById('feeModePanel');
+  if(!mode||!box)return;
+  if(mode.value==='manual'){
+    box.innerHTML='<div class="ib ib-b" style="padding:10px 12px">直接填写：结算时由财务人员录入金额，可用于绩效奖励、质量扣款、社保个人部分等需要人工确认的费用项。</div>';
+  }else if(mode.value==='read'){
+    box.innerHTML='<div class="ib ib-b" style="padding:12px"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px"><b>系统读数来源</b><span style="font-size:12px;color:var(--text3)">结算核算时自动获取，无需手工填写</span></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:10px"><label style="border:1px solid var(--border);border-radius:6px;padding:12px;display:block"><input type="radio" name="readSrc"> 未核销售支金额<div style="font-size:12px;color:var(--text3);margin-top:4px">读取该员工已审批、尚未通过工资完成抵扣的借支余额。</div><div class="tg tg-y" style="margin-top:6px">结算时自动带入，只读</div></label><label style="border:1px solid var(--border);border-radius:6px;padding:12px;display:block"><input type="radio" name="readSrc"> 本次个税金额<div style="font-size:12px;color:var(--text3);margin-top:4px">读取系统根据应税收入及固定个税公式计算出的本次应扣税额。</div><div class="tg tg-y" style="margin-top:6px">随应税金额自动重算，只读</div></label></div><div class="ib ib-o" style="margin-top:10px;font-size:12px">系统读数不可直接修改。如来源数据发生变化，应更新借支记录或重新执行个税计算，系统会同步刷新本次结算金额。</div></div>';
+  }else{
+    box.innerHTML='<div class="ib ib-b" style="padding:12px"><div style="display:flex;gap:8px;margin-bottom:12px"><button class="btn btn-p btn-sm">运算公式</button><button class="btn btn-sm">条件公式</button></div><div style="border:1px solid var(--border);border-radius:8px;padding:12px;background:#fff"><b>运算公式</b><div style="font-size:12px;color:var(--text3);margin:8px 0 12px">选择推荐公式，或依次设置起始因子、运算符和运算项。</div><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px"><div class="ib ib-b" style="margin:0;padding:10px"><b>基本工资</b><br><span style="font-size:12px;color:var(--text3)">岗位单价 × 工时</span></div><div class="ib ib-b" style="margin:0;padding:10px"><b>日薪</b><br><span style="font-size:12px;color:var(--text3)">岗位单价 × 计薪天数</span></div><div class="ib ib-b" style="margin:0;padding:10px"><b>月薪</b><br><span style="font-size:12px;color:var(--text3)">岗位单价 × 计薪月数</span></div></div><div class="fr"><div class="fg"><label>起始因子</label><select><option>岗位单价</option><option>工时</option><option>计薪天数</option><option>计薪月数</option><option>费用_基本工资</option><option>费用_绩效奖励</option><option>费用_质量扣款</option></select></div></div><div class="fr"><div class="fg"><label>运算符</label><select><option>×</option><option>+</option><option>-</option><option>÷</option></select></div></div><div class="fr"><div class="fg"><label>运算项 1</label><select><option>运算因子</option><option>系数</option></select></div><div class="fg"><label>&nbsp;</label><select><option>工时</option><option>计薪天数</option><option>计薪月数</option><option>费用_个人所得税</option></select></div></div><button class="btn btn-sm" style="border-style:dashed;color:var(--brand)">+ 增加运算项</button><div class="ib ib-g" style="margin-top:12px"><div style="font-size:12px">公式校验通过</div><b>岗位单价 × 工时</b><br><b>示例结果：¥4,400.00</b></div></div></div>';
+  }
+}
+</script>
 <div class="mo" id="addAccountModal"><div class="ml" style="width:540px">
 <div class="ml-t">新增 / 编辑账号<span class="ml-x" onclick="hm('addAccountModal')">×</span></div>
 <div class="ml-b">
@@ -2316,7 +2661,6 @@
 </div>
 <div class="ml-f"><button class="btn" onclick="hm('addAccountModal')">取消</button><button class="btn btn-p" onclick="hm('addAccountModal');alert('账号已保存')">保存</button></div>
 </div></div>
-
 <div class="mo" id="interviewInviteModal"><div class="ml" style="width:520px">
 <div class="ml-t">面试邀约</div>
 <div class="approval-info">
@@ -2331,7 +2675,6 @@
 <div class="fg" style="margin-top:12px"><label>通知方式</label><div style="display:flex;align-items:flex-start;gap:10px;padding:12px;background:var(--pri-l);border:1px solid #b7d4ff;border-radius:8px;color:var(--text2);font-size:13px;line-height:1.7"><span style="font-size:18px">🔔</span><span><b style="color:var(--brand)">微信服务通知</b><br>候选人在报名时需订阅服务通知；邀约将推送到小程序端，候选人可在线确认或重新约时间。</span></div></div>
 <div class="ml-f"><button class="btn" onclick="hm('interviewInviteModal')">取消</button><button class="btn btn-p" onclick="hm('interviewInviteModal');alert('面试邀约已发送到小程序，候选人状态变更为「待确认面试」，正在为你打开待确认列表');goInterviewConfirm()">发送邀请</button></div>
 </div></div>
-
 <div class="mo" id="onboardDirectModal"><div class="ml" style="width:680px;max-height:85vh;overflow-y:auto">
 <div class="ml-t">员工入职 - 办理入职到花名册</div>
 <div class="approval-info">
@@ -2355,7 +2698,6 @@
 <div class="fr" style="margin-top:12px;padding-top:12px;border-top:1px solid var(--border)"><div class="fg"><label>入职项目 *</label><select><option>请选择</option><option>电子普工</option><option>质检员</option><option>高级技工</option></select></div><div class="fg"><label>入职岗位 *</label><select><option>请选择</option><option>电子组装工</option><option>QC质检员</option><option>高级焊工</option></select></div><div class="fg"><label>渠道来源</label><input placeholder="手动输入" style="width:100px;border:1px solid var(--border);border-radius:4px;padding:2px 6px;font-size:12px"><select style="width:115px;margin-left:4px;border:1px solid var(--border);border-radius:4px;padding:2px 6px;font-size:12px"><option>从渠道列表选择</option><option>刘洋(LT0001)</option><option>杨光(LT0003)</option></select></div></div>
 <div class="ml-f" style="margin-top:16px"><button class="btn" onclick="hm('onboardDirectModal')">取消</button><button class="btn btn-p" onclick="hm('onboardDirectModal');alert('入职办理完成，员工已加入花名册，正在为你打开花名册');goRosterPage()">确认入职</button></div>
 </div></div>
-
 <div class="pg" id="p-positionAdd">
 <div class="rp-back" onclick="showPage('position');setMi('position')">&larr; 返回岗位管理</div>
 <div class="rp-header">
@@ -2363,38 +2705,32 @@
 <div class="rp-actions"><button class="btn" onclick="showPage('position');setMi('position')">取消</button><button class="btn btn-o" onclick="showPage('position');setMi('position');alert('已存为草稿')">存为草稿</button><button class="btn btn-p" onclick="showPage('position');setMi('position');alert('岗位已发布并关联至项目')">确认发布</button></div>
 </div>
 <div class="ib ib-b" style="margin-bottom:14px">配置岗位的招聘、薪资、任职资格、面试与发布信息。带 <span style="color:var(--danger)">*</span> 为必填项。结算单价将带入入职审核与电子合同劳动报酬条款。</div>
-
 <div class="rp-card">
 <div class="rp-card-title"><span style="display:inline-block;width:18px;height:18px;border-radius:50%;background:var(--brand);color:#fff;text-align:center;line-height:18px;font-size:11px;margin-right:6px">1</span>基本信息</div>
 <div class="fr"><div class="fg"><label>岗位标题名称 *</label><input id="posName" placeholder="如：电子组装工"></div><div class="fg"><label>关联项目 *</label><select><option>请选择</option><option>电子普工</option><option>质检员</option><option>高级技工</option><option>仓管员</option></select></div></div>
 <div class="fr" style="margin-top:10px"><div class="fg"><label>用工类型</label><select><option>长期工</option><option>短期工</option><option>小时工</option><option>日结</option><option>承包</option></select></div><div class="fg"><label>是否急招</label><select><option>否</option><option>是</option></select></div><div class="fg"><label>岗位状态</label><select><option selected>草稿</option><option>立即发布</option></select></div></div>
 <div class="fr" style="margin-top:10px"><div class="fg"><label>岗位图片</label><div class="uz" style="padding:14px 16px"><p>点击上传岗位图片</p><p style="font-size:12px;color:var(--text3)">用于小程序岗位详情轮播，支持 JPG/PNG，建议 16:9</p></div></div></div>
 </div>
-
 <div class="rp-card">
 <div class="rp-card-title"><span style="display:inline-block;width:18px;height:18px;border-radius:50%;background:var(--brand);color:#fff;text-align:center;line-height:18px;font-size:11px;margin-right:6px">2</span>薪资与结算 <span style="font-weight:400;font-size:11px;color:var(--text3);margin-left:8px">结算单价将带入入职审核与电子合同</span></div>
 <div class="fr"><div class="fg"><label>薪资 *</label><input id="posSalary" placeholder="如：5000-7000 / 260元/天 / 面议"></div><div class="fg"><label>薪资类型</label><select><option selected>月薪</option><option>日薪</option><option>面议</option></select></div></div>
 <div class="fr" style="margin-top:10px"><div class="fg"><label>结算方式</label><select><option selected>按月结算</option><option>按周结算</option><option>按日结算</option><option>完工一次性结算</option><option>按件计薪</option></select></div><div class="fg"><label>正常单价(元) *</label><input id="posPriceN" placeholder="如：40（时薪）"><div style="font-size:11px;color:var(--text3);margin-top:2px">将写入电子合同劳动报酬条款</div></div><div class="fg"><label>加班单价(元)</label><input id="posPriceOt" placeholder="如：60（时薪）"></div></div>
 </div>
-
 <div class="rp-card">
 <div class="rp-card-title"><span style="display:inline-block;width:18px;height:18px;border-radius:50%;background:var(--brand);color:#fff;text-align:center;line-height:18px;font-size:11px;margin-right:6px">3</span>任职资格要求</div>
 <div class="fr"><div class="fg"><label>性别要求</label><select><option selected>不限</option><option>男</option><option>女</option></select></div><div class="fg"><label>年龄要求</label><div style="display:flex;gap:8px"><input placeholder="自由填写，如：18-55岁 / 45岁以下" style="flex:1"><select style="width:90px"><option selected>填写</option><option>不限</option></select></div></div><div class="fg"><label>学历要求</label><select><option selected>不限</option><option>初中及以下</option><option>高中/中专</option><option>大专</option><option>本科及以上</option></select></div></div>
 <div class="fr" style="margin-top:10px"><div class="fg"><label>工作经验</label><select><option selected>不限</option><option>无经验可带薪培训</option><option>1年以下</option><option>1-3年</option><option>3-5年</option><option>5年以上</option></select></div><div class="fg"><label>技能证书要求</label><input placeholder="如：电工证、叉车证、焊工证（多选）"></div></div>
 </div>
-
 <div class="rp-card">
 <div class="rp-card-title"><span style="display:inline-block;width:18px;height:18px;border-radius:50%;background:var(--brand);color:#fff;text-align:center;line-height:18px;font-size:11px;margin-right:6px">4</span>工作信息</div>
 <div class="fr"><div class="fg"><label>工作城市 *</label><input placeholder="如：广州黄埔区"></div><div class="fg"><label>详细工作地址</label><input placeholder="如：广州市黄埔区开创大道288号澜特工业园A栋3楼"></div></div>
 <div class="fr" style="margin-top:10px"><div class="fg"><label>工作班次</label><select><option selected>两班倒</option><option>白班（08:00-17:00）</option><option>夜班（20:00-05:00）</option><option>三班倒</option><option>常白班</option><option>排班制</option></select></div><div class="fg"><label>到岗时间要求</label><select><option selected>随时到岗</option><option>一周内到岗</option><option>两周内到岗</option><option>一个月内到岗</option><option>协商确定</option></select></div></div>
 </div>
-
 <div class="rp-card">
 <div class="rp-card-title"><span style="display:inline-block;width:18px;height:18px;border-radius:50%;background:var(--brand);color:#fff;text-align:center;line-height:18px;font-size:11px;margin-right:6px">5</span>面试设置</div>
 <div class="fr"><div class="fg"><label>是否需要面试</label><select id="posNeedInterview" onchange="toggleInterviewFields(this)"><option selected value="yes">是（需面试邀约→确认→审核）</option><option value="no">否（直接进入入职流程）</option></select></div><div class="fg" id="interviewLocWrap"><label>面试地点</label><input placeholder="如：澜特人力资源服务中心 301 室"></div><div class="fg" id="interviewTimeWrap"><label>面试时间段</label><input placeholder="如：周一至周五 09:00-11:30, 14:00-16:30"></div></div>
 <div class="fr" style="margin-top:10px" id="interviewExtraWrap"><div class="fg"><label>面试官</label><select><option>请指定</option><option>赵敏（招聘主管）</option><option>李娜（面试官）</option></select></div><div class="fg"><label>面试方式</label><select><option selected>线下面试</option><option>视频面试</option><option>电话面试</option></select></div></div>
 </div>
-
 <div class="rp-card">
 <div class="rp-card-title"><span style="display:inline-block;width:18px;height:18px;border-radius:50%;background:var(--brand);color:#fff;text-align:center;line-height:18px;font-size:11px;margin-right:6px">6</span>岗位详情</div>
 <div class="fg"><label>招聘人数 *</label><input id="posCount" placeholder="50"></div>
@@ -2402,14 +2738,12 @@
 <div class="fg" style="margin-top:10px"><label>岗位描述</label><textarea rows="4" placeholder="描述岗位职责、日常工作内容、工作环境、团队规模等...&#10;&#10;示例：&#10;负责电子元器件的组装、焊接和质检工作；严格按照SOP作业；配合产线完成每日生产任务。车间配备空调、休息区，提供免费工作餐和宿舍。"></textarea></div>
 <div class="fg" style="margin-top:10px"><label>岗位要求</label><textarea rows="4" placeholder="学历要求、经验要求、技能证书要求、其他条件...&#10;&#10;示例：&#10;- 学历：中专及以上，电子/机械相关专业优先&#10;- 经验：1年以上电子厂流水线经验&#10;- 证书：持有电工证或焊工证者优先&#10;- 其他：能适应两班倒，服从产线安排"></textarea></div>
 </div>
-
 <div class="rp-card">
 <div class="rp-card-title"><span style="display:inline-block;width:18px;height:18px;border-radius:50%;background:var(--brand);color:#fff;text-align:center;line-height:18px;font-size:11px;margin-right:6px">7</span>发布设置</div>
 <div class="fr"><div class="fg"><label>岗位有效期至</label><input type="date" value="2026-12-31"></div><div class="fg"><label>联系人</label><input placeholder="招聘负责人姓名"></div><div class="fg"><label>联系电话</label><input placeholder="用于求职者咨询"></div></div>
 <div class="fg" style="margin-top:10px"><label style="display:flex;align-items:center;gap:8px;cursor:pointer"><input type="checkbox" checked> 上架到求职端（员工小程序可见）</label></div>
 <div class="fg" style="margin-top:8px"><label style="display:flex;align-items:center;gap:8px;cursor:pointer"><input type="checkbox"> 开启分销推广（渠道商可推广此岗位）</label></div>
 </div>
-
 <div class="rp-card" style="border-style:dashed">
 <div class="rp-card-title"><span style="display:inline-block;width:18px;height:18px;border-radius:50%;background:var(--text3);color:#fff;text-align:center;line-height:18px;font-size:11px;margin-right:6px">8</span>分销佣金配置 <span style="font-weight:400;font-size:11px;color:var(--text3);margin-left:8px">选填，也可在「分销裂变」模块统一配置</span></div>
 <div class="ib ib-b" style="font-size:12px;margin-bottom:10px">为此岗位设置分销佣金规则，支持在职天数、满岗条件、固定金额三种方式。</div>
@@ -2426,7 +2760,6 @@
 </div>
 
 </div>
-
 <div class="pg" id="p-customer">
 <div class="pt">客户管理</div>
 <div class="sbar"><input placeholder="搜索客户名称" style="width:220px"><select><option>全部状态</option><option>合作中</option><option>已暂停</option></select><button class="btn btn-p btn-sm">搜索</button><button class="btn btn-sm">重置</button><button class="btn btn-p" onclick="sm('addCustomerModal')">+ 新增客户</button></div>
@@ -2442,7 +2775,6 @@
 </tbody></table></div>
 <div class="pgn"><span>共12条</span><button class="active">1</button><button class="">2</button><span>条/页 10</span></div></div>
 </div>
-
 <div class="pg" id="p-customerDetail">
 <div class="rp-back" onclick="showPage('customer');setMi('customer')">&larr; 返回客户管理</div>
 <div class="rp-header">
@@ -2475,7 +2807,6 @@
 </tbody></table></div>
 </div>
 </div>
-
 <div class="pg" id="p-customerEdit">
 <div class="rp-back" onclick="showPage('customer');setMi('customer')">&larr; 返回客户管理</div>
 <div class="rp-header">
@@ -2494,7 +2825,6 @@
 <div class="rp-field" style="margin-top:8px"><span class="lbl">关联项目</span><select><option selected>电子普工</option><option>质检员</option><option>高级技工</option><option>仓管员</option></select></div>
 </div>
 </div>
-
 <div class="pg" id="p-userList">
 <div class="pt">用户列表</div>
 <div class="sbar"><input placeholder="搜索姓名/手机号/用户ID" style="width:220px"><select><option>简历状态：全部</option><option>有简历</option><option>无简历</option></select><select><option>账号状态：全部</option><option>正常</option><option>已禁用</option></select><button class="btn btn-p btn-sm">搜索</button><button class="btn btn-sm">重置</button><button class="btn btn-p btn-sm" onclick="sm('addUserModal')">+ 新增用户</button></div>
@@ -2513,7 +2843,6 @@
 </tbody></table></div>
 <div class="pgn"><span>共1286条</span><button class="active">1</button><button class="">2</button><button class="">3</button><button>...</button><button>129</button><span>条/页 10</span></div></div>
 </div>
-
 <div class="mo" id="addCustomerModal"><div class="ml" style="width:640px">
 <div class="ml-t">新增客户</div>
 <div class="rp-card" style="border:none;padding:0;margin:0">
@@ -2535,7 +2864,6 @@
 </div>
 <div class="ml-f"><button class="btn" onclick="hm('addCustomerModal')">取消</button><button class="btn btn-p" onclick="hm('addCustomerModal')">确认新增</button></div>
 </div></div>
-
 <div class="mo" id="customerContractModal"><div class="ml" style="width:600px">
 <div class="ml-t">客户合同管理 - 比亚迪电子</div>
 <div style="padding:16px 20px">
@@ -2549,7 +2877,6 @@
 </div>
 <div class="ml-f"><button class="btn" onclick="hm('customerContractModal')">关闭</button></div>
 </div></div>
-
 <div class="mo" id="addUserModal"><div class="ml" style="width:520px">
 <div class="ml-t">新增用户</div>
 <div style="padding:16px 20px">
@@ -2561,7 +2888,6 @@
 </div>
 <div class="ml-f"><button class="btn" onclick="hm('addUserModal')">取消</button><button class="btn btn-p" onclick="hm('addUserModal');alert('用户已创建')">确认新增</button></div>
 </div></div>
-
 <div class="mo" id="stopPositionModal"><div class="ml" style="width:420px">
 <div class="ml-t">确认停招岗位</div>
 <div style="padding:20px;text-align:center">
@@ -2573,7 +2899,6 @@
 </div>
 <div class="ml-f"><button class="btn" onclick="hm('stopPositionModal')">取消</button><button class="btn" style="background:var(--danger);color:#fff" onclick="hm('stopPositionModal');alert('岗位已停招，求职端将不再展示')">确认停招</button></div>
 </div></div>
-
 <div class="mo" id="dictEditModal"><div class="ml" style="width:400px">
 <div class="ml-t">编辑字典标签</div>
 <div style="padding:20px">
@@ -2584,7 +2909,6 @@
 </div>
 <div class="ml-f"><button class="btn" onclick="hm('dictEditModal')">取消</button><button class="btn btn-p" onclick="hm('dictEditModal');alert('标签已更新')">保存</button></div>
 </div></div>
-
 <div class="mo" id="empFileUploadModal"><div class="ml" style="width:480px">
 <div class="ml-t">上传员工文件</div>
 <div style="padding:20px">
@@ -2594,7 +2918,6 @@
 </div>
 <div class="ml-f"><button class="btn" onclick="hm('empFileUploadModal')">取消</button><button class="btn btn-p" onclick="hm('empFileUploadModal');alert('文件已上传并归档到员工文件')">确认上传</button></div>
 </div></div>
-
 <div class="mo" id="empFilePreviewModal"><div class="ml" style="width:560px">
 <div class="ml-t">文件预览 <button class="btn btn-sm" style="float:right" onclick="hm('empFilePreviewModal')">✕</button></div>
 <div style="padding:20px">
