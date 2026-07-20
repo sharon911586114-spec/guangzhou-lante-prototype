@@ -6,6 +6,7 @@
 
 - [Web 后台管理原型](./web/index.html)
 - [移动端小程序原型](./mobile/index.html)
+- [原型变更日志](./CHANGELOG.html)
 
 ## 目录结构
 
@@ -26,4 +27,5 @@
 
 - Web 原型修改后更新 `web/index.html`
 - 移动端原型修改后更新 `mobile/index.html`
+- 每次原型调整同步追加 `CHANGELOG.html`，记录日期、影响端和主要变更
 - 提交信息建议使用 `feat:`、`fix:`、`docs:` 等前缀

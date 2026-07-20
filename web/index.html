@@ -221,6 +221,9 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 .fb-coef-input:focus{outline:none;border-color:#ffa940;box-shadow:0 0 0 2px rgba(255,169,64,.2)}
 .fb-var-select{padding:4px 8px;border:1px solid #91caff;border-radius:4px;font-size:13px;background:#f5faff;color:var(--brand)}
 .switch{display:inline-flex;align-items:center;gap:10px;cursor:pointer;user-select:none;font-size:13px}.switch input{position:absolute;opacity:0;pointer-events:none}.switch-track{position:relative;width:44px;height:24px;border-radius:12px;background:#cbd5e1;transition:.2s}.switch-track:after{content:"";position:absolute;width:18px;height:18px;left:3px;top:3px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.25);transition:.2s}.switch input:checked+.switch-track{background:var(--brand)}.switch input:checked+.switch-track:after{transform:translateX(20px)}.switch-state{color:var(--text2);font-weight:500}
+.person-name-link{color:var(--brand);cursor:pointer;font-weight:600;text-decoration:none}.person-name-link:hover{text-decoration:underline}
+.emp-tab-tools{display:flex;justify-content:flex-end;gap:8px;margin-bottom:10px}
+.resume-paper{width:680px;min-height:900px;margin:0 auto;background:#fff;padding:42px 48px;box-shadow:0 4px 20px rgba(0,0,0,.12);color:#263238}.resume-paper h1{font-size:28px;margin:0}.resume-paper .resume-head{display:flex;justify-content:space-between;border-bottom:3px solid var(--brand);padding-bottom:20px}.resume-paper .resume-section{margin-top:24px}.resume-paper .resume-section h3{font-size:16px;color:var(--brand);border-left:4px solid var(--brand);padding-left:10px;margin-bottom:12px}.resume-paper .resume-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;font-size:13px}.resume-paper .resume-entry-line{display:flex;justify-content:space-between;font-size:13px;font-weight:600}.resume-paper p{font-size:13px;line-height:1.8;color:#52606d}
 
 </style>
 </head>
@@ -357,7 +360,7 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 <h2>简历详情 - 张伟 <span class="tg tg-g">已入职</span></h2>
 <div class="rp-actions">
 <button class="btn" id="editBtn" onclick="toggleResumeEdit()">编辑</button>
-<button class="btn btn-p" onclick="sm('exportModal')">导出简历</button>
+<button class="btn btn-p" onclick="sm('resumeExportModal')">导出简历 PDF</button>
 </div>
 </div>
 
@@ -826,7 +829,7 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 <div class="rp-back" onclick="showPage(_lastPage||'roster');document.querySelector('[data-p=roster]').classList.add('active')">&larr; 返回花名册</div>
 <div class="rp-header">
 <h2>员工详情 - 张伟 <span class="tg tg-g">在职</span></h2>
-<div class="rp-actions"><button class="btn" onclick="sm('exportModal')">导出</button> <button class="btn" style="color:var(--danger);border-color:var(--danger)" onclick="sm('resignModal')">办理离职</button></div>
+<div class="rp-actions"><button class="btn btn-p" onclick="sm('employeeResumePdfModal')">导出简历 PDF</button> <button class="btn" style="color:var(--danger);border-color:var(--danger)" onclick="sm('resignModal')">办理离职</button></div>
 </div>
 <div class="rp-card">
 <div class="rp-card-title">基本信息</div>
@@ -874,6 +877,7 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 <div class="tab" onclick="stab(this,'emp-files')">员工文件</div>
 </div>
 <div class="tc show" id="emp-resume">
+<div class="emp-tab-tools"><button class="btn btn-sm btn-p" onclick="sm('employeeResumePdfModal')">预览并导出简历 PDF</button></div>
 <div class="ib ib-b" style="margin-bottom:12px">同一用户可沉淀多份简历。<b>平台端</b>可查看该用户完整简历库；<b>用户端</b>仅展示用户自己填写或自己导入的简历，后台导入/后台新增简历默认仅平台可见。</div>
 <div class="rp-card" style="background:#fafafa">
 <div class="rp-card-title">该用户的多份简历</div>
@@ -921,6 +925,7 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 </div>
 </div>
 <div class="tc" id="emp-browse">
+<div class="emp-tab-tools"><button class="btn btn-sm" onclick="exportEmpTabData('浏览记录')">导出浏览记录 Excel</button></div>
 <div class="cd"><div class="cd-t">平台浏览记录</div>
 <div class="tw"><table><thead><tr><th>浏览时间</th><th>浏览岗位</th><th>是否报名</th><th>是否入职该岗位</th></tr></thead>
 <tbody>
@@ -932,6 +937,7 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 <div class="pgn"><span>共28条</span><button class="active">1</button><button>2</button><button>3</button><span>条/页 10</span></div></div>
 </div>
 <div class="tc" id="emp-turnover">
+<div class="emp-tab-tools"><button class="btn btn-sm" onclick="exportEmpTabData('在离职记录')">导出在离职记录 Excel</button></div>
 <div class="cd"><div class="cd-t">在离职记录</div>
 <div class="tw"><table><thead><tr><th>类型</th><th>项目</th><th>日期</th><th>操作人</th><th>备注</th></tr></thead>
 <tbody>
@@ -941,6 +947,7 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 <div class="pgn"><span>共2条</span><button class="active">1</button><span>条/页 10</span></div></div>
 </div>
 <div class="tc" id="emp-payroll">
+<div class="emp-tab-tools"><button class="btn btn-sm" onclick="exportEmpTabData('发薪记录')">导出发薪记录 Excel</button></div>
 <div class="cd"><div class="cd-t">发薪记录</div>
 <div class="tw"><table><thead><tr><th>结算月份</th><th>项目</th><th>结算方式</th><th>应发</th><th>个税</th><th>社保</th><th>实发</th><th>状态</th></tr></thead>
 <tbody>
@@ -950,6 +957,7 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 <div class="pgn"><span>共2条</span><button class="active">1</button><span>条/页 10</span></div></div>
 </div>
 <div class="tc" id="emp-files">
+<div class="emp-tab-tools"><button class="btn btn-sm" onclick="exportEmpTabData('员工文件清单')">导出文件清单 Excel</button></div>
 <div class="rp-card">
 <div class="rp-card-title">员工文件 <button class="btn btn-sm btn-p" onclick="sm('empFileUploadModal')">+ 上传文件</button></div>
 <div style="font-size:12px;color:var(--text3);margin:-4px 0 14px">集中归档员工入职影像件与资质材料，支持在线预览、下载与替换。带 <span style="color:var(--danger)">*</span> 为入职必备文件。</div>
@@ -989,6 +997,7 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 </div>
 </div>
 <div class="tc" id="emp-follow">
+<div class="emp-tab-tools"><button class="btn btn-sm" onclick="exportEmpTabData('跟进记录')">导出跟进记录 Excel</button></div>
 <div class="rp-card">
 <div class="rp-card-title">跟进记录 <button class="btn btn-sm btn-p" onclick="sm('followModal')">+ 新增跟进</button></div>
 <div class="rp-fields">
@@ -1347,7 +1356,7 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 <div class="fg"><label>合同编号</label><input placeholder="如：HT-2026-003"></div>
 </div>
 <div class="fg" style="margin-top:12px"><label>上传合同附件</label><div class="uz" style="padding:10px 12px;cursor:pointer;border:1px dashed var(--border);border-radius:6px;text-align:center;background:#fafafa"><span style="font-size:13px;color:var(--text3)">点击上传合同文件（PDF/Word）</span></div></div>
-<div class="ml-f"><button class="btn" onclick="hm('addContractModal')">取消</button><button class="btn btn-p" onclick="hm('addContractModal')">确认新增</button></div>
+<div class="ml-f"><button class="btn" onclick="closeAddContractModal(false)">取消</button><button class="btn btn-p" onclick="closeAddContractModal(true)">确认新增</button></div>
 </div></div>
 <div class="pg" id="p-settle">
 <div class="pt">结算中心</div>
@@ -1370,25 +1379,25 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 <div class="pg" id="p-settleApproval">
 <div class="rp-back" onclick="showPage('settle');document.querySelector('[data-p=settle]').classList.add('active')">&larr; 返回结算中心</div>
 <div class="rp-header">
-<h2>结算审批 - JS2026070003</h2>
+<h2>结算审批 - 2026年7月电子普工结算</h2>
 <div class="rp-actions"><button class="btn" onclick="showPage('settle');document.querySelector('[data-p=settle]').classList.add('active')">返回</button></div>
 </div>
+<div class="sg" style="margin-bottom:14px"><div class="sc"><div class="sv"><div class="n">3</div><div class="l">结算人数</div></div></div><div class="sc"><div class="sv"><div class="n">25,760</div><div class="l">基本工资及加项</div></div></div><div class="sc"><div class="sv"><div class="n" style="color:var(--danger)">-4,510</div><div class="l">扣款、借支及税费</div></div></div><div class="sc"><div class="sv"><div class="n" style="color:var(--brand)">21,250</div><div class="l">预计实发</div></div></div></div>
+<div class="ib ib-o" style="margin-bottom:14px"><b>财务复核提示：</b>2 人本月存在多次结算；1 人工时较考勤导入值波动超过 30%。财务调整工时或费项时必须填写原因，个税只允许系统重算。</div>
 <div class="rp-card">
-<div class="rp-card-title">工单信息</div>
+<div class="rp-card-title">结算单信息</div>
 <div class="rp-fields">
 <div class="rp-field"><span class="lbl">工单号</span><span class="val">JS2026070003</span></div>
-<div class="rp-field"><span class="lbl">员工</span><span class="val">王强</span></div>
-<div class="rp-field"><span class="lbl">项目</span><span class="val">高级技工</span></div>
-<div class="rp-field"><span class="lbl">结算方式</span><span class="val"><span class="tg tg-o">一次性</span></span></div>
-<div class="rp-field"><span class="lbl">标准工时</span><span class="val">200h</span></div>
-<div class="rp-field"><span class="lbl">加班工时</span><span class="val">24h</span></div>
-<div class="rp-field"><span class="lbl">员工单价</span><span class="val">55元/时</span></div>
-<div class="rp-field"><span class="lbl">应发工资</span><span class="val" style="font-weight:600">11,000</span></div>
-<div class="rp-field"><span class="lbl">个税</span><span class="val" style="color:var(--danger)">320</span></div>
-<div class="rp-field"><span class="lbl">社保</span><span class="val" style="color:var(--warning)">1,020</span></div>
-<div class="rp-field"><span class="lbl">实发工资</span><span class="val" style="font-weight:600;color:var(--success)">9,660</span></div>
+<div class="rp-field"><span class="lbl">结算单位</span><span class="val">比亚迪电子</span></div>
+<div class="rp-field"><span class="lbl">项目 / 岗位</span><span class="val">电子普工 / 电子组装工</span></div>
+<div class="rp-field"><span class="lbl">结算周期</span><span class="val">2026-07-01 至 2026-07-31</span></div>
+<div class="rp-field"><span class="lbl">提交人</span><span class="val">管理员（Web后台）</span></div>
+<div class="rp-field"><span class="lbl">提交时间</span><span class="val">2026-07-20 10:32</span></div>
+<div class="rp-field"><span class="lbl">版本</span><span class="val">V1</span></div>
+<div class="rp-field"><span class="lbl">当前状态</span><span class="val"><span class="tg tg-o">财务复核中</span></span></div>
 </div>
 </div>
+<div class="rp-card"><div class="rp-card-title">人员明细 <button class="btn btn-sm" style="float:right">导出核对表</button></div><div class="tw"><table><thead><tr><th>员工</th><th>计价</th><th>工时</th><th>基本工资</th><th>加项</th><th>扣款</th><th>借支</th><th>社保</th><th>个税</th><th>实发</th><th>状态</th><th>操作</th></tr></thead><tbody><tr><td><b>张伟</b><br><small>本月第2次</small></td><td>40元/时</td><td>176h</td><td>7,040</td><td>+300</td><td>-100</td><td>-500</td><td>-856</td><td>-126</td><td><b>5,758</b></td><td><span class="tg tg-y">需关注</span></td><td><button class="btn-link" onclick="sm('settlePersonEditModal')">复核调整</button></td></tr><tr><td><b>李娜</b></td><td>45元/时</td><td>168h</td><td>7,560</td><td>+260</td><td>-80</td><td>0</td><td>-856</td><td>-132</td><td><b>6,752</b></td><td><span class="tg tg-g">已校验</span></td><td><button class="btn-link" onclick="sm('settlePersonEditModal')">复核调整</button></td></tr><tr><td><b>王强</b><br><small>工时异常</small></td><td>55元/时</td><td>200h</td><td>11,000</td><td>+500</td><td>-200</td><td>-700</td><td>-1,020</td><td>-320</td><td><b>9,260</b></td><td><span class="tg tg-r">待复核</span></td><td><button class="btn-link" onclick="sm('settlePersonEditModal')">复核调整</button></td></tr></tbody></table></div></div>
 <div class="rp-card">
 <div class="rp-card-title">审批流</div>
 <div class="flow-bar" style="margin-top:8px">
@@ -1454,9 +1463,20 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 <h2>新建结算</h2>
 <div class="rp-actions">
 <button class="btn" onclick="showPage('settle');document.querySelector('[data-p=settle]').classList.add('active')">取消</button>
-<button class="btn btn-p" onclick="alert('结算已提交审批');showPage('settleApproval')">提交审批</button>
+<button class="btn" id="settlePrevBtn" style="display:none" onclick="switchSettleStep(-1)">上一步</button>
+<button class="btn btn-p" id="settleNextBtn" onclick="switchSettleStep(1)">下一步：填写工资</button>
 </div>
 </div>
+
+<div class="flow-bar" style="margin:0 0 16px;background:#fff;padding:16px;border-radius:8px;border:1px solid var(--border)"><div class="flow-step active" data-settle-step="1">1 选择人员</div><span class="flow-arrow">→</span><div class="flow-step" data-settle-step="2">2 填写工资</div><span class="flow-arrow">→</span><div class="flow-step" data-settle-step="3">3 核对提交</div></div>
+
+<div id="settleStep1">
+<div class="rp-card"><div class="rp-card-title">确定结算范围</div><div class="rp-fields"><div class="rp-field"><span class="lbl">结算单位 *</span><select><option>比亚迪电子</option><option>广汽乘用车</option><option>美的集团</option></select></div><div class="rp-field"><span class="lbl">项目 / 岗位 *</span><select><option>电子普工 / 电子组装工</option><option>质检员 / QC质检员</option><option>高级技工 / 高级焊工</option></select></div><div class="rp-field"><span class="lbl">结算周期 *</span><input type="date" value="2026-07-01"> <span style="padding:0 6px">至</span> <input type="date" value="2026-07-31"></div><div class="rp-field"><span class="lbl">制单人</span><span class="val">管理员（Web后台）</span></div></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px"><label style="display:flex;justify-content:space-between;align-items:center;padding:14px;border:1px solid var(--border);border-radius:8px"><span><b>本次计算个税</b><small style="display:block;color:var(--text3);margin-top:4px">按人员、发薪主体和所属月份累计预扣</small></span><span class="switch"><input type="checkbox" checked><span class="switch-track"></span></span></label><label style="display:flex;justify-content:space-between;align-items:center;padding:14px;border:1px solid var(--border);border-radius:8px"><span><b>自动抵扣借支</b><small style="display:block;color:var(--text3);margin-top:4px">按可核销余额自动带出，可逐人调整</small></span><span class="switch"><input type="checkbox" checked><span class="switch-track"></span></span></label></div></div>
+<div class="rp-card"><div class="rp-card-title">选择结算人员 <span style="font-size:12px;font-weight:400;color:var(--text3)">仅展示当前单位、项目及岗位下的可结算员工</span></div><div class="sbar"><input placeholder="搜索姓名 / 手机号"><select><option>离职待结算（18）</option><option>在职员工（42）</option><option>全部可结算人员</option></select><button class="btn btn-sm">筛选</button><button class="btn btn-sm btn-p" onclick="document.querySelectorAll('#settlePeopleTable tbody input').forEach(function(x){x.checked=true});updateSettleSelected()">全选本页</button></div><div class="tw"><table id="settlePeopleTable"><thead><tr><th><input type="checkbox" checked onclick="toggleAll(this);updateSettleSelected()"></th><th>员工</th><th>手机号</th><th>岗位</th><th>计价方式</th><th>岗位单价</th><th>本月结算次数</th><th>状态</th></tr></thead><tbody><tr><td><input type="checkbox" checked onchange="updateSettleSelected()"></td><td><b>张伟</b></td><td>138****6688</td><td>电子组装工</td><td>按小时</td><td>40元/时</td><td>1次</td><td><span class="tg tg-o">离职待结</span></td></tr><tr><td><input type="checkbox" checked onchange="updateSettleSelected()"></td><td><b>李娜</b></td><td>139****2233</td><td>QC质检员</td><td>按小时</td><td>45元/时</td><td>0次</td><td><span class="tg tg-g">在职</span></td></tr><tr><td><input type="checkbox" checked onchange="updateSettleSelected()"></td><td><b>王强</b></td><td>137****8899</td><td>高级焊工</td><td>按小时</td><td>55元/时</td><td>1次</td><td><span class="tg tg-o">离职待结</span></td></tr></tbody></table></div><div class="ib ib-b" style="margin-top:12px">已选择 <b id="settleSelectedCount">3</b> 人。其中 2 人本月已有结算记录，系统将在下一步按累计口径计算个税。</div></div>
+</div>
+
+<div id="settleStep2" style="display:none">
 
 <div class="rp-card settle-form">
 <div class="rp-card-title">结算基本信息</div>
@@ -1476,12 +1496,13 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 <div style="font-size:14px;color:var(--brand);font-weight:500">点击导入结算表（Excel）</div>
 <div style="font-size:12px;color:var(--text3);margin-top:6px">系统将自动匹配员工信息，计算工时、个税、社保应缴金额</div>
 </div>
+<div style="display:flex;align-items:center;justify-content:space-between;margin-top:14px;padding:12px;background:#f7f9fc;border-radius:8px"><div><b style="font-size:13px">批量填写</b><span style="font-size:12px;color:var(--text3);margin-left:8px">先为已选人员填相同值，再逐人微调</span></div><div style="display:flex;gap:8px"><button class="btn btn-sm" onclick="sm('settleBatchFillModal')">批量填工时</button><button class="btn btn-sm" onclick="sm('settleBatchFeeModal')">批量填费项</button><button class="btn btn-sm">仅看异常（1）</button></div></div>
 <div class="tw" style="margin-top:16px"><table>
-<thead><tr><th style="width:36px"><input type="checkbox" onclick="toggleAll(this)"></th><th>员工</th><th>项目</th><th>结算方式</th><th>员工单价</th><th>标准工时</th><th>加班工时</th><th>应发工资</th><th>个税</th><th>社保</th><th>实发</th><th>操作</th></tr></thead>
+<thead><tr><th style="width:36px"><input type="checkbox" onclick="toggleAll(this)"></th><th>员工</th><th>计价</th><th>计薪数量</th><th>基本工资</th><th>其他加项</th><th>业务扣款</th><th>借支</th><th>社保</th><th>个税</th><th>实发</th><th>状态</th><th>操作</th></tr></thead>
 <tbody>
-<tr><td><input type="checkbox"></td><td>张伟</td><td>电子普工</td><td><span class="tg tg-b">按月</span></td><td>40元/时</td><td>176h</td><td>8h</td><td>7,200</td><td>126</td><td>856</td><td style="font-weight:600;color:var(--success)">6,218</td><td><button class="btn-link">修改</button></td></tr>
-<tr><td><input type="checkbox"></td><td>李娜</td><td>质检员</td><td><span class="tg tg-b">按月</span></td><td>45元/时</td><td>168h</td><td>0h</td><td>7,560</td><td>132</td><td>856</td><td style="font-weight:600;color:var(--success)">6,572</td><td><button class="btn-link">修改</button></td></tr>
-<tr><td><input type="checkbox"></td><td>王强</td><td>高级技工</td><td><span class="tg tg-o">一次性</span></td><td>55元/时</td><td>200h</td><td>24h</td><td>11,000</td><td>320</td><td>1,020</td><td style="font-weight:600;color:var(--success)">9,660</td><td><button class="btn-link">修改</button></td></tr>
+<tr><td><input type="checkbox"></td><td><b>张伟</b><br><small style="color:var(--warning)">本月第2次</small></td><td>40元/时</td><td><input value="176" style="width:64px"> 小时</td><td>7,040</td><td style="color:var(--success)">+300</td><td>-100</td><td>-500</td><td>-856</td><td>-126</td><td style="font-weight:600;color:var(--success)">5,758</td><td><span class="tg tg-g">已计算</span></td><td><button class="btn-link" onclick="sm('settlePersonEditModal')">修改</button></td></tr>
+<tr><td><input type="checkbox"></td><td><b>李娜</b></td><td>45元/时</td><td><input value="168" style="width:64px"> 小时</td><td>7,560</td><td style="color:var(--success)">+260</td><td>-80</td><td>0</td><td>-856</td><td>-132</td><td style="font-weight:600;color:var(--success)">6,752</td><td><span class="tg tg-g">已计算</span></td><td><button class="btn-link" onclick="sm('settlePersonEditModal')">修改</button></td></tr>
+<tr><td><input type="checkbox"></td><td><b>王强</b><br><small style="color:var(--warning)">本月第2次</small></td><td>55元/时</td><td><input value="200" style="width:64px"> 小时</td><td>11,000</td><td style="color:var(--success)">+500</td><td>-200</td><td>-700</td><td>-1,020</td><td>-320</td><td style="font-weight:600;color:var(--success)">9,260</td><td><span class="tg tg-r">工时差异</span></td><td><button class="btn-link" onclick="sm('settlePersonEditModal')">修改</button></td></tr>
 </tbody></table></div>
 <div class="pgn"><span>共3条</span><button class="active">1</button><span>条/页 10</span></div>
 <div class="ib ib-b" style="margin-top:8px">导入工时表后系统自动匹配员工单价和扣减项，计算个税与社保。可点击「修改」调整单个员工的数值，修改后实发工资自动重新计算。</div>
@@ -1498,6 +1519,14 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 <div class="sc"><div class="si" style="background:#fde8c8;color:var(--warning)">保</div><div class="sv"><div class="n">2,732</div><div class="l">社保合计(元)</div></div></div>
 <div class="sc"><div class="si" style="background:var(--brand-light);color:var(--brand)">实发</div><div class="sv"><div class="n">22,450</div><div class="l">实发合计(元)</div></div></div>
 </div>
+</div>
+</div>
+
+<div id="settleStep3" style="display:none">
+<div class="rp-card"><div class="rp-card-title">结算汇总</div><div class="sg"><div class="sc"><div class="sv"><div class="n">3</div><div class="l">结算人数</div></div></div><div class="sc"><div class="sv"><div class="n">25,760</div><div class="l">应发合计(元)</div></div></div><div class="sc"><div class="sv"><div class="n" style="color:var(--danger)">-1,200</div><div class="l">扣款及借支(元)</div></div></div><div class="sc"><div class="sv"><div class="n" style="color:var(--brand)">21,250</div><div class="l">预计实发(元)</div></div></div></div></div>
+<div class="ib ib-o" style="margin-bottom:14px"><b>发现 2 项需确认：</b>张伟本月已有 1 次结算，本次为第 2 次；王强工时与导入考勤相差 8 小时。确认无误后可提交财务复核。</div>
+<div class="rp-card"><div class="rp-card-title">人员工资核对</div><div class="tw"><table><thead><tr><th>员工</th><th>计薪数量</th><th>基本工资</th><th>加项</th><th>业务扣款</th><th>借支</th><th>社保</th><th>本次个税</th><th>实发</th><th>校验结果</th></tr></thead><tbody><tr><td><b>张伟</b><br><small>本月第2次</small></td><td>176小时</td><td>7,040</td><td style="color:var(--success)">+300</td><td>-100</td><td>-500</td><td>-856</td><td>-126</td><td><b>5,758</b></td><td><span class="tg tg-y">累计税确认</span></td></tr><tr><td><b>李娜</b></td><td>168小时</td><td>7,560</td><td style="color:var(--success)">+260</td><td>-80</td><td>0</td><td>-856</td><td>-132</td><td><b>6,752</b></td><td><span class="tg tg-g">通过</span></td></tr><tr><td><b>王强</b><br><small>本月第2次</small></td><td>200小时</td><td>11,000</td><td style="color:var(--success)">+500</td><td>-200</td><td>-700</td><td>-1,020</td><td>-320</td><td><b>9,260</b></td><td><span class="tg tg-r">工时差异</span></td></tr></tbody></table></div></div>
+<div class="rp-card"><div class="rp-card-title">提交说明</div><div class="fg"><label>结算备注</label><textarea rows="3" placeholder="补充本批次结算说明、异常确认依据等"></textarea></div><label style="display:flex;align-items:center;gap:8px;margin-top:12px;font-size:13px"><input type="checkbox" checked> 已核对员工、工时、费项、借支和累计个税结果</label><div class="ib ib-b" style="margin-top:12px">提交后生成结算单版本快照并进入财务复核；如被驳回，可修改后生成新版本，原审核轨迹保留。</div></div>
 </div>
 </div>
 <div class="pg" id="p-dist">
@@ -2434,6 +2463,35 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 <div class="ib ib-b" style="margin-top:8px">导出格式：Excel (.xlsx)</div>
 <div class="ml-f"><button class="btn" onclick="hm('exportModal')">取消</button><button class="btn btn-p" onclick="hm('exportModal')">确认导出</button></div>
 </div></div>
+<div class="mo" id="resumeExportModal"><div class="ml" style="width:500px">
+<div class="ml-t">导出当前简历</div>
+<div style="padding:20px">
+<div style="display:flex;align-items:center;gap:14px;padding:16px;border:1px solid var(--border);border-radius:10px;background:#f8fafc">
+<div style="width:48px;height:56px;border-radius:8px;background:#fff1f0;color:#cf1322;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;border:1px solid #ffccc7">PDF</div>
+<div style="flex:1"><div style="font-size:15px;font-weight:600">张伟_简历.pdf</div><div style="font-size:12px;color:var(--text3);margin-top:5px">当前简历原文件 · 2.4 MB · 2026-07-08 上传</div></div>
+<button class="btn btn-sm" onclick="alert('打开当前简历 PDF 预览')">预览</button>
+</div>
+<div class="ib ib-b" style="margin-top:14px"><b>导出内容：</b>当前详情关联的完整简历 PDF 原文件。无需选择数据范围，不生成 Excel。</div>
+<label class="switch" style="margin-top:16px"><input type="checkbox" checked><span class="switch-track"></span><span class="switch-state">按系统设置添加简历水印</span></label>
+<div style="font-size:12px;color:var(--text3);margin-top:8px">水印包含导出人、账号及导出时间，用于简历信息安全追溯。</div>
+</div>
+<div class="ml-f"><button class="btn" onclick="hm('resumeExportModal')">取消</button><button class="btn btn-p" onclick="hm('resumeExportModal');alert('张伟_简历.pdf 已开始下载')">下载 PDF</button></div>
+</div></div>
+<div class="mo" id="employeeResumePdfModal"><div class="ml" style="width:820px;max-height:92vh">
+<div class="ml-t">简历 PDF 效果预览 <button class="btn btn-sm" style="float:right" onclick="hm('employeeResumePdfModal')">✕</button></div>
+<div style="padding:20px;background:#eef1f5;max-height:72vh;overflow:auto">
+<div class="resume-paper">
+<div class="resume-head"><div><h1>张伟</h1><div style="margin-top:8px;color:#607d8b;font-size:13px">求职意向：电子技工 / 设备维护</div></div><div style="text-align:right;font-size:13px;line-height:1.8">男 · 28岁 · 汉族<br>138****6688<br>广州黄埔</div></div>
+<div class="resume-section"><h3>个人信息</h3><div class="resume-grid"><span>学历：大专</span><span>工作经验：6年</span><span>期望薪资：8,000–10,000元/月</span><span>证书：低压电工操作证</span><span>到岗时间：随时到岗</span><span>当前状态：在职</span></div></div>
+<div class="resume-section"><h3>个人优势</h3><p>熟悉电子元器件组装、产线设备维护和质量检验，能够独立处理常见设备故障；持低压电工操作证，适应倒班及加班安排。</p></div>
+<div class="resume-section"><h3>工作经历</h3><div class="resume-entry-line"><span>广州XX电子有限公司 · 技工</span><span>2023.03–2026.06</span></div><p>负责电子元器件组装与调试、产线设备日常点检及异常处理，协助提升产线良率。</p><div class="resume-entry-line"><span>东莞XX制造厂 · 普工</span><span>2020.06–2023.02</span></div><p>负责生产线组装操作、物料核对和成品包装，连续两年获评优秀员工。</p></div>
+<div class="resume-section"><h3>教育经历</h3><div class="resume-entry-line"><span>广州职业技术学院 · 机电一体化 · 大专</span><span>2017.09–2020.06</span></div></div>
+<div class="resume-section"><h3>培训与证书</h3><div class="resume-entry-line"><span>广州职业技能培训中心 · 电工操作证培训</span><span>2022.03–2022.06</span></div><p>获得低压电工操作证。</p></div>
+<div style="margin-top:38px;padding-top:12px;border-top:1px solid #dfe5eb;text-align:center;font-size:11px;color:#94a3b8">广州澜特招聘平台 · 简历编号 LT-R-202607001 · 导出人 admin · 2026-07-20</div>
+</div>
+</div>
+<div class="ml-f"><span style="margin-right:auto;font-size:12px;color:var(--text3)">仅支持 PDF 格式，按系统水印设置导出</span><button class="btn" onclick="hm('employeeResumePdfModal')">关闭</button><button class="btn btn-p" onclick="hm('employeeResumePdfModal');alert('张伟_员工简历.pdf 已开始下载')">导出 PDF</button></div>
+</div></div>
 <div class="mo" id="resignModal"><div class="ml" style="width:480px">
 <div class="ml-t">办理离职</div>
 <div style="padding:20px">
@@ -2501,9 +2559,16 @@ function openFieldEdit(btn){if(btn){var r=btn.closest('tr');if(r){var n=r.queryS
 function feTypeChange(sel){var g=document.getElementById('feOptionsGrp');if(g)g.style.display=(sel.value==='下拉选择'||sel.value==='单选'||sel.value==='多选')?'block':'none'}
 function goResumeDetail(){document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-resumeDetail').classList.add('show');document.getElementById('pn').textContent='简历库 / 简历详情';document.querySelector('[data-p=resume]').classList.add('active')}
 function goResumeAdd(){document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-resumeAdd').classList.add('show');document.getElementById('pn').textContent='简历库 / 新增简历';document.querySelector('[data-p=resume]').classList.add('active')}
-function goSettleCreate(){document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-settleCreate').classList.add('show');document.getElementById('pn').textContent='结算中心 / 新建结算';document.querySelector('[data-p=settle]').classList.add('active')}
+var settleCreateStep=1;
+function renderSettleStep(){[1,2,3].forEach(function(n){var el=document.getElementById('settleStep'+n);if(el)el.style.display=n===settleCreateStep?'':'none'});document.querySelectorAll('[data-settle-step]').forEach(function(x){x.classList.toggle('active',Number(x.dataset.settleStep)<=settleCreateStep)});var prev=document.getElementById('settlePrevBtn'),next=document.getElementById('settleNextBtn');if(prev)prev.style.display=settleCreateStep===1?'none':'';if(next)next.textContent=settleCreateStep===1?'下一步：填写工资':settleCreateStep===2?'下一步：核对提交':'提交财务复核'}
+function switchSettleStep(delta){if(settleCreateStep===3&&delta>0){alert('结算单 JS202607-0036 已提交财务复核');showPage('settleApproval');return}settleCreateStep=Math.max(1,Math.min(3,settleCreateStep+delta));renderSettleStep()}
+function updateSettleSelected(){var c=document.querySelectorAll('#settlePeopleTable tbody input:checked').length,el=document.getElementById('settleSelectedCount');if(el)el.textContent=c}
+function goSettleCreate(){settleCreateStep=1;document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-settleCreate').classList.add('show');document.getElementById('pn').textContent='结算中心 / 新建结算';document.querySelector('[data-p=settle]').classList.add('active');renderSettleStep()}
 function backToResume(){showPage('resume');document.querySelector('[data-p=resume]').classList.add('active')}
 function goEmpDetail(){var current=document.querySelector('.pg.show');if(current)_lastPage=current.id.replace('p-','');document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-empDetail').classList.add('show');document.getElementById('pn').textContent='花名册 / 员工详情';document.querySelector('[data-p=roster]').classList.add('active')}
+function openEmployeeFromName(event,name){if(event){event.preventDefault();event.stopPropagation()}var current=document.querySelector('.pg.show');if(current&&current.id!=='p-empDetail')_lastPage=current.id.replace('p-','');goEmpDetail();var h=document.querySelector('#p-empDetail .rp-header h2');if(h)h.innerHTML='员工详情 - '+name+' <span class="tg tg-g">在职</span>'}
+function enhancePersonNameLinks(){var nameHeaders=['姓名','员工','候选人','申请人','求职者','评价人'];document.querySelectorAll('table').forEach(function(table){var headers=Array.prototype.slice.call(table.querySelectorAll('thead th'));headers.forEach(function(th,index){if(nameHeaders.indexOf(th.textContent.trim())<0)return;table.querySelectorAll('tbody tr').forEach(function(row){var cell=row.cells[index];if(!cell||cell.querySelector('a,.person-name-link,button,input,select'))return;var bold=cell.querySelector('b');var target=bold||cell;var name=(target.textContent||'').trim().split(/\s|\n/)[0];if(!name||name==='--'||/管理员|系统自动|平台管理员/.test(name))return;if(bold){bold.classList.add('person-name-link');bold.setAttribute('onclick',"openEmployeeFromName(event,'"+name+"')")}else{target.innerHTML='<a href="javascript:void(0)" class="person-name-link" onclick="openEmployeeFromName(event,\''+name+'\')">'+name+'</a>'}})})})}
+function exportEmpTabData(label){alert('正在导出“张伟-'+label+'.xlsx”，仅包含当前 '+label+' Tab 的数据')}
 function goProjectEdit(){document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-projectEdit').classList.add('show');document.getElementById('pn').textContent='项目管理 / 编辑项目';document.querySelector('[data-p=project]').classList.add('active')}
 function goProjectDetail(){document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-projectDetail').classList.add('show');document.getElementById('pn').textContent='项目管理 / 项目详情';document.querySelector('[data-p=project]').classList.add('active')}
 function goSettleApproval(){document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-settleApproval').classList.add('show');document.getElementById('pn').textContent='结算中心 / 结算审批';document.querySelector('[data-p=settle]').classList.add('active')}
@@ -2520,6 +2585,7 @@ document.addEventListener('DOMContentLoaded',function(){
   // 弹窗必须脱离页面容器，否则关闭/切换父页面后，即使添加 show 也会被父级 display:none 隐藏。
   // 统一提升到应用根节点，修复合同管理、新增用户、新增合同等弹窗丢失问题。
   Array.prototype.slice.call(document.querySelectorAll('.mo')).forEach(function(modal){app.appendChild(modal)});
+  enhancePersonNameLinks();
 });
 function goPositionEdit(){var t=document.getElementById('positionAddTitle');if(t)t.textContent='编辑岗位 - 电子组装工';var n=document.getElementById('posName');if(n)n.value='电子组装工';var mn=document.getElementById('posSalMin');if(mn)mn.value='5000';var mx=document.getElementById('posSalMax');if(mx)mx.value='7000';var pn=document.getElementById('posPriceN');if(pn)pn.value='40';var po=document.getElementById('posPriceOt');if(po)po.value='60';var pc=document.getElementById('posCount');if(pc)pc.value='50';showPage('positionAdd');setMi('position')}
 function goDistDetail(){document.querySelectorAll('.pg').forEach(g=>g.classList.remove('show'));document.getElementById('p-distDetail').classList.add('show');document.getElementById('pn').textContent='分销裂变 / 渠道商详情';document.querySelector('[data-p=dist]').classList.add('active')}
@@ -2535,6 +2601,9 @@ function goAccountEdit(){var t=document.getElementById('accountAddTitle');if(t)t
 function stab(el,tid){var pg=el.closest('.pg');if(!pg)return;el.parentElement.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));el.classList.add('active');pg.querySelectorAll('.tc').forEach(c=>c.classList.remove('show'));document.getElementById(tid).classList.add('show')}
 function sm(id){document.getElementById(id).classList.add('show')}
 function hm(id){document.getElementById(id).classList.remove('show')}
+var addContractReturnToManager=false;
+function openAddContractFromManager(){addContractReturnToManager=true;hm('customerContractModal');sm('addContractModal')}
+function closeAddContractModal(saved){hm('addContractModal');if(addContractReturnToManager){sm('customerContractModal');addContractReturnToManager=false}if(saved)alert('合同已新增，并已同步到合同管理列表')}
 function toggleAll(cb){var table=cb.closest('table');if(table)table.querySelectorAll('tbody input[type="checkbox"]').forEach(c=>c.checked=cb.checked)}
 function toggleResumeEdit(){var page=document.getElementById('p-resumeDetail');var btn=document.getElementById('editBtn');var isEditing=page.classList.contains('editing');if(isEditing){page.classList.remove('editing');btn.textContent='编辑';btn.className='btn'}else{page.classList.add('editing');btn.textContent='保存';btn.className='btn btn-p'}page.querySelectorAll('input,select,textarea').forEach(f=>{if(f.type==='checkbox'||f.type==='button')return;if(isEditing){f.setAttribute('readonly','');if(f.tagName==='SELECT')f.setAttribute('disabled','')}else{f.removeAttribute('readonly');if(f.tagName==='SELECT')f.removeAttribute('disabled')}});page.querySelectorAll('.rp-add,.rp-entry-del').forEach(el=>{el.style.display=isEditing?'none':''})}
 function addEntry(btn,type){var card=btn.closest('.rp-card');var entry=document.createElement('div');entry.className='rp-entry';var fields='';if(type==='work'){fields='<button class="btn btn-sm rp-entry-del" onclick="removeEntry(this)">删除</button><div class="rp-fields"><div class="rp-field"><span class="lbl">公司名称</span><input placeholder="请输入公司名称"></div><div class="rp-field"><span class="lbl">职位</span><input placeholder="请输入职位"></div><div class="rp-field"><span class="lbl">工作时间</span><input placeholder="如：2023.03 - 2026.06"></div></div><div class="rp-field" style="margin-top:8px"><span class="lbl">工作描述</span><textarea placeholder="请输入工作描述"></textarea></div>'}else if(type==='edu'){fields='<button class="btn btn-sm rp-entry-del" onclick="removeEntry(this)">删除</button><div class="rp-fields"><div class="rp-field"><span class="lbl">学校名称</span><input placeholder="请输入学校名称"></div><div class="rp-field"><span class="lbl">专业</span><input placeholder="请输入专业"></div><div class="rp-field"><span class="lbl">学历</span><select><option>请选择</option><option>高中</option><option>中专</option><option>大专</option><option>本科</option><option>硕士</option></select></div><div class="rp-field"><span class="lbl">就读时间</span><input placeholder="如：2017.09 - 2020.06"></div></div>'}else if(type==='train'){fields='<button class="btn btn-sm rp-entry-del" onclick="removeEntry(this)">删除</button><div class="rp-fields"><div class="rp-field"><span class="lbl">培训名称</span><input placeholder="请输入培训名称"></div><div class="rp-field"><span class="lbl">培训机构</span><input placeholder="请输入培训机构"></div><div class="rp-field"><span class="lbl">培训时间</span><input placeholder="如：2022.03 - 2022.06"></div><div class="rp-field"><span class="lbl">获得证书</span><input placeholder="请输入获得证书"></div></div>'}entry.innerHTML=fields;card.appendChild(entry)}
@@ -2823,7 +2892,7 @@ function changeFeeSetMode(){
 <div style="font-size:13px;line-height:1.8;color:var(--text2);padding:8px 0">客户结算基准单价：<b>45 元/时</b>。各岗位实际结算单价以「岗位管理」中配置为准，差额部分为客户服务费。</div>
 </div>
 <div class="rp-card">
-<div class="rp-card-title">合同管理 <button class="btn btn-sm btn-p" onclick="sm('customerContractModal')">+ 新增合同</button></div>
+<div class="rp-card-title">合同管理 <button class="btn btn-sm btn-p" onclick="sm('addContractModal')">+ 新增合同</button></div>
 <div class="ib ib-b" style="margin-bottom:8px">一个客户可关联多份合同，每份合同独立管理，支持启用/停用。</div>
 <div class="tw"><table>
 <thead><tr><th>合同名称</th><th>合同编号</th><th>开始日期</th><th>结束日期</th><th>状态</th><th>操作</th></tr></thead>
@@ -2882,7 +2951,7 @@ function changeFeeSetMode(){
 </div>
 </div>
 <div class="rp-card" style="border:none;padding:0;margin:0">
-<div class="rp-card-title">合同管理 <button class="btn btn-sm btn-p" onclick="sm('customerContractModal')">+ 新增合同</button></div>
+<div class="rp-card-title">合同管理 <button class="btn btn-sm btn-p" onclick="sm('addContractModal')">+ 新增合同</button></div>
 <div class="ib ib-b" style="margin-bottom:8px">录入客户基础信息后，可继续维护客户合同。</div>
 <div class="tw"><table>
 <thead><tr><th>合同名称</th><th>合同编号</th><th>开始日期</th><th>结束日期</th><th>状态</th></tr></thead>
@@ -2893,7 +2962,7 @@ function changeFeeSetMode(){
 <div class="mo" id="customerContractModal"><div class="ml" style="width:600px">
 <div class="ml-t">客户合同管理 - 比亚迪电子</div>
 <div style="padding:16px 20px">
-<div style="display:flex;justify-content:flex-end;margin-bottom:8px"><button class="btn btn-sm btn-p" onclick="sm('addContractModal')">+ 新增合同</button></div>
+<div style="display:flex;justify-content:flex-end;margin-bottom:8px"><button class="btn btn-sm btn-p" onclick="openAddContractFromManager()">+ 新增合同</button></div>
 <div class="tw"><table>
 <thead><tr><th>合同名称</th><th>合同编号</th><th>开始日期</th><th>结束日期</th><th>状态</th><th>操作</th></tr></thead>
 <tbody>
@@ -2916,6 +2985,9 @@ function changeFeeSetMode(){
 </div></div>
 <div class="mo" id="reviewAddModal"><div class="ml" style="width:560px"><div class="ml-t" id="reviewModalTitle">手动添加评价</div><div style="padding:20px"><div class="fr"><div class="fg"><label>评价岗位 *</label><select id="reviewAddPosition"><option>电子组装工</option><option>QC质检员</option><option>高级焊工</option><option>仓库管理员</option></select></div><div class="fg"><label>评价人</label><input id="reviewAuthor" value="平台管理员" placeholder="请输入评价人"></div></div><div class="fg" style="margin-top:14px"><label>岗位评分 *</label><div id="reviewStarPicker" style="display:flex;gap:8px;font-size:28px;color:#faad14;cursor:pointer"><span onclick="setReviewScore(1)">★</span><span onclick="setReviewScore(2)">★</span><span onclick="setReviewScore(3)">★</span><span onclick="setReviewScore(4)">★</span><span onclick="setReviewScore(5)">★</span><b id="reviewScoreText" style="font-size:13px;color:var(--text2);align-self:center;margin-left:6px">5.0 分</b></div></div><div class="fg" style="margin-top:14px"><label>评论内容 *</label><textarea id="reviewContent" rows="4" placeholder="请输入岗位评论内容"></textarea></div><div class="fr" style="margin-top:14px"><div class="fg"><label>评价时间</label><input type="datetime-local" value="2026-07-20T10:00"></div><div class="fg"><label>展示状态</label><select><option>正常展示</option><option>隐藏</option></select></div></div><div class="ib ib-b" style="margin-top:14px">后台添加的评价将标记为“后台添加”，并计入该岗位综合评分。</div></div><div class="ml-f"><button class="btn" onclick="hm('reviewAddModal')">取消</button><button class="btn btn-p" onclick="saveReview()">保存评价</button></div></div></div>
 <div class="mo" id="reviewViewModal"><div class="ml" style="width:520px"><div class="ml-t">评价详情</div><div style="padding:20px"><div class="rp-fields"><div class="rp-field"><span class="lbl">评价岗位</span><span class="val" id="reviewViewPosition">电子组装工</span></div><div class="rp-field"><span class="lbl">评价人</span><span class="val" id="reviewViewAuthor">张伟</span></div><div class="rp-field"><span class="lbl">评分</span><span class="val" style="color:#faad14">★★★★★ 5.0分</span></div><div class="rp-field"><span class="lbl">评价时间</span><span class="val">2026-07-19 14:32</span></div></div><div style="margin-top:16px;padding:14px;background:#f7f9fc;border-radius:8px;font-size:13px;line-height:1.8" id="reviewViewContent">工作环境不错，宿舍有空调，工资发放也很准时。</div></div><div class="ml-f"><button class="btn" onclick="hm('reviewViewModal')">关闭</button><button class="btn btn-p" onclick="hm('reviewViewModal');openReviewAdd()">编辑评价</button></div></div></div>
+<div class="mo" id="settleBatchFillModal"><div class="ml" style="width:480px"><div class="ml-t">批量填写计薪数量</div><div style="padding:20px"><div class="ib ib-b">将相同计薪数量应用到已选 3 名员工，应用后仍可逐人修改。</div><div class="fr" style="margin-top:14px"><div class="fg"><label>计薪数量 *</label><input type="number" value="176"></div><div class="fg"><label>单位</label><select><option>小时</option><option>天</option><option>月</option></select></div></div><label style="display:flex;gap:6px;margin-top:12px;font-size:13px"><input type="checkbox" checked> 仅覆盖空值，不修改已有数据</label></div><div class="ml-f"><button class="btn" onclick="hm('settleBatchFillModal')">取消</button><button class="btn btn-p" onclick="hm('settleBatchFillModal');alert('已批量填写计薪数量')">应用到3人</button></div></div></div>
+<div class="mo" id="settleBatchFeeModal"><div class="ml" style="width:520px"><div class="ml-t">批量填写现场费项</div><div style="padding:20px"><div class="fr"><div class="fg"><label>费项</label><select><option>绩效奖励（加项）</option><option>质量扣款（减项）</option><option>社保个人部分（减项）</option></select></div><div class="fg"><label>金额 *</label><input type="number" placeholder="请输入金额"></div></div><div class="fg" style="margin-top:14px"><label>填写依据</label><input placeholder="如：7月现场绩效表"></div><div class="ib ib-o" style="margin-top:14px">系统计算项（借支、个税）不可手工批量修改；个税只允许重新计算。</div></div><div class="ml-f"><button class="btn" onclick="hm('settleBatchFeeModal')">取消</button><button class="btn btn-p" onclick="hm('settleBatchFeeModal');alert('费项已应用并重新计算')">应用并计算</button></div></div></div>
+<div class="mo" id="settlePersonEditModal"><div class="ml" style="width:560px"><div class="ml-t">员工工资核对 - 张伟</div><div style="padding:20px"><div class="ib ib-o">本月第 2 次结算 · 前次已发 ¥1,200.00，个税按本月累计差额补扣。</div><div class="fr" style="margin-top:14px"><div class="fg"><label>计薪数量（小时）</label><input value="176"></div><div class="fg"><label>岗位单价</label><input value="40" readonly></div></div><div class="fr" style="margin-top:14px"><div class="fg"><label>绩效奖励</label><input value="300"></div><div class="fg"><label>质量扣款</label><input value="100"></div></div><div class="fr" style="margin-top:14px"><div class="fg"><label>借支抵扣</label><input value="500"></div><div class="fg"><label>社保个人部分</label><input value="856"></div></div><div style="margin-top:14px;padding:12px;background:#f7f9fc;border-radius:8px;font-size:13px;line-height:1.8">基本工资：176 × 40 = <b>¥7,040.00</b><br>本月累计应税收入：¥8,240.00<br>本次应扣个税：<b style="color:var(--brand)">¥126.00</b><br>预计实发：<b style="color:var(--success)">¥5,758.00</b></div><div class="fg" style="margin-top:14px"><label>调整原因 *</label><textarea rows="2" placeholder="修改工时或费项时必须填写，保存后记入审核轨迹"></textarea></div></div><div class="ml-f"><button class="btn" onclick="hm('settlePersonEditModal')">取消</button><button class="btn btn-p" onclick="hm('settlePersonEditModal');alert('调整已保存并写入操作记录')">保存调整</button></div></div></div>
 <div class="mo" id="stopPositionModal"><div class="ml" style="width:420px">
 <div class="ml-t">确认停招岗位</div>
 <div style="padding:20px;text-align:center">
