@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>澜特分销逻辑说明 — 广州澜特原型</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",sans-serif;background:#f5f7fb;color:#1f2937}.wrap{max-width:880px;margin:0 auto;padding:72px 24px}h1{font-size:34px;margin:0 0 12px}.sub{color:#64748b;margin-bottom:36px}.back{margin-bottom:24px}.back a{color:#1677ff;text-decoration:none;font-weight:600}.back a:hover{text-decoration:underline}.entry{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:24px;margin-bottom:16px;box-shadow:0 8px 24px rgba(15,23,42,.06);transition:.2s}.entry:hover{box-shadow:0 14px 30px rgba(15,23,42,.1)}.entry h2{font-size:22px;margin:28px 0 12px;padding-bottom:8px;border-bottom:2px solid #e8f2ff;color:#1f2937}.entry h2:first-child{margin-top:0}.entry h3{font-size:17px;margin:20px 0 8px;color:#1f2937}.entry h4{font-size:15px;margin:16px 0 6px;color:#334155}.entry p{margin:0 0 12px;line-height:1.8;font-size:15px;color:#334155}.entry ul,.entry ol{margin:0 0 12px;padding-left:22px;line-height:1.8;font-size:15px;color:#334155}.entry li{margin-bottom:4px}.entry strong{color:#1e293b}.entry blockquote{margin:12px 0;padding:12px 16px;background:#f8fafc;border-left:4px solid #1677ff;border-radius:8px;color:#475569;font-size:14px;line-height:1.7}.entry blockquote p{margin:0;color:#475569;font-size:14px}.entry code{font-family:"SF Mono","Fira Code",monospace;font-size:13px;background:#f1f5f9;padding:2px 6px;border-radius:4px;color:#1e293b}.entry pre{margin:12px 0;padding:16px;background:#1e293b;border-radius:12px;overflow-x:auto;font-size:13px;line-height:1.6}.entry pre code{background:none;padding:0;color:#e2e8f0;font-size:13px}.entry table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px;border-radius:10px;overflow:hidden;box-shadow:0 1px 4px rgba(15,23,42,.06)}.entry th{background:#f1f5f9;color:#1e293b;font-weight:600;text-align:left;padding:10px 14px;border-bottom:2px solid #e2e8f0;white-space:nowrap}.entry td{padding:10px 14px;border-bottom:1px solid #f1f5f9;color:#475569;vertical-align:top;line-height:1.6}.entry tr:last-child td{border-bottom:none}.entry tr:hover td{background:#fafbfc}.entry a{color:#1677ff;text-decoration:none}.entry a:hover{text-decoration:underline}.entry .checklist{list-style:none;padding-left:0}.entry .checklist li::before{content:"☐ ";color:#94a3b8}.entry hr{border:none;border-top:1px solid #e5e7eb;margin:24px 0}.entry blockquote blockquote{border-left-color:#94a3b8;margin:8px 0;background:#fff}.entry img{max-width:100%;border-radius:8px;margin:12px 0}
+</style>
+</head>
+<body><main class="wrap">
+<p class="back"><a href="./index.html">← 返回首页</a></p>
+<h1>澜特分销逻辑说明</h1>
+<p class="sub">广州澜特分销体系业务逻辑说明</p>
+<div class="entry">
+<h1>澜特分销逻辑说明</h1>
+<blockquote>
+<p>文档性质：产品逻辑梳理稿<br />
+适用范围：广州澜特 Web 管理后台、Mob 小程序<br />
+整理日期：2026-07-23<br />
+当前状态：依据现有原型整理；标记为“待确认”的内容需在开发前完成产品决策。</p>
+</blockquote>
+<h2>1. 业务目标</h2>
+<p>澜特分销体系用于发展和管理渠道商，通过专属分销码建立最多二级的上下级关系。渠道商可以报备求职者并跟踪报名、面试、入职和在职结果；系统依据岗位佣金规则、渠道商独立配置及等级倍率计算佣金，最终进入审核和发放流程。</p>
+<p>完整链路如下：</p>
+<pre class="codehilite"><code class="language-mermaid">flowchart LR
+    A[申请成为渠道商] --&gt; B[平台审核]
+    B --&gt; C[生成唯一分销码]
+    C --&gt; D{建立邀请关系}
+    D --&gt; E[分享链接自动绑定]
+    D --&gt; F[手动输入分销码]
+    E --&gt; G[形成一级或二级关系]
+    F --&gt; G
+    G --&gt; H[报备求职者]
+    H --&gt; I[报名与招聘审核]
+    I --&gt; J[面试]
+    J --&gt; K[入职与在职跟踪]
+    K --&gt; L{达到佣金条件}
+    L --&gt;|否| K
+    L --&gt;|是| M[生成佣金明细]
+    M --&gt; N[佣金审核]
+    N --&gt; O[结算与发放]
+</code></pre>
+
+<h2>2. 参与角色</h2>
+<table>
+<thead>
+<tr>
+<th>角色</th>
+<th>主要权限</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>平台管理员</td>
+<td>审核渠道商、管理分销关系、配置佣金规则、查看全部团队数据、审核和发放佣金</td>
+</tr>
+<tr>
+<td>平台直营渠道商</td>
+<td>无上级；可以报备求职者、邀请一级下级、查看本人及团队数据</td>
+</tr>
+<tr>
+<td>一级下级渠道商</td>
+<td>由上级直接邀请；可以报备求职者，并继续邀请二级下级</td>
+</tr>
+<tr>
+<td>二级下级渠道商</td>
+<td>由一级下级邀请；可以报备求职者，但不可继续发展下级</td>
+</tr>
+<tr>
+<td>求职者</td>
+<td>被渠道商报备或自行报名岗位，进入招聘审核及入职流程</td>
+</tr>
+</tbody>
+</table>
+<h3>2.1 层级口径</h3>
+<p>建议产品和研发统一采用“相对邀请层级”的表达：</p>
+<ul>
+<li>平台直营渠道商：平台直接管理，无上级。</li>
+<li>一级下级：由平台直营渠道商直接邀请。</li>
+<li>二级下级：由一级下级继续邀请。</li>
+<li>系统最多保留二级下级，二级下级不可发展新的渠道商。</li>
+</ul>
+<p>现有原型同时出现“一级渠道商”“一级下级”“当前二级”等表述，开发前应统一字段名称和页面文案。</p>
+<h2>3. 渠道商准入</h2>
+<h3>3.1 申请入口</h3>
+<p>Mob 端支持以下入口：</p>
+<ol>
+<li>用户主动点击“申请成为渠道商”。</li>
+<li>用户通过渠道商分享的邀请链接进入申请页。</li>
+<li>用户已有分销码，在申请页手动填写上级分销码。</li>
+</ol>
+<h3>3.2 申请规则</h3>
+<ul>
+<li>上级分销码为选填项。</li>
+<li>邀请链接进入时，系统自动带入上级分销码。</li>
+<li>未填写上级分销码的申请人，审核通过后作为平台直营渠道商。</li>
+<li>提交申请前，用户须同意渠道商相关协议。</li>
+<li>申请状态建议包含：草稿、待审核、审核通过、审核驳回、已停用。</li>
+<li>审核通过后，系统为渠道商生成全局唯一且不可重复的分销码。</li>
+</ul>
+<h3>3.3 渠道商基础资料</h3>
+<p>渠道商至少包含以下信息：</p>
+<ul>
+<li>渠道商姓名或名称</li>
+<li>手机号</li>
+<li>唯一分销码</li>
+<li>渠道商等级</li>
+<li>上级渠道商</li>
+<li>当前层级</li>
+<li>状态</li>
+<li>佣金倍率</li>
+<li>结算周期</li>
+<li>创建时间及审核信息</li>
+</ul>
+<h2>4. 分销关系建立</h2>
+<h3>4.1 绑定方式</h3>
+<p>支持两种方式：</p>
+<ol>
+<li><strong>分享邀请自动绑定</strong>：用户从上级渠道商分享的链接进入，系统自动记录邀请人和分销码。</li>
+<li><strong>手动分销码绑定</strong>：用户输入上级分销码，系统校验后建立关系，适用于线下邀请。</li>
+</ol>
+<h3>4.2 绑定校验</h3>
+<p>系统绑定前应校验：</p>
+<ul>
+<li>分销码是否存在、有效且对应活跃渠道商。</li>
+<li>用户是否已经是渠道商。</li>
+<li>用户是否已经绑定上级。</li>
+<li>是否存在本人绑定本人。</li>
+<li>是否形成循环关系。</li>
+<li>绑定后是否超过二级分销限制。</li>
+<li>上级渠道商是否具有继续发展下级的权限。</li>
+</ul>
+<h3>4.3 关系变更</h3>
+<p>建议规则：</p>
+<ul>
+<li>渠道商关系一经审核生效，不允许用户自行修改。</li>
+<li>确需更换上级时，由后台发起关系变更并记录变更原因、操作人和时间。</li>
+<li>关系变更不追溯修改历史报备、历史佣金和已结算记录。</li>
+<li>上级停用时，下级历史归属保留；能否重新挂接新上级属于待确认事项。</li>
+</ul>
+<h2>5. 求职者报备与归属</h2>
+<h3>5.1 报备方式</h3>
+<p>渠道商在 Mob 端填写求职者资料并提交报备。报备时支持选择：</p>
+<ul>
+<li><strong>我的团队</strong>：归属于当前渠道商本人。</li>
+<li><strong>二级团队</strong>：选择具体下级成员，报备归属于被选择的下级，并同步汇总到上级团队数据。</li>
+</ul>
+<h3>5.2 报备后的招聘流程</h3>
+<p>报备成功后，求职者进入正常招聘链路：</p>
+<blockquote>
+<p>已报备 → 已报名/待审核 → 待面试 → 面试通过 → 待入职 → 已入职 → 在职或离职</p>
+</blockquote>
+<p>建议增加的异常状态：报备驳回、报名取消、面试未通过、放弃入职、入职撤销、重复报备、归属失效。</p>
+<h3>5.3 业绩统计口径</h3>
+<ul>
+<li>报备数：成功创建且未被判定为无效或重复的报备数量。</li>
+<li>报名数：报备人成功报名至少一个岗位的数量。</li>
+<li>面试数：已生成有效面试安排的数量。</li>
+<li>入职数：入职审核通过并生成员工关系的数量。</li>
+<li>在职资源数：当前处于在职状态且仍归属于渠道商的员工数量。</li>
+<li>团队数据：本人数据加全部有效下级数据，不应重复累计同一求职者。</li>
+</ul>
+<h3>5.4 待确认的归属规则</h3>
+<p>以下规则在现有原型中尚未明确：</p>
+<ol>
+<li>同一求职者被多个渠道商报备时，是否以首次有效报备为准。</li>
+<li>报备关系的保护期是30天、60天、90天还是长期有效。</li>
+<li>报备A岗位后报名B岗位，是否继续归属于原渠道商。</li>
+<li>求职者已有平台账号或已有历史报名时，是否允许再次报备。</li>
+<li>离职后再次入职，是否继续计算原渠道商佣金。</li>
+</ol>
+<p>建议采用“求职者 + 岗位 + 保护期”的唯一归属模型，并以首次有效报备时间确定归属。</p>
+<h2>6. 渠道商数据权限</h2>
+<p>渠道商可查看：</p>
+<ul>
+<li>本人分销码及邀请链接</li>
+<li>本人上下级关系</li>
+<li>本人报备、报名、面试、入职和在职数据</li>
+<li>下级成员及团队汇总数据</li>
+<li>本人预计佣金、待结算佣金和已发放佣金</li>
+<li>与本人报备求职者相关的必要招聘进度</li>
+</ul>
+<p>渠道商不可查看：</p>
+<ul>
+<li>平台完整分销规则和内部佣金成本</li>
+<li>其他团队的渠道商及求职者数据</li>
+<li>平台全部岗位推荐数据</li>
+<li>求职者与招聘无关的敏感资料</li>
+<li>后台审核意见、内部备注等平台管理信息</li>
+</ul>
+<p>手机号、身份证等个人信息应按权限脱敏展示。</p>
+<h2>7. 佣金配置体系</h2>
+<h3>7.1 岗位佣金规则</h3>
+<p>岗位是佣金规则的主要载体。新增或编辑岗位时可配置：</p>
+<ul>
+<li>是否开启分销推广</li>
+<li>佣金模式</li>
+<li>达标条件</li>
+<li>直接推荐奖励</li>
+<li>间接推荐奖励</li>
+<li>发放周期</li>
+<li>适用渠道商等级倍率</li>
+</ul>
+<p>关闭分销推广的岗位不产生渠道商佣金。</p>
+<h3>7.2 渠道商独立佣金配置</h3>
+<p>Web 端支持为指定渠道商设置独立佣金方案，用于特殊合作价格。包含：</p>
+<ul>
+<li>佣金方式</li>
+<li>阶梯条件</li>
+<li>阶梯金额</li>
+<li>计费单位</li>
+<li>结算周期</li>
+<li>渠道商倍率</li>
+<li>启用状态</li>
+</ul>
+<p>该配置应定位为“渠道商特殊覆盖规则”，不再重复维护岗位的通用佣金规则。</p>
+<h3>7.3 渠道商等级倍率</h3>
+<p>现有原型示例：</p>
+<table>
+<thead>
+<tr>
+<th>等级</th>
+<th style="text-align: right;">基础倍率</th>
+<th>默认结算周期</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A级</td>
+<td style="text-align: right;">1.5倍</td>
+<td>按月</td>
+</tr>
+<tr>
+<td>B级</td>
+<td style="text-align: right;">1.2倍</td>
+<td>按月</td>
+</tr>
+<tr>
+<td>C级</td>
+<td style="text-align: right;">1.0倍</td>
+<td>一次性或按规则</td>
+</tr>
+</tbody>
+</table>
+<p>新增等级支持维护等级名称、倍率、适用条件、状态和等级说明。</p>
+<h3>7.4 建议的规则优先级</h3>
+<p>当前原型尚未明确多层配置的优先级，建议统一为：</p>
+<ol>
+<li>先读取报名时保存的岗位佣金规则快照。</li>
+<li>如该渠道商存在有效的独立配置，则由独立配置覆盖岗位基础金额或条件。</li>
+<li>在最终有效基础佣金上叠加渠道商等级倍率。</li>
+<li>按上下级关系拆分直接推荐奖励和间接推荐奖励。</li>
+</ol>
+<p>禁止岗位规则、渠道商独立规则无条件重复累加，避免同一笔业务重复计佣。</p>
+<h2>8. 佣金模式</h2>
+<h3>8.1 在职天数阶梯</h3>
+<p>员工连续在职达到指定天数后触发佣金，例如：</p>
+<ul>
+<li>满30天：200元</li>
+<li>满60天：500元</li>
+<li>满90天：1000元</li>
+</ul>
+<p>现有原型采用累计制，即满90天同时触发30天、60天和90天档位。业务需确认是否保持累计制，或改为只发最高档/补差制。</p>
+<h3>8.2 满岗条件</h3>
+<p>可按以下指标判断是否达标：</p>
+<ul>
+<li>在职天数</li>
+<li>实际工时</li>
+<li>出勤天数</li>
+</ul>
+<p>达到指定指标后按一次性金额、元/天或元/小时计算。</p>
+<h3>8.3 固定金额</h3>
+<p>员工入职成功后触发一次性介绍费，不依赖后续在职时长。是否需要设置最低在职保护天数属于待确认事项。</p>
+<h3>8.4 直接与间接佣金</h3>
+<ul>
+<li>直接推荐人获得直接推荐奖励。</li>
+<li>直接推荐人的上级可获得间接推荐奖励。</li>
+<li>二级之外不再产生佣金。</li>
+<li>间接奖励是否也乘以上级自身等级倍率，需要产品明确。</li>
+</ul>
+<p>建议计算结构：</p>
+<pre class="codehilite"><code class="language-text">直接佣金 = 当前有效基础佣金 × 直接推荐人等级倍率
+间接佣金 = 当前有效间接奖励 × 上级渠道商等级倍率
+</code></pre>
+
+<h2>9. 佣金生成与结算</h2>
+<h3>9.1 规则快照</h3>
+<p>求职者报名成功时，应保存以下快照：</p>
+<ul>
+<li>岗位及项目</li>
+<li>直接、间接渠道商</li>
+<li>分销层级</li>
+<li>生效佣金模式</li>
+<li>阶梯条件和金额</li>
+<li>渠道商等级及倍率</li>
+<li>结算周期</li>
+</ul>
+<p>后续修改岗位或渠道商规则，不应影响已经报名并形成归属的历史业务。</p>
+<h3>9.2 佣金状态</h3>
+<p>建议佣金明细状态包括：</p>
+<table>
+<thead>
+<tr>
+<th>状态</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>待达标</td>
+<td>已建立归属，但尚未满足在职或满岗条件</td>
+</tr>
+<tr>
+<td>待确认</td>
+<td>已达到条件，等待系统或运营确认</td>
+</tr>
+<tr>
+<td>待审核</td>
+<td>已生成佣金单，等待后台审核</td>
+</tr>
+<tr>
+<td>已驳回</td>
+<td>数据异常或不符合结算要求</td>
+</tr>
+<tr>
+<td>待发放</td>
+<td>审核通过，等待付款</td>
+</tr>
+<tr>
+<td>已发放</td>
+<td>已完成佣金支付</td>
+</tr>
+<tr>
+<td>已失效</td>
+<td>离职、撤销入职、虚假报备等导致失效</td>
+</tr>
+<tr>
+<td>已冲减</td>
+<td>已计提或已结算后发生退款、追回或负向调整</td>
+</tr>
+</tbody>
+</table>
+<h3>9.3 异常处理</h3>
+<ul>
+<li>入职被撤销：尚未发放的佣金失效。</li>
+<li>达标前离职：对应未达标档位不生成佣金。</li>
+<li>发放后发现虚假入职：生成冲减记录，不直接删除原记录。</li>
+<li>重复结算：系统以求职者、岗位、档位和佣金类型生成唯一结算标识。</li>
+<li>规则或考勤数据修正：保留原版本，生成新的调整记录及审核轨迹。</li>
+</ul>
+<h2>10. Web 与 Mob 功能分工</h2>
+<h3>10.1 Web 管理后台</h3>
+<ul>
+<li>渠道商列表及新增渠道商</li>
+<li>渠道商详情和上下级关系维护</li>
+<li>查看个人及团队业绩</li>
+<li>渠道商等级管理</li>
+<li>岗位佣金规则配置</li>
+<li>渠道商独立佣金配置</li>
+<li>佣金明细、审核、结算和导出</li>
+<li>渠道商启用、停用及异常处理</li>
+</ul>
+<h3>10.2 Mob 小程序</h3>
+<ul>
+<li>申请成为渠道商</li>
+<li>通过邀请链接或分销码绑定上级</li>
+<li>展示本人分销码并分享邀请</li>
+<li>报备求职者</li>
+<li>选择本人或下级团队归属</li>
+<li>查看本人及团队招聘数据</li>
+<li>查看本人佣金概览和发放记录</li>
+<li>在“我的”中切换渠道商角色</li>
+</ul>
+<p>Mob 端不应展示平台内部佣金规则和岗位推荐配置。</p>
+<h2>11. 当前原型存在的主要问题</h2>
+<ol>
+<li>分销层级名称不统一。</li>
+<li>岗位配置中仍存在“公开给渠道商”的选项，与“不向渠道商展示分销规则”的要求冲突。</li>
+<li>分销规则页仍分别展示“在职天数”和“满岗条件”，但岗位端已要求合并为统一阶梯条件模式。</li>
+<li>岗位规则、渠道商独立规则和等级倍率之间的覆盖关系没有明确。</li>
+<li>重复报备、保护期和跨岗位归属未定义。</li>
+<li>缺少报名时的佣金规则快照。</li>
+<li>缺少佣金审核、驳回、失效、冲减及发放明细的完整闭环。</li>
+<li>团队业绩的去重及统计口径没有完整说明。</li>
+<li>关系变更、渠道商停用及上下级解绑后的历史数据处理未定义。</li>
+</ol>
+<h2>12. 开发前必须确认的决策清单</h2>
+<ul>
+<li>[ ] 分销层级的统一名称和数据库口径</li>
+<li>[ ] 报备保护期及重复报备判定规则</li>
+<li>[ ] 跨岗位和再次入职的渠道归属规则</li>
+<li>[ ] 岗位规则与渠道商独立规则的覆盖优先级</li>
+<li>[ ] 阶梯佣金采用累计制、最高档制还是补差制</li>
+<li>[ ] 间接佣金及等级倍率的计算公式</li>
+<li>[ ] 固定金额佣金的最低在职条件</li>
+<li>[ ] 渠道关系是否允许变更及变更审批方式</li>
+<li>[ ] 渠道商停用后历史求职者和佣金如何处理</li>
+<li>[ ] 佣金审核、付款、失效和冲减的状态及权限</li>
+<li>[ ] 渠道商可见的求职者资料范围和脱敏规则</li>
+</ul>
+<hr />
+<h2>变更记录</h2>
+<table>
+<thead>
+<tr>
+<th>日期</th>
+<th>版本</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026-07-23</td>
+<td>V1.0</td>
+<td>根据当前 Web/Mob 原型首次整理分销业务全链路、佣金体系及待确认规则</td>
+</tr>
+</tbody>
+</table>
+</div>
+</main></body></html>
