@@ -894,9 +894,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Helvetica Neue'
 </div>
 <div class="card" style="margin-top:12px;background:#f7faff">
 <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><h4 style="font-size:15px;font-weight:600;margin:0">我的渠道关系</h4><span style="font-size:12px;color:var(--pri)" onclick="sm('bindReferralModal')">手动绑定</span></div>
-<div style="font-size:13px;color:var(--text-2);line-height:1.8">我的分销码：<b style="color:var(--pri)">LT202607001</b><br>当前层级：<b>二级渠道商</b><br>上级渠道商：<b>刘洋（LT0001）</b><br>绑定方式：分享邀请自动绑定；如线下邀请，可手动输入分销码绑定。<br><span style="font-size:11px;color:var(--text-3)">当前已是二级，不可继续发展下级渠道商。</span></div>
+<div style="font-size:13px;color:var(--text-2);line-height:1.8">我的分销码：<b style="color:var(--pri)">LT202607001</b><br>当前层级：<b>二级</b><br>上级渠道商：<b>刘洋（LT0001）</b><br>绑定方式：分享邀请自动绑定；如线下邀请，可手动输入分销码绑定。<br><span style="font-size:11px;color:var(--text-3)">当前已是二级，不可继续发展下级渠道商。</span></div>
 </div>
 <div class="card" style="margin-top:12px"><div style="display:flex;justify-content:space-between;align-items:center"><b>今日招聘动态</b><span style="font-size:11px;color:var(--text-3)">截至 17:12</span></div><div class="today-channel-stats"><div onclick="alert('查看今日报备明细')"><b>8</b><span>当日报备</span></div><div onclick="alert('查看今日面试明细')"><b>5</b><span>当日面试</span></div><div onclick="alert('查看今日入职明细')"><b>2</b><span>当日入职</span></div></div></div>
+<div style="margin-top:12px;padding:12px;background:var(--pri-l);border-radius:10px;font-size:12px;color:var(--text-2);line-height:1.8"><b>报备归属规则</b><br>系统统一设置报备保护期（当前示例：30天）。同一求职者在同一岗位未入职前只能归属一个渠道商；不同岗位可归属不同渠道商。原岗位离职后，可再次报备同一岗位。佣金按入职审核时生效的岗位规则计算。</div>
 <div class="card" style="margin-top:12px">
 <div style="font-size:15px;font-weight:600;margin-bottom:10px">渠道商工作台</div>
 <div style="display:flex;gap:10px">
@@ -915,6 +916,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Helvetica Neue'
 <div style="flex:1;text-align:center"><div style="font-size:22px;font-weight:700;color:var(--pri)">&#165;3,600</div><div style="font-size:11px;color:var(--text-3);margin-top:2px">预计佣金</div></div>
 <div style="flex:1;text-align:center"><div style="font-size:22px;font-weight:700;color:var(--ok)">&#165;1,800</div><div style="font-size:11px;color:var(--text-3);margin-top:2px">已发放</div></div>
 </div>
+<div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:12px;font-size:11px"><span class="tag" style="background:#fff8e6;color:#a66a00">待达标 3</span><span class="tag" style="background:#eaf3ff;color:var(--pri)">待审核 2</span><span class="tag" style="background:#eef9f1;color:var(--ok)">待发放 1</span><span class="tag" style="background:#fff0f0;color:#d34b4b">失效 1</span></div>
+<div style="font-size:11px;color:var(--text-3);line-height:1.7;margin-top:8px">佣金按入职审核时生效的岗位规则计算；提前离职按是否满足满岗条件处理。</div>
 </div>
 <div class="card" id="channel-team">
 <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px"><h4 style="font-size:15px">团队招聘统计</h4><span style="font-size:12px;color:var(--pri)" onclick="alert('打开添加团队成员')">+ 添加成员</span></div>
@@ -971,6 +974,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Helvetica Neue'
 <div class="form-group"><label>手机号</label><input type="tel" placeholder="请输入手机号"></div>
 <div class="form-group"><label>身份证号</label><input placeholder="请输入身份证号"></div>
 <div class="form-group"><label>意向岗位</label><select><option>电子普工</option><option>质检员</option><option>高级技工</option><option>仓管员</option></select></div>
+<div style="padding:10px 12px;background:#fff8e6;border-radius:8px;color:#8a6410;font-size:11px;line-height:1.7;margin-bottom:12px">报备校验：同一求职者在同一岗位未入职前只能被一个渠道商报备；不同岗位可以分别报备。原岗位离职后，才允许其他渠道商再次报备同一岗位。</div>
 <div class="form-group"><label>所属团队</label><select id="reportTeamLevel" onchange="toggleReportSubTeam(this)"><option value="self">我的团队（自己）</option><option value="sub">二级团队（选择下级）</option></select></div>
 <div class="form-group" id="reportSubTeamWrap" style="display:none"><label>选择对应下级</label><select><option>李明（一级渠道商 · LT1008）</option><option>王芳（一级渠道商 · LT1021）</option><option>陈强（二级团队 · LT2036）</option></select><div style="font-size:11px;color:var(--text-3);margin-top:5px">报备数据将计入所选下级的团队统计。</div></div>
 <div class="form-group"><label>备注说明</label><textarea rows="3" placeholder="补充说明（如到岗时间、特殊需求）"></textarea></div>
@@ -2385,7 +2389,7 @@ if(imgSlides.length>0)setInterval(imgNext,3500);
 function bindReferralCode(){
   var v=(document.getElementById('referralCodeInput')||{}).value||'LT0001';
   hm('bindReferralModal');
-  alert('已绑定上级渠道商：刘洋（分销码 '+v+'），申请成为渠道商后将自动形成上下级关系；系统最多支持二级分销');
+  alert('已绑定上级渠道商：刘洋（分销码 '+v+'），申请成为渠道商后将自动形成一级/二级关系；二级不可继续发展下级');
 }
 function applyChannel(){
   alert('申请已提交，等待审核通过后即可成为渠道商；审核通过后系统将生成专属分销码');
@@ -2396,7 +2400,7 @@ function applyChannel(){
 
 // Channel report - submit (代报名)
 function submitReport(){
-  alert('已提交报备，求职者报名信息已进入审核流程');
+  alert('已提交报备，系统将校验同一求职者在同一岗位的保护期归属；通过后进入报名审核流程');
   mp('m-dist');
 }
 
@@ -2481,9 +2485,9 @@ var mobPageLogicSpecs={
  'm-onboard':['填写入职资料、证件、银行卡和通知订阅。','资料状态：未填写 / 待审核 / 已通过 / 已驳回。','提交后进入 Web 入职审核；审核通过并完成电子签后加入花名册。'],
  'm-esign':['完成合同阅读、人脸核身和电子签名。','状态：待签署 / 签署中 / 已签署 / 已过期。','必须勾选协议并通过人脸核身；签署成功写入合同记录并推进入职。'],
  'm-contract':['查看个人待签和已签合同。','合同状态：待签署 / 已签署 / 已过期 / 已作废。','已签合同只读并支持查看文件；待签合同可继续签署。'],
- 'm-dist':['渠道商查看分销码、团队关系和当日报备/面试/入职数据。','关系层级：本人团队 / 一级下级 / 二级下级，最多二级。','不展示平台分销规则或推荐岗位；分享邀请自动绑定，也可手动输入分销码。'],
+ 'm-dist':['渠道商查看分销码、团队关系和当日报备/面试/入职数据。','关系层级统一为：一级 / 二级；最多二级，二级不可继续发展下级。','同一求职者同一岗位未入职前只能归属一个渠道商；不同岗位可分别归属不同渠道商，离职后可重新报备同岗。佣金按入职审核时生效的岗位规则计算；不展示平台分销规则或推荐岗位。'],
  'm-distApply':['申请成为渠道商。','申请状态：未提交 / 待审核 / 已通过 / 已驳回。','审核通过后生成唯一分销码并允许进入渠道商工作台。'],
- 'm-channelReport':['渠道商代报名或报备求职者。','所属团队：我的团队 / 二级团队；选择二级团队时必须指定下级。','报备后关联渠道商与求职者，进入报名流程，并计入团队统计。'],
+ 'm-channelReport':['渠道商代报名或报备求职者。','所属团队：我的团队 / 二级团队；选择二级团队时必须指定下级。','提交前按系统统一保护期校验求职者+岗位的唯一归属；报备后关联渠道商与求职者，进入报名流程，并计入团队统计。'],
  'm-profile':['维护个人资料、简历、通知订阅和角色切换。','角色可切换员工 / 渠道商 / 管理角色，以实际授权为准。','个人资料与员工档案共享基础身份信息；敏感字段修改需重新验证。'],
  'm-resume':['管理本人最多 3 份简历并设置主简历。','简历状态：主简历 / 普通简历；来源：本人填写 / 本人导入。','投递默认主简历，也可临时选择其他简历；删除主简历前需设置新的主简历。'],
  'm-payslip':['查看个人工资条列表。','状态：待发放 / 已发放 / 待确认 / 已确认。','金额来源于审批通过的结算单，列表按月份和发薪批次展示。'],

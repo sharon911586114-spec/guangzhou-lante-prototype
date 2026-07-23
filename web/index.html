@@ -1554,7 +1554,10 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 <div class="tabs">
 <div class="tab active" onclick="stab(this,'dist-channel')">渠道商列表</div>
 <div class="tab" onclick="stab(this,'dist-rule')">分销规则配置</div>
+<div class="tab" onclick="stab(this,'dist-commission')">佣金明细</div>
 </div>
+
+<div class="ib ib-b" style="margin:12px 0">佣金规则优先级：<b>岗位规则 ＞ 渠道商独立规则 ＞ 渠道商等级默认规则</b>。佣金以入职审核时生效的规则计算；报备保护期由「系统设置」统一维护。</div>
 
 <div class="tc show" id="dist-channel">
 <div class="sbar"><input placeholder="搜索渠道商名称/手机号" style="width:220px"><select><option>全部状态</option><option>活跃</option><option>停用</option></select><button class="btn btn-p btn-sm">搜索</button><button class="btn btn-sm">重置</button><button class="btn btn-p btn-sm" onclick="sm('addChannelModal')">+ 新增渠道商</button></div>
@@ -1575,6 +1578,7 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 <div class="cd">
 <div class="cd-h"><div class="cd-t">佣金结算方式</div></div>
 <div class="ib ib-b" style="margin-bottom:16px">系统支持多种佣金计算方式，可按需组合配置。每种方式支持固定金额或按单位（天/小时）计费。</div>
+<div class="ib ib-y" style="margin-bottom:16px"><b>规则优先级：</b>岗位已配置佣金时优先使用岗位规则；岗位未配置或不适用时才读取渠道商独立规则；前两者均未配置时使用渠道商等级默认规则。不同规则不重复叠加。</div>
 <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px">
 <label style="display:flex;align-items:center;gap:6px;padding:12px 16px;border:2px solid var(--brand);border-radius:var(--radius);background:var(--brand-light);cursor:pointer;font-weight:600;font-size:14px"><input type="radio" name="commType" checked style="accent-color:var(--brand);width:16px;height:16px">在职天数佣金</label>
 <label style="display:flex;align-items:center;gap:6px;padding:12px 16px;border:1px solid var(--border);border-radius:var(--radius);cursor:pointer;font-size:14px"><input type="radio" name="commType" style="accent-color:var(--brand);width:16px;height:16px">满岗条件佣金</label>
@@ -1629,7 +1633,7 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 </div>
 <div class="cd">
 <div class="cd-h"><div class="cd-t">按渠道商配置佣金</div></div>
-<div class="ib ib-b" style="margin-bottom:16px">岗位维度的佣金已在「岗位管理」中维护；本处仅保留渠道商维度的佣金覆盖配置。</div>
+<div class="ib ib-b" style="margin-bottom:16px">本处维护渠道商独立规则。计算时遵循：岗位规则 ＞ 渠道商独立规则 ＞ 渠道商等级默认规则；同一业务只采用一套生效规则。</div>
 <div class="tc show" id="dist-cfg-channel">
 <div class="tw"><table>
 <thead><tr><th>渠道商</th><th>专属码</th><th>佣金方式</th><th>档位 / 金额</th><th>倍率</th><th>状态</th><th>操作</th></tr></thead>
@@ -1652,6 +1656,24 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 </div>
 
 <div style="margin-top:16px;text-align:right"><button class="btn btn-p">保存所有佣金规则配置</button></div>
+</div>
+</div>
+<div class="tc" id="dist-commission">
+<div class="cd">
+<div class="cd-h"><div><div class="cd-t">佣金明细</div><div style="font-size:12px;color:var(--text3);margin-top:4px">按求职者、岗位和渠道商查看佣金生成及结算轨迹。</div></div><button class="btn btn-sm" onclick="alert('佣金明细已导出')">导出明细</button></div>
+<div class="sbar" style="margin-bottom:12px"><input placeholder="搜索求职者/岗位/渠道商" style="width:240px"><select><option>全部状态</option><option>待达标</option><option>待审核</option><option>已驳回</option><option>待发放</option><option>已发放</option><option>失效</option><option>已冲减</option></select><select><option>全部佣金类型</option><option>直接推荐</option><option>间接推荐</option></select><button class="btn btn-p btn-sm">查询</button><button class="btn btn-sm">重置</button></div>
+<div class="sg" style="margin-bottom:14px"><div class="sc"><div class="sv"><div class="n">18</div><div class="l">待审核</div></div></div><div class="sc"><div class="sv"><div class="n">12</div><div class="l">待发放</div></div></div><div class="sc"><div class="sv"><div class="n">28,600</div><div class="l">已发放(元)</div></div></div><div class="sc"><div class="sv"><div class="n" style="color:var(--danger)">3</div><div class="l">已失效</div></div></div></div>
+<div class="tw"><table><thead><tr><th>佣金明细编号</th><th>求职者</th><th>岗位</th><th>渠道商</th><th>佣金类型</th><th>触发条件</th><th>金额(元)</th><th>状态</th><th>操作</th></tr></thead><tbody>
+<tr><td>CM20260723001</td><td>张三</td><td>普工</td><td>刘洋（一级）</td><td>直接推荐</td><td>入职审核通过，待满岗30天</td><td>200</td><td><span class="tg tg-y">待达标</span></td><td><button class="btn-link" onclick="alert('显示入职审核时生效的岗位佣金规则')">查看</button></td></tr>
+<tr><td>CM20260723002</td><td>李四</td><td>分拣工</td><td>杨光（二级）</td><td>间接推荐</td><td>已达到满岗条件</td><td>300</td><td><span class="tg tg-b">待审核</span></td><td><button class="btn-link" onclick="alert('已进入佣金审核')">审核</button></td></tr>
+<tr><td>CM20260723003</td><td>王五</td><td>仓管员</td><td>陈芳（一级）</td><td>直接推荐</td><td>固定金额，一次性介绍费</td><td>500</td><td><span class="tg tg-o">待发放</span></td><td><button class="btn-link" onclick="alert('进入发放确认')">发放</button></td></tr>
+<tr><td>CM20260723004</td><td>赵敏</td><td>质检员</td><td>刘洋（一级）</td><td>直接推荐</td><td>入职撤销</td><td>300</td><td><span class="tg tg-r">失效</span></td><td><button class="btn-link" onclick="alert('入职撤销，佣金直接取消')">查看</button></td></tr>
+<tr><td>CM20260723005</td><td>周强</td><td>普工</td><td>杨光（二级）</td><td>直接推荐</td><td>重复入职第2次，按本次入职审核规则计算</td><td>200</td><td><span class="tg tg-g">已发放</span></td><td><button class="btn-link" onclick="alert('已完成发放')">查看</button></td></tr>
+<tr><td>CM20260723006</td><td>孙丽</td><td>普工</td><td>陈芳（一级）</td><td>直接推荐</td><td>虚假报备</td><td>200</td><td><span class="tg tg-r">已冲减</span></td><td><button class="btn-link" onclick="alert('虚假报备，佣金取消并生成冲减记录')">查看</button></td></tr>
+<tr><td>CM20260723007</td><td>何敏</td><td>分拣工</td><td>刘洋（一级）</td><td>直接推荐</td><td>报备资料不完整</td><td>300</td><td><span class="tg tg-r">已驳回</span></td><td><button class="btn-link" onclick="alert('佣金审核已驳回，补充资料后可重新提交')">查看</button></td></tr>
+</tbody></table></div>
+<div class="ib ib-y" style="margin-top:12px">处理规则：岗位佣金以「入职审核通过」时生效的岗位规则计算；员工提前离职时，已满足满岗条件的佣金保留，未满足的佣金取消；入职撤销、虚假报备直接取消；同一求职者重复入职时，每次入职按本次条件独立计算。</div>
+<div class="pgn"><span>共72条</span><button class="active">1</button><button>2</button><button>3</button><button>...</button><button>8</button><span>条/页 10</span></div>
 </div>
 </div>
 <div class="mo" id="addDistLevelModal"><div class="ml" style="width:520px">
@@ -1682,7 +1704,7 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 <h2>按渠道商配置佣金</h2>
 <div class="rp-actions"><button class="btn" onclick="goBackDistRule()">取消</button><button class="btn btn-p" onclick="goBackDistRule();alert('渠道商佣金配置已保存')">保存配置</button></div>
 </div>
-<div class="ib ib-b" style="margin-bottom:14px">为指定渠道商设置独立的佣金结算方式与阶梯规则。渠道商等级倍率将在结算时自动叠加。</div>
+<div class="ib ib-b" style="margin-bottom:14px">为指定渠道商设置独立的佣金结算方式与阶梯规则。仅当岗位没有生效岗位规则时使用；岗位规则优先级高于本配置，本配置高于渠道商等级默认规则。</div>
 
 <div class="rp-card">
 <div class="rp-card-title">基础信息</div>
@@ -1724,12 +1746,12 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 
 <div class="rp-card">
 <div class="rp-card-title">分销关系</div>
-<div class="ib ib-b" style="margin-bottom:12px">渠道商可通过分销码绑定上下级关系。平台最多保留二级分销：一级为直接邀请，二级为一级渠道商继续邀请；二级渠道商不可继续发展下级。</div>
+<div class="ib ib-b" style="margin-bottom:12px">渠道商可通过分销码绑定上下级关系。平台最多保留两级：一级、二级。一级可以发展二级，二级不可继续发展下级；页面统一使用“一级 / 二级”作为层级名称。</div>
 <div class="rp-fields">
 <div class="rp-field"><span class="lbl">我的分销码</span><span class="val"><b style="color:var(--brand)">LT0001</b></span></div>
-<div class="rp-field"><span class="lbl">当前层级</span><span class="val">一级渠道商</span></div>
+<div class="rp-field"><span class="lbl">当前层级</span><span class="val">一级</span></div>
 <div class="rp-field"><span class="lbl">上级渠道商</span><span class="val">平台直营（无上级）</span></div>
-<div class="rp-field"><span class="lbl">下级数量</span><span class="val">3 个一级下级</span></div>
+<div class="rp-field"><span class="lbl">下级数量</span><span class="val">3 个一级</span></div>
 </div>
 <div class="fr" style="margin-top:12px"><div class="fg"><label>绑定上级分销码</label><input id="webDistParentCode" placeholder="输入上级分销码，如 LT0008"></div><div class="fg" style="justify-content:flex-end"><label>&nbsp;</label><button class="btn btn-p" onclick="var v=document.getElementById('webDistParentCode').value.trim();if(!v){alert('请输入上级分销码');return}alert('分销码 '+v+' 校验通过，已绑定上级渠道商；系统将自动校验层级不超过二级')">校验并绑定</button></div></div>
 </div>
@@ -1772,6 +1794,8 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 </div>
 </div>
 </div>
+ </div>
+<!-- 结束分销裂变主页面，避免后续结算页面被错误嵌套在分销页内 -->
 <div class="pg" id="p-settlePaySlip">
 <div class="rp-back" onclick="showPage('settleApproval')">&larr; 返回结算审批</div>
 <div class="rp-header">
@@ -2330,6 +2354,12 @@ table input[type="checkbox"]{width:14px;height:14px;cursor:pointer;accent-color:
 
 <div class="tc show" id="cfg-salaryrule">
 <div class="cd" style="margin-bottom:14px">
+<div class="cd-h"><div><div class="cd-t">报备保护期设置</div><div style="font-size:12px;color:var(--text3);margin-top:4px">统一控制同一求职者在同一岗位上的渠道商报备有效期。</div></div><span class="tg tg-g">系统统一配置</span></div>
+<div class="fr"><div class="fg"><label>保护期</label><select id="reportProtectPeriod"><option>30天</option><option>60天</option><option>90天</option><option>180天</option><option>长期有效</option></select></div><div class="fg"><label>保护期起算点</label><select><option>首次有效报备成功</option><option>报名审核通过</option></select></div></div>
+<div class="ib ib-b" style="margin-top:10px">规则：同一求职者在保护期内，同一岗位只能归属一个渠道商；不同岗位可分别归属不同渠道商。求职者从原岗位离职后，可再次报备同一岗位，按新的报备关系计算。</div>
+<div style="margin-top:10px;text-align:right"><button class="btn btn-p btn-sm" onclick="alert('报备保护期已保存，将对新报备生效')">保存保护期设置</button></div>
+</div>
+<div class="cd" style="margin-bottom:14px">
 <div class="cd-h"><div><div class="cd-t">工资计算模板</div><div style="font-size:12px;color:var(--text3);margin-top:4px">将费用项和计算公式组合成可复用模板，并按项目或岗位指定发薪规则。</div></div><div style="display:flex;gap:8px"><button class="btn btn-sm" onclick="sm('salaryAssignModal')">指定使用范围</button><button class="btn btn-p btn-sm" onclick="sm('salaryTemplateModal')">+ 新增模板</button></div></div>
 <div class="tw"><table>
 <thead><tr><th>模板名称</th><th>模板编码</th><th>主要计算规则</th><th>费用项</th><th>使用范围</th><th>已关联对象</th><th>状态</th><th>操作</th></tr></thead>
@@ -2617,9 +2647,9 @@ var globalPageLogicSpecs={
  settleCreate:{summary:'按选择人员、填写工资、核对提交三步创建结算单。',status:'人员校验状态：正常 / 缺少单价 / 缺少工时 / 存在未完成结算。',data:'系统计算项不可手改；现场费项需填写依据；个税按本月累计收入差额计算。'},
  settleApproval:{summary:'财务或管理人员复核结算金额并决定通过或驳回。',status:'待复核 / 审批中显示审批操作；已通过、已驳回只读。',data:'审批通过锁定当前版本并进入发薪；驳回必须填写原因并退回提交人修改。'},
  settlePaySlip:{summary:'查看员工工资条构成、发放状态及确认记录。',status:'工资条状态：待发放 / 已发放 / 待确认 / 已确认。',data:'工资条金额与审批通过的结算快照一致，不允许在工资条页面直接修改。'},
- dist:{summary:'管理渠道商、上下级关系、等级、佣金倍率与裂变数据。',status:'渠道商状态：待审核 / 正常 / 停用；分销关系最多二级。',data:'岗位佣金在岗位管理配置，不在分销页重复配置；渠道商端不展示平台分销规则。'},
- distDetail:{summary:'查看单个渠道商资料、分销码、上下级、报备、面试、入职与佣金数据。',status:'绑定方式：分享邀请自动绑定 / 手动输入分销码绑定。',data:'每个渠道商唯一分销码；超过二级、重复绑定或形成闭环时禁止建立关系。'},
- distCommChannel:{summary:'按渠道商维度维护等级及佣金倍率。',status:'等级状态：启用 / 停用；新增等级需通过弹窗维护名称、门槛和倍率。',data:'倍率影响后续符合条件的佣金计算，不追溯已结算佣金。'},
+ dist:{summary:'管理渠道商、一级/二级关系、等级、佣金倍率、报备保护期与佣金明细。',status:'渠道商状态：待审核 / 正常 / 停用；分销层级统一为一级 / 二级。',data:'佣金优先级：岗位规则 ＞ 渠道商独立规则 ＞ 渠道商等级默认规则；佣金按入职审核时生效规则计算。'},
+ distDetail:{summary:'查看单个渠道商资料、分销码、一级/二级关系、报备、面试、入职与佣金数据。',status:'绑定方式：分享邀请自动绑定 / 手动输入分销码绑定；最多二级。',data:'同一求职者同一岗位未入职前只能归属一个渠道商；离职后可重新报备同岗。'},
+ distCommChannel:{summary:'按渠道商维度维护独立佣金规则及等级倍率。',status:'佣金状态：待达标 / 待审核 / 已驳回 / 待发放 / 已发放 / 失效 / 已冲减。',data:'岗位规则优先于渠道商独立规则，独立规则优先于等级默认规则；规则在入职审核时确定。'},
  role:{summary:'管理后台角色、菜单权限和操作权限。',status:'角色状态：启用 / 停用。',data:'去掉渠道商角色说明及数据隔离策略展示；账号最终权限为角色权限与数据范围交集。'},
  roleAdd:{summary:'新增角色并配置菜单、页面和按钮权限。',status:'未保存为临时配置，保存后角色启用或停用。',data:'至少保留一个可管理系统的管理员角色；权限变化对新会话生效。'},
  roleEdit:{summary:'调整已有角色权限。',status:'停用角色后关联账号不可继续使用该角色权限。',data:'保存权限差异并记录变更前后值，不自动删除角色关联账号。'},
